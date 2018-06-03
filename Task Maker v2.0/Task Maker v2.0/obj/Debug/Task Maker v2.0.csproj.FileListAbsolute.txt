@@ -79,3 +79,30 @@ C:\Users\Kirill\Documents\GitHub\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\D
 C:\Users\Kirill\Documents\GitHub\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\Task Maker v2.0.g.resources
 C:\Users\Kirill\Documents\GitHub\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\Task_Maker_v2._0.Properties.Resources.resources
 C:\Users\Kirill\Documents\GitHub\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\Task Maker v2.0.csproj.GenerateResource.Cache
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\bin\Debug\Task Maker v2.0.exe.config
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\Task Maker v2.0.exe
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\Task Maker v2.0.pdb
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\bin\Debug\Task Maker v2.0.exe
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\bin\Debug\Task Maker v2.0.pdb
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\bin\Debug\System.Windows.Forms.dll
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\Task Maker v2.0.csprojResolveAssemblyReference.cache
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\About.g.cs
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\Creators.g.cs
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\MainPage.g.cs
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\MainWindow.g.cs
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\QuestionPage.g.cs
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\TaskPage.g.cs
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\App.g.cs
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\Task Maker v2.0_MarkupCompile.cache
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\Task Maker v2.0_MarkupCompile.lref
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\App.baml
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\About.baml
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\Creators.baml
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\MainDictionary.baml
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\MainPage.baml
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\MainWindow.baml
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\QuestionPage.baml
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\TaskPage.baml
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\Task Maker v2.0.g.resources
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\Task_Maker_v2._0.Properties.Resources.resources
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\Task Maker v2.0.csproj.GenerateResource.Cache

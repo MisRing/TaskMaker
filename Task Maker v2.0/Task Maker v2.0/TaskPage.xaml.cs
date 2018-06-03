@@ -78,7 +78,24 @@ namespace Task_Maker_v2._0
                         string text = Read_itc.GetValue(q, "text")[0];
                         int DIF = int.Parse(Read_itc.GetValue(q, "dif")[0]);
 
-                        theme.CreateQuestion(DIF, Questions_panel, Create_question, text, false);
+                        List<string> images_bytes = Read_itc.GetValue(q, "image");
+
+                        List<System.Drawing.Image> images = new List<System.Drawing.Image>();
+                        foreach(string img in images_bytes)
+                        {
+                            string[] bt = img.Split('*');
+                            byte[] bytes = new byte[bt.Length];
+
+                            for(int i = 0; i < bt.Length; i++)
+                            {
+                                bytes[i] = byte.Parse(bt[i]);
+                            }
+
+                            System.Drawing.Image im = byteArrayToImage(bytes);
+                            images.Add(im);
+                        }
+
+                        theme.CreateQuestion(DIF, Questions_panel, Create_question, text, false, images);
                     }
                 }
                 catch { }
@@ -111,12 +128,19 @@ namespace Task_Maker_v2._0
                         Values.Add(Read_itc.SetValue("text", q.q_text));
                         Values.Add(Read_itc.SetValue("dif", q.Dif.ToString()));
 
-                        /*foreach(System.Drawing.Image img in q.im)
+                        foreach(System.Drawing.Image img in q.im)
                         {
-                            System.Drawing.bit b = img as System.Drawing.Bitmap;
+                            byte[] byt = ImageToByte(img);
+                            string bytes = "";
 
-                            byte[] bytes = SaveImage(b);
-                        }*/
+                            foreach (byte b in byt)
+                            {
+                                bytes += b.ToString() + "*";
+                            }
+                            bytes = bytes.Remove(bytes.Length - 1);
+
+                            Values.Add(Read_itc.SetValue("image", bytes));
+                        }
                         DifEl.Add(Read_itc.SetElement("question", Values, 2));
                     }
                 }
@@ -139,16 +163,10 @@ namespace Task_Maker_v2._0
             return returnImage;
         }
 
-        byte[] SaveImage(BitmapSource bitmap)
+        public static byte[] ImageToByte(System.Drawing.Image img)
         {
-            using (MemoryStream ms = new MemoryStream())
-            {
-                var encoder = new BmpBitmapEncoder();
-                encoder.Frames.Add(BitmapFrame.Create(bitmap));
-                encoder.Save(ms);
-
-                return ms.GetBuffer();
-            }
+            System.Drawing.ImageConverter converter = new System.Drawing.ImageConverter();
+            return (byte[])converter.ConvertTo(img, typeof(byte[]));
         }
 
         private void Search_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
@@ -376,10 +394,12 @@ namespace Task_Maker_v2._0
             Main.Click += ChoseThis;
         }
 
-        public void CreateQuestion(int dif, StackPanel sp, Button add, string text = "Новый вопрос.", bool create = true)
+        public void CreateQuestion(int dif, StackPanel sp, Button add, string text = "Новый вопрос.", bool create = true, List<System.Drawing.Image> images = null)
         {
             sp.Children.Remove(add);
             Question q = new Question(text, sp, MW, this, dif, create);
+            if(images != null)
+                q.im = images;
             Questions[dif - 1].Add(q);
             if(MW.OpenedDif != 0)
                 sp.Children.Add(add);
