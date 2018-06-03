@@ -91,7 +91,63 @@ namespace Task_Maker_v2._0 {
         
         #line 24 "..\..\QuestionPage.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button square;
+        internal System.Windows.Controls.Button math;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 25 "..\..\QuestionPage.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button picture;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 27 "..\..\QuestionPage.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button up;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 28 "..\..\QuestionPage.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button down;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 29 "..\..\QuestionPage.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button cur;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 30 "..\..\QuestionPage.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button jir;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 31 "..\..\QuestionPage.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button podch;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 34 "..\..\QuestionPage.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button zach;
         
         #line default
         #line hidden
@@ -159,7 +215,28 @@ namespace Task_Maker_v2._0 {
             this.formuls = ((System.Windows.Controls.Button)(target));
             return;
             case 8:
-            this.square = ((System.Windows.Controls.Button)(target));
+            this.math = ((System.Windows.Controls.Button)(target));
+            return;
+            case 9:
+            this.picture = ((System.Windows.Controls.Button)(target));
+            return;
+            case 10:
+            this.up = ((System.Windows.Controls.Button)(target));
+            return;
+            case 11:
+            this.down = ((System.Windows.Controls.Button)(target));
+            return;
+            case 12:
+            this.cur = ((System.Windows.Controls.Button)(target));
+            return;
+            case 13:
+            this.jir = ((System.Windows.Controls.Button)(target));
+            return;
+            case 14:
+            this.podch = ((System.Windows.Controls.Button)(target));
+            return;
+            case 15:
+            this.zach = ((System.Windows.Controls.Button)(target));
             return;
             }
             this._contentLoaded = true;
