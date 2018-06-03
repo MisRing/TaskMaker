@@ -18,10 +18,21 @@
         </Border>
         <Button x:Name="save" FontSize="35" Style="{StaticResource one}" Content="СОХРАНИТЬ" HorizontalAlignment="Left" Margin="48,571,0,0" VerticalAlignment="Top" Width="300" Height="85" Grid.Column="1"/>
         <Button x:Name="cancel" FontSize="35" Style="{StaticResource one}" Content="ОТМЕНА" HorizontalAlignment="Left" Margin="510.8,571,0,0" VerticalAlignment="Top" Width="300" Height="85" Grid.Column="1" Click="cancel_Click"/>
-        <Button x:Name="symbols" FontSize="16" Content="Специальные символы" HorizontalAlignment="Left" VerticalAlignment="Top" Width="188" Grid.Column="1" Margin="816,55,0,0" Height="50"/>
-        <Button x:Name="grek" FontSize="16" Content="Греческий алфавит" HorizontalAlignment="Left" VerticalAlignment="Top" Width="188" Grid.Column="1" Margin="816,120,0,0" Height="50"/>
+        <Button x:Name="symbols" FontSize="16" Content="Специальные символы" HorizontalAlignment="Left" VerticalAlignment="Top" Width="188" Grid.Column="1" Margin="816,315,0,0" Height="50"/>
+        <Button x:Name="grek" FontSize="16" Content="Греческий алфавит" HorizontalAlignment="Left" VerticalAlignment="Top" Width="188" Grid.Column="1" Margin="816,250,0,0" Height="50"/>
         <Button x:Name="formuls" FontSize="16" Content="Формулы" HorizontalAlignment="Left" VerticalAlignment="Top" Width="188" Grid.Column="1" Margin="816,185,0,0" Height="50"/>
-        <Button x:Name="square" FontSize="20" Content="x²" Style="{StaticResource one}" Grid.Column="1" HorizontalAlignment="Left" Margin="47.8,3,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+        <Button x:Name="math" FontSize="14" Content="Математические символы" HorizontalAlignment="Left" VerticalAlignment="Top" Width="188" Grid.Column="1" Margin="816,120,0,0" Height="50"/>
+        <Button x:Name="picture" FontSize="16" Content="Вставить картинку" HorizontalAlignment="Left" VerticalAlignment="Top" Width="188" Grid.Column="1" Margin="816,55,0,0" Height="50"/>
 
+        <Button x:Name="up" FontSize="25" Content="A²" Style="{StaticResource one}" Grid.Column="1" HorizontalAlignment="Left" Margin="48,3,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+          <Button x:Name="down" FontSize="25" Content="A₂" Style="{StaticResource one}" Grid.Column="1" HorizontalAlignment="Left" Margin="118,3,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+          <Button x:Name="cur" FontSize="20" Content="Ab" FontFamily="Times New Roman" FontStyle="Oblique" Style="{StaticResource one}" Grid.Column="1" HorizontalAlignment="Left" Margin="188,3,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+          <Button x:Name="jir" FontSize="25" Content="Ab" Style="{StaticResource one}" Grid.Column="1" HorizontalAlignment="Left" FontWeight="Bold" Margin="258,3,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+          <Button x:Name="podch" FontSize="25"  Style="{StaticResource one}" Grid.Column="1" HorizontalAlignment="Left"  Margin="328,3,0,0" VerticalAlignment="Top" Width="50" Height="50">
+            <TextBlock TextDecorations="Underline" Text="Ab"/>
+          </Button>
+          <Button x:Name="zach" FontSize="25"  Style="{StaticResource one}" Grid.Column="1" HorizontalAlignment="Left"  Margin="398,3,0,0" VerticalAlignment="Top" Width="50" Height="50">
+            <TextBlock TextDecorations="Strikethrough" Text="Ab"/>
+          </Button>
     </Grid>
 </Page>
