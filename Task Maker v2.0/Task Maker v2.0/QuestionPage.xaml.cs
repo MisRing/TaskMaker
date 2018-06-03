@@ -38,5 +38,21 @@ namespace Task_Maker_v2._0
         {
             MW.Content = taskPage;
         }
+
+        private void OnKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            string ch = ((System.Windows.Forms.Keys)(KeyInterop.VirtualKeyFromKey(e.Key))).ToString();
+
+            Run p = new Run(ch);
+            p.Typography.Variants = FontVariants.Superscript;
+            //MessageBox.Show("1" + p.Text);
+            questionInput.Document.Blocks.Add(new Paragraph(p));
+                string clipText = System.Windows.Forms.Clipboard.GetText();
+                System.Windows.Forms.Clipboard.SetDataObject(p);
+                questionInput.Paste();
+                System.Windows.Forms.Clipboard.Clear();
+                questionInput.IsReadOnly = true;
+                System.Windows.Forms.Clipboard.SetText(clipText);
+        }
     }
 }
