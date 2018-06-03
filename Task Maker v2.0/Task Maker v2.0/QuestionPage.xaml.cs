@@ -20,10 +20,12 @@ namespace Task_Maker_v2._0
     public partial class QuestionPage : Page
     {
         Window MW = new Window();
+        TaskPage taskPage;
 
-        public QuestionPage(Window win)
+        public QuestionPage(Window win, TaskPage tp)
         {
             MW = win;
+            taskPage = tp;
             InitializeComponent();
         }
 
@@ -34,8 +36,7 @@ namespace Task_Maker_v2._0
 
         private void cancel_Click(object sender, RoutedEventArgs e)
         {
-            TaskPage task = new TaskPage(MW);
-            MW.Content = task;
+            MW.Content = taskPage;
         }
     }
 }

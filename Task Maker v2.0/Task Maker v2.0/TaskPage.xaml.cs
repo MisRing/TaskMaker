@@ -28,6 +28,7 @@ namespace Task_Maker_v2._0
         public Theme OpenedTheme;
         public int OpenedDif = 0;
         public List<Button> DifButtons = new List<Button>();
+        bool loaded = false;
 
         BrushConverter converter = new System.Windows.Media.BrushConverter();
         Brush brush;
@@ -257,20 +258,24 @@ namespace Task_Maker_v2._0
 
         private void OnLoad(object sender, RoutedEventArgs e)
         {
-            Questions_panel.Children.Clear();
+            if (!loaded)
+            {
+                Questions_panel.Children.Clear();
 
-            DifButtons.Add(difficulty1);
-            DifButtons.Add(difficulty2);
-            DifButtons.Add(difficulty3);
-            DifButtons.Add(difficulty4);
-            DifButtons.Add(difficulty5);
-            DifButtons.Add(difficulty6);
-            DifButtons.Add(difficulty7);
-            DifButtons.Add(difficulty8);
-            DifButtons.Add(difficulty9);
-            DifButtons.Add(difficulty10);
+                DifButtons.Add(difficulty1);
+                DifButtons.Add(difficulty2);
+                DifButtons.Add(difficulty3);
+                DifButtons.Add(difficulty4);
+                DifButtons.Add(difficulty5);
+                DifButtons.Add(difficulty6);
+                DifButtons.Add(difficulty7);
+                DifButtons.Add(difficulty8);
+                DifButtons.Add(difficulty9);
+                DifButtons.Add(difficulty10);
 
-            LoadThemes();
+                LoadThemes();
+                loaded = true;
+            }
         }
 
         private void ChoseDif(object sender, RoutedEventArgs e)
@@ -579,7 +584,7 @@ namespace Task_Maker_v2._0
 
         public void OpenText(object sender, RoutedEventArgs e)
         {
-            QuestionPage qp = new QuestionPage(MW.MW);
+            QuestionPage qp = new QuestionPage(MW.MW, MW);
             MW.MW.Content = qp;
             
         }
