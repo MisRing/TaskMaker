@@ -15,8 +15,8 @@
             <ColumnDefinition Width="338*"/>
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="copyright" HorizontalAlignment="Left" Margin="902.1,641,0,0" Foreground="Gray" FontSize="15" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Grid.Column="1"><Run Text="© 2018 MRCSoft"/></TextBlock>
-        <Border BorderBrush="Black" BorderThickness="2" Margin="21,50,12.9,125.4"/>
-        <ScrollViewer x:Name="ThemeScroll"  Margin="20,50,1010,125.4" Grid.ColumnSpan="2">
+        <Border BorderBrush="Black" BorderThickness="2" Margin="21,64,13.2,111.4"/>
+        <ScrollViewer x:Name="ThemeScroll"  Margin="20,62,1009.8,113.4" Grid.ColumnSpan="2">
             <StackPanel x:Name="Content_scroll">
                 <Button x:Name="CreateTheme_button" Style="{StaticResource one}" Width="50" Height="50" Margin="0,10,0,0" Click="CreateTheme_button_Click">
                     <Image Source="resources/plus2.png"/>
@@ -24,7 +24,7 @@
             </StackPanel>
         </ScrollViewer>
         <Button x:Name="DelThemes" FontSize="15" Style="{StaticResource one}"  Content="Удалить все темы" HorizontalAlignment="Left" Margin="20,586,0,0" VerticalAlignment="Top" Width="141" Height="70" Click="DeliteAllThemes"/>
-        <ScrollViewer HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="780" Margin="49.1,5,0,0" Grid.Column="1">
+        <ScrollViewer HorizontalAlignment="Left" Height="500" VerticalAlignment="Top" Width="780" Margin="47.8,55,0,0" Grid.Column="1">
             <StackPanel x:Name="Questions_panel" Height="500" Margin="0,0,0,0" VerticalAlignment="Top" Width="763">
                 <Button x:Name="Create_question"  Style="{StaticResource one}" Width="50" Height="50" Margin="0,10,0,0" Click="CreateQuestion">
                     <Image Source="resources/plus2.png"/>
@@ -33,21 +33,21 @@
 
         </ScrollViewer>
 
-        <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="500" Margin="48.1,5,0,0" VerticalAlignment="Top" Width="763" Grid.Column="1"/>
-        <TextBlock x:Name="SearchStatic" Background="LightGray" HorizontalAlignment="Left" Height="23" Margin="23,17,0,0" TextWrapping="Wrap" Foreground="Gray" Text="Поиск по темам..." VerticalAlignment="Top" Width="146"/>
-        <TextBox x:Name="Search" Background="Transparent" HorizontalAlignment="Left" Height="23" Margin="21,16,0,0" TextWrapping="Wrap" Foreground="Black"  BorderBrush="Black" BorderThickness="0.5" VerticalAlignment="Top" Width="137" TextInput="Search_TextInput" LostKeyboardFocus="Search_LostKeyboardFocus" PreviewTextInput="Search_TextInput"/>
+        <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="500" Margin="48,55,0,0" VerticalAlignment="Top" Width="763" Grid.Column="1"/>
+        <TextBlock x:Name="SearchStatic" Background="LightGray" HorizontalAlignment="Left" Height="23" Margin="22,33,0,0" TextWrapping="Wrap" Foreground="Gray" Text="Поиск по темам..." VerticalAlignment="Top" Width="146"/>
+        <TextBox x:Name="Search" Background="Transparent" HorizontalAlignment="Left" Height="23" Margin="20,32,0,0" TextWrapping="Wrap" Foreground="Black"  BorderBrush="Black" BorderThickness="0.5" VerticalAlignment="Top" Width="137" TextInput="Search_TextInput" LostKeyboardFocus="Search_LostKeyboardFocus" PreviewTextInput="Search_TextInput"/>
         <Button x:Name="make_variants" FontSize="25" Style="{StaticResource one}" Content="СОЗДАТЬ ВАРИАНТЫ" HorizontalAlignment="Left" Margin="48.1,571,0,0" VerticalAlignment="Top" Width="300" Height="85" Grid.Column="1"/>
         <Button x:Name="question_list" FontSize="19" Style="{StaticResource one}" Content="СОЗДАТЬ СПИСОК ВОПРОСОВ" HorizontalAlignment="Left" Margin="511.1,571,0,0" VerticalAlignment="Top" Width="300" Height="85" Grid.Column="1"/>
-        <Button x:Name="difficulty1" FontSize="20" Content="Сложность 1" HorizontalAlignment="Left" Margin="839.1,10,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
-        <Button x:Name="difficulty2" FontSize="20" Content="Сложность 2" HorizontalAlignment="Left" Margin="839.1,60,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
-        <Button x:Name="difficulty3" FontSize="20" Content="Сложность 3" HorizontalAlignment="Left" Margin="839.1,110,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
-        <Button x:Name="difficulty4" FontSize="20" Content="Сложность 4" HorizontalAlignment="Left" Margin="839.1,161,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
-        <Button x:Name="difficulty5" FontSize="20" Content="Сложность 5" HorizontalAlignment="Left" Margin="839.1,211,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
-        <Button x:Name="difficulty6" FontSize="20" Content="Сложность 6" HorizontalAlignment="Left" Margin="839.1,260,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
-        <Button x:Name="difficulty7" FontSize="20" Content="Сложность 7" HorizontalAlignment="Left" Margin="839.1,311,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
-        <Button x:Name="difficulty8" FontSize="20" Content="Сложность 8" HorizontalAlignment="Left" Margin="839.1,361,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
-        <Button x:Name="difficulty9" FontSize="20" Content="Сложность 9" HorizontalAlignment="Left" Margin="839.1,411,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
-        <Button x:Name="difficulty10" FontSize="20" Content="Сложность 10" HorizontalAlignment="Left" Margin="839.1,461,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
+        <Button x:Name="difficulty1" FontSize="20" Content="Сложность 1" HorizontalAlignment="Left" Margin="839.1,58,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
+        <Button x:Name="difficulty2" FontSize="20" Content="Сложность 2" HorizontalAlignment="Left" Margin="839.1,108,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
+        <Button x:Name="difficulty3" FontSize="20" Content="Сложность 3" HorizontalAlignment="Left" Margin="839.1,158,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
+        <Button x:Name="difficulty4" FontSize="20" Content="Сложность 4" HorizontalAlignment="Left" Margin="839.1,209,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
+        <Button x:Name="difficulty5" FontSize="20" Content="Сложность 5" HorizontalAlignment="Left" Margin="839.1,259,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
+        <Button x:Name="difficulty6" FontSize="20" Content="Сложность 6" HorizontalAlignment="Left" Margin="839.1,308,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
+        <Button x:Name="difficulty7" FontSize="20" Content="Сложность 7" HorizontalAlignment="Left" Margin="839.1,359,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
+        <Button x:Name="difficulty8" FontSize="20" Content="Сложность 8" HorizontalAlignment="Left" Margin="839.1,409,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
+        <Button x:Name="difficulty9" FontSize="20" Content="Сложность 9" HorizontalAlignment="Left" Margin="839.1,459,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
+        <Button x:Name="difficulty10" FontSize="20" Content="Сложность 10" HorizontalAlignment="Left" Margin="838.8,509,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
         <Button x:Name="back_button" Background="Red" FontSize="30" Content="МЕНЮ" HorizontalAlignment="Left" Margin="872.1,585,0,0" VerticalAlignment="Top" Width="112" Height="55" Click="back" Grid.Column="1"/>
 
     </Grid>

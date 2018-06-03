@@ -64,6 +64,38 @@ namespace Task_Maker_v2._0 {
         #line default
         #line hidden
         
+        
+        #line 21 "..\..\QuestionPage.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button symbols;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 22 "..\..\QuestionPage.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button grek;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 23 "..\..\QuestionPage.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button formuls;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 24 "..\..\QuestionPage.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button square;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -116,6 +148,18 @@ namespace Task_Maker_v2._0 {
             
             #line default
             #line hidden
+            return;
+            case 5:
+            this.symbols = ((System.Windows.Controls.Button)(target));
+            return;
+            case 6:
+            this.grek = ((System.Windows.Controls.Button)(target));
+            return;
+            case 7:
+            this.formuls = ((System.Windows.Controls.Button)(target));
+            return;
+            case 8:
+            this.square = ((System.Windows.Controls.Button)(target));
             return;
             }
             this._contentLoaded = true;
