@@ -19,13 +19,20 @@ namespace Task_Maker_v2._0
     /// </summary>
     public partial class QuestionPage : Page
     {
-        Window MW = new Window();
+        Window MW;
         TaskPage taskPage;
+        bool Subscript = false, Superscript = false;
+        maths mat = new maths();
+        spec sp = new spec();
+        BrushConverter converter = new System.Windows.Media.BrushConverter();
+        Brush brush;
 
         public QuestionPage(Window win, TaskPage tp)
         {
             MW = win;
             taskPage = tp;
+            brush = (Brush)converter.ConvertFromString("#FFFCB93E");
+
             InitializeComponent();
         }
 
@@ -39,20 +46,66 @@ namespace Task_Maker_v2._0
             MW.Content = taskPage;
         }
 
+        private void SetSuperscript(object sender, RoutedEventArgs e)
+        {
+            Superscript = !Superscript;
+            Subscript = false;
+
+            if (Superscript)
+                up.Background = Brushes.LightCyan;
+            else
+                up.Background = brush;
+
+            if (Subscript)
+               down.Background = Brushes.LightCyan;
+            else
+                down.Background = brush;
+        }
+
+        private void SetSubscript(object sender, RoutedEventArgs e)
+        {
+            Subscript = !Subscript;
+            Superscript = false;
+
+            if (Superscript)
+                up.Background = Brushes.LightCyan;
+            else
+                up.Background = brush;
+
+            if (Subscript)
+                down.Background = Brushes.LightCyan;
+            else
+                down.Background = brush;
+        }
+
+        private void math_Click(object sender, RoutedEventArgs e)
+        {
+            frame.Content = mat;
+        }
+
+        private void symbols_Click(object sender, RoutedEventArgs e)
+        {
+            frame.Content = sp;
+        }
+
         private void OnKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            string ch = ((System.Windows.Forms.Keys)(KeyInterop.VirtualKeyFromKey(e.Key))).ToString();
-
-            Run p = new Run(ch);
-            p.Typography.Variants = FontVariants.Superscript;
-            //MessageBox.Show("1" + p.Text);
-            questionInput.Document.Blocks.Add(new Paragraph(p));
-                string clipText = System.Windows.Forms.Clipboard.GetText();
-                System.Windows.Forms.Clipboard.SetDataObject(p);
-                questionInput.Paste();
-                System.Windows.Forms.Clipboard.Clear();
-                questionInput.IsReadOnly = true;
-                System.Windows.Forms.Clipboard.SetText(clipText);
+            if (Subscript)
+            {
+                BaselineAlignment newAlignment = BaselineAlignment.Subscript;
+                questionInput.Selection.ApplyPropertyValue(Inline.BaselineAlignmentProperty, newAlignment);
+                questionInput.Selection.ApplyPropertyValue(Inline.FontSizeProperty, 6);
+            }
+            else if (Superscript)
+            {
+                BaselineAlignment newAlignment = BaselineAlignment.Superscript;
+                questionInput.Selection.ApplyPropertyValue(Inline.BaselineAlignmentProperty, newAlignment);
+            }
+            else
+            {
+                BaselineAlignment newAlignment = BaselineAlignment.Baseline;
+                questionInput.Selection.ApplyPropertyValue(Inline.BaselineAlignmentProperty, newAlignment);
+            }
         }
     }
 }

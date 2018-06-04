@@ -9,13 +9,13 @@
       Title="MainPage">
     <Grid Background="LightGray">
 
-        <Button x:Name="make_task" Content="Создание работ" FontSize="35" Style="{StaticResource one}"    HorizontalAlignment="Left" Margin="100,55,0,0" VerticalAlignment="Top" Width="300" Height="150" Click="OpenTask"/>
-        <Button x:Name="make_test" Content="Создание тестов" FontSize="35" Style="{StaticResource one}"   HorizontalAlignment="Left" Margin="800,55,0,0" VerticalAlignment="Top" Width="300" Height="150"/>
-        <Button x:Name="creators" FontSize="40" Style="{StaticResource two}"  Content="Создатели"  Margin="400,418,400,189" Click="ShowCreators"/>
-        <Button x:Name="FAQ" FontSize="40" Style="{StaticResource two}" Content="Как пользоваться" HorizontalAlignment="Left" Margin="400,320,0,0" VerticalAlignment="Top" Width="400" Height="56"/>
-        <Button x:Name="about" FontSize="40" Style="{StaticResource two}" Content="О приложении" HorizontalAlignment="Left" Margin="400,210,0,0" VerticalAlignment="Top" Width="400" Height="64" Click="ShowAbout"/>
+        <Button x:Name="make_task" Background="Red" Content="Создание работ" FontSize="38" Style="{StaticResource one}"    HorizontalAlignment="Left" Margin="50,80,0,0" VerticalAlignment="Top" Width="400" Height="80" Click="OpenTask"/>
+        <Button x:Name="make_test" Background="Red" Content="Создание тестов" FontSize="38" Style="{StaticResource one}"   HorizontalAlignment="Left" Margin="730,80,0,0" VerticalAlignment="Top" Width="400" Height="80"/>
+        <Button x:Name="creators" FontSize="40" Style="{StaticResource one}"  Content="Создатели"  Margin="400,440,404.8,152.4" Click="ShowCreators" Width="380" Height="70"/>
+        <Button x:Name="FAQ" FontSize="40" Style="{StaticResource one}" Content="Как пользоваться" HorizontalAlignment="Left" Margin="400,320,0,0" VerticalAlignment="Top" Width="380" Height="70"/>
+        <Button x:Name="about" FontSize="40" Style="{StaticResource one}" Content="О приложении" HorizontalAlignment="Left" Margin="400,200,0,0" VerticalAlignment="Top" Width="380" Height="70" Click="ShowAbout"/>
         <TextBlock x:Name="copyright" HorizontalAlignment="Left" Margin="1072,641,0,0" Foreground="Gray" FontSize="15" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="© 2018 MRCSoft"/></TextBlock>
-        <Button x:Name="Exit" FontSize="40" Style="{StaticResource two}" Content="Выход" HorizontalAlignment="Left" Margin="400,519,0,0" VerticalAlignment="Top" Width="400" Height="64" Click="WindowClose"/>
+        <Button x:Name="Exit" FontSize="40" Style="{StaticResource one}" Content="Выход" HorizontalAlignment="Left" Margin="400,560,0,0" VerticalAlignment="Top" Width="380" Height="70" Click="WindowClose"/>
 
 
     </Grid>

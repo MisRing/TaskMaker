@@ -13,7 +13,6 @@
     <SolidColorBrush x:Key="detailMarkBrush" Color="{StaticResource ResourceKey=detailMark}" />
     <Color x:Key="detailMark">#FFA1A9B3</Color>
     <Style TargetType="{x:Type Button}" x:Name="main">
-        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}" />
         <Setter Property="Background" Value="#FFFCB93E" />
         <Setter Property="BorderBrush" Value="Black" />
         <Setter Property="Foreground" Value="Black" />
@@ -44,50 +43,13 @@
                 <Setter Property="FontWeight" Value="Bold" />
             </Trigger>
             <Trigger Property="IsPressed" Value="true">
-                <Setter Property="Background" Value="gray" />
+                <Setter Property="Background" Value="LightCyan" />
             </Trigger>
         </Style.Triggers>
     </Style>
     
-    <Style  x:Key="two" x:Name="two"  TargetType="{x:Type Button}">
-        <Setter Property="Cursor" Value="Hand"></Setter>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border x:Name="border">
-                        <ContentControl
-                    Content="{TemplateBinding Content}"
-                            Margin="{TemplateBinding Padding}"
-                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="FontWeight" Value="SemiBold" />
-                            <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.MouseOver.Border}" />
-                        </Trigger>
-                        <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="FontWeight" Value="Bold" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}" />
-        <Setter Property="BorderBrush" Value="Black" />
-        <Setter Property="Foreground" Value="Black" />
-        <Setter Property="Padding" Value="1" />
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="FontWeight" Value="Thin"/>
-        <Setter Property="FontSize" Value="30"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Padding" Value="1" />
-    </Style>
     
     <Style TargetType="{x:Type Button}" x:Key="one"  x:Name="one">
-        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}" />
         <Setter Property="Background" Value="#FFFCB93E" />
         <Setter Property="BorderBrush" Value="Black" />
         <Setter Property="Foreground" Value="Black" />
@@ -118,13 +80,46 @@
                 <Setter Property="FontWeight" Value="Bold" />
             </Trigger>
             <Trigger Property="IsPressed" Value="true">
-                <Setter Property="Background" Value="gray" />
+                <Setter Property="Background" Value="LightCyan" />
             </Trigger>
         </Style.Triggers>
     </Style>
-    
+    <Style TargetType="{x:Type Button}" x:Key="elem"  x:Name="elem">
+        <Setter Property="Background" Value="#FFFCB93E" />
+        <Setter Property="BorderBrush" Value="Black" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="1" />
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border  CornerRadius="5"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Background="{TemplateBinding Background}"
+                        Height="{TemplateBinding Height}"
+                        Width="{TemplateBinding Width}" >
+                        <ContentControl Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Content="{TemplateBinding Content}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="FontWeight" Value="Bold" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+                <Setter Property="Background" Value="LightCyan" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
     <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}" />
         <Setter Property="Background" Value="{StaticResource Button.Static.Background}" />
         <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}" />
         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
