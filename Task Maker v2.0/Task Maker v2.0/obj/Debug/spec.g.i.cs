@@ -43,7 +43,47 @@ namespace Task_Maker_v2._0 {
         
         #line 13 "..\..\spec.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button button;
+        internal System.Windows.Controls.Button arrow;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 14 "..\..\spec.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button double_arrow;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 15 "..\..\spec.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button arrow_up;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 16 "..\..\spec.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button arrow_down;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 17 "..\..\spec.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button celsii;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 18 "..\..\spec.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button par;
         
         #line default
         #line hidden
@@ -79,7 +119,22 @@ namespace Task_Maker_v2._0 {
             switch (connectionId)
             {
             case 1:
-            this.button = ((System.Windows.Controls.Button)(target));
+            this.arrow = ((System.Windows.Controls.Button)(target));
+            return;
+            case 2:
+            this.double_arrow = ((System.Windows.Controls.Button)(target));
+            return;
+            case 3:
+            this.arrow_up = ((System.Windows.Controls.Button)(target));
+            return;
+            case 4:
+            this.arrow_down = ((System.Windows.Controls.Button)(target));
+            return;
+            case 5:
+            this.celsii = ((System.Windows.Controls.Button)(target));
+            return;
+            case 6:
+            this.par = ((System.Windows.Controls.Button)(target));
             return;
             }
             this._contentLoaded = true;

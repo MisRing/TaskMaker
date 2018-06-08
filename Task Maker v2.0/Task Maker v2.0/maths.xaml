@@ -10,6 +10,32 @@
       ShowsNavigationUI="False">
     
     <Grid Background="LightGray">
-
+        <Button x:Name="alfa1" Style="{StaticResource elem}" Margin="0,0,0,0" FontSize="30" Content="≠" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="betta1" Style="{StaticResource elem}" Margin="70,0,0,0" FontSize="30" Content="≈" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="gamma1" Style="{StaticResource elem}" Margin="140,0,0,0" FontSize="30" Content="≤" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="delta1" Style="{StaticResource elem}" Margin="0,70,0,0" FontSize="30" Content="≤" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="epsilon1" Style="{StaticResource elem}"  Margin="70,70,0,0" FontSize="30" Content="±" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="dzeta1" Style="{StaticResource elem}" Margin="140,70,0,0" FontSize="30" Content="∪" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="eta1" Style="{StaticResource elem}" Margin="0,140,0,0" FontSize="30" Content="⋂" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="teta1" Style="{StaticResource elem}" Margin="70,140,0,0" FontSize="30" Content="∞" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="iota1" Style="{StaticResource elem}" Margin="140,140,0,0" FontSize="30" Content="||" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="labmda1" Style="{StaticResource elem}" Margin="0,210,0,0" FontSize="30" Content="∅" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="mu1" Style="{StaticResource elem}" FontSize="30" Content="∈" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49" Margin="70,210,0,0"/>
+        <Button x:Name="nu1" Style="{StaticResource elem}" FontSize="30" Content="∉" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49" Margin="140,210,0,0"/>
+        <Button x:Name="ksi1" Style="{StaticResource elem}" Margin="0,270,0,0" FontSize="30" Content="∀" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="pi1" Style="{StaticResource elem}" FontSize="30" Content="≡" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49" Margin="70,270,0,0"/>
+        <Button x:Name="ro1" Style="{StaticResource elem}" FontSize="30" Content="⊥" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49" RenderTransformOrigin="0.486,0.496" Margin="140,270,0,0"/>
+        <Button x:Name="sigma1" Style="{StaticResource elem}" Margin="0,340,0,0" FontSize="30" Content="⊂" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="tau1" Style="{StaticResource elem}" FontSize="30" Content="⊃" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49" Margin="70,340,0,0"/>
+        <Button x:Name="ipsilon1" Style="{StaticResource elem}" FontSize="30" Content="sin" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49" Margin="140,340,0,0"/>
+        <Button x:Name="fi1" Style="{StaticResource elem}" Margin="0,410,0,0" FontSize="30" Content="cos" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="hi1" Style="{StaticResource elem}" FontSize="30" Content="tg" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49" Margin="70,410,0,0"/>
+        <Button x:Name="psi1" Style="{StaticResource elem}" FontSize="30" Content="ctg" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49" Margin="140,410,0,0"/>
+        <Button x:Name="omega1" Style="{StaticResource elem}" Margin="0,480,0,0" FontSize="30" Content="log" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="delta2" Style="{StaticResource elem}" FontSize="30" Content="lg" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49" Margin="70,480,0,0"/>
+        <Button x:Name="teta2" Style="{StaticResource elem}" FontSize="30" Content="ln" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49" Margin="140,480,0,0"/>
+        <Button x:Name="sigma2" Style="{StaticResource elem}" Margin="0,550,0,0" FontSize="30" Content="∠" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="psi2" Style="{StaticResource elem}" FontSize="30" Content="∫" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49" Margin="70,550,0,-0.6"/>
+        <Button x:Name="omega2" Style="{StaticResource elem}" FontSize="30" Content="∃" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49" Margin="140,550,0,-0.6"/>
     </Grid>
 </Page>

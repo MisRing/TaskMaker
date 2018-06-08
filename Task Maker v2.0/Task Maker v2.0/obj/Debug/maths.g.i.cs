@@ -40,6 +40,222 @@ namespace Task_Maker_v2._0 {
     /// </summary>
     public partial class maths : System.Windows.Controls.Page, System.Windows.Markup.IComponentConnector {
         
+        
+        #line 13 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button alfa1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 14 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button betta1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 15 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button gamma1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 16 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button delta1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 17 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button epsilon1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 18 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button dzeta1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 19 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button eta1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 20 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button teta1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 21 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button iota1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 22 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button labmda1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 23 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button mu1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 24 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button nu1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 25 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button ksi1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 26 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button pi1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 27 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button ro1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 28 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button sigma1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 29 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button tau1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 30 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button ipsilon1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 31 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button fi1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 32 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button hi1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 33 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button psi1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 34 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button omega1;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 35 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button delta2;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 36 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button teta2;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 37 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button sigma2;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 38 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button psi2;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 39 "..\..\maths.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button omega2;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -68,6 +284,90 @@ namespace Task_Maker_v2._0 {
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
         void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target) {
+            switch (connectionId)
+            {
+            case 1:
+            this.alfa1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 2:
+            this.betta1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 3:
+            this.gamma1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 4:
+            this.delta1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 5:
+            this.epsilon1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 6:
+            this.dzeta1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 7:
+            this.eta1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 8:
+            this.teta1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 9:
+            this.iota1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 10:
+            this.labmda1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 11:
+            this.mu1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 12:
+            this.nu1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 13:
+            this.ksi1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 14:
+            this.pi1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 15:
+            this.ro1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 16:
+            this.sigma1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 17:
+            this.tau1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 18:
+            this.ipsilon1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 19:
+            this.fi1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 20:
+            this.hi1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 21:
+            this.psi1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 22:
+            this.omega1 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 23:
+            this.delta2 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 24:
+            this.teta2 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 25:
+            this.sigma2 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 26:
+            this.psi2 = ((System.Windows.Controls.Button)(target));
+            return;
+            case 27:
+            this.omega2 = ((System.Windows.Controls.Button)(target));
+            return;
+            }
             this._contentLoaded = true;
         }
     }

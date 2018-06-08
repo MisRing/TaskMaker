@@ -10,7 +10,11 @@
       ShowsNavigationUI="False">
 
     <Grid Background="LightGray">
-        <Button x:Name="button" Style="{StaticResource elem}" FontSize="30" Content="→" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
-
+        <Button x:Name="arrow" Style="{StaticResource elem}" FontSize="30" Content="→" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="double_arrow" Style="{StaticResource elem}" Margin="70,0,0,0" FontSize="30" Content="⇄" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="arrow_up" Style="{StaticResource elem}" Margin="140,0,0,0" FontSize="30" Content="↑" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="arrow_down" Style="{StaticResource elem}" Margin="0,70,0,0" FontSize="30" Content="↓" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="celsii" Style="{StaticResource elem}" Margin="70,70,0,0" FontSize="30" Content="°C" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
+        <Button x:Name="par" Style="{StaticResource elem}" Margin="140,70,0,0" FontSize="30" Content="§" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="49"/>
     </Grid>
 </Page>
