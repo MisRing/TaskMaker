@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿#pragma checksum "..\..\QuestionPage.xaml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "C94963997F563CBF6732E717D363F022CCD50B2D"
+=======
+﻿#pragma checksum "..\..\QuestionPage.xaml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "FBDB325DE97A4882EEF093000AE0DA4B89E6EC24"
+>>>>>>> d1151383eea3f2bd76304606efcaca727b8d76e1
 =======
 ﻿#pragma checksum "..\..\QuestionPage.xaml" "{ff1816ec-aa5e-4d10-87f7-6f4963833460}" "FBDB325DE97A4882EEF093000AE0DA4B89E6EC24"
 >>>>>>> d1151383eea3f2bd76304606efcaca727b8d76e1
@@ -156,6 +160,14 @@ namespace Task_Maker_v2._0 {
         #line default
         #line hidden
         
+        
+        #line 37 "..\..\QuestionPage.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Frame frame;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -253,6 +265,9 @@ namespace Task_Maker_v2._0 {
             
             #line 27 "..\..\QuestionPage.xaml"
             this.up.Click += new System.Windows.RoutedEventHandler(this.SetSuperscript);
+<<<<<<< HEAD
+>>>>>>> d1151383eea3f2bd76304606efcaca727b8d76e1
+=======
 >>>>>>> d1151383eea3f2bd76304606efcaca727b8d76e1
             
             #line default
@@ -269,6 +284,9 @@ namespace Task_Maker_v2._0 {
             
             #line 28 "..\..\QuestionPage.xaml"
             this.down.Click += new System.Windows.RoutedEventHandler(this.SetSubscript);
+<<<<<<< HEAD
+>>>>>>> d1151383eea3f2bd76304606efcaca727b8d76e1
+=======
 >>>>>>> d1151383eea3f2bd76304606efcaca727b8d76e1
             
             #line default
@@ -300,6 +318,9 @@ namespace Task_Maker_v2._0 {
             
             #line default
             #line hidden
+            return;
+            case 16:
+            this.frame = ((System.Windows.Controls.Frame)(target));
             return;
             case 16:
             this.frame = ((System.Windows.Controls.Frame)(target));
