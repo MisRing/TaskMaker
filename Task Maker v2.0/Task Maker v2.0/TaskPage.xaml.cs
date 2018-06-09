@@ -290,7 +290,7 @@ namespace Task_Maker_v2._0
                 {
                     d.Background = brush;
                 }
-
+                
                 b.Background = Brushes.LightCyan;
                 Questions_panel.Children.Clear();
                 foreach (Question q in OpenedTheme.Questions[OpenedDif-1])
@@ -586,7 +586,6 @@ namespace Task_Maker_v2._0
         {
             QuestionPage qp = new QuestionPage(MW.MW, MW);
             MW.MW.Content = qp;
-            
         }
 
         public void InterText(string _text)
