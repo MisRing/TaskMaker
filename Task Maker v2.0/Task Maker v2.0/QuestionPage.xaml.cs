@@ -21,20 +21,9 @@ namespace Task_Maker_v2._0
     {
         Window MW;
         TaskPage taskPage;
-<<<<<<< HEAD
-<<<<<<< HEAD
         public bool Subscript = false, Supperscript = false, Bold = false, Cursive = false, BaseLine = false;
-
-=======
-        bool Subscript = false, Superscript = false;
         maths mat = new maths();
         spec sp = new spec();
->>>>>>> d1151383eea3f2bd76304606efcaca727b8d76e1
-=======
-        bool Subscript = false, Superscript = false;
-        maths mat = new maths();
-        spec sp = new spec();
->>>>>>> d1151383eea3f2bd76304606efcaca727b8d76e1
         BrushConverter converter = new System.Windows.Media.BrushConverter();
         Brush brush;
 
@@ -58,8 +47,7 @@ namespace Task_Maker_v2._0
             MW.Content = taskPage;
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         private void sup_Click(object sender, RoutedEventArgs e)
         {
             Supperscript = !Supperscript;
@@ -94,39 +82,38 @@ namespace Task_Maker_v2._0
         {
             Bold = !Bold;
             bold.Background = Bold ? Brushes.LightCyan : brush;
-=======
-=======
->>>>>>> d1151383eea3f2bd76304606efcaca727b8d76e1
+        }
+
         private void SetSuperscript(object sender, RoutedEventArgs e)
         {
-            Superscript = !Superscript;
+            Supperscript = !Supperscript;
             Subscript = false;
 
-            if (Superscript)
-                up.Background = Brushes.LightCyan;
+            if (Supperscript)
+                sup.Background = Brushes.LightCyan;
             else
-                up.Background = brush;
+                sup.Background = brush;
 
             if (Subscript)
-               down.Background = Brushes.LightCyan;
+               sub.Background = Brushes.LightCyan;
             else
-                down.Background = brush;
+               sub.Background = brush;
         }
 
         private void SetSubscript(object sender, RoutedEventArgs e)
         {
             Subscript = !Subscript;
-            Superscript = false;
+            Supperscript = false;
 
-            if (Superscript)
-                up.Background = Brushes.LightCyan;
+            if (Supperscript)
+                sup.Background = Brushes.LightCyan;
             else
-                up.Background = brush;
+                sup.Background = brush;
 
             if (Subscript)
-                down.Background = Brushes.LightCyan;
+                sub.Background = Brushes.LightCyan;
             else
-                down.Background = brush;
+                sub.Background = brush;
         }
 
         private void math_Click(object sender, RoutedEventArgs e)
@@ -137,51 +124,26 @@ namespace Task_Maker_v2._0
         private void symbols_Click(object sender, RoutedEventArgs e)
         {
             frame.Content = sp;
-<<<<<<< HEAD
->>>>>>> d1151383eea3f2bd76304606efcaca727b8d76e1
-=======
->>>>>>> d1151383eea3f2bd76304606efcaca727b8d76e1
         }
 
         private void OnKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            if(Supperscript)
+            if (Supperscript)
             {
                 BaselineAlignment newAlignment = BaselineAlignment.Superscript;
                 questionInput.Selection.ApplyPropertyValue(Inline.BaselineAlignmentProperty, newAlignment);
                 questionInput.Selection.ApplyPropertyValue(Inline.FontSizeProperty, (double)10);
             }
-            else if(Subscript)
+            else if (Subscript)
             {
                 BaselineAlignment newAlignment = BaselineAlignment.Subscript;
                 questionInput.Selection.ApplyPropertyValue(Inline.BaselineAlignmentProperty, newAlignment);
                 questionInput.Selection.ApplyPropertyValue(Inline.FontSizeProperty, (double)10);
-=======
-=======
->>>>>>> d1151383eea3f2bd76304606efcaca727b8d76e1
-            if (Subscript)
-            {
-                BaselineAlignment newAlignment = BaselineAlignment.Subscript;
-                questionInput.Selection.ApplyPropertyValue(Inline.BaselineAlignmentProperty, newAlignment);
-                questionInput.Selection.ApplyPropertyValue(Inline.FontSizeProperty, 6);
-            }
-            else if (Superscript)
-            {
-                BaselineAlignment newAlignment = BaselineAlignment.Superscript;
-                questionInput.Selection.ApplyPropertyValue(Inline.BaselineAlignmentProperty, newAlignment);
-<<<<<<< HEAD
->>>>>>> d1151383eea3f2bd76304606efcaca727b8d76e1
-=======
->>>>>>> d1151383eea3f2bd76304606efcaca727b8d76e1
             }
             else
             {
                 BaselineAlignment newAlignment = BaselineAlignment.Baseline;
                 questionInput.Selection.ApplyPropertyValue(Inline.BaselineAlignmentProperty, newAlignment);
-<<<<<<< HEAD
-<<<<<<< HEAD
                 questionInput.Selection.ApplyPropertyValue(Inline.FontSizeProperty, (double)14);
             }
 
@@ -207,13 +169,6 @@ namespace Task_Maker_v2._0
                 questionInput.Selection.ApplyPropertyValue(Inline.TextDecorationsProperty, TextDecorations.Underline);
             else
                 questionInput.Selection.ApplyPropertyValue(Inline.TextDecorationsProperty, null);
-
-=======
-            }
->>>>>>> d1151383eea3f2bd76304606efcaca727b8d76e1
-=======
-            }
->>>>>>> d1151383eea3f2bd76304606efcaca727b8d76e1
         }
     }
 }

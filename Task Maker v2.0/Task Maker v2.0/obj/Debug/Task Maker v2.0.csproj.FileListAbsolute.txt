@@ -112,3 +112,9 @@ C:\Users\Kirill\Documents\GitHub\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\D
 C:\Users\Kirill\Documents\GitHub\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\spec.g.cs
 C:\Users\Kirill\Documents\GitHub\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\grec.baml
 C:\Users\Kirill\Documents\GitHub\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\spec.baml
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\grec.g.cs
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\maths.g.cs
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\spec.g.cs
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\grec.baml
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\maths.baml
+E:\MRCsoft\TaskMaker\Task Maker v2.0\Task Maker v2.0\obj\Debug\spec.baml
