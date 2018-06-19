@@ -15,8 +15,8 @@
             <ColumnDefinition Width="338*"/>
         </Grid.ColumnDefinitions>
         <TextBlock x:Name="copyright" HorizontalAlignment="Left" Margin="902.1,641,0,0" Foreground="Gray" FontSize="15" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Grid.Column="1"><Run Text="© 2018 MRCSoft"/></TextBlock>
-        <Border BorderBrush="Black" BorderThickness="2" Margin="21,58,13.2,111.4"/>
-        <ScrollViewer x:Name="ThemeScroll"  Margin="20,61,1009.8,113.4" Grid.ColumnSpan="2">
+        <Border BorderBrush="Black" BorderThickness="2" Margin="21,64,13.2,111.4"/>
+        <ScrollViewer x:Name="ThemeScroll"  Margin="20,62,1009.8,113.4" Grid.ColumnSpan="2">
             <StackPanel x:Name="Content_scroll">
                 <Button x:Name="CreateTheme_button" Style="{StaticResource one}" Width="50" Height="50" Margin="0,10,0,0" Click="CreateTheme_button_Click">
                     <Image Source="resources/plus2.png"/>
@@ -48,7 +48,7 @@
         <Button x:Name="difficulty8" FontSize="20" Content="Сложность 8" HorizontalAlignment="Left" Margin="839.1,409,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
         <Button x:Name="difficulty9" FontSize="20" Content="Сложность 9" HorizontalAlignment="Left" Margin="839.1,459,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
         <Button x:Name="difficulty10" FontSize="20" Content="Сложность 10" HorizontalAlignment="Left" Margin="838.8,509,0,0" VerticalAlignment="Top" Height="40" Width="169" Grid.Column="1" Click="ChoseDif"/>
-        <Button x:Name="back_button" Background="DarkOrange" FontSize="30" Content="МЕНЮ" HorizontalAlignment="Left" Margin="872.1,585,0,0" VerticalAlignment="Top" Width="112" Height="55" Click="back" Grid.Column="1"/>
+        <Button x:Name="back_button" Background="Red" FontSize="30" Content="МЕНЮ" HorizontalAlignment="Left" Margin="872.1,585,0,0" VerticalAlignment="Top" Width="112" Height="55" Click="back" Grid.Column="1"/>
 
     </Grid>
 </Page>

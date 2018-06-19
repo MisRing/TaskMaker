@@ -9,8 +9,8 @@
       Title="MainPage">
     <Grid Background="LightGray">
 
-        <Button x:Name="make_task" Background="DarkOrange" Content="Создание работ" FontSize="38" Style="{StaticResource one}"    HorizontalAlignment="Left" Margin="50,80,0,0" VerticalAlignment="Top" Width="400" Height="80" Click="OpenTask"/>
-        <Button x:Name="make_test" Background="DarkOrange" Content="Создание тестов" FontSize="38" Style="{StaticResource one}"   HorizontalAlignment="Left" Margin="730,80,0,0" VerticalAlignment="Top" Width="400" Height="80"/>
+        <Button x:Name="make_task" Background="Red" Content="Создание работ" FontSize="38" Style="{StaticResource one}"    HorizontalAlignment="Left" Margin="50,80,0,0" VerticalAlignment="Top" Width="400" Height="80" Click="OpenTask"/>
+        <Button x:Name="make_test" Background="Red" Content="Создание тестов" FontSize="38" Style="{StaticResource one}"   HorizontalAlignment="Left" Margin="730,80,0,0" VerticalAlignment="Top" Width="400" Height="80"/>
         <Button x:Name="creators" FontSize="40" Style="{StaticResource one}"  Content="Создатели"  Margin="400,440,404.8,152.4" Click="ShowCreators" Width="380" Height="70"/>
         <Button x:Name="FAQ" FontSize="40" Style="{StaticResource one}" Content="Как пользоваться" HorizontalAlignment="Left" Margin="400,320,0,0" VerticalAlignment="Top" Width="380" Height="70"/>
         <Button x:Name="about" FontSize="40" Style="{StaticResource one}" Content="О приложении" HorizontalAlignment="Left" Margin="400,200,0,0" VerticalAlignment="Top" Width="380" Height="70" Click="ShowAbout"/>

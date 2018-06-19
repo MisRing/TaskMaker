@@ -12,7 +12,7 @@
         <TextBlock x:Name="textBlock" TextAlignment="Center" FontWeight="SemiBold" FontSize="35" HorizontalAlignment="Center" Margin="0,64,0,0" TextWrapping="Wrap" Text="Task Maker - это универсальная программа для создания тестов и самостоятельных работ, созданная на базе Минского радиотехнического колледжа. При создании работ задания перемешиваются, что делает каждую работу уникальной. Эта программа поможет предотвратить списывание и быстро оформить созданную вами работу. Все задания могут бессрочно храниться в приложении и при необходимости экспортироваться в формат pdf." VerticalAlignment="Top" Width="1000" Height="394"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="92,441,0,0" TextWrapping="Wrap" FontSize="40" FontWeight="Bold" TextAlignment="Center" Text="Приятного использования!" VerticalAlignment="Top" Height="60" Width="1000"/>
         <TextBlock x:Name="copyright" HorizontalAlignment="Left" Margin="1072,641,0,0" Foreground="Gray" FontSize="15" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="© 2018 MRCSoft"/></TextBlock>
-        <Button x:Name="button" Background="DarkOrange" Content="МЕНЮ" HorizontalAlignment="Center" FontSize="40" Margin="0,516,0,0" VerticalAlignment="Top" Width="300" Height="125" Click="back"/>
+        <Button x:Name="button" Background="Red" Content="МЕНЮ" HorizontalAlignment="Center" FontSize="40" Margin="0,516,0,0" VerticalAlignment="Top" Width="300" Height="125" Click="back"/>
 
     </Grid>
 </Page>
