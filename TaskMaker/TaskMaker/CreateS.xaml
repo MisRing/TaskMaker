@@ -7,6 +7,11 @@
       mc:Ignorable="d" 
   d:DesignHeight="662" d:DesignWidth="1185"
       Title="CreateS">
-   <Grid Style="{StaticResource main}">
+    <Grid Style="{StaticResource main}">
+        <ScrollViewer HorizontalAlignment="Left" Height="525" Margin="10,34,0,0" VerticalAlignment="Top" Width="140" Grid.RowSpan="2">
+            <StackPanel HorizontalAlignment="Left" Height="525" Margin="10,34,0,0" VerticalAlignment="Top" Width="125" Grid.RowSpan="2"/>
+            <ScrollViewer/>
+            <Border  BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Left" Height="525" Margin="10,34,0,0" VerticalAlignment="Top" Width="122"/>
+        <ScrollViewer HorizontalAlignment="Left" Height="525" Margin="200,34,0,0" VerticalAlignment="Top" Width="835"/>
     </Grid>
 </Page>

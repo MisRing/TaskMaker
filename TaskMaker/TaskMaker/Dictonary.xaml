@@ -3,11 +3,11 @@
                     xmlns:local="clr-namespace:TaskMaker">
     <Style TargetType="{x:Type Button}" x:Key="one"  x:Name="one">
         <Setter Property="FontSize" Value="35"/>
-        <Setter Property="Background" Value="Azure" />
-        <Setter Property="BorderBrush" Value="DarkOrange"/>
-        <Setter Property="Foreground" Value="Gray" />
+        <Setter Property="Background" Value="LightGray" />
+        <Setter Property="BorderBrush" Value="Blue"/>
+        <Setter Property="Foreground" Value="Black" />
         <Setter Property="FontFamily" Value="Calibri"/>
-        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="BorderThickness" Value="3" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Padding" Value="1" />
@@ -31,7 +31,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="true">
-                <Setter Property="Background" Value="LightGray" />
+                <Setter Property="Background" Value="Gray" />
             </Trigger>
         </Style.Triggers>
     </Style>

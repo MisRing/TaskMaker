@@ -12,10 +12,10 @@
 
 
 
-        <Button x:Name="Start" Style="{StaticResource one}" Foreground="Black"   HorizontalAlignment="Left" Margin="460,201,0,0" VerticalAlignment="Top" Width="290" Height="260" Click="Start_Click">
+        <Button x:Name="Start" Style="{StaticResource one}" BorderThickness="4"   HorizontalAlignment="Left" Margin="460,201,0,0" VerticalAlignment="Top" Width="290" Height="260" Click="Start_Click">
             <TextBlock  TextAlignment="Center" FontSize="75" TextWrapping="Wrap">Создать работы</TextBlock>
         </Button>
-        <Button x:Name="Exit" Style="{StaticResource one}" Content="Выход" FontSize="60" Foreground="black"  HorizontalAlignment="Left" Margin="460,572,0,0"  VerticalAlignment="Top" Width="290" Height="80"/>
+        <Button x:Name="Exit" Style="{StaticResource one}" Content="Выход" FontSize="60"   HorizontalAlignment="Left" Margin="460,572,0,0"  VerticalAlignment="Top" Width="290" Height="80"/>
         <Button x:Name="FAQ" Style="{StaticResource ResourceKey=one}" Content="Как пользоваться" HorizontalAlignment="Left" Margin="460,10,0,0" VerticalAlignment="Top" Width="290" Height="80"/>
         <Button x:Name="Creators" Style="{StaticResource ResourceKey=one}" Content="Создатели"  HorizontalAlignment="Left" Margin="885,291,0,0" VerticalAlignment="Top" Width="290" Height="80"/>
         <Button x:Name="Exit_Copy" Style="{StaticResource ResourceKey=one}" Content="О программе"   HorizontalAlignment="Left" Margin="10,291,0,0" VerticalAlignment="Top" Width="290" Height="80"/>
