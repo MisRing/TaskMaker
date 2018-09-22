@@ -8,10 +8,14 @@
   d:DesignHeight="662" d:DesignWidth="1185"
       Title="CreateS">
     <Grid Style="{StaticResource main}">
-        <ScrollViewer HorizontalAlignment="Left" Height="525" Margin="10,34,0,0" VerticalAlignment="Top" Width="140" Grid.RowSpan="2">
+        <ScrollViewer HorizontalAlignment="Left" Height="525" Margin="10,34,0,0" VerticalAlignment="Top" Width="140">
             <StackPanel HorizontalAlignment="Left" Height="525" Margin="10,34,0,0" VerticalAlignment="Top" Width="125" Grid.RowSpan="2"/>
-            <ScrollViewer/>
-            <Border  BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Left" Height="525" Margin="10,34,0,0" VerticalAlignment="Top" Width="122"/>
-        <ScrollViewer HorizontalAlignment="Left" Height="525" Margin="200,34,0,0" VerticalAlignment="Top" Width="835"/>
+        </ScrollViewer>
+        <ScrollViewer HorizontalAlignment="Left" Height="525" Margin="200,34,0,0" VerticalAlignment="Top" Width="835">
+            <StackPanel HorizontalAlignment="Left" Height="525" VerticalAlignment="Top" Width="814"/>
+        </ScrollViewer>
+        <Border  BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Left" Height="525" Margin="10,34,0,0" VerticalAlignment="Top" Width="122"/>
+        <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="525" Margin="200,34,0,0" VerticalAlignment="Top" Width="815"/>
+
     </Grid>
 </Page>
