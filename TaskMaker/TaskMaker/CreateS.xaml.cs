@@ -41,7 +41,33 @@ namespace TaskMaker
                 SearchStatic.Visibility = Visibility.Visible;
             }
         }
-
-       
+        private void Search_TextInput(object sender, TextCompositionEventArgs e)
+        {
+            SearchStatic.Visibility = Visibility.Hidden;
         }
+
+        private void create_variants_Click(object sender, RoutedEventArgs e)
+        {
+            MakeVariants VariantW = new MakeVariants();
+            VariantW.Owner = MW;
+            VariantW.ShowDialog();
+            VariantW.Margin = new Thickness(0, 0, 0,0);
+        }
+
+        private void make_list_Click(object sender, RoutedEventArgs e)
+        {
+            MakeList ListW = new MakeList();
+            ListW.Owner = MW;
+            ListW.ShowDialog();
+            ListW.Margin = new Thickness(0, 0, 0, 0);
+        }
+
+        private void theme_export_Click(object sender, RoutedEventArgs e)
+        {
+            Export exportW = new Export();
+            exportW.Owner = MW;
+            exportW.ShowDialog();
+            exportW.Margin = new Thickness(0, 0, 0, 0);
+        }
+    }
 }

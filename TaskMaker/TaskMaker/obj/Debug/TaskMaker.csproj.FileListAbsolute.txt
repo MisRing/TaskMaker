@@ -40,3 +40,9 @@ E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.GenerateR
 E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CoreCompileInputs.cache
 E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.exe
 E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.pdb
+E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\Export.g.cs
+E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MakeList.g.cs
+E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MakeVariants.g.cs
+E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\Export.baml
+E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MakeList.baml
+E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MakeVariants.baml
