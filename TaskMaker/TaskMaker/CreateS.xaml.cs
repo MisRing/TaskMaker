@@ -20,9 +20,28 @@ namespace TaskMaker
     /// </summary>
     public partial class CreateS : Page
     {
+        Window MW = new Window();
         public CreateS(Window win)
         {
+
+            MW = win;
             InitializeComponent();
         }
-    }
+
+        private void menu_Click(object sender, RoutedEventArgs e)
+        {
+            mainS main = new mainS(MW);
+            MW.Content = main;
+        }
+
+        private void Search_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (Search.Text == "")
+            {
+                SearchStatic.Visibility = Visibility.Visible;
+            }
+        }
+
+       
+        }
 }
