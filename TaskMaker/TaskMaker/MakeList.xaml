@@ -9,7 +9,10 @@
         WindowStyle="SingleBorderWindow"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize">
-    <Grid Style="{StaticResource main}">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="font2.jpg"/>
+        </Grid.Background>
         <Label x:Name="label" Content="Выберите тему:" Foreground="White" FontSize="18" HorizontalAlignment="Left" Margin="50,105,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="Выберите сложность:" Foreground="White" FontSize="18" HorizontalAlignment="Left" Margin="50,210,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="30" Margin="322,109,0,0" VerticalAlignment="Top" Width="120"/>
