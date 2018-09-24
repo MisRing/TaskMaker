@@ -6,8 +6,29 @@
         xmlns:local="clr-namespace:TaskMaker"
         mc:Ignorable="d"
       Title="" Height="600" Width="500"
-        WindowStyle="None"
+        WindowStyle="SingleBorderWindow"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize">
-    <Grid Style="{StaticResource main}"/>
+    <Grid Style="{StaticResource main}">
+        <Label x:Name="label" Content="Выберите тему:" Foreground="White" FontSize="18" HorizontalAlignment="Left" Margin="50,105,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Выберите сложность:" Foreground="White" FontSize="18" HorizontalAlignment="Left" Margin="50,210,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="30" Margin="322,109,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Height="30" Margin="322,213,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="Все сложности"/>
+            <ComboBoxItem Content="1-ая сложность"/>
+            <ComboBoxItem Content="2-ая сложность"/>
+            <ComboBoxItem Content="3-ая сложность"/>
+            <ComboBoxItem Content="4-ая сложность"/>
+            <ComboBoxItem Content="5-ая сложность"/>
+            <ComboBoxItem Content="6-ая сложность"/>
+            <ComboBoxItem Content="7-ая сложность"/>
+            <ComboBoxItem Content="8-ая сложность"/>
+            <ComboBoxItem Content="9-ая сложность"/>
+            <ComboBoxItem Content="10-ая сложность"/>
+
+        </ComboBox>
+        <Button x:Name="create" Content="Экспортировать" Style="{StaticResource one}" FontSize="20" HorizontalAlignment="Left" Height="55" Margin="50,460,0,0" VerticalAlignment="Top" Width="165"/>
+        <Button x:Name="exit" Content="Закрыть" Style="{StaticResource one}" FontSize="20" HorizontalAlignment="Left" Height="55" Margin="277,460,0,0" VerticalAlignment="Top" Width="165" Click="exit_Click"/>
+
+    </Grid>
 </Window>
