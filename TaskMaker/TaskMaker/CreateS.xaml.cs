@@ -22,7 +22,8 @@ namespace TaskMaker
     /// Логика взаимодействия для CreateS.xaml
     /// </summary>
     public partial class CreateS : Page
-    {
+    { 
+
         Window MW = new Window();
         public CreateS(Window win)
         {
@@ -87,10 +88,34 @@ namespace TaskMaker
             Canvas can = new Canvas()
             {
                 Width = 125,
-                Height = 60,
+                Height = 80,
             };
-
+            TextBox name = new TextBox()
+            {
+                Width = 117,
+                Height = 60.5,
+                Background = Brushes.Transparent,
+                BorderThickness = new Thickness(0),
+                Margin = new Thickness(0,13,3,0),
+                HorizontalContentAlignment = HorizontalAlignment.Center,
+                TextWrapping = TextWrapping.Wrap,
+            };
+            Image img = new Image();
+            img.Source = new BitmapImage(new Uri(@"/cross.png", UriKind.Relative));
+            Button close = new Button()
+            {
+                Content = img,
+                Width = 15,
+                Height = 15,
+                Margin = new Thickness(104,0,0,0),
+                Background = Brushes.Transparent,
+                BorderThickness = new Thickness(0),
+                BorderBrush = Brushes.Transparent,
+                Style = (Style)Application.Current.Resources["ButtonStyle1"],
+            };
             b.Content = can;
+            can.Children.Add(name);
+            can.Children.Add(close);
             Content_scroll.Children.Remove(CreateTheme_button);
             Content_scroll.Children.Add(b);
             Content_scroll.Children.Add(CreateTheme_button);

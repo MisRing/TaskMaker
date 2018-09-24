@@ -11,18 +11,19 @@
         <ScrollViewer HorizontalAlignment="Left" Height="520" Margin="0,39,0,0" VerticalAlignment="Top" Width="150">
             <StackPanel x:Name="Content_scroll" Height="520" Width="136">
                 <Button x:Name="CreateTheme_button" BorderThickness="2" Style="{StaticResource plus}"  HorizontalAlignment="Left" Margin="42,5,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="CreateTheme_button_Click">
-               
+                    <Image Source="plus.png"/>
                 </Button>
             </StackPanel>
         </ScrollViewer>
         <Border  BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Left" Height="520" Margin="0,39,0,0" VerticalAlignment="Top" Width="133"/>
         <ScrollViewer HorizontalAlignment="Left" Height="520" Margin="200,39,0,0" VerticalAlignment="Top" Width="835">
             <StackPanel HorizontalAlignment="Left" Height="525" VerticalAlignment="Top" Width="814">
-                
+                <Button x:Name="createQeust_button" Style="{StaticResource plus}" BorderThickness="2"  Width="50" Height="50" Margin="381.4,5,381.4,461">
+                    <Image Source="plus.png"/>
+                </Button>
             </StackPanel>
         </ScrollViewer>
         <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="520" Margin="200,39,0,0" VerticalAlignment="Top" Width="817">
-            <Button x:Name="createQeust_button" Style="{StaticResource plus}" BorderThickness="2"  Width="50" Height="50" Margin="381.4,5,381.4,461"/>
         </Border>
         <Button x:Name="dif1" Style="{StaticResource dif}"   Content="Сложность 1" Margin="1035,39,0,0" VerticalAlignment="Top" Height="52"/>
         <Button x:Name="dif2" Style="{StaticResource dif}"   Content="Сложность 2" Margin="1035,91,0,0" VerticalAlignment="Top" Height="52"/>
