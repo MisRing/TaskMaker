@@ -22,7 +22,7 @@ namespace TaskMaker
     /// Логика взаимодействия для CreateS.xaml
     /// </summary>
     public partial class CreateS : Page
-    { 
+    {
 
         Window MW = new Window();
         public CreateS(Window win)
@@ -36,7 +36,7 @@ namespace TaskMaker
         {
             mainS main = new mainS(MW);
             MW.Content = main;
-        }                                   
+        }
 
         private void Search_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
@@ -49,15 +49,13 @@ namespace TaskMaker
         {
             SearchStatic.Visibility = Visibility.Hidden;
         }
-
         private void create_variants_Click(object sender, RoutedEventArgs e)
         {
             MakeVariants VariantW = new MakeVariants();
             VariantW.Owner = MW;
             VariantW.ShowDialog();
-            VariantW.Margin = new Thickness(0, 0, 0,0);
+            VariantW.Margin = new Thickness(0, 0, 0, 0);
         }
-
         private void make_list_Click(object sender, RoutedEventArgs e)
         {
             MakeList ListW = new MakeList();
@@ -65,7 +63,6 @@ namespace TaskMaker
             ListW.ShowDialog();
             ListW.Margin = new Thickness(0, 0, 0, 0);
         }
-
         private void theme_export_Click(object sender, RoutedEventArgs e)
         {
             Export exportW = new Export();
@@ -76,50 +73,81 @@ namespace TaskMaker
 
         private void CreateTheme_button_Click(object sender, RoutedEventArgs e)
         {
-            Button b = new Button()
-            {
-                Width = 125,
-                Height = 80,
-                Margin = new Thickness(0, 5, 3, 0),
-                BorderThickness = new Thickness(3,3,3,3),
-                Style = (Style)Application.Current.Resources["ButtonStyle1"],
-
-            };
-            Canvas can = new Canvas()
-            {
-                Width = 125,
-                Height = 80,
-            };
-            TextBox name = new TextBox()
-            {
-                Width = 117,
-                Height = 60.5,
-                Background = Brushes.Transparent,
-                BorderThickness = new Thickness(0),
-                Margin = new Thickness(0,13,3,0),
-                HorizontalContentAlignment = HorizontalAlignment.Center,
-                TextWrapping = TextWrapping.Wrap,
-            };
-            Image img = new Image();
-            img.Source = new BitmapImage(new Uri(@"/cross.png", UriKind.Relative));
-            Button close = new Button()
-            {
-                Content = img,
-                Width = 15,
-                Height = 15,
-                Margin = new Thickness(104,0,0,0),
-                Background = Brushes.Transparent,
-                BorderThickness = new Thickness(0),
-                BorderBrush = Brushes.Transparent,
-                Style = (Style)Application.Current.Resources["ButtonStyle1"],
-            };
-            b.Content = can;
-            can.Children.Add(name);
-            can.Children.Add(close);
-            Content_scroll.Children.Remove(CreateTheme_button);
-            Content_scroll.Children.Add(b);
-            Content_scroll.Children.Add(CreateTheme_button);
+            Theme t = new Theme("Новая тема", this, this.Content_scroll);
         }
-    }
+        public class Theme : Window
+        {
+            public Button theme_b;
+            public Canvas can;
+            public TextBox NameBox;
+            public Button close;
+            public CreateS cre;
+            public StackPanel stac;
+            public Theme(string imya, CreateS cre, StackPanel s)
+            {
+                stac = s;
+
+                Button theme_b = new Button()
+                {
+                    Width = 125,
+                    Height = 80,
+                    Margin = new Thickness(0, 5, 3, 0),
+                    BorderThickness = new Thickness(3, 3, 3, 3),
+                    Style = (Style)Application.Current.Resources["ButtonStyle1"],
+
+                };
+                Canvas can = new Canvas()
+                {
+                    Width = 125,
+                    Height = 80,
+                };
+                TextBox NameBox = new TextBox()
+                {
+                    Width = 117,
+                    Height = 60.5,
+                    Background = Brushes.Transparent,
+                    BorderThickness = new Thickness(0),
+                    Margin = new Thickness(0, 13, 3, 0),
+                    HorizontalContentAlignment = HorizontalAlignment.Center,
+                    TextWrapping = TextWrapping.Wrap,
+                    Text = imya,
+                };
+                //  NameBox.PreviewMouseDoubleClick += ChangeName;
+                //  NameBox.PreviewMouseDown += ChoseThis;
+                //  NameBox.LostFocus += ChangeName_close2;
+                //  NameBox.KeyDown += new KeyEventHandler(OnKeyDownHandler);
+                Image img = new Image();
+                img.Source = new BitmapImage(new Uri(@"/cross.png", UriKind.Relative));
+                Button close = new Button()
+                {
+                    Content = img,
+                    Width = 15,
+                    Height = 15,
+                    Margin = new Thickness(104, 0, 0, 0),
+                    Background = Brushes.Transparent,
+                    BorderThickness = new Thickness(0),
+                    BorderBrush = Brushes.Transparent,
+                    Style = (Style)Application.Current.Resources["ButtonStyle1"],
+                };
+                theme_b.Content = can;
+                can.Children.Add(NameBox);
+                can.Children.Add(close);
+                stac.Children.Remove(cre.CreateTheme_button);
+                stac.Children.Add(theme_b);
+                stac.Children.Add(cre.CreateTheme_button);
+                close.Click += del_theme;
+                void del_theme(object sender, EventArgs e)
+                {
+                    stac.Children.Remove(theme_b);
+                }
+
+
+            }
+         }
+     }
 }
+
+
+
+
 
