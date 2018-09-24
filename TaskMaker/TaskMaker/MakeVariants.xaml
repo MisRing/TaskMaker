@@ -5,11 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TaskMaker"
         mc:Ignorable="d"
-        Title="MakeVariants" Height="600" Width="500"
-        WindowStyle="None"
+        Title="Создать варианты" Height="600" Width="500"
+        WindowStyle="SingleBorderWindow"
         WindowStartupLocation="CenterOwner"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        >
     <Grid Style="{StaticResource main}">
-        <Border BorderBrush="LightBlue" BorderThickness="4" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="500"/>
+        <ComboBox x:Name="comboBox" FontSize="18"  HorizontalAlignment="Left" Height="30" Margin="407,76,0,0" VerticalAlignment="Top" Width="66" SelectedIndex="0" RenderTransformOrigin="0.512,0.527">
+            <ComboBoxItem Content="pdf"/>
+            <ComboBoxItem Content="docx"/>
+        </ComboBox>
+        <Label x:Name="label" Content="Экспорт в:" Foreground="White" FontSize="18" HorizontalAlignment="Left" Height="40" Margin="260,75,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="label1" Content="Количество вопросов:" Foreground="White" FontSize="18" HorizontalAlignment="Left" Height="40" Margin="6,75,0,0" VerticalAlignment="Top" Width="195"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" FontSize="18" Height="25" Margin="211,81,0,0" TextWrapping="Wrap" MaxLength="2" VerticalAlignment="Top" Width="35"/>
+        <Label x:Name="label2" Content="Количество вариантов:" Foreground="white" FontSize="18" HorizontalAlignment="Left" Margin="6,120,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" FontSize="18" Height="25" Margin="211,125,0,0" TextWrapping="Wrap" MaxLength="2" VerticalAlignment="Top" Width="35"/>
+        <Label x:Name="label3" Content="Размер шрифта:" FontSize="18" Foreground="White" HorizontalAlignment="Left" Margin="260,120,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBox2" FontSize="18"  HorizontalAlignment="Left" Height="30" Margin="407,122,0,0" VerticalAlignment="Top" Width="66" SelectedIndex="0">
+            <ComboBoxItem Content="6"/>
+            <ComboBoxItem Content="8"/>
+            <ComboBoxItem Content="10"/>
+            <ComboBoxItem Content="12"/>
+            <ComboBoxItem Content="14"/>
+            <ComboBoxItem Content="16"/>
+            <ComboBoxItem Content="18"/>
+        </ComboBox>
+        <Label x:Name="label4" Content="Шапка работы:" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="-6,181,0,0" VerticalAlignment="Top" Width="494"/>
+        <RichTextBox x:Name="richTextBox" HorizontalAlignment="Left" Height="150" Block.TextAlignment="Center" BorderThickness="2" BorderBrush="LightBlue" Margin="97,239,0,0" VerticalAlignment="Top" Width="300"/>
+        <Button Style="{StaticResource one}" x:Name="create" FontSize="20" Content="Создать" HorizontalAlignment="Left" Margin="50,460,0,0" VerticalAlignment="Top" Width="155" Height="55"/>
+        <Button Style="{StaticResource one}" x:Name="exit" FontSize="20" Content="Закрыть" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="287,460,0,0" Click="exit_Click" Height="55"/>
+
     </Grid>
 </Window>

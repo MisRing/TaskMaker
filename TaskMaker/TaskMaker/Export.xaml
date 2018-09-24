@@ -5,11 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TaskMaker"
         mc:Ignorable="d"
-      Title="MakeVariants" Height="600" Width="500"
+      Title="" Height="600" Width="500"
         WindowStyle="None"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize">
-    <Grid Style="{StaticResource main}">
-        <Border BorderBrush="LightBlue" BorderThickness="4" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="500"/>
-    </Grid>
+    <Grid Style="{StaticResource main}"/>
 </Window>
