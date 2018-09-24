@@ -10,7 +10,9 @@
     <Grid Style="{StaticResource main}">
         <ScrollViewer HorizontalAlignment="Left" Height="520" Margin="0,39,0,0" VerticalAlignment="Top" Width="150">
             <StackPanel x:Name="Content_scroll" Height="520" Width="136">
-                <Button x:Name="CreateTheme_button" BorderThickness="2" Style="{StaticResource plus}"  HorizontalAlignment="Left" Margin="40,5,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+                <Button x:Name="CreateTheme_button" BorderThickness="2" Style="{StaticResource plus}"  HorizontalAlignment="Left" Margin="42,5,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="CreateTheme_button_Click">
+               
+                </Button>
             </StackPanel>
         </ScrollViewer>
         <Border  BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Left" Height="520" Margin="0,39,0,0" VerticalAlignment="Top" Width="133"/>

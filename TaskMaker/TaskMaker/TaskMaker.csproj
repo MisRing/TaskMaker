@@ -139,5 +139,8 @@
   <ItemGroup>
     <Resource Include="font2.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="plus.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

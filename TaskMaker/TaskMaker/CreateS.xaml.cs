@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using TaskMaker;
+using System.Text.RegularExpressions;
 
 namespace TaskMaker
 {
@@ -32,7 +35,7 @@ namespace TaskMaker
         {
             mainS main = new mainS(MW);
             MW.Content = main;
-        }
+        }                                   
 
         private void Search_LostKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
         {
@@ -69,5 +72,29 @@ namespace TaskMaker
             exportW.ShowDialog();
             exportW.Margin = new Thickness(0, 0, 0, 0);
         }
+
+        private void CreateTheme_button_Click(object sender, RoutedEventArgs e)
+        {
+            Button b = new Button()
+            {
+                Width = 125,
+                Height = 80,
+                Margin = new Thickness(0, 5, 3, 0),
+                BorderThickness = new Thickness(3,3,3,3),
+                Style = (Style)Application.Current.Resources["ButtonStyle1"],
+
+            };
+            Canvas can = new Canvas()
+            {
+                Width = 125,
+                Height = 60,
+            };
+
+            b.Content = can;
+            Content_scroll.Children.Remove(CreateTheme_button);
+            Content_scroll.Children.Add(b);
+            Content_scroll.Children.Add(CreateTheme_button);
+        }
     }
 }
+
