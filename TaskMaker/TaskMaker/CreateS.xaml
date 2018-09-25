@@ -38,7 +38,7 @@
 
         <Canvas Grid.Column="1">
 
-            <TextBlock Name="__ChooseThemeName" TextAlignment="Center" FontSize="30" Canvas.Left="10" Text="Выберите тему" Width="817" Height="49" Canvas.Top="274"></TextBlock>
+            <TextBlock Name="__ChooseThemeName" TextAlignment="Center" Foreground="White" FontSize="30" Canvas.Left="10" Text="Выберите тему" Width="817" Height="49" Canvas.Top="274"></TextBlock>
 
             <ScrollViewer Visibility="Hidden" HorizontalAlignment="Left" Height="520" Margin="10,39,0,0" VerticalAlignment="Top" Width="835">
                 <StackPanel HorizontalAlignment="Left" Height="525" VerticalAlignment="Top" Width="814">
