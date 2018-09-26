@@ -24,8 +24,9 @@ public class Theme : Window
     public Button close;
     public CreateS cre;
     public StackPanel stac;
-    public Theme(string imya, CreateS cre, StackPanel s)
+    public Theme(string imya, CreateS _cre, StackPanel s)
     {
+        cre = _cre;
         stac = s;
 
         theme_b = new Button()
@@ -37,13 +38,17 @@ public class Theme : Window
             Style = (Style)Application.Current.Resources["ButtonStyle1"],
 
         };
-        Canvas can = new Canvas()
+        can = new Canvas()
         {
             Width = 125,
             Height = 80,
         };
-        TextBox NameBox = new TextBox()
+        NameBox = new TextBox()
         {
+            Style = (Style)Application.Current.Resources["Arrow_Cursor"],
+            IsReadOnly = true,
+            HorizontalAlignment = HorizontalAlignment.Center,
+            FontSize = 12,
             Width = 117,
             Height = 60.5,
             Background = Brushes.Transparent,
@@ -53,13 +58,14 @@ public class Theme : Window
             TextWrapping = TextWrapping.Wrap,
             Text = imya,
         };
-        //  NameBox.PreviewMouseDoubleClick += ChangeName;
-        //  NameBox.PreviewMouseDown += ChoseThis;
-        //  NameBox.LostFocus += ChangeName_close2;
-        //  NameBox.KeyDown += new KeyEventHandler(OnKeyDownHandler);
+        NameBox.PreviewMouseDoubleClick += ChangeName;
+        NameBox.PreviewMouseDown += open_theme;
+        NameBox.LostFocus += ChangeName_close2;
+        NameBox.KeyDown += new KeyEventHandler(OnKeyDownHandler);
+
         Image img = new Image();
         img.Source = new BitmapImage(new Uri(@"/cross.png", UriKind.Relative));
-        Button close = new Button()
+        close = new Button()
         {
             Content = img,
             Width = 15,
@@ -70,6 +76,7 @@ public class Theme : Window
             BorderBrush = Brushes.Transparent,
             Style = (Style)Application.Current.Resources["ButtonStyle1"],
         };
+        theme_b.Click += open_theme;
         theme_b.Content = can;
         can.Children.Add(NameBox);
         can.Children.Add(close);
@@ -79,10 +86,48 @@ public class Theme : Window
         close.Click += del_theme;
     }
 
+    private bool ch = false;
+    public void ChangeName(object sender, MouseButtonEventArgs e)
+    {
+        NameBox.IsReadOnly = false;
+        NameBox.Style = (Style)Application.Current.Resources["I_Cursor"];
+        Keyboard.Focus(NameBox);
+        NameBox.SelectAll();
+        ch = true;
+    }
+
+    private void OnKeyDownHandler(object sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.Return)
+        {
+            NameBox.IsReadOnly = true;
+            NameBox.Style = (Style)Application.Current.Resources["Arrow_Cursor"];
+            Keyboard.Focus(null);
+            try
+            {
+                theme_b.Focus();
+            }
+            catch { }
+        }
+    }
+
     public void del_theme(object sender, EventArgs e)
     {
         cre.Themes.Remove(this);
         stac.Children.Remove(theme_b);
+    }
+
+    public void ChangeName_close2(object sender, EventArgs e)
+    {
+        NameBox.IsReadOnly = true;
+        NameBox.Style = (Style)Application.Current.Resources["Arrow_Cursor"];
+        Keyboard.Focus(null);
+        theme_b.Focus();
+    }
+
+    public void open_theme(object sender, EventArgs e)
+    {
+        cre.OpenTheme(this);
     }
 
     public void del_theme()
