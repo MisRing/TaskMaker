@@ -18,59 +18,65 @@
             <ColumnDefinition Width="170"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
+        <ScrollViewer Grid.Column="0" HorizontalAlignment="Stretch" Margin="10,40,0,100" VerticalAlignment="Stretch">
+            <StackPanel x:Name="Content_scroll" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="130">
+                <Button x:Name="CreateTheme_button" Margin="0,10,0,10" BorderThickness="2" Style="{StaticResource plus}"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="50" Height="50" Click="CreateTheme_button_Click">
+                    <Image Source="plus.png"/>
+                </Button>
+            </StackPanel>
+        </ScrollViewer>
+
+        <Border Grid.Column="0" BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Stretch" Margin="10,40,0,100" VerticalAlignment="Stretch" />
+
         <Canvas Grid.Column="0">
-            <ScrollViewer HorizontalAlignment="Left" Height="520" Margin="10,39,0,0" VerticalAlignment="Top" Width="150">
-                <StackPanel x:Name="Content_scroll" Height="520" Width="136">
-                    <Button x:Name="CreateTheme_button" BorderThickness="2" Style="{StaticResource plus}"  HorizontalAlignment="Left" Margin="42,5,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="CreateTheme_button_Click">
-                        <Image Source="plus.png"/>
-                    </Button>
-                </StackPanel>
-            </ScrollViewer>
-            <Border  BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Left" Height="520" Margin="10,39,0,0" VerticalAlignment="Top" Width="133"/>
+            <TextBlock x:Name="empty" Background="White" HorizontalAlignment="Left" Height="21" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Canvas.Left="10" Canvas.Top="10"/>
+            <TextBlock x:Name="SearchStatic" Background="White" HorizontalAlignment="Left" Height="21" TextWrapping="Wrap" Foreground="Gray" Text="  Поиск по темам..." VerticalAlignment="Top" Width="160" Canvas.Left="10" Canvas.Top="10"/>
+            <TextBox x:Name="Search" Background="Transparent" Foreground="Black" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap"  BorderBrush="Black" BorderThickness="1" VerticalAlignment="Top" Width="160" TextInput="Search_TextInput" LostKeyboardFocus="Search_LostKeyboardFocus" PreviewTextInput="Search_TextInput" Canvas.Left="10" Canvas.Top="9"/>
 
-            <TextBlock x:Name="empty" Background="White" HorizontalAlignment="Left" Height="21" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" Margin="10,10,0,0"/>
-            <TextBlock x:Name="SearchStatic" Background="White" HorizontalAlignment="Left" Height="21" TextWrapping="Wrap" Foreground="Gray" Text="  Поиск по темам..." VerticalAlignment="Top" Width="149" Margin="10,10,0,0"/>
-            <TextBox x:Name="Search" Background="Transparent" Foreground="Black" HorizontalAlignment="Left" Height="22" Margin="10,9,0,0" TextWrapping="Wrap"  BorderBrush="Black" BorderThickness="1" VerticalAlignment="Top" Width="149" TextInput="Search_TextInput" LostKeyboardFocus="Search_LostKeyboardFocus" PreviewTextInput="Search_TextInput"/>
-
-            <Button x:Name="del_thems" FontSize="17"  Foreground="#FFD7D7D7" BorderThickness="2" Style="{StaticResource dif}" Content="Удалить все темы" HorizontalAlignment="Left" Margin="10,581,0,0" VerticalAlignment="Top" Width="150" Height="60" Background="#FF990404" BorderBrush="Black" Click="DeliteAllThemes"/>
+            <Button x:Name="del_thems" FontSize="17"  Foreground="#FFD7D7D7" BorderThickness="2" Style="{StaticResource dif}" Content="Удалить все темы" HorizontalAlignment="Left" Canvas.Bottom="20" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="60" Background="#FF990404" BorderBrush="Black" Click="DeliteAllThemes"/>
 
         </Canvas>
 
-        <Canvas Grid.Column="1">
+        <Grid Grid.Column="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+            </Grid.RowDefinitions>
 
             <TextBlock Name="__ChooseThemeName" TextAlignment="Center" Foreground="White" FontSize="30" Canvas.Left="10" Text="Выберите тему" Width="817" Height="49" Canvas.Top="274"></TextBlock>
 
-            <ScrollViewer Visibility="Hidden" HorizontalAlignment="Left" Height="520" Margin="10,39,0,0" VerticalAlignment="Top" Width="835">
-                <StackPanel HorizontalAlignment="Left" Height="525" VerticalAlignment="Top" Width="814">
-                    <Button x:Name="createQeust_button" Style="{StaticResource plus}" BorderThickness="2"  Width="50" Height="50" Margin="381.4,5,381.4,461">
+            <ScrollViewer Margin="10,10,10,0" HorizontalAlignment="Stretch" Grid.Row="0" BorderThickness="3" Visibility="Hidden" VerticalAlignment="Stretch" BorderBrush="Black">
+                <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <Button x:Name="createQeust_button" Style="{StaticResource plus}" BorderThickness="2" Height="50" Width="50">
                         <Image Source="plus.png"/>
                     </Button>
                 </StackPanel>
             </ScrollViewer>
 
-            <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="520" Margin="10,39,0,0" VerticalAlignment="Top" Width="817">
+            <Border Margin="10,10,10,0" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             </Border>
 
-            <Button x:Name="create_variants"  BorderThickness="2" Style="{StaticResource dif}" Content="Созать варианты" HorizontalAlignment="Left" Margin="20,593,0,0" VerticalAlignment="Top" Width="155" Height="40"  BorderBrush="Black" Click="create_variants_Click"/>
-            <Button x:Name="make_list"  BorderThickness="2" Style="{StaticResource dif}" Content="Список вопросов" HorizontalAlignment="Left" Margin="195,593,0,0" VerticalAlignment="Top" Width="155" Height="40"  BorderBrush="Black" Click="make_list_Click"/>
-            <Button x:Name="theme_export"  BorderThickness="2" Style="{StaticResource dif}" Content="Экспорт тем" HorizontalAlignment="Left" Margin="370,593,0,0" VerticalAlignment="Top" Width="155" Height="40"  BorderBrush="Black" RenderTransformOrigin="0.5,0.5" Click="theme_export_Click"/>
-            <Label x:Name="k_theme" Foreground="White" Content="Количество вопросов в теме:" FontSize="15" HorizontalAlignment="Left" Margin="545,582,0,0" VerticalAlignment="Top"/>
-            <Label x:Name="k_dif" Foreground="White" Content="Количество вопросов в сложности:"  FontSize="15" HorizontalAlignment="Left" Margin="545,612,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="create_variants" Grid.Row="1"  BorderThickness="2" Style="{StaticResource dif}" Content="Созать варианты" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="40"  BorderBrush="Black" Click="create_variants_Click" Margin="14,30,0,0"/>
+            <Button x:Name="make_list" Grid.Row="1" BorderThickness="2" Style="{StaticResource dif}" Content="Список вопросов" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="40"  BorderBrush="Black" Click="make_list_Click" Margin="190,30,0,0"/>
+            <Button x:Name="theme_export" Grid.Row="1" BorderThickness="2" Style="{StaticResource dif}" Content="Экспорт тем" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="40"  BorderBrush="Black" RenderTransformOrigin="0.5,0.5" Click="theme_export_Click" Margin="370,30,0,0"/>
+            <Label x:Name="k_theme" Grid.Row="1" Foreground="White" Content="Количество вопросов в теме:" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="255" Canvas.Left="545" Margin="543,20,0,0"/>
+            <Label x:Name="k_dif" Grid.Row="1" Foreground="White" Content="Количество вопросов в сложности:"  FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="255" Canvas.Left="545" Margin="543,55,0,0"/>
 
-        </Canvas>
+        </Grid>
         <Canvas Grid.Column="2">
-            <Button x:Name="menu"  BorderThickness="2" Style="{StaticResource dif}" Content="Меню" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="60"  BorderBrush="Black" Click="menu_Click" Canvas.Left="10" Canvas.Top="581"/>
+            <Button x:Name="menu"  BorderThickness="2" Style="{StaticResource dif}" Content="Меню" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="60"  BorderBrush="Black" Click="menu_Click" Canvas.Left="10" Canvas.Bottom="20"/>
 
-            <Button x:Name="dif1" Style="{StaticResource dif}"   Content="Сложность 1" Margin="10,39,0,10" VerticalAlignment="Top" Width="150" Height="52"/>
-            <Button x:Name="dif2" Style="{StaticResource dif}"   Content="Сложность 2" Margin="10,91,0,10" VerticalAlignment="Top" Width="150" Height="52"/>
-            <Button x:Name="dif3" Style="{StaticResource dif}"   Content="Сложность 3" Margin="10,143,0,10" VerticalAlignment="Top" Width="150" Height="52"/>
-            <Button x:Name="dif4" Style="{StaticResource dif}"   Content="Сложность 4" Margin="10,195,0,10" VerticalAlignment="Top" Width="150" Height="52"/>
-            <Button x:Name="dif5" Style="{StaticResource dif}"   Content="Сложность 5" Margin="10,247,0,10" VerticalAlignment="Top" Width="150" Height="52"/>
-            <Button x:Name="dif6" Style="{StaticResource dif}"   Content="Сложность 6" Margin="10,299,0,10" VerticalAlignment="Top" Width="150" Height="52"/>
-            <Button x:Name="dif7"  Style="{StaticResource dif}"   Content="Сложность 7" Margin="10,351,0,10" VerticalAlignment="Top" Width="150" Height="52"/>
-            <Button x:Name="dif8"  Style="{StaticResource dif}"  Content="Сложность 8" Margin="10,403,0,10" VerticalAlignment="Top" Width="150" Height="52"/>
-            <Button x:Name="dif9"  Style="{StaticResource dif}"   Content="Сложность 9" Margin="10,455,0,10" VerticalAlignment="Top" Width="150" Height="52"/>
-            <Button x:Name="dif10" Style="{StaticResource dif}"  Content="Сложность 10" Margin="10,507,-0.2,10" VerticalAlignment="Top" Width="150" Height="52"/>
+            <Button x:Name="dif1" Style="{StaticResource dif}"   Content="Сложность 1" Canvas.Top="20" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
+            <Button x:Name="dif2" Style="{StaticResource dif}"   Content="Сложность 2" Canvas.Top="75" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
+            <Button x:Name="dif3" Style="{StaticResource dif}"   Content="Сложность 3" Canvas.Top="130" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
+            <Button x:Name="dif4" Style="{StaticResource dif}"   Content="Сложность 4" Canvas.Top="185" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
+            <Button x:Name="dif5" Style="{StaticResource dif}"   Content="Сложность 5" Canvas.Top="240" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
+            <Button x:Name="dif6" Style="{StaticResource dif}"   Content="Сложность 6" Canvas.Top="295" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
+            <Button x:Name="dif7"  Style="{StaticResource dif}"   Content="Сложность 7" Canvas.Top="350" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
+            <Button x:Name="dif8"  Style="{StaticResource dif}"  Content="Сложность 8" Canvas.Top="405" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
+            <Button x:Name="dif9"  Style="{StaticResource dif}"   Content="Сложность 9" Canvas.Top="460" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
+            <Button x:Name="dif10" Style="{StaticResource dif}"  Content="Сложность 10" Canvas.Top="515" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
         </Canvas>
 
     </Grid>
