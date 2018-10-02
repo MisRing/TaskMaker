@@ -78,6 +78,25 @@ namespace TaskMaker
             Themes.Add(t);
         }
 
+        public Theme choosedTheme = null;
+        public void ChooseTheme(Theme theme)
+        {
+            choosedTheme = theme;
+
+            if(choosedTheme == null)
+            {
+                __ChooseThemeName.Visibility = Visibility.Visible;
+                QuestionPanel.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                __ChooseThemeName.Visibility = Visibility.Hidden;
+                QuestionPanel.Visibility = Visibility.Visible;
+
+
+            }
+        }
+
         private void DeliteAllThemes(object sender, RoutedEventArgs e)
         {
             if(MessageBox.Show("Вы действительно хотите удалить все темы?", "Удалить темы?",  MessageBoxButton.YesNo) == MessageBoxResult.Yes)

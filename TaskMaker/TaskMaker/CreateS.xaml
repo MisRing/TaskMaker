@@ -46,8 +46,8 @@
 
             <TextBlock Name="__ChooseThemeName" TextAlignment="Center" Foreground="White" FontSize="30" Canvas.Left="10" Text="Выберите тему" Width="817" Height="49" Canvas.Top="274"></TextBlock>
 
-            <ScrollViewer Margin="10,10,10,0" HorizontalAlignment="Stretch" Grid.Row="0" BorderThickness="3" Visibility="Hidden" VerticalAlignment="Stretch" BorderBrush="Black">
-                <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <ScrollViewer Name="QuestionPanel" Margin="10,10,10,0" HorizontalAlignment="Stretch" Grid.Row="0" BorderThickness="3" Visibility="Hidden" VerticalAlignment="Stretch" BorderBrush="Black">
+                <StackPanel Name="QuestionStackPanel" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     <Button x:Name="createQeust_button" Style="{StaticResource plus}" BorderThickness="2" Height="50" Width="50">
                         <Image Source="plus.png"/>
                     </Button>
