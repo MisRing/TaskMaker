@@ -71,7 +71,6 @@ namespace TaskMaker
         }
 
         public List<Theme> Themes = new List<Theme>();
-        public Theme OpenedTheme;
 
         private void CreateTheme_button_Click(object sender, RoutedEventArgs e)
         {
@@ -89,22 +88,6 @@ namespace TaskMaker
                 }
 
                 Themes.Clear();
-            }
-        }
-
-        public void OpenTheme(Theme theme)
-        {
-            OpenedTheme = theme;
-
-            if(OpenedTheme != null)
-            {
-                QScroll.Visibility = Visibility.Visible;
-                __ChooseThemeName.Visibility = Visibility.Hidden;
-            }
-            else
-            {
-                QScroll.Visibility = Visibility.Hidden;
-                __ChooseThemeName.Visibility = Visibility.Visible;
             }
         }
     }
