@@ -175,10 +175,5 @@
             </Setter.Value>
         </Setter>
     </Style>
-    <Style x:Key="I_Cursor" TargetType="{x:Type TextBox}"/>
-
-    <Style x:Key="Arrow_Cursor" TargetType="{x:Type TextBox}">
-        <Setter Property="Cursor" Value="Arrow"></Setter>
-    </Style>
 
 </ResourceDictionary>
