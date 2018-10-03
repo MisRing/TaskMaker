@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:TaskMaker"
       mc:Ignorable="d" 
   d:DesignHeight="662" d:DesignWidth="1185"
-      Title="CreateS">
+      Title="CreateS" Loaded="ThemePageLoaded">
     <Grid Style="{StaticResource main}">
 
         <Grid.RowDefinitions>
@@ -48,7 +48,7 @@
 
             <ScrollViewer Name="QuestionPanel" Margin="10,10,10,0" HorizontalAlignment="Stretch" Grid.Row="0" BorderThickness="3" Visibility="Hidden" VerticalAlignment="Stretch" BorderBrush="Black">
                 <StackPanel Name="QuestionStackPanel" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                    <Button x:Name="createQeust_button" Style="{StaticResource plus}" BorderThickness="2" Height="50" Width="50">
+                    <Button x:Name="createQeust_button" Margin="10,10,10,10" Style="{StaticResource plus}" BorderThickness="2" Height="50" Width="50" Click="CreateQuestion">
                         <Image Source="plus.png"/>
                     </Button>
                 </StackPanel>
@@ -67,16 +67,16 @@
         <Canvas Grid.Column="2">
             <Button x:Name="menu"  BorderThickness="2" Style="{StaticResource dif}" Content="Меню" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Height="60"  BorderBrush="Black" Click="menu_Click" Canvas.Left="10" Canvas.Bottom="20"/>
 
-            <Button x:Name="dif1" Style="{StaticResource dif}"   Content="Сложность 1" Canvas.Top="20" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
-            <Button x:Name="dif2" Style="{StaticResource dif}"   Content="Сложность 2" Canvas.Top="75" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
-            <Button x:Name="dif3" Style="{StaticResource dif}"   Content="Сложность 3" Canvas.Top="130" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
-            <Button x:Name="dif4" Style="{StaticResource dif}"   Content="Сложность 4" Canvas.Top="185" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
-            <Button x:Name="dif5" Style="{StaticResource dif}"   Content="Сложность 5" Canvas.Top="240" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
-            <Button x:Name="dif6" Style="{StaticResource dif}"   Content="Сложность 6" Canvas.Top="295" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
-            <Button x:Name="dif7"  Style="{StaticResource dif}"   Content="Сложность 7" Canvas.Top="350" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
-            <Button x:Name="dif8"  Style="{StaticResource dif}"  Content="Сложность 8" Canvas.Top="405" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
-            <Button x:Name="dif9"  Style="{StaticResource dif}"   Content="Сложность 9" Canvas.Top="460" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
-            <Button x:Name="dif10" Style="{StaticResource dif}"  Content="Сложность 10" Canvas.Top="515" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52"/>
+            <Button x:Name="dif1" Style="{StaticResource dif}"   Content="Сложность 1" Canvas.Top="20" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52" Click="ChooseDif"/>
+            <Button x:Name="dif2" Style="{StaticResource dif}"   Content="Сложность 2" Canvas.Top="75" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52" Click="ChooseDif"/>
+            <Button x:Name="dif3" Style="{StaticResource dif}"   Content="Сложность 3" Canvas.Top="130" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52" Click="ChooseDif"/>
+            <Button x:Name="dif4" Style="{StaticResource dif}"   Content="Сложность 4" Canvas.Top="185" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52" Click="ChooseDif"/>
+            <Button x:Name="dif5" Style="{StaticResource dif}"   Content="Сложность 5" Canvas.Top="240" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52" Click="ChooseDif"/>
+            <Button x:Name="dif6" Style="{StaticResource dif}"   Content="Сложность 6" Canvas.Top="295" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52" Click="ChooseDif"/>
+            <Button x:Name="dif7"  Style="{StaticResource dif}"   Content="Сложность 7" Canvas.Top="350" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52" Click="ChooseDif"/>
+            <Button x:Name="dif8"  Style="{StaticResource dif}"  Content="Сложность 8" Canvas.Top="405" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52" Click="ChooseDif"/>
+            <Button x:Name="dif9"  Style="{StaticResource dif}"   Content="Сложность 9" Canvas.Top="460" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52" Click="ChooseDif"/>
+            <Button x:Name="dif10" Style="{StaticResource dif}"  Content="Сложность 10" Canvas.Top="515" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="52" Click="ChooseDif"/>
         </Canvas>
 
     </Grid>

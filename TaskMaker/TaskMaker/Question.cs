@@ -38,32 +38,30 @@ public class Question : Window
         if (create)
             qPan.Children.Add(can);
         can.Children.Add(close);
-        can.Width = 650;
-        can.Height = 60;
-        can.Margin = new Thickness(30, 6, 0, 0);
+        can.Height = 100;
+        can.Margin = new Thickness(10, 10, 10, 0);
+        can.HorizontalAlignment = HorizontalAlignment.Stretch;
         can.Background = Brushes.White;
         q_text = question_text;
         text.Text = q_text;
         can.Children.Add(text);
         text.TextWrapping = TextWrapping.Wrap;
-        text.Width = 625;
-        text.MaxWidth = 625;
-        text.Height = 50;
-        text.MaxHeight = 50;
-        text.Margin = new Thickness(2, 0, 0, 30);
-        text.HorizontalAlignment = HorizontalAlignment.Center;
-        text.VerticalAlignment = VerticalAlignment.Center;
+        text.Margin = new Thickness(5, 5, 20, 5);
+        text.HorizontalAlignment = HorizontalAlignment.Stretch;
+        text.VerticalAlignment = VerticalAlignment.Stretch;
         close.BorderThickness = new Thickness(0, 0, 0, 0);
+        Canvas.SetRight(close, 0);
+        Canvas.SetTop(close, 0);
         close.Background = Brushes.White;
         close.Height = 15;
         close.Width = 15;
-        close.Margin = new Thickness(635, 0, 0, 30);
         close.Click += DeliteQuestion;
-        System.Windows.Controls.Image img = new System.Windows.Controls.Image();
-        ImageSourceConverter imgs = new ImageSourceConverter();
-        img.SetValue(System.Windows.Controls.Image.SourceProperty, imgs.ConvertFromString("resources/cross.png"));
+        Image img = new Image();
+        img.Source = new BitmapImage(new Uri(@"/cross.png", UriKind.Relative));
         close.Content = img;
         can.MouseUp += OpenText;
+
+        theme.Questions[Dif - 1].Add(this);
     }
 
     public void DeliteQuestion(object sender, RoutedEventArgs e)
@@ -79,19 +77,6 @@ public class Question : Window
         //MW.MW.Content = qp;
     }
 
-    public void InterText(string _text)
-    {
-        text.Text = _text;
-        q_text = _text.Replace("\n", "@:n:@");
-        char[] denied = new[] { '\n', '\t', '\r' };
-        StringBuilder newString = new StringBuilder();
-        foreach (var ch in q_text)
-            if (!denied.Contains(ch))
-                newString.Append(ch);
-
-        q_text = newString.ToString();
-    }
-
     void SaveQ(object sender, RoutedEventArgs e)
     {
         // MainWindow.SaveQuestions();
@@ -99,7 +84,7 @@ public class Question : Window
 
     public void SaveQuestion()
     {
-        text.Text = q_text.Replace("@:n:@", "\n");
+        //text.Text = q_text.Replace("@:n:@", "\n");
         //MainWindow.SaveQuestions();
     }
 }

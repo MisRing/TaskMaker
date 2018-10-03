@@ -29,6 +29,10 @@ public class Theme : Window
 
     public Theme(string imya, CreateS _cre, StackPanel s)
     {
+        for(int i = 0; i < 10; i++)
+        {
+            Questions[i] = new List<Question>();
+        }
         stac = s;
         cre = _cre;
 
@@ -61,6 +65,7 @@ public class Theme : Window
         NameBox.TextChanged += NameChanges;
         NameBox.PreviewMouseDoubleClick += ChangeName;
         NameBox.LostFocus += ChangeName_close2;
+        NameBox.PreviewMouseDown += ThemeOpen;
         NameBox.KeyDown += new KeyEventHandler(OnKeyDownHandler);
 
         Image img = new Image();
@@ -87,7 +92,7 @@ public class Theme : Window
 
     public void ThemeOpen(object sender, EventArgs e)
     {
-
+        cre.ChooseTheme(this);
     }
 
     public void NameChanges(object sender, EventArgs e)
@@ -132,6 +137,8 @@ public class Theme : Window
 
         if (dialogResult == MessageBoxResult.Yes)
         {
+            if (cre.choosedTheme == this)
+                cre.ChooseTheme(null);
             cre.Themes.Remove(this);
             stac.Children.Remove(theme_b);
         }
@@ -139,6 +146,8 @@ public class Theme : Window
 
     public void del_theme()
     {
+        if (cre.choosedTheme == this)
+            cre.ChooseTheme(null);
         stac.Children.Remove(theme_b);
     }
 }

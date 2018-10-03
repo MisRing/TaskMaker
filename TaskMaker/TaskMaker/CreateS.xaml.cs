@@ -79,6 +79,7 @@ namespace TaskMaker
         }
 
         public Theme choosedTheme = null;
+        public int choosedDif = -1;
         public void ChooseTheme(Theme theme)
         {
             choosedTheme = theme;
@@ -86,20 +87,56 @@ namespace TaskMaker
             if(choosedTheme == null)
             {
                 __ChooseThemeName.Visibility = Visibility.Visible;
+                __ChooseThemeName.Text = "Выберите тему";
                 QuestionPanel.Visibility = Visibility.Hidden;
+
+                foreach (Button dif in DifButtons)
+                {
+                    dif.Background = Brushes.LightGray;
+                    dif.FontWeight = FontWeights.Normal;
+                }
+
+                choosedDif = -1;
+
+                QuestionStackPanel.Children.Clear();
+                QuestionStackPanel.Children.Add(createQeust_button);
+
             }
             else
             {
-                __ChooseThemeName.Visibility = Visibility.Hidden;
-                QuestionPanel.Visibility = Visibility.Visible;
+                foreach(Theme t in Themes)
+                {
+                    t.theme_b.Background = Brushes.LightGray;
+                }
+                theme.theme_b.Background = Brushes.DarkGray;
 
+                if(choosedDif == -1)
+                {
+                    __ChooseThemeName.Visibility = Visibility.Visible;
+                    __ChooseThemeName.Text = "Выберите сложность";
+                    QuestionPanel.Visibility = Visibility.Hidden;
+                }
+                else
+                {
+                    __ChooseThemeName.Visibility = Visibility.Hidden;
+                    QuestionPanel.Visibility = Visibility.Visible;
 
+                    QuestionStackPanel.Children.Clear();
+
+                    foreach (Question q in choosedTheme.Questions[choosedDif - 1])
+                    {
+                        QuestionStackPanel.Children.Add(q.can);
+                    }
+
+                    QuestionStackPanel.Children.Add(createQeust_button);
+                }
+                
             }
         }
 
         private void DeliteAllThemes(object sender, RoutedEventArgs e)
         {
-            if(MessageBox.Show("Вы действительно хотите удалить все темы?", "Удалить темы?",  MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if(MessageBox.Show("Вы действительно хотите удалить все темы?", "Удаление тем",  MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 foreach(Theme t in Themes)
                 {
@@ -107,6 +144,61 @@ namespace TaskMaker
                 }
 
                 Themes.Clear();
+            }
+        }
+
+        public Button[] DifButtons = new Button[10];
+        private void ThemePageLoaded(object sender, RoutedEventArgs e)
+        {
+            DifButtons[0] = dif1;
+            DifButtons[1] = dif2;
+            DifButtons[2] = dif3;
+            DifButtons[3] = dif4;
+            DifButtons[4] = dif5;
+            DifButtons[5] = dif6;
+            DifButtons[6] = dif7;
+            DifButtons[7] = dif8;
+            DifButtons[8] = dif9;
+            DifButtons[9] = dif10;
+        }
+
+        private void ChooseDif(object sender, RoutedEventArgs e)
+        {
+            Button thisButton = sender as Button;
+            if(choosedTheme != null)
+            {
+                __ChooseThemeName.Visibility = Visibility.Hidden;
+                QuestionPanel.Visibility = Visibility.Visible;
+
+                foreach (Button dif in DifButtons)
+                {
+                    dif.Background = Brushes.LightGray;
+                    dif.FontWeight = FontWeights.Normal;
+                }
+
+                thisButton.Background = Brushes.DarkGray;
+                thisButton.FontWeight = FontWeights.Bold;
+                choosedDif = int.Parse(thisButton.Name.Remove(0, 3));
+
+                QuestionStackPanel.Children.Clear();
+
+                foreach(Question q in choosedTheme.Questions[choosedDif - 1])
+                {
+                    QuestionStackPanel.Children.Add(q.can);
+                }
+
+                QuestionStackPanel.Children.Add(createQeust_button);
+            }
+        }
+
+        private void CreateQuestion(object sender, RoutedEventArgs e)
+        {
+            if(choosedTheme != null && choosedDif != -1)
+            {
+                Question q = new Question("", QuestionStackPanel, this, choosedTheme, choosedDif);
+
+                QuestionStackPanel.Children.Remove(createQeust_button);
+                QuestionStackPanel.Children.Add(createQeust_button);
             }
         }
     }
