@@ -61,12 +61,14 @@ public class Theme : Window
             TextWrapping = TextWrapping.Wrap,
             Text = imya,
             IsReadOnly = true,
-        };
+            Style = (Style)Application.Current.Resources["Arrow_Cursor"],
+    };
         NameBox.TextChanged += NameChanges;
         NameBox.PreviewMouseDoubleClick += ChangeName;
         NameBox.LostFocus += ChangeName_close2;
         NameBox.PreviewMouseDown += ThemeOpen;
         NameBox.KeyDown += new KeyEventHandler(OnKeyDownHandler);
+
 
         Image img = new Image();
         img.Source = new BitmapImage(new Uri(@"/cross.png", UriKind.Relative));

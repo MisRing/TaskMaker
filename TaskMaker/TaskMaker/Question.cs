@@ -52,7 +52,7 @@ public class Question : Window
         close.BorderThickness = new Thickness(0, 0, 0, 0);
         Canvas.SetRight(close, 0);
         Canvas.SetTop(close, 0);
-        close.Background = Brushes.White;
+        close.Background = Brushes.Transparent;
         close.Height = 15;
         close.Width = 15;
         close.Click += DeliteQuestion;
