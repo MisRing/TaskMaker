@@ -72,3 +72,5 @@ E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.Properties.Resource
 E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.GenerateResource.Cache
 E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.exe
 E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.pdb
+E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\QuestionPage.g.cs
+E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\QuestionPage.baml

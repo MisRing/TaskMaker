@@ -24,7 +24,7 @@ namespace TaskMaker
     public partial class CreateS : Page
     {
         Window MW = new Window();
-
+        
         public CreateS(Window win)
         {
             MW = win;
@@ -195,7 +195,7 @@ namespace TaskMaker
         {
             if(choosedTheme != null && choosedDif != -1)
             {
-                Question q = new Question("", QuestionStackPanel, this, choosedTheme, choosedDif);
+                Question q = new Question("", QuestionStackPanel, this, choosedTheme, choosedDif, MW);
 
                 QuestionStackPanel.Children.Remove(createQeust_button);
                 QuestionStackPanel.Children.Add(createQeust_button);

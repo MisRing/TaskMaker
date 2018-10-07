@@ -17,7 +17,6 @@ using TaskMaker;
 using System.Text.RegularExpressions;
 public class Question : Window
 {
-
     public Canvas can;
     public Button close = new Button();
     public TextBlock text = new TextBlock();
@@ -25,11 +24,13 @@ public class Question : Window
     public StackPanel qPan;
     //public List<System.Drawing.Image> im = new List<System.Drawing.Image>();
     public CreateS MW;
+    public Window lol;
     public Theme theme;
     public int Dif = 0;
-
-    public Question(string question_text, StackPanel stack, CreateS win, Theme t, int dif, bool create = true)
+//ЖЕНЯ, ТЫ ПИДОР, ЗАЧЕМ НАЗЫВАТЬ ГЛАВНУЮ СТРАНИЦУ MW, WIN, MainWindow и т.д. Как мне сука назвать окно? Мне же блять контент менять надо
+    public Question(string question_text, StackPanel stack, CreateS win, Theme t, int dif,  Window okno, bool create = true)
     {
+       /*Ну урод просто*/ lol = okno;       
         Dif = dif;
         MW = win;
         theme = t;
@@ -60,10 +61,15 @@ public class Question : Window
         img.Source = new BitmapImage(new Uri(@"/cross.png", UriKind.Relative));
         close.Content = img;
         can.MouseUp += OpenText;
-
+        can.MouseUp += Redaktor;
         theme.Questions[Dif - 1].Add(this);
     }
-
+    public void Redaktor(object sender, RoutedEventArgs e)
+    {
+        QuestionPage quest = new QuestionPage(MW, lol);
+        lol.Content = quest;
+ 
+    }
     public void DeliteQuestion(object sender, RoutedEventArgs e)
     {
         theme.Questions[Dif - 1].Remove(this);
