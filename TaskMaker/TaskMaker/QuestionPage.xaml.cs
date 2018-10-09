@@ -39,5 +39,10 @@ namespace TaskMaker
         {
             MW.Content = cre;
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Formula");
+        }
     }
 }
