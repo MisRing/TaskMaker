@@ -30,6 +30,6 @@
             <Button x:Name="cancel" Style="{StaticResource one}" Content="Отмена" HorizontalAlignment="Left" Margin="10,9.6,0,0" Grid.Row="1" VerticalAlignment="Top" Height="80" Width="250"/>
 
         </Grid>
-        <Button x:Name="button" Content="+ФОРМУЛА" HorizontalAlignment="Left" Margin="43,10,0,0" VerticalAlignment="Top" Width="117" Height="102"/>
+        <Button x:Name="Formula_Button" Content="+ФОРМУЛА" HorizontalAlignment="Left" Margin="43,10,0,0" VerticalAlignment="Top" Width="117" Height="102" Click="button_Click"/>
     </Grid>
 </Page>
