@@ -74,8 +74,9 @@ namespace TaskMaker
 
         private void CreateTheme_button_Click(object sender, RoutedEventArgs e)
         {
-            Theme t = new Theme("Новая тема", this, this.Content_scroll);
+            Theme t = new Theme("Новая тема", this, this.ThemeStackPanel);
             Themes.Add(t);
+            ThemeScroll.ScrollToVerticalOffset(ThemeStackPanel.Children.Count * 100);
         }
 
         public Theme choosedTheme = null;
@@ -101,20 +102,23 @@ namespace TaskMaker
                 QuestionStackPanel.Children.Clear();
                 QuestionStackPanel.Children.Add(createQeust_button);
 
+                UpdateCounts();
             }
             else
             {
                 foreach(Theme t in Themes)
                 {
-                    t.theme_b.Background = Brushes.LightGray;
+                    t.theme_button.Background = Brushes.LightGray;
                 }
-                theme.theme_b.Background = Brushes.DarkGray;
+                theme.theme_button.Background = Brushes.DarkGray;
 
                 if(choosedDif == -1)
                 {
                     __ChooseThemeName.Visibility = Visibility.Visible;
                     __ChooseThemeName.Text = "Выберите сложность";
                     QuestionPanel.Visibility = Visibility.Hidden;
+
+                    UpdateCounts();
                 }
                 else
                 {
@@ -129,8 +133,10 @@ namespace TaskMaker
                     }
 
                     QuestionStackPanel.Children.Add(createQeust_button);
+
+                    UpdateCounts();
                 }
-                
+
             }
         }
 
@@ -145,6 +151,8 @@ namespace TaskMaker
 
                 Themes.Clear();
             }
+
+            UpdateCounts();
         }
 
         public Button[] DifButtons = new Button[10];
@@ -188,6 +196,8 @@ namespace TaskMaker
                 }
 
                 QuestionStackPanel.Children.Add(createQeust_button);
+
+                UpdateCounts();
             }
         }
 
@@ -199,6 +209,32 @@ namespace TaskMaker
 
                 QuestionStackPanel.Children.Remove(createQeust_button);
                 QuestionStackPanel.Children.Add(createQeust_button);
+                QuestionPanel.ScrollToVerticalOffset(QuestionStackPanel.Children.Count * 100);
+
+                UpdateCounts();
+            }
+        }
+
+        public void UpdateCounts()
+        {
+            if (choosedDif == -1)
+                k_dif.Content = "Количество вопросов в сложности: —";
+
+            else
+                k_dif.Content = "Количество вопросов в сложности: " + choosedTheme.Questions[choosedDif - 1].Count.ToString();
+
+            if (choosedTheme == null)
+                k_theme.Content = "Количество вопросов в теме: —";
+            else
+            {
+
+                int countQ = 0;
+                foreach (List<Question> q in choosedTheme.Questions)
+                {
+                    countQ += q.Count;
+                }
+
+                k_theme.Content = "Количество вопросов в теме: " + countQ.ToString();
             }
         }
     }

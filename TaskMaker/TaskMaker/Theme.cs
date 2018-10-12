@@ -18,11 +18,11 @@ using System.Text.RegularExpressions;
 
 public class Theme : Window
 {
-    public Button theme_b;
+    public Button theme_button;
     public Canvas can;
     public TextBox NameBox;
     public Button close;
-    public CreateS cre;
+    public CreateS MW;
     public StackPanel stac;
     public string ThemeName;
     public List<Question>[] Questions = new List<Question>[10];
@@ -34,9 +34,9 @@ public class Theme : Window
             Questions[i] = new List<Question>();
         }
         stac = s;
-        cre = _cre;
+        MW = _cre;
 
-        theme_b = new Button()
+        theme_button = new Button()
         {
             Width = 125,
             Height = 80,
@@ -44,7 +44,7 @@ public class Theme : Window
             BorderThickness = new Thickness(3, 3, 3, 3),
             Style = (Style)Application.Current.Resources["ButtonStyle1"],
         };
-        theme_b.Click += ThemeOpen;
+        theme_button.Click += ThemeOpen;
         can = new Canvas()
         {
             Width = 125,
@@ -83,18 +83,18 @@ public class Theme : Window
             BorderBrush = Brushes.Transparent,
             Style = (Style)Application.Current.Resources["ButtonStyle1"],
         };
-        theme_b.Content = can;
+        theme_button.Content = can;
         can.Children.Add(NameBox);
         can.Children.Add(close);
-        stac.Children.Remove(cre.CreateTheme_button);
-        stac.Children.Add(theme_b);
-        stac.Children.Add(cre.CreateTheme_button);
+        stac.Children.Remove(MW.CreateTheme_button);
+        stac.Children.Add(theme_button);
+        stac.Children.Add(MW.CreateTheme_button);
         close.Click += del_theme;
     }
 
     public void ThemeOpen(object sender, EventArgs e)
     {
-        cre.ChooseTheme(this);
+        MW.ChooseTheme(this);
     }
 
     public void NameChanges(object sender, EventArgs e)
@@ -107,7 +107,7 @@ public class Theme : Window
         NameBox.IsReadOnly = true;
         NameBox.Style = (Style)Application.Current.Resources["Arrow_Cursor"];
         Keyboard.Focus(null);
-        theme_b.Focus();
+        theme_button.Focus();
     }
 
     private void OnKeyDownHandler(object sender, KeyEventArgs e)
@@ -119,7 +119,7 @@ public class Theme : Window
             Keyboard.Focus(null);
             try
             {
-                theme_b.Focus();
+                theme_button.Focus();
             }
             catch { }
         }
@@ -139,17 +139,19 @@ public class Theme : Window
 
         if (dialogResult == MessageBoxResult.Yes)
         {
-            if (cre.choosedTheme == this)
-                cre.ChooseTheme(null);
-            cre.Themes.Remove(this);
-            stac.Children.Remove(theme_b);
+            if (MW.choosedTheme == this)
+                MW.ChooseTheme(null);
+            MW.Themes.Remove(this);
+            stac.Children.Remove(theme_button);
         }
+
+        MW.UpdateCounts();
     }
 
     public void del_theme()
     {
-        if (cre.choosedTheme == this)
-            cre.ChooseTheme(null);
-        stac.Children.Remove(theme_b);
+        if (MW.choosedTheme == this)
+            MW.ChooseTheme(null);
+        stac.Children.Remove(theme_button);
     }
 }

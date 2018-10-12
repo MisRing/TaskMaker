@@ -103,3 +103,5 @@ C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker
 C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.exe
 C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.pdb
+E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\QuestionPage.g.cs
+E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\QuestionPage.baml

@@ -18,8 +18,8 @@
             <ColumnDefinition Width="170"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <ScrollViewer Grid.Column="0" HorizontalAlignment="Stretch" Margin="10,40,0,100" VerticalAlignment="Stretch">
-            <StackPanel x:Name="Content_scroll" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="130">
+        <ScrollViewer Name="ThemeScroll" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10,40,0,100" VerticalAlignment="Stretch">
+            <StackPanel x:Name="ThemeStackPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="130">
                 <Button x:Name="CreateTheme_button" Margin="0,10,0,10" BorderThickness="2" Style="{StaticResource plus}"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="50" Height="50" Click="CreateTheme_button_Click">
                     <Image Source="plus.png"/>
                 </Button>
@@ -60,8 +60,8 @@
             <Button x:Name="create_variants" Grid.Row="1"  BorderThickness="2" Style="{StaticResource dif}" Content="Созать варианты" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="40"  BorderBrush="Black" Click="create_variants_Click" Margin="14,30,0,0"/>
             <Button x:Name="make_list" Grid.Row="1" BorderThickness="2" Style="{StaticResource dif}" Content="Список вопросов" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="40"  BorderBrush="Black" Click="make_list_Click" Margin="190,30,0,0"/>
             <Button x:Name="theme_export" Grid.Row="1" BorderThickness="2" Style="{StaticResource dif}" Content="Экспорт тем" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="40"  BorderBrush="Black" RenderTransformOrigin="0.5,0.5" Click="theme_export_Click" Margin="370,30,0,0"/>
-            <Label x:Name="k_theme" Grid.Row="1" Foreground="White" Content="Количество вопросов в теме:" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="255" Canvas.Left="545" Margin="543,20,0,0"/>
-            <Label x:Name="k_dif" Grid.Row="1" Foreground="White" Content="Количество вопросов в сложности:"  FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="255" Canvas.Left="545" Margin="543,55,0,0"/>
+            <Label x:Name="k_theme" Grid.Row="1" Foreground="White" Content="Количество вопросов в теме: —" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="288" Canvas.Left="545" Margin="543,20,0,0"/>
+            <Label x:Name="k_dif" Grid.Row="1" Foreground="White" Content="Количество вопросов в сложности: —"  FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="288" Canvas.Left="545" Margin="543,55,0,0"/>
 
         </Grid>
         <Canvas Grid.Column="2">
