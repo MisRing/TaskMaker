@@ -41,3 +41,14 @@ E:\MRCsoft\TaskMaker\Interaction\obj\Debug\Interaction.Properties.Resources.reso
 E:\MRCsoft\TaskMaker\Interaction\obj\Debug\Interaction.csproj.GenerateResource.Cache
 E:\MRCsoft\TaskMaker\Interaction\obj\Debug\Interaction.exe
 E:\MRCsoft\TaskMaker\Interaction\obj\Debug\Interaction.pdb
+F:\TaskMaker\Interaction\bin\Debug\Interaction.exe.config
+F:\TaskMaker\Interaction\bin\Debug\Interaction.exe
+F:\TaskMaker\Interaction\bin\Debug\Interaction.pdb
+F:\TaskMaker\Interaction\obj\Debug\Interaction.csprojAssemblyReference.cache
+F:\TaskMaker\Interaction\obj\Debug\App.g.cs
+F:\TaskMaker\Interaction\obj\Debug\Interaction_MarkupCompile.cache
+F:\TaskMaker\Interaction\obj\Debug\Interaction.Properties.Resources.resources
+F:\TaskMaker\Interaction\obj\Debug\Interaction.csproj.GenerateResource.cache
+F:\TaskMaker\Interaction\obj\Debug\Interaction.csproj.CoreCompileInputs.cache
+F:\TaskMaker\Interaction\obj\Debug\Interaction.exe
+F:\TaskMaker\Interaction\obj\Debug\Interaction.pdb

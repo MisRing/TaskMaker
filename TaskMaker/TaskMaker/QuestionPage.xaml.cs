@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Interaction;
+using Editor;
 
 namespace TaskMaker
 {
@@ -39,10 +41,17 @@ namespace TaskMaker
         {
             MW.Content = cre;
         }
+        //----------------------------------------------------------------------------------------------------------------
+        public Editor.MainWindow eq;
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Formula");
+            //MessageBox.Show("Formula");
+            logic.Logic.Interact(Pole);
+            eq = new Editor.MainWindow();
+            //eq.Activate();
+            eq.Show();
         }
     }
+    //----------------------------------------------------------------------------------------------------------------
 }

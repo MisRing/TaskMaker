@@ -1,27 +1,54 @@
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Editor.exe
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Editor.pdb
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Interaction.exe
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Interaction.pdb
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Interaction.exe.config
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csprojAssemblyReference.cache
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\ButtonPanel.baml
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MathToolBar.baml
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\App.baml
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\ButtonPanel.g.cs
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\EditorControl.g.cs
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MainWindow.g.cs
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MathToolBar.g.cs
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\App.g.cs
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor_MarkupCompile.cache
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor_MarkupCompile.lref
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\EditorControl.baml
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MainWindow.baml
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.g.resources
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.Properties.Resources.resources
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.GenerateResource.cache
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.CoreCompileInputs.cache
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.CopyComplete
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.exe
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.pdb
-E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MainDictionary.baml
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Editor.exe
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Editor.pdb
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Interaction.exe
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Interaction.pdb
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Interaction.exe.config
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csprojAssemblyReference.cache
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\ButtonPanel.baml
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MathToolBar.baml
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\App.baml
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\ButtonPanel.g.cs
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\EditorControl.g.cs
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MainWindow.g.cs
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MathToolBar.g.cs
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\App.g.cs
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor_MarkupCompile.cache
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor_MarkupCompile.lref
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\EditorControl.baml
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MainDictionary.baml
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MainWindow.baml
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.g.resources
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.Properties.Resources.resources
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.GenerateResource.cache
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.CopyComplete
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.exe
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.pdb
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Editor.exe
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Editor.pdb
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Interaction.exe
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Interaction.pdb
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Interaction.exe.config
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csprojAssemblyReference.cache
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\ButtonPanel.baml
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MathToolBar.baml
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\App.baml
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\ButtonPanel.g.cs
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\EditorControl.g.cs
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MainWindow.g.cs
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MathToolBar.g.cs
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\App.g.cs
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor_MarkupCompile.cache
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor_MarkupCompile.lref
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\EditorControl.baml
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MainDictionary.baml
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MainWindow.baml
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.g.resources
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.Properties.Resources.resources
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.GenerateResource.cache
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.CoreCompileInputs.cache
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.CopyComplete
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.exe
+F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.pdb
