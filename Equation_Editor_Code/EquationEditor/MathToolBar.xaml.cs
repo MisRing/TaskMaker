@@ -191,7 +191,7 @@ namespace Editor
 
         Uri CreateImageUri(string subFolder, string imageFileName)
         {
-            return new Uri("pack://application:,,,/images/commands/" + subFolder + "/" + imageFileName);
+            return new Uri("pack://application:,,,/Editor;component/images/commands/" + subFolder + "/" + imageFileName);
         }
 
         void CreateBracketsPanel()
