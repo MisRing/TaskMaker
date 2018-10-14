@@ -177,4 +177,7 @@ C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.Co
 C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\TaskMaker.exe
 C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\TaskMaker.pdb
+<<<<<<< HEAD:TaskMaker/TaskMaker/obj/Debug/TaskMaker.csproj.FileListAbsolute.txt
+>>>>>>> parent of 59c6df1... Затащил катку в соло :D:TaskMaker/obj/Debug/TaskMaker.csproj.FileListAbsolute.txt
+=======
 >>>>>>> parent of 59c6df1... Затащил катку в соло :D:TaskMaker/obj/Debug/TaskMaker.csproj.FileListAbsolute.txt
