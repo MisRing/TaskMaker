@@ -343,8 +343,32 @@
         </Setter>
     </Style>
     <Style x:Key="I_Cursor" TargetType="{x:Type TextBox}"/>
-
     <Style x:Key="Arrow_Cursor" TargetType="{x:Type TextBox}">
         <Setter Property="Cursor" Value="Arrow"></Setter>
+    </Style>
+    <Style TargetType="{x:Type Button}" x:Key="textap" x:Name="textap">
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border CornerRadius="10"
+                        BorderBrush="Black"
+                        BorderThickness="2"
+                        Background="{TemplateBinding Background}"
+                        Height="{TemplateBinding Height}"
+                        Width="{TemplateBinding Width}" >
+                        <ContentControl Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Content="{TemplateBinding Content}" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Background" Value="Gray"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 </ResourceDictionary>

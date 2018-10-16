@@ -51,6 +51,11 @@ namespace TaskMaker
             //eq.Activate();
             qe.Show();
         }
+
+        private void cancel_Click(object sender, RoutedEventArgs e)
+        {
+            MW.Content = cre;
+        }
     }
     //----------------------------------------------------------------------------------------------------------------
 }

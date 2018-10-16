@@ -52,3 +52,30 @@ F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.Cor
 F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.CopyComplete
 F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.exe
 F:\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.pdb
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Editor.exe
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Editor.pdb
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Interaction.exe
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Interaction.pdb
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Interaction.exe.config
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csprojAssemblyReference.cache
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\ButtonPanel.baml
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MathToolBar.baml
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\App.baml
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\ButtonPanel.g.cs
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\EditorControl.g.cs
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MainWindow.g.cs
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MathToolBar.g.cs
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\App.g.cs
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor_MarkupCompile.cache
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor_MarkupCompile.lref
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\EditorControl.baml
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MainDictionary.baml
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MainWindow.baml
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.g.resources
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.Properties.Resources.resources
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.GenerateResource.cache
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.CoreCompileInputs.cache
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.CopyComplete
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.exe
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.pdb
