@@ -79,3 +79,27 @@ E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor
 E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.CopyComplete
 E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.exe
 E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.pdb
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Editor.exe
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Editor.pdb
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Interaction.exe
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Interaction.pdb
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csprojResolveAssemblyReference.cache
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\ButtonPanel.baml
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MathToolBar.baml
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\App.baml
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\ButtonPanel.g.cs
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\EditorControl.g.cs
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MainWindow.g.cs
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MathToolBar.g.cs
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\App.g.cs
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor_MarkupCompile.cache
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor_MarkupCompile.lref
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\EditorControl.baml
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MainDictionary.baml
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MainWindow.baml
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.g.resources
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.Properties.Resources.resources
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.GenerateResource.Cache
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.exe
+E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.pdb

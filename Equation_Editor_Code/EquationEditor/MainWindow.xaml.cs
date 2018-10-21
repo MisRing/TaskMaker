@@ -168,7 +168,7 @@ namespace Editor
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            editor.ExportImage(@"C:\Users\User\Desktop\картинки\img.png", logic.Logic.text);
+            editor.ExportImage(@"\img.bmp", logic.Logic.text);
         }
     }
 }

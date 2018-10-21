@@ -202,9 +202,9 @@ namespace Editor
             }
         }       
 
-        public void ExportImage(string filePath, RichTextBox hui)
+        public void ExportImage(string filePath, RichTextBox rtb)
         {
-            equationRoot.SaveImageToFile(filePath, hui);
+            equationRoot.SaveImageToFile(filePath, rtb);
         }
 
         public void ZoomOut()

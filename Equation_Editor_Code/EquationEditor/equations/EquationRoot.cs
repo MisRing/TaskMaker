@@ -76,53 +76,38 @@ namespace Editor
 
         public void SaveImageToFile(string path, RichTextBox richTextBox)
         {
-            string extension = Path.GetExtension(path).ToLower();
             DrawingVisual dv = new DrawingVisual();
             using (DrawingContext dc = dv.RenderOpen())
             {
-                if (extension == ".bmp" || extension == "jpg")
-                {
-                    dc.DrawRectangle(Brushes.White, null, new Rect(0, 0, Math.Ceiling(Width + Location.X * 2), Math.Ceiling(Width + Location.Y * 2)));
-                }
+                dc.DrawRectangle(Brushes.White, null, new Rect(0, 0, Math.Ceiling(Width + Location.X * 2), Math.Ceiling(Width + Location.Y * 2)));
                 ActiveChild.DrawEquation(dc);
             }
             RenderTargetBitmap bitmap = new RenderTargetBitmap((int)(Math.Ceiling(Width + Location.X * 2)), (int)(Math.Ceiling(Height + Location.Y * 2)), 96, 96, PixelFormats.Default);
             bitmap.Render(dv);
-            BitmapEncoder encoder = null;
-            switch (extension)
-            {
-                case ".jpg":
-                    encoder = new JpegBitmapEncoder();
-                    break;
-                case ".gif":
-                    encoder = new GifBitmapEncoder();
-                    break;
-                case ".bmp":
-                    encoder = new BmpBitmapEncoder();
-                    break;
-                case ".png":
-                    encoder = new PngBitmapEncoder();
-                    break;
-                case ".wdp":
-                    encoder = new WmpBitmapEncoder();
-                    break;
-                case ".tif":
-                    encoder = new TiffBitmapEncoder();
-                    break;
-            }
+            BitmapEncoder encoder = new BmpBitmapEncoder();
             try
             {
                 encoder.Frames.Add(BitmapFrame.Create(bitmap));
+                MemoryStream ms = new MemoryStream();
                 using (Stream s = File.Create(path))
                 {
-                    //encoder.Save(s);
-                    Clipboard.SetImage(bitmap);
+                    encoder.Save(s);
+                }
+                using (Stream s = File.OpenRead(path))
+                {
+                    BitmapImage img = new BitmapImage();
+                    img.BeginInit();
+                    img.CacheOption = BitmapCacheOption.OnLoad;
+                    img.StreamSource = s;
+                    img.EndInit();
+                    Clipboard.SetImage(img);
                     richTextBox.Paste();
                 }
+                File.Delete(path);
             }
             catch
             {
-                MessageBox.Show("File could not be saved. Please make sure the path you entered is correct", "Error");
+                MessageBox.Show("Fatal error!", "Error");
             }
         }
 
