@@ -22,6 +22,9 @@ namespace TaskMaker
     /// </summary>
     public partial class QuestionPage : Page
     {
+        grec gr = new grec();
+        math ma = new math();
+        spec sp = new spec();
         public Window MW;
         CreateS cre;
         public QuestionPage(CreateS main, Window win)
@@ -55,6 +58,22 @@ namespace TaskMaker
         private void cancel_Click(object sender, RoutedEventArgs e)
         {
             MW.Content = cre;
+        }
+
+        private void spec_click(object sender, RoutedEventArgs e)
+        {
+            f1.Content = sp;
+         
+        }
+
+        private void grec_Click(object sender, RoutedEventArgs e)
+        {
+            f1.Content = gr;
+        }
+
+        private void math_click(object sender, RoutedEventArgs e)
+        {
+            f1.Content = ma;
         }
     }
     //----------------------------------------------------------------------------------------------------------------

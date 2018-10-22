@@ -275,3 +275,9 @@ E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CoreCompileInputs.c
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CopyComplete
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.exe
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.pdb
+E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\spec.g.cs
+E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\spec.baml
+E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\grec.g.cs
+E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\math.g.cs
+E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\grec.baml
+E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\math.baml

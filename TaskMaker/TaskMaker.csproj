@@ -58,9 +58,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="grec.xaml.cs">
+      <DependentUpon>grec.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="math.xaml.cs">
+      <DependentUpon>math.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Question.cs" />
     <Compile Include="QuestionPage.xaml.cs">
       <DependentUpon>QuestionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="spec.xaml.cs">
+      <DependentUpon>spec.xaml</DependentUpon>
     </Compile>
     <Compile Include="Theme.cs" />
     <Page Include="CreateS.xaml">
@@ -72,6 +81,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Export.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="grec.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,7 +121,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="math.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="QuestionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="spec.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

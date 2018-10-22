@@ -1,0 +1,73 @@
+﻿<Page x:Class="TaskMaker.grec"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TaskMaker"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="170"
+      Title="grec"
+      ShowsNavigationUI="False">
+    <Grid Background="Transparent" Margin="0,0,-0.4,0.4">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="495.2"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Margin="0,495,0,0.4" Grid.RowSpan="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="85"/>
+                <ColumnDefinition Width="85"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Style="{StaticResource dif}" Content="η" Grid.Row="0" Height="50" Width="50"/>
+            <Button Grid.Column="1" Style="{StaticResource dif}" Content="ω" Grid.Row="0" Height="50" Width="50"/>
+        </Grid>
+
+
+
+
+        <Grid Grid.Row="0" Margin="0,10,0,0.2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="55.6"/>
+                <ColumnDefinition Width="55.6"/>
+                <ColumnDefinition Width="55.6"/>
+                <ColumnDefinition Width="4"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="61.1"/>
+                <RowDefinition Height="61.1"/>
+                <RowDefinition Height="61.1"/>
+                <RowDefinition Height="61.1"/>
+                <RowDefinition Height="61.1"/>
+                <RowDefinition Height="61.1"/>
+                <RowDefinition Height="61.1"/>
+                <RowDefinition Height="61.1"/>
+                <RowDefinition Height="61.1"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" x:Name="q" Content="Δ" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="1" Grid.Row="0" x:Name="w" Content="Θ" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="2" Grid.Row="0" x:Name="e" Content="Ξ" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="0" Grid.Row="1" x:Name="r" Content="Σ" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="1" Grid.Row="1" x:Name="t" Content="Χ" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="2" Grid.Row="1" x:Name="y" Content="Ψ" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="0" Grid.Row="2" x:Name="u" Content="Ω" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="1" Grid.Row="2" x:Name="i" Content="α" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="2" Grid.Row="2" x:Name="o" Content="β" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="0" Grid.Row="3" x:Name="p" Content="γ" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="1" Grid.Row="3" x:Name="a" Content="δ" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="2" Grid.Row="3" x:Name="s" Content="ε" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="0" Grid.Row="4" x:Name="d" Content="ζ" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="1" Grid.Row="4" x:Name="f" Content="θ" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="2" Grid.Row="4" x:Name="g" Content="λ" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="0" Grid.Row="5" x:Name="h" Content="μ" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="1" Grid.Row="5" x:Name="j" Content="ξ" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="2" Grid.Row="5" x:Name="k" Content="π" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="0" Grid.Row="6" x:Name="l" Content="ρ" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="1" Grid.Row="6" x:Name="z" Content="σ" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="2" Grid.Row="6" x:Name="x" Content="ς" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="0" Grid.Row="7" x:Name="c" Content="φ" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="1" Grid.Row="7" x:Name="v" Content="χ" Height="50" Width="50" Style="{StaticResource dif}"/>
+            <Button Grid.Column="2" Grid.Row="7" x:Name="b" Content="ψ" Height="50" Width="50" Style="{StaticResource dif}"/>
+        </Grid>
+    </Grid>
+</Page>
