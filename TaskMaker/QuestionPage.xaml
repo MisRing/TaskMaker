@@ -21,7 +21,7 @@
 
         <Grid Grid.Column="1">
             <Border Margin="10,10,10,0" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <RichTextBox x:Name="Pole" />
+                <RichTextBox x:Name="Pole" KeyDown="Pole_KeyDown" SelectionChanged="Pole_SelectionChanged" />
             </Border>
 
         </Grid>
@@ -31,20 +31,20 @@
         <Grid Grid.Column="1" Grid.Row="2">
             <Label x:Name="k_theme" Grid.Row="1" Foreground="White" Content="Количество символов:" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="255" Canvas.Left="545" Margin="543,20,0,0"/>
 
-            <Button x:Name="jir" Style="{StaticResource textap}"  FontWeight="Bold" Content="Ab" FontSize="25" HorizontalAlignment="Left" Margin="35,25,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
-            <Button x:Name="cur" Style="{StaticResource textap}"  FontStyle="Oblique" Content="Ab" FontSize="25" HorizontalAlignment="Left" Margin="130,25,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
-            <Button x:Name="line" Style="{StaticResource textap}" FontSize="25" HorizontalAlignment="Left" Margin="225,25,0,0" VerticalAlignment="Top" Width="50" Height="50">
+            <Button x:Name="jir" Style="{StaticResource textap}"  FontWeight="Bold" Content="Ab" FontSize="25" HorizontalAlignment="Left" Margin="35,25,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="Bold_but_Click"/>
+            <Button x:Name="cur" Style="{StaticResource textap}"  FontStyle="Oblique" Content="Ab" FontSize="25" HorizontalAlignment="Left" Margin="130,25,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="Italian_but_Click"/>
+            <Button x:Name="line" Style="{StaticResource textap}" FontSize="25" HorizontalAlignment="Left" Margin="225,25,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="underline_but_Click">
                 <TextBlock TextDecorations="Underline" Text="Ab"/>
             </Button>
-            <Button x:Name="up_ind" Style="{StaticResource textap}"  Content="A²" FontSize="25" HorizontalAlignment="Left" Margin="310,25,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
-            <Button x:Name="down_ind" Style="{StaticResource textap}"  Content="A₂" FontSize="25" HorizontalAlignment="Left" Margin="395,25,0,0" VerticalAlignment="Top" Width="50" Height="50"/>
+            <Button x:Name="up_ind" Style="{StaticResource textap}"  Content="A²" FontSize="25" HorizontalAlignment="Left" Margin="310,25,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="Superscript_but_Click"/>
+            <Button x:Name="down_ind" Style="{StaticResource textap}"  Content="A₂" FontSize="25" HorizontalAlignment="Left" Margin="395,25,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="Subscipt_but_Click"/>
 
         </Grid>
-        <Button x:Name="Formula_Button" Content="Вставить формулу" Style="{StaticResource dif}" HorizontalAlignment="Left" Margin="0,11,0,0" VerticalAlignment="Top" Width="170" Height="44" Click="button_Click" Grid.ColumnSpan="2"/>
-        <Button x:Name="pic_Button" Content="Вставить картинку" Style="{StaticResource dif}" HorizontalAlignment="Left" Margin="0,79,0,0" VerticalAlignment="Top" Width="170" Height="44" Click="button_Click" Grid.ColumnSpan="2"/>
-        <Button x:Name="math_symblol" Content="Мат. символы" Style="{StaticResource dif}" HorizontalAlignment="Left" Margin="0,145,0,0" VerticalAlignment="Top" Width="170" Height="46" Click="math_click" Grid.ColumnSpan="2"/>
-        <Button x:Name="spec_symblol" Content="Спец. символы" Style="{StaticResource dif}" HorizontalAlignment="Left" Margin="0,213,0,0" VerticalAlignment="Top" Width="170" Height="46" Click="spec_click" Grid.ColumnSpan="2"/>
-        <Button x:Name="grec" Content="Греческий алфавит" Style="{StaticResource dif}" HorizontalAlignment="Left" Margin="0,281,0,0" VerticalAlignment="Top" Width="170" Height="44" Click="grec_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="Formula_Button" Content="Вставить формулу" Style="{StaticResource dif}" HorizontalAlignment="Left" Margin="5,11,0,0" VerticalAlignment="Top" Width="170" Height="44" Click="button_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="pic_Button" Content="Вставить картинку" Style="{StaticResource dif}" HorizontalAlignment="Left" Margin="5,79,0,0" VerticalAlignment="Top" Width="170" Height="44" Click="picture_but_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="math_symblol" Content="Мат. символы" Style="{StaticResource dif}" HorizontalAlignment="Left" Margin="5,145,0,0" VerticalAlignment="Top" Width="170" Height="46" Click="math_click" Grid.ColumnSpan="2"/>
+        <Button x:Name="spec_symblol" Content="Спец. символы" Style="{StaticResource dif}" HorizontalAlignment="Left" Margin="5,213,0,0" VerticalAlignment="Top" Width="170" Height="46" Click="spec_click" Grid.ColumnSpan="2"/>
+        <Button x:Name="grec" Content="Греческий алфавит" Style="{StaticResource dif}" HorizontalAlignment="Left" Margin="5,281,0,0" VerticalAlignment="Top" Width="170" Height="44" Click="grec_Click" Grid.ColumnSpan="2"/>
         <Button x:Name="cancel" FontSize="23"  BorderThickness="2" Style="{StaticResource dif}" Content="Отмена" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="70"  BorderBrush="Black" Margin="7,15.6,0,0" Click="cancel_Click" Grid.Row="1"/>
         <Button x:Name="save" FontSize="23" BorderThickness="2" Style="{StaticResource dif}" Content="Сохранить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="70"  BorderBrush="Black" Click="save_Click" Margin="4.8,15.6,0,0" Grid.Row="1" Grid.Column="2"/>
 

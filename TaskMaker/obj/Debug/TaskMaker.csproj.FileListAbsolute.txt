@@ -281,3 +281,9 @@ E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\grec.g.cs
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\math.g.cs
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\grec.baml
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\math.baml
+E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\grec.g.cs
+E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\math.g.cs
+E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\spec.g.cs
+E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\grec.baml
+E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\math.baml
+E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\spec.baml

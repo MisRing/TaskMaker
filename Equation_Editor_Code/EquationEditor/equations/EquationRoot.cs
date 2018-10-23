@@ -100,6 +100,8 @@ namespace Editor
                     img.CacheOption = BitmapCacheOption.OnLoad;
                     img.StreamSource = s;
                     img.EndInit();
+                    Clipboard.SetText(" ");
+                    richTextBox.Paste();
                     Clipboard.SetImage(img);
                     richTextBox.Paste();
                 }
