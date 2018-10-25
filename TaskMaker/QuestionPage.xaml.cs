@@ -140,6 +140,7 @@ namespace TaskMaker
         private bool isBold = false;
         private void Bold_but_Click(object sender, RoutedEventArgs e)
         {
+            Pole.Focus();
             Button thisButton = sender as Button;
             if(isBold)
             {
@@ -149,7 +150,6 @@ namespace TaskMaker
             {
                 thisButton.Background = Brushes.DarkGray;
             }
-
             isBold = !isBold;
             TextPropertys();
             Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
@@ -158,6 +158,7 @@ namespace TaskMaker
         private bool isItalian = false;
         private void Italian_but_Click(object sender, RoutedEventArgs e)
         {
+            Pole.Focus();
             Button thisButton = sender as Button;
             if (isItalian)
             {
@@ -169,7 +170,6 @@ namespace TaskMaker
                 thisButton.Background = Brushes.DarkGray;
                 thisButton.FontWeight = FontWeights.Bold;
             }
-
             isItalian = !isItalian;
             TextPropertys();
             Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
@@ -178,6 +178,7 @@ namespace TaskMaker
         private bool isUnderline = false;
         private void underline_but_Click(object sender, RoutedEventArgs e)
         {
+            Pole.Focus();
             Button thisButton = sender as Button;
             if (isUnderline)
             {
@@ -189,7 +190,6 @@ namespace TaskMaker
                 thisButton.Background = Brushes.DarkGray;
                 thisButton.FontWeight = FontWeights.Bold;
             }
-
             isUnderline = !isUnderline;
             TextPropertys();
             Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
@@ -199,6 +199,7 @@ namespace TaskMaker
 
         private void Subscipt_but_Click(object sender, RoutedEventArgs e)
         {
+            Pole.Focus();
             Button thisButton = sender as Button;
             if (scriptMode == 1)
             {
@@ -217,13 +218,13 @@ namespace TaskMaker
 
                 scriptMode = 1;
             }
-
             TextPropertys();
             Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
         }
 
         private void Superscript_but_Click(object sender, RoutedEventArgs e)
         {
+            Pole.Focus();
             Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
 
             Button thisButton = sender as Button;
@@ -244,7 +245,6 @@ namespace TaskMaker
 
                 scriptMode = 2;
             }
-
             TextPropertys();
         }
 

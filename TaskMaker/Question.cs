@@ -56,7 +56,8 @@ public class Question : Window
 
         can.Children.Add(text);
         text.TextWrapping = TextWrapping.Wrap;
-        text.Margin = new Thickness(5, 5, 20, 5);
+        text.Margin = new Thickness(5, 5, 100, 5); //5 5 20 5
+        text.Height = 100;
         text.HorizontalAlignment = HorizontalAlignment.Stretch;
         text.VerticalAlignment = VerticalAlignment.Stretch;
         close.BorderThickness = new Thickness(0, 0, 0, 0);
