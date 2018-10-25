@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:TaskMaker"
       mc:Ignorable="d" 
     d:DesignHeight="662" d:DesignWidth="1185"
-      Title="QuestionPage">
+      Title="QuestionPage" Loaded="Page_Loaded">
 
     <Grid Style="{StaticResource main}">
         <Grid.RowDefinitions>
@@ -21,7 +21,7 @@
 
         <Grid Grid.Column="1">
             <Border Margin="10,10,10,0" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <RichTextBox x:Name="Pole" KeyDown="Pole_KeyDown" SelectionChanged="Pole_SelectionChanged" />
+                <RichTextBox x:Name="Pole" KeyDown="Pole_KeyDown" SelectionChanged="Pole_SelectionChanged" TextChanged="Pole_TextChanged" />
             </Border>
 
         </Grid>
@@ -29,7 +29,7 @@
             <Frame x:Name="f1" NavigationUIVisibility="Hidden"/>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="2">
-            <Label x:Name="k_theme" Grid.Row="1" Foreground="White" Content="Количество символов:" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="255" Canvas.Left="545" Margin="543,20,0,0"/>
+            <Label x:Name="k_theme" Grid.Row="1" Foreground="White" Content="Количество символов: 0" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="255" Canvas.Left="545" Margin="543,20,0,0"/>
 
             <Button x:Name="jir" Style="{StaticResource textap}"  FontWeight="Bold" Content="Ab" FontSize="25" HorizontalAlignment="Left" Margin="35,25,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="Bold_but_Click"/>
             <Button x:Name="cur" Style="{StaticResource textap}"  FontStyle="Oblique" Content="Ab" FontSize="25" HorizontalAlignment="Left" Margin="130,25,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="Italian_but_Click"/>

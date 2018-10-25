@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Interaction;
 using Editor;
+using System.IO;
 
 namespace TaskMaker
 {
@@ -27,23 +28,50 @@ namespace TaskMaker
         spec sp = new spec();
         public Window MW;
         CreateS cre;
-        public QuestionPage(CreateS main, Window win)
+        Question ques;
+        public QuestionPage(CreateS main, Window win, Question q)
         {
+            ques = q;
             cre = main;
             MW = win;
             InitializeComponent();
             Pole.Focus();
         }
 
-        private void richTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void save_Click(object sender, RoutedEventArgs e)
         {
+            var range = new TextRange(Pole.Document.ContentStart, Pole.Document.ContentEnd);
+            var fStream = new MemoryStream();
+            range.Save(fStream, System.Windows.DataFormats.Rtf);
+
+            string text = Encoding.UTF8.GetString(fStream.ToArray());
+
+            ques.Text = text;
+            ques.text.Text = new TextRange(Pole.Document.ContentStart, Pole.Document.ContentEnd).Text;
+            fStream.Close();
+
             MW.Content = cre;
         }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            Load();
+        }
+
+        public void Load()
+        {
+            try
+            {
+                string text = ques.Text;
+                var fStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(text));
+
+                var range = new TextRange(Pole.Document.ContentStart, Pole.Document.ContentEnd);
+                range.Load(fStream, System.Windows.DataFormats.Rtf);
+                fStream.Close();
+            }
+            catch { }
+        }
+
         //----------------------------------------------------------------------------------------------------------------
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -75,8 +103,19 @@ namespace TaskMaker
             f1.Content = gr;
             foreach (object obj in (gr.Content as Grid).Children)
             {
-                Button but = obj as Button;
-                but.Click += InputChar;
+                try
+                {
+                    Button but = obj as Button;
+                    but.Click += InputChar;
+                }
+                catch
+                {
+                    foreach (object ob in (obj as Grid).Children)
+                    {
+                        Button but = ob as Button;
+                        but.Click += InputChar;
+                    }
+                }
             }
         }
 
@@ -185,6 +224,8 @@ namespace TaskMaker
 
         private void Superscript_but_Click(object sender, RoutedEventArgs e)
         {
+            Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
+
             Button thisButton = sender as Button;
             if (scriptMode == 2)
             {
@@ -205,7 +246,6 @@ namespace TaskMaker
             }
 
             TextPropertys();
-            Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
         }
 
         private void picture_but_Click(object sender, RoutedEventArgs e)
@@ -323,6 +363,13 @@ namespace TaskMaker
                     scriptMode = 0;
                     break;
             }*/
+        }
+
+        private void Pole_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string allText = (new TextRange(Pole.Document.ContentStart, Pole.Document.ContentEnd).Text).Replace(" ", "");
+            int count = allText.Length - Pole.Document.Blocks.Count * 2;
+            k_theme.Content = "Количество символов: " + count.ToString();
         }
     }
     //----------------------------------------------------------------------------------------------------------------

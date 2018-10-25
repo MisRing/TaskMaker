@@ -79,10 +79,10 @@ namespace Editor
             DrawingVisual dv = new DrawingVisual();
             using (DrawingContext dc = dv.RenderOpen())
             {
-                dc.DrawRectangle(Brushes.White, null, new Rect(0, 0, Math.Ceiling(Width + Location.X * 2), Math.Ceiling(Width + Location.Y * 2)));
+                dc.DrawRectangle(Brushes.White, null, new Rect(0, 0, Math.Ceiling(Width + Location.X * 2), Math.Ceiling(Height + Location.Y * 2)));
                 ActiveChild.DrawEquation(dc);
             }
-            RenderTargetBitmap bitmap = new RenderTargetBitmap((int)(Math.Ceiling(Width + Location.X * 2)), (int)(Math.Ceiling(Height + Location.Y * 2)), 96, 96, PixelFormats.Default);
+            RenderTargetBitmap bitmap = new RenderTargetBitmap((int)(Math.Ceiling(Width + Location.X * 2)), (int)(Math.Ceiling(Height - 20 + Location.Y * 2)), 96, 96, PixelFormats.Default);
             bitmap.Render(dv);
             BitmapEncoder encoder = new BmpBitmapEncoder();
             try
@@ -100,10 +100,12 @@ namespace Editor
                     img.CacheOption = BitmapCacheOption.OnLoad;
                     img.StreamSource = s;
                     img.EndInit();
+                    string str = Clipboard.GetText();
                     Clipboard.SetText(" ");
                     richTextBox.Paste();
                     Clipboard.SetImage(img);
                     richTextBox.Paste();
+                    try { Clipboard.SetText(str); } catch { }
                 }
                 File.Delete(path);
             }

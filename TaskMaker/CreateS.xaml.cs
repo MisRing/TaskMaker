@@ -195,7 +195,7 @@ namespace TaskMaker
         {
             if(choosedTheme != null && choosedDif != -1)
             {
-                Question q = new Question("", QuestionStackPanel, this, choosedTheme, choosedDif, MW);
+                Question q = new Question(null, QuestionStackPanel, this, choosedTheme, choosedDif, MW);
 
                 QuestionStackPanel.Children.Remove(createQeust_button);
                 QuestionStackPanel.Children.Add(createQeust_button);

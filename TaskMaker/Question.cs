@@ -20,17 +20,16 @@ public class Question : Window
     public Canvas can;
     public Button close = new Button();
     public TextBlock text = new TextBlock();
-    public string q_text;
+    public string Text;
     public StackPanel qPan;
-    //public List<System.Drawing.Image> im = new List<System.Drawing.Image>();
     public CreateS MW;
     public Window lol;
     public Theme theme;
     public int Dif = 0;
-//ЖЕНЯ, ТЫ ПИДОР, ЗАЧЕМ НАЗЫВАТЬ ГЛАВНУЮ СТРАНИЦУ MW, WIN, MainWindow и т.д. Как мне сука назвать окно? Мне же блять контент менять надо
+
     public Question(string question_text, StackPanel stack, CreateS win, Theme t, int dif,  Window okno, bool create = true)
     {
-       /*Ну урод просто*/ lol = okno;       
+        lol = okno;       
         Dif = dif;
         MW = win;
         theme = t;
@@ -43,8 +42,18 @@ public class Question : Window
         can.Margin = new Thickness(10, 10, 10, 0);
         can.HorizontalAlignment = HorizontalAlignment.Stretch;
         can.Background = Brushes.White;
-        q_text = question_text;
-        text.Text = q_text;
+        Text = question_text;
+
+        if(!create)
+        {
+            var fStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(Text));
+            var fd = new FlowDocument();
+            var range = new TextRange(fd.ContentStart, fd.ContentEnd);
+            range.Load(fStream, System.Windows.DataFormats.Rtf);
+            fStream.Close();
+            text.Text = range.Text;
+        }
+
         can.Children.Add(text);
         text.TextWrapping = TextWrapping.Wrap;
         text.Margin = new Thickness(5, 5, 20, 5);
@@ -60,13 +69,12 @@ public class Question : Window
         Image img = new Image();
         img.Source = new BitmapImage(new Uri(@"/cross.png", UriKind.Relative));
         close.Content = img;
-        can.MouseUp += OpenText;
         can.MouseUp += Redaktor;
         theme.Questions[Dif - 1].Add(this);
     }
     public void Redaktor(object sender, RoutedEventArgs e)
     {
-        QuestionPage quest = new QuestionPage(MW, lol);
+        QuestionPage quest = new QuestionPage(MW, lol, this);
         lol.Content = quest;
  
     }
@@ -75,12 +83,6 @@ public class Question : Window
         theme.Questions[Dif - 1].Remove(this);
         qPan.Children.Remove(can);
         //MW.SaveThemes();
-    }
-
-    public void OpenText(object sender, RoutedEventArgs e)
-    {
-        //QuestionPage qp = new QuestionPage();
-        //MW.MW.Content = qp;
     }
 
     void SaveQ(object sender, RoutedEventArgs e)
