@@ -51,6 +51,8 @@ namespace TaskMaker
             fStream.Close();
 
             MW.Content = cre;
+
+            cre.SaveAll();
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -152,7 +154,11 @@ namespace TaskMaker
             }
             isBold = !isBold;
             TextPropertys();
-            Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
+            try
+            {
+                Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
+            }
+            catch { }
         }
 
         private bool isItalian = false;
@@ -172,7 +178,11 @@ namespace TaskMaker
             }
             isItalian = !isItalian;
             TextPropertys();
-            Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
+            try
+            {
+                Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
+            }
+            catch { }
         }
 
         private bool isUnderline = false;
@@ -192,7 +202,11 @@ namespace TaskMaker
             }
             isUnderline = !isUnderline;
             TextPropertys();
-            Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
+            try
+            {
+                Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
+            }
+            catch { }
         }
 
         private int scriptMode = 0;
@@ -219,7 +233,11 @@ namespace TaskMaker
                 scriptMode = 1;
             }
             TextPropertys();
-            Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
+            try
+            {
+                Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
+            }
+            catch { }
         }
 
         private void Superscript_but_Click(object sender, RoutedEventArgs e)

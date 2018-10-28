@@ -67,6 +67,7 @@
       <DependentUpon>math.xaml</DependentUpon>
     </Compile>
     <Compile Include="Question.cs" />
+    <Compile Include="QuestionData.cs" />
     <Compile Include="QuestionPage.xaml.cs">
       <DependentUpon>QuestionPage.xaml</DependentUpon>
     </Compile>
@@ -74,6 +75,7 @@
       <DependentUpon>spec.xaml</DependentUpon>
     </Compile>
     <Compile Include="Theme.cs" />
+    <Compile Include="ThemeData.cs" />
     <Page Include="CreateS.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

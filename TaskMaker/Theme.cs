@@ -35,7 +35,7 @@ public class Theme : Window
         }
         stac = s;
         cre = _cre;
-
+        ThemeName = imya;
         theme_b = new Button()
         {
             Width = 125,
@@ -59,10 +59,73 @@ public class Theme : Window
             Margin = new Thickness(0, 13, 3, 0),
             HorizontalContentAlignment = HorizontalAlignment.Center,
             TextWrapping = TextWrapping.Wrap,
-            Text = imya,
+            Text = ThemeName,
             IsReadOnly = true,
             Style = (Style)Application.Current.Resources["Arrow_Cursor"],
     };
+        NameBox.TextChanged += NameChanges;
+        NameBox.PreviewMouseDoubleClick += ChangeName;
+        NameBox.LostFocus += ChangeName_close2;
+        NameBox.PreviewMouseDown += ThemeOpen;
+        NameBox.KeyDown += new KeyEventHandler(OnKeyDownHandler);
+
+
+        Image img = new Image();
+        img.Source = new BitmapImage(new Uri(@"/cross.png", UriKind.Relative));
+        close = new Button()
+        {
+            Content = img,
+            Width = 15,
+            Height = 15,
+            Margin = new Thickness(104, 0, 0, 0),
+            Background = Brushes.Transparent,
+            BorderThickness = new Thickness(0),
+            BorderBrush = Brushes.Transparent,
+            Style = (Style)Application.Current.Resources["ButtonStyle1"],
+        };
+        theme_b.Content = can;
+        can.Children.Add(NameBox);
+        can.Children.Add(close);
+        stac.Children.Remove(cre.CreateTheme_button);
+        stac.Children.Add(theme_b);
+        stac.Children.Add(cre.CreateTheme_button);
+        close.Click += del_theme;
+    }
+
+    public Theme() { }
+
+    public void LoadThisTheme(CreateS _cre, StackPanel s, List<Question>[] questions)
+    {
+        Questions = questions;
+        stac = s;
+        cre = _cre;
+        theme_b = new Button()
+        {
+            Width = 125,
+            Height = 80,
+            Margin = new Thickness(0, 5, 3, 0),
+            BorderThickness = new Thickness(3, 3, 3, 3),
+            Style = (Style)Application.Current.Resources["ButtonStyle1"],
+        };
+        theme_b.Click += ThemeOpen;
+        can = new Canvas()
+        {
+            Width = 125,
+            Height = 80,
+        };
+        NameBox = new TextBox()
+        {
+            Width = 117,
+            Height = 60.5,
+            Background = Brushes.Transparent,
+            BorderThickness = new Thickness(0),
+            Margin = new Thickness(0, 13, 3, 0),
+            HorizontalContentAlignment = HorizontalAlignment.Center,
+            TextWrapping = TextWrapping.Wrap,
+            Text = ThemeName,
+            IsReadOnly = true,
+            Style = (Style)Application.Current.Resources["Arrow_Cursor"],
+        };
         NameBox.TextChanged += NameChanges;
         NameBox.PreviewMouseDoubleClick += ChangeName;
         NameBox.LostFocus += ChangeName_close2;
@@ -100,6 +163,7 @@ public class Theme : Window
     public void NameChanges(object sender, EventArgs e)
     {
         ThemeName = NameBox.Text;
+        cre.SaveAll();
     }
 
     public void ChangeName_close2(object sender, EventArgs e)
@@ -110,7 +174,7 @@ public class Theme : Window
         theme_b.Focus();
     }
 
-    private void OnKeyDownHandler(object sender, KeyEventArgs e)
+    public void OnKeyDownHandler(object sender, KeyEventArgs e)
     {
         if (e.Key == Key.Return)
         {
@@ -143,6 +207,7 @@ public class Theme : Window
                 cre.ChooseTheme(null);
             cre.Themes.Remove(this);
             stac.Children.Remove(theme_b);
+            cre.SaveAll();
         }
     }
 
