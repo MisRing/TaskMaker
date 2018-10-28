@@ -157,7 +157,8 @@ public class Theme : Window
 
     public void ThemeOpen(object sender, EventArgs e)
     {
-        cre.ChooseTheme(this);
+        if(!delited)
+            cre.ChooseTheme(this);
     }
 
     public void NameChanges(object sender, EventArgs e)
@@ -196,7 +197,7 @@ public class Theme : Window
         Keyboard.Focus(NameBox);
         NameBox.SelectAll();
     }
-
+    public bool delited = false;
     public void del_theme(object sender, EventArgs e)
     {
         MessageBoxResult dialogResult = MessageBox.Show("Вы действительно хотите удалить эту тему?", "Удалить тему?", MessageBoxButton.YesNo);
@@ -208,6 +209,7 @@ public class Theme : Window
             cre.Themes.Remove(this);
             stac.Children.Remove(theme_b);
             cre.SaveAll();
+            delited = true;
         }
     }
 
@@ -216,5 +218,6 @@ public class Theme : Window
         if (cre.choosedTheme == this)
             cre.ChooseTheme(null);
         stac.Children.Remove(theme_b);
+        delited = true;
     }
 }

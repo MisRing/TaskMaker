@@ -103,6 +103,8 @@ namespace TaskMaker
                 QuestionStackPanel.Children.Clear();
                 QuestionStackPanel.Children.Add(createQeust_button);
 
+                k_theme.Content = "Количество вопросов в теме: —";
+                k_dif.Content = "Количество вопросов в сложности: —";
             }
             else
             {
@@ -117,6 +119,14 @@ namespace TaskMaker
                     __ChooseThemeName.Visibility = Visibility.Visible;
                     __ChooseThemeName.Text = "Выберите сложность";
                     QuestionPanel.Visibility = Visibility.Hidden;
+
+                    int Tcount = 0;
+                    foreach (List<Question> qm in choosedTheme.Questions)
+                    {
+                        Tcount += qm.Count;
+                    }
+                    k_theme.Content = "Количество вопросов в теме: " + Tcount.ToString();
+                    k_dif.Content = "Количество вопросов в сложности: —";
                 }
                 else
                 {
@@ -131,6 +141,15 @@ namespace TaskMaker
                     }
 
                     QuestionStackPanel.Children.Add(createQeust_button);
+
+                    int Tcount = 0;
+                    int Dcount = choosedTheme.Questions[choosedDif - 1].Count;
+                    foreach (List<Question> qm in choosedTheme.Questions)
+                    {
+                        Tcount += qm.Count;
+                    }
+                    k_theme.Content = "Количество вопросов в теме: " + Tcount.ToString();
+                    k_dif.Content = "Количество вопросов в сложности: " + Dcount.ToString();
                 }
 
             }
@@ -147,6 +166,9 @@ namespace TaskMaker
 
                 Themes.Clear();
                 SaveAll();
+
+                k_theme.Content = "Количество вопросов в теме: —";
+                k_dif.Content = "Количество вопросов в сложности: —";
             }
         }
 
@@ -176,8 +198,8 @@ namespace TaskMaker
                     }
                     catch
                     {
-                        MessageBox.Show("При загрузке сохраненных данных произошла ошибка. \n Ваши сохраненные данные не были утеряны и были скопированны в следующий файл: " + SaveFilePath.Replace(".xml", "") + "_errorSave.xml", "Ошибка загрузки.");
-                        File.Copy(SaveFilePath, SaveFilePath.Replace(".xml", "") + "_errorSave.xml", true);
+                        MessageBox.Show("При загрузке сохраненных данных произошла ошибка. \n Ваши сохраненные данные не были утеряны и были скопированны в следующий файл: " + SaveFilePath.Replace(".xml", "") + "_Error.xml", "Ошибка загрузки.");
+                        File.Copy(SaveFilePath, SaveFilePath.Replace(".xml", "") + "_Error.xml", true);
                     }
                 }
 
@@ -211,6 +233,10 @@ namespace TaskMaker
                 }
 
                 QuestionStackPanel.Children.Add(createQeust_button);
+
+
+                int count = choosedTheme.Questions[choosedDif - 1].Count;
+                k_dif.Content = "Количество вопросов в сложности: " + count.ToString();
             }
         }
 
@@ -223,11 +249,22 @@ namespace TaskMaker
                 QuestionStackPanel.Children.Remove(createQeust_button);
                 QuestionStackPanel.Children.Add(createQeust_button);
                 SaveAll();
+
+                int Tcount = 0;
+                int Dcount = choosedTheme.Questions[choosedDif - 1].Count;
+                foreach (List<Question> qm in choosedTheme.Questions)
+                {
+                    Tcount += qm.Count;
+                }
+                k_theme.Content = "Количество вопросов в теме: " + Tcount.ToString();
+                k_dif.Content = "Количество вопросов в сложности: " + Dcount.ToString();
             }
         }
 
         public void SaveAll()
         {
+            if (File.Exists(SaveFilePath))
+                File.Delete(SaveFilePath);
             List<ThemeData> TD = new List<ThemeData>();
             foreach(Theme t in Themes)
             {

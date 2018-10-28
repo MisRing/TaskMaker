@@ -80,12 +80,15 @@ public class Question : Window
         can.HorizontalAlignment = HorizontalAlignment.Stretch;
         can.Background = Brushes.White;
         Text = question_text;
-        var fStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(Text));
-        var fd = new FlowDocument();
-        var range = new TextRange(fd.ContentStart, fd.ContentEnd);
-        range.Load(fStream, System.Windows.DataFormats.Rtf);
-        fStream.Close();
-        text.Text = range.Text;
+        if (Text != null && Text != "")
+        {
+            var fStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(Text));
+            var fd = new FlowDocument();
+            var range = new TextRange(fd.ContentStart, fd.ContentEnd);
+            range.Load(fStream, System.Windows.DataFormats.Rtf);
+            fStream.Close();
+            text.Text = range.Text;
+        }
         can.Children.Add(text);
         text.TextWrapping = TextWrapping.Wrap;
         text.Margin = new Thickness(5, 5, 100, 5); //5 5 20 5
