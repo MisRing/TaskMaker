@@ -287,3 +287,9 @@ E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\spec.g.cs
 E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\grec.baml
 E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\math.baml
 E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\spec.baml
+E:\MRCsoft\TaskMaker\TaskMaker\bin\Debug\Spire.Doc.dll
+E:\MRCsoft\TaskMaker\TaskMaker\bin\Debug\Spire.License.dll
+E:\MRCsoft\TaskMaker\TaskMaker\bin\Debug\Spire.Pdf.dll
+E:\MRCsoft\TaskMaker\TaskMaker\bin\Debug\Microsoft.mshtml.dll
+E:\MRCsoft\TaskMaker\TaskMaker\bin\Debug\Spire.Doc.xml
+E:\MRCsoft\TaskMaker\TaskMaker\bin\Debug\Spire.License.xml

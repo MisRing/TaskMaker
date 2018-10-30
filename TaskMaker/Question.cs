@@ -117,7 +117,7 @@ public class Question : Window
     {
         theme.Questions[Dif - 1].Remove(this);
         qPan.Children.Remove(can);
-        //MW.SaveThemes();
+        MW.SaveAll();
     }
 
     void SaveQ(object sender, RoutedEventArgs e)

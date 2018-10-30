@@ -51,10 +51,18 @@ namespace TaskMaker
         }
         private void create_variants_Click(object sender, RoutedEventArgs e)
         {
-            MakeVariants VariantW = new MakeVariants();
-            VariantW.Owner = MW;
-            VariantW.ShowDialog();
-            VariantW.Margin = new Thickness(0, 0, 0, 0);
+            if (choosedTheme != null)
+            {
+                MakeVariants VariantW = new MakeVariants();
+                VariantW.cre = this;
+                VariantW.Owner = MW;
+                VariantW.ShowDialog();
+                VariantW.Margin = new Thickness(0, 0, 0, 0);
+            }
+            else
+            {
+                MessageBox.Show("Для того, что бы сгенерировать варианты, вы должны выбрать тему.", "Выберите тему.");
+            }
         }
         private void make_list_Click(object sender, RoutedEventArgs e)
         {
