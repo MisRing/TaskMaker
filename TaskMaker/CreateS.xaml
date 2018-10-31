@@ -31,7 +31,7 @@
         <Canvas Grid.Column="0">
             <TextBlock x:Name="empty" Background="White" HorizontalAlignment="Left" Height="21" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Canvas.Left="10" Canvas.Top="10"/>
             <TextBlock x:Name="SearchStatic" Background="White" HorizontalAlignment="Left" Height="21" TextWrapping="Wrap" Foreground="Gray" Text="  Поиск по темам..." VerticalAlignment="Top" Width="160" Canvas.Left="10" Canvas.Top="10"/>
-            <TextBox x:Name="Search" Background="Transparent" Foreground="Black" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap"  BorderBrush="Black" BorderThickness="1" VerticalAlignment="Top" Width="160" TextInput="Search_TextInput" LostKeyboardFocus="Search_LostKeyboardFocus" PreviewTextInput="Search_TextInput" Canvas.Left="10" Canvas.Top="9"/>
+            <TextBox x:Name="Search" Background="Transparent" Foreground="Black" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap"  BorderBrush="Black" BorderThickness="1" VerticalAlignment="Top" Width="160" TextInput="Search_TextInput" LostKeyboardFocus="Search_LostKeyboardFocus" PreviewTextInput="Search_TextInput" Canvas.Left="10" Canvas.Top="9" TextChanged="Search_TextChanged" GotFocus="Search_GotFocus"/>
 
             <Button x:Name="del_thems" FontSize="17"  Foreground="#FFD7D7D7" BorderThickness="2" Style="{StaticResource dif}" Content="Удалить все темы" HorizontalAlignment="Left" Canvas.Bottom="20" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="60" Background="#FF990404" BorderBrush="Black" Click="DeliteAllThemes"/>
 
@@ -57,11 +57,12 @@
             <Border Margin="10,10,10,0" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             </Border>
 
-            <Button x:Name="create_variants" Grid.Row="1"  BorderThickness="2" Style="{StaticResource dif}" Content="Созать варианты" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="40"  BorderBrush="Black" Click="create_variants_Click" Margin="14,30,0,0"/>
+            <Button x:Name="create_variants" Grid.Row="1"  BorderThickness="2" Style="{StaticResource dif}" Content="Созать варианты" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="40"  BorderBrush="Black" Click="create_variants_Click" Margin="15,30,0,0"/>
             <Button x:Name="make_list" Grid.Row="1" BorderThickness="2" Style="{StaticResource dif}" Content="Список вопросов" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="40"  BorderBrush="Black" Click="make_list_Click" Margin="190,30,0,0"/>
-            <Button x:Name="theme_export" Grid.Row="1" BorderThickness="2" Style="{StaticResource dif}" Content="Экспорт тем" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="40"  BorderBrush="Black" RenderTransformOrigin="0.5,0.5" Click="theme_export_Click" Margin="370,30,0,0"/>
-            <Label x:Name="k_theme" Grid.Row="1" Foreground="White" Content="Количество вопросов в теме: —" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="292" Canvas.Left="545" Margin="543,20,0,0"/>
-            <Label x:Name="k_dif" Grid.Row="1" Foreground="White" Content="Количество вопросов в сложности: —"  FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="292" Canvas.Left="545" Margin="543,55,0,0"/>
+            <Button x:Name="theme_export" Grid.Row="1" BorderThickness="2" Style="{StaticResource dif}" Content="Экспорт" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="40"  BorderBrush="Black" RenderTransformOrigin="0.5,0.5" Click="theme_export_Click" Margin="370,30,0,0"/>
+            <Button x:Name="theme_import" Grid.Row="1" BorderThickness="2" Style="{StaticResource dif}" Content="Импорт" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="40"  BorderBrush="Black" RenderTransformOrigin="0.5,0.5" Click="theme_import_Click" Margin="470,30,0,0"/>
+            <Label x:Name="k_theme" Grid.Row="1" Foreground="White" Content="Количество вопросов в теме: —" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top" Width="265" Canvas.Left="545" Margin="566,20,0,0"/>
+            <Label x:Name="k_dif" Grid.Row="1" Foreground="White" Content="Количество вопросов в сложности: —"  FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top" Width="265" Canvas.Left="545" Margin="566,55,0,0"/>
 
         </Grid>
         <Canvas Grid.Column="2">

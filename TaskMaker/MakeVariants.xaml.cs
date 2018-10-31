@@ -58,13 +58,14 @@ namespace TaskMaker
                     {
                         sfd.FileName = "NewTest.pdf";
                         sfd.Filter = "pdf files (*.pdf)|*.pdf";
+                        sfd.FilterIndex = 1;
                     }
                     else
                     {
                         sfd.FileName = "NewTest.docx";
                         sfd.Filter = "docx files (*.docx)|*.docx|doc files (*.doc)|*.doc";
+                        sfd.FilterIndex = 2;
                     }
-                    sfd.FilterIndex = 2;
                     sfd.RestoreDirectory = true;
 
                     if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -178,7 +179,6 @@ namespace TaskMaker
                         rrrange2.Load(sstream, DataFormats.Rtf);
                         sstream.Close();
 
-                        Paragraph p = currentFD.Blocks.Take<Block>(0) as Paragraph;
                         List<Block> blocks = currentFD.Blocks.ToList();
                         foreach (Block b in blocks)
                         {

@@ -40,5 +40,18 @@ namespace TaskMaker
         {
             System.Environment.Exit(0);
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            string[] args = Environment.GetCommandLineArgs();
+            
+            try
+            {
+                string path = args[1];
+                CreateS create = new CreateS(this, path);
+                this.Content = create;
+            }
+            catch { MessageBox.Show("!"); }
+        }
     }
 }

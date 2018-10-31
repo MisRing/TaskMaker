@@ -25,10 +25,18 @@ namespace TaskMaker
     public partial class CreateS : Page
     {
         Window MW = new Window();
+        string loadedFilePath = "none";
 
         public CreateS(Window win)
         {
             MW = win;
+            InitializeComponent();
+        }
+
+        public CreateS(Window win, string loadedFile)
+        {
+            MW = win;
+            loadedFilePath = loadedFile;
             InitializeComponent();
         }
 
@@ -66,14 +74,14 @@ namespace TaskMaker
         }
         private void make_list_Click(object sender, RoutedEventArgs e)
         {
-            MakeList ListW = new MakeList();
+            MakeList ListW = new MakeList(this);
             ListW.Owner = MW;
             ListW.ShowDialog();
             ListW.Margin = new Thickness(0, 0, 0, 0);
         }
         private void theme_export_Click(object sender, RoutedEventArgs e)
         {
-            Export exportW = new Export();
+            Export exportW = new Export(this);
             exportW.Owner = MW;
             exportW.ShowDialog();
             exportW.Margin = new Thickness(0, 0, 0, 0);
@@ -203,6 +211,12 @@ namespace TaskMaker
                     try
                     {
                         LoadAll();
+                        MessageBox.Show(loadedFilePath);
+                        if (loadedFilePath != "none")
+                        {
+                            Import(loadedFilePath);
+                            loadedFilePath = "none";
+                        }
                     }
                     catch
                     {
@@ -299,6 +313,8 @@ namespace TaskMaker
 
         public void LoadAll()
         {
+            Themes.Clear();
+            Content_scroll.Children.Clear();
             List<ThemeData> TD = new List<ThemeData>();
             XmlSerializer formatter = new XmlSerializer(TD.GetType());
 
@@ -329,6 +345,113 @@ namespace TaskMaker
                 theme.LoadThisTheme(this, Content_scroll, QD);
                 Themes.Add(theme);
             }
+        }
+
+        private void Search_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string text = Search.Text.ToLower();
+
+            if(text.Replace(" ", "").Length == 0)
+            {
+                Content_scroll.Children.Clear();
+
+                foreach(Theme t in Themes)
+                {
+                    Content_scroll.Children.Add(t.theme_b);
+                }
+
+                Content_scroll.Children.Add(CreateTheme_button);
+            }
+            else
+            {
+                Regex trimmer = new Regex(@"\s\s+");
+
+                text = trimmer.Replace(text, " ");
+                text = (text[0].ToString() == " ") ? text.Remove(0, 1) : text;
+
+                Content_scroll.Children.Clear();
+
+                foreach (Theme t in Themes)
+                {
+                    try
+                    {
+                        string text2 = t.ThemeName.ToLower();
+                        text2 = trimmer.Replace(text2, " ");
+                        text2 = (text2[0].ToString() == " ") ? text2.Remove(0, 1) : text2;
+                        text2 = text2.Substring(0, text.Length);
+                        if (string.Compare(text2, text) == 0)
+                            Content_scroll.Children.Add(t.theme_b);
+                    }
+                    catch { }
+                }
+            }
+        }
+
+        private void Search_GotFocus(object sender, RoutedEventArgs e)
+        {
+            SearchStatic.Visibility = Visibility.Hidden;
+        }
+
+        private void theme_import_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.OpenFileDialog sfd = new System.Windows.Forms.OpenFileDialog();
+            sfd.Filter = "Task Maker files (*.task)|*.task";
+            sfd.FilterIndex = 1;
+            sfd.RestoreDirectory = true;
+
+            if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                if (sfd.FileName != null)
+                {
+                    try
+                    {
+                        Import(sfd.FileName);
+                        MessageBox.Show("Импорт завершен.", "Готово");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Не удаётся получить доступ к файлу.", "Ошибка");
+                    }
+                }
+            }
+        }
+
+        public void Import(string path)
+        {
+            List<ThemeData> TD = new List<ThemeData>();
+            XmlSerializer formatter = new XmlSerializer(TD.GetType());
+
+            using (FileStream fs = new FileStream(path, FileMode.OpenOrCreate))
+            {
+                TD = (List<ThemeData>)formatter.Deserialize(fs);
+            }
+
+            foreach (ThemeData td in TD)
+            {
+                Theme theme = new Theme();
+
+                theme.ThemeName = td.ThemeName;
+
+                List<Question>[] QD = new List<Question>[10];
+                for (int i = 0; i < 10; i++)
+                {
+                    QD[i] = new List<Question>();
+
+                    foreach (QuestionData qd in td.Questions[i])
+                    {
+                        Question q = new Question();
+                        q.LoadQuestion(qd.Text, QuestionStackPanel, this, theme, qd.Dif, MW);
+                        QD[i].Add(q);
+                    }
+                }
+
+                theme.LoadThisTheme(this, Content_scroll, QD);
+                Themes.Add(theme);
+            }
+            Content_scroll.Children.Remove(CreateTheme_button);
+            Content_scroll.Children.Add(CreateTheme_button);
+
+            SaveAll();
         }
     }
 }

@@ -31,7 +31,6 @@ namespace TaskMaker
         {
             CreateS create = new CreateS(MW);
             MW.Content = create;
-
         }
 
     }
