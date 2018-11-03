@@ -389,6 +389,11 @@ namespace TaskMaker
             int count = allText.Length - Pole.Document.Blocks.Count * 2;
             k_theme.Content = "Количество символов: " + count.ToString();
         }
+
+        private void Page_GotFocus(object sender, RoutedEventArgs e)
+        {
+            Pole.Focus();
+        }
     }
     //----------------------------------------------------------------------------------------------------------------
 }

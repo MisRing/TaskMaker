@@ -32,7 +32,6 @@ namespace Editor
             mathToolBar.CommandCompleted += (x, y) => { editor.Focus(); };
             SetTitle();
             AddHandler(UIElement.MouseDownEvent, new MouseButtonEventHandler(MainWindow_MouseDown), true);
-            underbarToggle.IsChecked = true;
         }
 
         public void HandleToolBarCommand(CommandDetails commandDetails)
@@ -116,10 +115,7 @@ namespace Editor
             }
         }
 
-        private void underbarToggleCheckChanged(object sender, RoutedEventArgs e)
-        {
-            editor.ShowOverbar(underbarToggle.IsChecked == true);
-        }
+
 
         private void IncreaseZoomCommandHandler(object sender, ExecutedRoutedEventArgs e)
         {
@@ -169,6 +165,7 @@ namespace Editor
         private void button_Click(object sender, RoutedEventArgs e)
         {
             editor.ExportImage(@"\img.bmp", logic.Logic.text);
+            this.Close();
         }
     }
 }

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:TaskMaker"
       mc:Ignorable="d" 
     d:DesignHeight="662" d:DesignWidth="1185"
-      Title="QuestionPage" Loaded="Page_Loaded">
+      Title="QuestionPage" Loaded="Page_Loaded" GotFocus="Page_GotFocus">
 
     <Grid Style="{StaticResource main}">
         <Grid.RowDefinitions>
