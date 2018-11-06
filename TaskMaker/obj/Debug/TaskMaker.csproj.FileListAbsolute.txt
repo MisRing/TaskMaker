@@ -1,261 +1,28 @@
-D:\TaskMaker\TaskMaker\bin\Debug\TaskMaker.exe.config
-D:\TaskMaker\TaskMaker\bin\Debug\TaskMaker.exe
-D:\TaskMaker\TaskMaker\bin\Debug\TaskMaker.pdb
-D:\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csprojAssemblyReference.cache
-D:\TaskMaker\TaskMaker\obj\Debug\MainWindow.g.cs
-D:\TaskMaker\TaskMaker\obj\Debug\App.g.cs
-D:\TaskMaker\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.cache
-D:\TaskMaker\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.lref
-D:\TaskMaker\TaskMaker\obj\Debug\MainWindow.baml
-D:\TaskMaker\TaskMaker\obj\Debug\TaskMaker.g.resources
-D:\TaskMaker\TaskMaker\obj\Debug\TaskMaker.Properties.Resources.resources
-D:\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.GenerateResource.cache
-D:\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CoreCompileInputs.cache
-D:\TaskMaker\TaskMaker\obj\Debug\TaskMaker.exe
-D:\TaskMaker\TaskMaker\obj\Debug\TaskMaker.pdb
-D:\TaskMaker\TaskMaker\obj\Debug\mainS.g.cs
-D:\TaskMaker\TaskMaker\obj\Debug\mainS.baml
-D:\TaskMaker\TaskMaker\obj\Debug\App.baml
-D:\TaskMaker\TaskMaker\obj\Debug\Dictonary.baml
-D:\TaskMaker\TaskMaker\obj\Debug\CreateS.g.cs
-D:\TaskMaker\TaskMaker\obj\Debug\CreateS.baml
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\bin\Debug\TaskMaker.exe.config
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\bin\Debug\TaskMaker.exe
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\bin\Debug\TaskMaker.pdb
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csprojAssemblyReference.cache
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\CreateS.g.cs
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\mainS.g.cs
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MainWindow.g.cs
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\App.g.cs
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.cache
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.lref
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\App.baml
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\CreateS.baml
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\Dictonary.baml
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\mainS.baml
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MainWindow.baml
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.g.resources
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.Properties.Resources.resources
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.GenerateResource.cache
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CoreCompileInputs.cache
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.exe
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.pdb
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\Export.g.cs
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MakeList.g.cs
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MakeVariants.g.cs
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\Export.baml
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MakeList.baml
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MakeVariants.baml
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\bin\Debug\TaskMaker.exe.config
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csprojResolveAssemblyReference.cache
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\CreateS.g.cs
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\Export.g.cs
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\mainS.g.cs
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MainWindow.g.cs
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MakeList.g.cs
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MakeVariants.g.cs
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\App.g.cs
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.cache
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.lref
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\bin\Debug\TaskMaker.exe
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\bin\Debug\TaskMaker.pdb
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\App.baml
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\CreateS.baml
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\Dictonary.baml
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\Export.baml
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\mainS.baml
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MainWindow.baml
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MakeList.baml
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MakeVariants.baml
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.g.resources
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.Properties.Resources.resources
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.GenerateResource.Cache
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.exe
-E:\MRCsoft\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.pdb
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\QuestionPage.g.cs
-E:\Task Maker\TaskMaker\TaskMaker\TaskMaker\obj\Debug\QuestionPage.baml
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\bin\Debug\TaskMaker.exe.config
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\bin\Debug\TaskMaker.exe
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\bin\Debug\TaskMaker.pdb
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csprojAssemblyReference.cache
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\CreateS.g.cs
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\Export.g.cs
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\mainS.g.cs
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MainWindow.g.cs
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MakeList.g.cs
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MakeVariants.g.cs
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\QuestionPage.g.cs
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\App.g.cs
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.cache
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.lref
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\App.baml
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\CreateS.baml
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\Dictonary.baml
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\Export.baml
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\mainS.baml
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MainWindow.baml
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MakeList.baml
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\MakeVariants.baml
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\QuestionPage.baml
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.g.resources
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.Properties.Resources.resources
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.GenerateResource.cache
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CoreCompileInputs.cache
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.exe
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.pdb
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\TaskMaker.csprojAssemblyReference.cache
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\CreateS.g.cs
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\Export.g.cs
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\mainS.g.cs
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\MainWindow.g.cs
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\MakeList.g.cs
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\MakeVariants.g.cs
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\QuestionPage.g.cs
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\App.g.cs
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.cache
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.lref
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\TaskMaker.exe
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\TaskMaker.pdb
-F:\Progs\FORMULIITASKI\TaskMaker\bin\Debug\TaskMaker.exe.config
-F:\Progs\FORMULIITASKI\TaskMaker\bin\Debug\TaskMaker.exe
-F:\Progs\FORMULIITASKI\TaskMaker\bin\Debug\TaskMaker.pdb
-F:\Progs\FORMULIITASKI\TaskMaker\bin\Debug\Editor.exe
-F:\Progs\FORMULIITASKI\TaskMaker\bin\Debug\Interaction.exe
-F:\Progs\FORMULIITASKI\TaskMaker\bin\Debug\Editor.pdb
-F:\Progs\FORMULIITASKI\TaskMaker\bin\Debug\Interaction.pdb
-F:\Progs\FORMULIITASKI\TaskMaker\bin\Debug\Interaction.exe.config
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\App.baml
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\CreateS.baml
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\Dictonary.baml
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\Export.baml
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\mainS.baml
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\MainWindow.baml
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\MakeList.baml
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\MakeVariants.baml
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\QuestionPage.baml
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\TaskMaker.g.resources
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\TaskMaker.Properties.Resources.resources
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\TaskMaker.csproj.GenerateResource.cache
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\TaskMaker.csproj.CoreCompileInputs.cache
-F:\Progs\FORMULIITASKI\TaskMaker\obj\Debug\TaskMaker.csproj.CopyComplete
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\bin\Debug\TaskMaker.exe.config
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\bin\Debug\TaskMaker.exe
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\bin\Debug\TaskMaker.pdb
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\bin\Debug\Editor.exe
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\bin\Debug\Interaction.exe
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\bin\Debug\Editor.pdb
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\bin\Debug\Interaction.pdb
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\bin\Debug\Interaction.exe.config
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csprojAssemblyReference.cache
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\CreateS.g.cs
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\Export.g.cs
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\mainS.g.cs
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\MainWindow.g.cs
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\MakeList.g.cs
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\MakeVariants.g.cs
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\QuestionPage.g.cs
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\App.g.cs
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.cache
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.lref
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\App.baml
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\CreateS.baml
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\Dictonary.baml
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\Export.baml
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\mainS.baml
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\MainWindow.baml
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\MakeList.baml
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\MakeVariants.baml
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\QuestionPage.baml
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\TaskMaker.g.resources
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\TaskMaker.Properties.Resources.resources
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.GenerateResource.cache
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CoreCompileInputs.cache
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CopyComplete
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\TaskMaker.exe
-C:\Users\User\Documents\GitHub\TaskMaker\TaskMaker\obj\Debug\TaskMaker.pdb
-E:\MRCsoft\TaskMaker\TaskMaker\bin\Debug\TaskMaker.exe.config
-E:\MRCsoft\TaskMaker\TaskMaker\bin\Debug\TaskMaker.exe
-E:\MRCsoft\TaskMaker\TaskMaker\bin\Debug\TaskMaker.pdb
-E:\MRCsoft\TaskMaker\TaskMaker\bin\Debug\Editor.exe
-E:\MRCsoft\TaskMaker\TaskMaker\bin\Debug\Interaction.exe
-E:\MRCsoft\TaskMaker\TaskMaker\bin\Debug\Editor.pdb
-E:\MRCsoft\TaskMaker\TaskMaker\bin\Debug\Interaction.pdb
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csprojResolveAssemblyReference.cache
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\CreateS.g.cs
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\Export.g.cs
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\mainS.g.cs
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\MainWindow.g.cs
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\MakeList.g.cs
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\MakeVariants.g.cs
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\QuestionPage.g.cs
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\App.g.cs
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.cache
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.lref
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\App.baml
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\CreateS.baml
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\Dictonary.baml
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\Export.baml
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\mainS.baml
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\MainWindow.baml
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\MakeList.baml
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\MakeVariants.baml
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\QuestionPage.baml
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\TaskMaker.g.resources
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\TaskMaker.Properties.Resources.resources
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.GenerateResource.Cache
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\TaskMaker.exe
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\TaskMaker.pdb
-F:\TaskMaker\TaskMaker\bin\Debug\TaskMaker.exe.config
-F:\TaskMaker\TaskMaker\bin\Debug\TaskMaker.exe
-F:\TaskMaker\TaskMaker\bin\Debug\TaskMaker.pdb
-F:\TaskMaker\TaskMaker\bin\Debug\Editor.exe
-F:\TaskMaker\TaskMaker\bin\Debug\Interaction.exe
-F:\TaskMaker\TaskMaker\bin\Debug\Editor.pdb
-F:\TaskMaker\TaskMaker\bin\Debug\Interaction.pdb
-F:\TaskMaker\TaskMaker\bin\Debug\Interaction.exe.config
-F:\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csprojAssemblyReference.cache
-F:\TaskMaker\TaskMaker\obj\Debug\CreateS.g.cs
-F:\TaskMaker\TaskMaker\obj\Debug\Export.g.cs
-F:\TaskMaker\TaskMaker\obj\Debug\mainS.g.cs
-F:\TaskMaker\TaskMaker\obj\Debug\MainWindow.g.cs
-F:\TaskMaker\TaskMaker\obj\Debug\MakeList.g.cs
-F:\TaskMaker\TaskMaker\obj\Debug\MakeVariants.g.cs
-F:\TaskMaker\TaskMaker\obj\Debug\QuestionPage.g.cs
-F:\TaskMaker\TaskMaker\obj\Debug\App.g.cs
-F:\TaskMaker\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.cache
-F:\TaskMaker\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.lref
-F:\TaskMaker\TaskMaker\obj\Debug\App.baml
-F:\TaskMaker\TaskMaker\obj\Debug\CreateS.baml
-F:\TaskMaker\TaskMaker\obj\Debug\Dictonary.baml
-F:\TaskMaker\TaskMaker\obj\Debug\Export.baml
-F:\TaskMaker\TaskMaker\obj\Debug\mainS.baml
-F:\TaskMaker\TaskMaker\obj\Debug\MainWindow.baml
-F:\TaskMaker\TaskMaker\obj\Debug\MakeList.baml
-F:\TaskMaker\TaskMaker\obj\Debug\MakeVariants.baml
-F:\TaskMaker\TaskMaker\obj\Debug\QuestionPage.baml
-F:\TaskMaker\TaskMaker\obj\Debug\TaskMaker.g.resources
-F:\TaskMaker\TaskMaker\obj\Debug\TaskMaker.Properties.Resources.resources
-F:\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.GenerateResource.cache
-F:\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CoreCompileInputs.cache
-F:\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CopyComplete
-F:\TaskMaker\TaskMaker\obj\Debug\TaskMaker.exe
-F:\TaskMaker\TaskMaker\obj\Debug\TaskMaker.pdb
 E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\TaskMaker.exe.config
 E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\TaskMaker.exe
 E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\TaskMaker.pdb
 E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Editor.exe
 E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Interaction.exe
+E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.Doc.dll
+E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.License.dll
+E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.Pdf.dll
+E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Microsoft.mshtml.dll
 E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Editor.pdb
 E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Interaction.pdb
 E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Interaction.exe.config
+E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.Doc.xml
+E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.License.xml
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csprojAssemblyReference.cache
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\CreateS.g.cs
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\Export.g.cs
+E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\grec.g.cs
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\mainS.g.cs
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\MainWindow.g.cs
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\MakeList.g.cs
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\MakeVariants.g.cs
+E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\math.g.cs
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\QuestionPage.g.cs
+E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\spec.g.cs
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\App.g.cs
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.cache
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.lref
@@ -263,11 +30,14 @@ E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\App.baml
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\CreateS.baml
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\Dictonary.baml
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\Export.baml
+E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\grec.baml
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\mainS.baml
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\MainWindow.baml
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\MakeList.baml
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\MakeVariants.baml
+E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\math.baml
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\QuestionPage.baml
+E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\spec.baml
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.g.resources
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.Properties.Resources.resources
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.GenerateResource.cache
@@ -275,27 +45,3 @@ E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CoreCompileInputs.c
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CopyComplete
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.exe
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.pdb
-E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\spec.g.cs
-E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\spec.baml
-E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\grec.g.cs
-E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\math.g.cs
-E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\grec.baml
-E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\math.baml
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\grec.g.cs
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\math.g.cs
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\spec.g.cs
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\grec.baml
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\math.baml
-E:\MRCsoft\TaskMaker\TaskMaker\obj\Debug\spec.baml
-E:\MRCsoft\TaskMaker\TaskMaker\bin\Debug\Spire.Doc.dll
-E:\MRCsoft\TaskMaker\TaskMaker\bin\Debug\Spire.License.dll
-E:\MRCsoft\TaskMaker\TaskMaker\bin\Debug\Spire.Pdf.dll
-E:\MRCsoft\TaskMaker\TaskMaker\bin\Debug\Microsoft.mshtml.dll
-E:\MRCsoft\TaskMaker\TaskMaker\bin\Debug\Spire.Doc.xml
-E:\MRCsoft\TaskMaker\TaskMaker\bin\Debug\Spire.License.xml
-E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.Doc.dll
-E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.License.dll
-E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.Pdf.dll
-E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Microsoft.mshtml.dll
-E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.Doc.xml
-E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.License.xml

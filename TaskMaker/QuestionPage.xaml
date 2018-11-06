@@ -21,7 +21,7 @@
 
         <Grid Grid.Column="1">
             <Border Margin="10,10,10,0" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <RichTextBox x:Name="Pole" KeyDown="Pole_KeyDown" SelectionChanged="Pole_SelectionChanged" TextChanged="Pole_TextChanged" />
+                <RichTextBox x:Name="Pole" FontSize="14" KeyDown="Pole_KeyDown" SelectionChanged="Pole_SelectionChanged" TextChanged="Pole_TextChanged" ContextMenuClosing="Pole_ContextMenuClosing" />
             </Border>
 
         </Grid>

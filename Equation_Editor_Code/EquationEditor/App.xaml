@@ -7,7 +7,7 @@
     <Application.Resources>         
     	<ResourceDictionary>
     		<ResourceDictionary.MergedDictionaries>                
-                <ResourceDictionary Source="../../TaskMaker/Dictonary.xaml"/>
+                <ResourceDictionary Source="Dictonary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
     	</ResourceDictionary>         
     </Application.Resources>

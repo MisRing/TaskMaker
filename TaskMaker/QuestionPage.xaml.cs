@@ -394,6 +394,11 @@ namespace TaskMaker
         {
             Pole.Focus();
         }
+
+        private void Pole_ContextMenuClosing(object sender, ContextMenuEventArgs e)
+        {
+
+        }
     }
     //----------------------------------------------------------------------------------------------------------------
 }

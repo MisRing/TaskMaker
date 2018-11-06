@@ -211,7 +211,6 @@ namespace TaskMaker
                     try
                     {
                         LoadAll();
-                        MessageBox.Show(loadedFilePath);
                         if (loadedFilePath != "none")
                         {
                             Import(loadedFilePath);

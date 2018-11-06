@@ -73,7 +73,7 @@ namespace Editor
         
         void SetTitle()
         {
-           Title = "Math Editor Mini v." + version;
+        
         }
 
         string ShowSaveFileDialog(string extension, string filter)

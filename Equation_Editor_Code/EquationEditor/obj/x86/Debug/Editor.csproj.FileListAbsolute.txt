@@ -103,3 +103,4 @@ E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.Pr
 E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.GenerateResource.Cache
 E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.exe
 E:\MRCsoft\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.pdb
+E:\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Dictonary.baml
