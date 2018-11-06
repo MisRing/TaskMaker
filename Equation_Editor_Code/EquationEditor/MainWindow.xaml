@@ -19,13 +19,9 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    <Window.CommandBindings>
-        <CommandBinding Command="Close"	        Executed="CloseCommandHandler"/>
-        <CommandBinding Command="DecreaseZoom"  Executed="DecreaseZoomCommandHandler"/>
-        <CommandBinding Command="IncreaseZoom"  Executed="IncreaseZoomCommandHandler"/>
-    </Window.CommandBindings>
+ 
     <Grid>
-        <DockPanel x:Name="mainDock" Margin="0,0,0,100" LastChildFill="True">
+        <DockPanel x:Name="mainDock" Margin="0,0,-0.4,100" LastChildFill="True">
 
             <Grid DockPanel.Dock="Top"/>
             <local:MathToolBar x:Name="mathToolBar" DockPanel.Dock="Top" DockPanel.ZIndex="99"></local:MathToolBar>
@@ -37,8 +33,8 @@
                 <Label Name="statusBarLeftLabel" Height="25"></Label>
                 <Label Grid.Column="1" Name="statusBarRightLabel" Height="25" HorizontalAlignment="Right"></Label>
             </Grid>
-            <ScrollViewer x:Name="scrollViwer" FocusVisualStyle="{x:Null}" Focusable="True" ScrollChanged="scrollViwer_ScrollChanged" HorizontalScrollBarVisibility="Auto" Margin="0,-0.6,0,0">
-                <local:EditorControl Background="Transparent" x:Name="editor" Focusable="True"  FocusVisualStyle="{x:Null}" Height="468"></local:EditorControl>
+            <ScrollViewer x:Name="scrollViwer" FocusVisualStyle="{x:Null}" Focusable="True" ScrollChanged="scrollViwer_ScrollChanged" HorizontalScrollBarVisibility="Auto" Margin="0,17.6,0,0">
+                <local:EditorControl Background="Transparent" x:Name="editor" Focusable="True"  FocusVisualStyle="{x:Null}" Height="478"></local:EditorControl>
             </ScrollViewer>
         </DockPanel>
         <Button x:Name="button" Content="Вставить формулу" HorizontalAlignment="Left" Background="LightGray" Height="65" Margin="187,545,0,0" VerticalAlignment="Top" Width="350" FontSize="25"  BorderBrush="LightBlue" BorderThickness="3" Click="button_Click"/>

@@ -28,7 +28,6 @@ E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.cache
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker_MarkupCompile.lref
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\App.baml
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\CreateS.baml
-E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\Dictonary.baml
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\Export.baml
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\grec.baml
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\mainS.baml
@@ -45,3 +44,4 @@ E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CoreCompileInputs.c
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CopyComplete
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.exe
 E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.pdb
+E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\Dictionary.baml
