@@ -15,7 +15,7 @@ namespace TaskMaker
         public static void Associate(string description, string icon)
         {
             Registry.ClassesRoot.CreateSubKey(FILE_EXTENSION).SetValue("", Application.ProductName);
-
+            icon = @"E:\Task Maker\TaskMaker\TaskMaker\file.ico";
             if (Application.ProductName != null && Application.ProductName.Length > 0)
             {
                 using (RegistryKey key = Registry.ClassesRoot.CreateSubKey(Application.ProductName))
