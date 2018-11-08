@@ -95,17 +95,21 @@ namespace Editor
                 }
                 using (Stream s = File.OpenRead(path))
                 {
-                    BitmapImage img = new BitmapImage();
-                    img.BeginInit();
-                    img.CacheOption = BitmapCacheOption.OnLoad;
-                    img.StreamSource = s;
-                    img.EndInit();
-                    string str = Clipboard.GetText();
-                    Clipboard.SetText(" ");
+                    System.Drawing.Bitmap b = new System.Drawing.Bitmap(System.Drawing.Image.FromStream(s));
+                    int h = b.Height;
+                    int w = b.Width;
+                    System.Drawing.Size size = new System.Drawing.Size(w, h);
+                    w = (int)((w * 1f) / 2f);
+                    h = (int)((h * 1f) / 2f);
+                    size = new System.Drawing.Size(w, h);
+                    b = new System.Drawing.Bitmap(System.Drawing.Image.FromStream(s), size);
+                    System.Drawing.Image im = (System.Drawing.Image)b;
+                    string str = System.Windows.Forms.Clipboard.GetText();
+                    System.Windows.Forms.Clipboard.SetText(" ");
                     richTextBox.Paste();
-                    Clipboard.SetImage(img);
+                    System.Windows.Forms.Clipboard.SetImage(im);
                     richTextBox.Paste();
-                    try { Clipboard.SetText(str); } catch { }
+                    try { System.Windows.Forms.Clipboard.SetText(str); } catch { }
                 }
                 File.Delete(path);
             }

@@ -86,9 +86,7 @@ public class Theme : Window
         theme_b.Content = can;
         can.Children.Add(NameBox);
         can.Children.Add(close);
-        stac.Children.Remove(cre.CreateTheme_button);
         stac.Children.Add(theme_b);
-        stac.Children.Add(cre.CreateTheme_button);
         close.Click += del_theme;
     }
 

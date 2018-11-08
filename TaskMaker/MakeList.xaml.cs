@@ -147,10 +147,18 @@ namespace TaskMaker
                                 foreach (Question q in ql)
                                 {
                                     FlowDocument currentQuestion = new FlowDocument();
-                                    MemoryStream sstream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(q.Text));
-                                    TextRange rrrange2 = new TextRange(currentQuestion.ContentEnd, currentQuestion.ContentEnd);
-                                    rrrange2.Load(sstream, DataFormats.Rtf);
-                                    sstream.Close();
+                                    try
+                                    {
+                                        MemoryStream sstream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(q.Text));
+                                        TextRange rrrange2 = new TextRange(currentQuestion.ContentEnd, currentQuestion.ContentEnd);
+                                        rrrange2.Load(sstream, DataFormats.Rtf);
+                                        sstream.Close();
+                                    }
+                                    catch
+                                    {
+                                        TextRange rrrange2 = new TextRange(currentQuestion.ContentEnd, currentQuestion.ContentEnd);
+                                        rrrange2.Text = "";
+                                    }
 
                                     List<Block> blocks = currentQuestion.Blocks.ToList();
                                     foreach (Block b in blocks)
@@ -173,18 +181,29 @@ namespace TaskMaker
                                             numberS = "    №" + (number).ToString() + " ";
                                             break;
                                     }
-                                    if (blocks[0] is Paragraph)
+                                    if (blocks.Count != 0)
                                     {
-                                        Paragraph par = blocks[0] as Paragraph;
-                                        var images = FindAllImagesInParagraph(par);
-                                        if (images == null)
+                                        if (blocks[0] is Paragraph)
                                         {
-                                            TextRange tr1 = new TextRange(par.ContentStart, par.ContentEnd);
-                                            tr1.Text = number + tr1.Text;
-                                            blocks.RemoveAt(0);
-                                            par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                            par.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
-                                            flowDoc.Blocks.Add(par);
+                                            Paragraph par = blocks[0] as Paragraph;
+                                            var images = FindAllImagesInParagraph(par);
+                                            if (images == null)
+                                            {
+                                                TextRange tr1 = new TextRange(par.ContentStart, par.ContentEnd);
+                                                tr1.Text = number + tr1.Text;
+                                                blocks.RemoveAt(0);
+                                                par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
+                                                par.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                                                flowDoc.Blocks.Add(par);
+                                            }
+                                            else
+                                            {
+                                                Paragraph newPar = new Paragraph(new Run(numberS));
+                                                newPar.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
+                                                newPar.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                                                newPar.TextAlignment = TextAlignment.Left;
+                                                flowDoc.Blocks.Add(newPar);
+                                            }
                                         }
                                         else
                                         {
@@ -194,14 +213,6 @@ namespace TaskMaker
                                             newPar.TextAlignment = TextAlignment.Left;
                                             flowDoc.Blocks.Add(newPar);
                                         }
-                                    }
-                                    else
-                                    {
-                                        Paragraph newPar = new Paragraph(new Run(numberS));
-                                        newPar.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                        newPar.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
-                                        newPar.TextAlignment = TextAlignment.Left;
-                                        flowDoc.Blocks.Add(newPar);
                                     }
 
                                     flowDoc.Blocks.AddRange(blocks);

@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.IO;
 using Spire.Doc;
 using System.Security.Cryptography;
+using System.Reflection;
 
 namespace TaskMaker
 {
@@ -39,16 +40,17 @@ namespace TaskMaker
             if(v_count.Text != "" && v_count.Text != null && q_count.Text != "" && q_count.Text != null)
             {
                 bool Do = true;
-                MemoryStream ms = new MemoryStream();
-                try
-                {
-                    ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(RandomiseVariants()));
-                }
-                catch
-                {
-                    MessageBox.Show("Ошибка. Для создания такой работы недостаточно вопросов", "Ошибка");
-                    Do = false;
-                }
+                //MemoryStream ms = new MemoryStream();
+                //try
+                //{
+                //ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(RandomiseVariants()));
+                //RandomiseVariants().
+                //}
+                //catch
+                //{
+                //    MessageBox.Show("Ошибка. Для создания такой работы недостаточно вопросов", "Ошибка");
+                //    Do = false;
+                //}
 
                 if (Do)
                 {
@@ -76,11 +78,12 @@ namespace TaskMaker
                             {
                                 if (fileType.SelectedIndex == 0)
                                 {
-                                    CreatePdfDocument(sfd.FileName, ms);
+                                    CreatePdfDocument(RandomiseVariants("pdf.docx"), sfd.FileName);
+                                    File.Delete("pdf.docx"); 
                                 }
                                 else
                                 {
-                                    CreateWordDocument(sfd.FileName, ms);
+                                    RandomiseVariants(sfd.FileName).Close();
                                 }
                                 MessageBox.Show("Генерация завершена.", "Готово");
                             }
@@ -94,7 +97,7 @@ namespace TaskMaker
             }
         }
 
-        public string RandomiseVariants()
+        public Microsoft.Office.Interop.Word.Document RandomiseVariants(string path)
         {
             float fontSize = int.Parse((fontSizeBox.SelectedItem as ComboBoxItem).Content.ToString()) / 0.75f;
             List<Question>[] Questions = cre.choosedTheme.Questions;
@@ -134,8 +137,10 @@ namespace TaskMaker
             }
             int[] questionsID = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
-            List<FlowDocument> Variants = new List<FlowDocument>();
-            for(int v = 0; v < variants; v++)
+            //List<FlowDocument> Variants = new List<FlowDocument>();
+            List<string> Variants = new List<string>();
+            //List<Microsoft.Office.Interop.Word.Document> Variants = new List<Microsoft.Office.Interop.Word.Document>();
+            for (int v = 0; v < variants; v++)
             {
                 FlowDocument thisVariant = new FlowDocument();
                 Paragraph v_text = new Paragraph(new Run("Вариант " + (v + 1).ToString()));
@@ -239,22 +244,83 @@ namespace TaskMaker
                         questionsID[dif] = (questionsID[dif] > newQuestions[dif].Count - 1) ? 0 : questionsID[dif];
                     }
                 }
-                Variants.Add(thisVariant);
-            }
+                //Variants.Add(thisVariant);
 
-            FlowDocument newDocument = new FlowDocument();
-            foreach(FlowDocument fd in Variants)
-            {
-                newDocument.Blocks.AddRange(fd.Blocks.ToList());
-                newDocument.Blocks.Add(new Paragraph(new Run("")));
-                newDocument.Blocks.Add(new Paragraph(new Run("")));
+                object ffileName = "test" + v.ToString() + ".docx";
+                MemoryStream ms = new MemoryStream();
+                var rrrrange = new TextRange(thisVariant.ContentStart, thisVariant.ContentEnd);
+                var fffStream = new MemoryStream();
+                rrrrange.Save(fffStream, System.Windows.DataFormats.Rtf);
+                string t = Encoding.UTF8.GetString(fffStream.ToArray());
+                ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(t));
+                CreateWordDocument((string)ffileName, ms);
+                Variants.Add(System.IO.Path.GetFullPath((string)ffileName));
             }
-            newDocument.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-            //
-            var rrange = new TextRange(newDocument.ContentStart, newDocument.ContentEnd);
-            var ffStream = new MemoryStream();
-            rrange.Save(ffStream, System.Windows.DataFormats.Rtf);
-            return Encoding.UTF8.GetString(ffStream.ToArray());
+            object mmissing = Missing.Value;
+            object rreadOnly = false;
+            object isVvisible = false;
+            Microsoft.Office.Interop.Word.Application WordApp2 = new Microsoft.Office.Interop.Word.Application();
+            object aabsPath = System.IO.Path.GetFullPath(path);
+            Microsoft.Office.Interop.Word.Document FinalDoc = new Microsoft.Office.Interop.Word.Document();
+            object aabsPath2 = System.IO.Path.GetFullPath("notFull.docx");
+            Microsoft.Office.Interop.Word.Document NotFinalDoc = new Microsoft.Office.Interop.Word.Document();
+            NotFinalDoc.SaveAs2(aabsPath2);
+
+            bool alwaysBreake = false;
+            foreach (string st in Variants)
+            {
+                Microsoft.Office.Interop.Word.Range FinalDocRange = FinalDoc.Range(FinalDoc.Content.End - 1, FinalDoc.Content.End);
+                Microsoft.Office.Interop.Word.Range NotFinalDocRange = NotFinalDoc.Range(NotFinalDoc.Content.End - 1, NotFinalDoc.Content.End);
+
+                //Microsoft.Office.Interop.Word.Application WordApp = new Microsoft.Office.Interop.Word.Application();
+                object sst = st;
+                object missing = Missing.Value;
+                object missing2 = Missing.Value;
+                object readOnly = false;
+                object isVisible = false;
+                Microsoft.Office.Interop.Word.Document wDoc = WordApp2.Documents.Open(ref sst,
+                                                           ref missing, ref readOnly, ref missing,
+                                                           ref missing, ref missing, ref missing,
+                                                           ref missing, ref missing, ref missing,
+                                                           ref missing, ref isVisible);
+                Microsoft.Office.Interop.Word.WdStatistic stat = Microsoft.Office.Interop.Word.WdStatistic.wdStatisticPages;
+                int num = NotFinalDoc.ComputeStatistics(stat, ref missing2);
+                wDoc.Range(wDoc.Content.Start, wDoc.Content.End).Copy();
+                NotFinalDocRange.Paste();
+                if (Variants.IndexOf(st) == 0 && num < NotFinalDoc.ComputeStatistics(stat, ref missing2))
+                    alwaysBreake = true;
+                if((num < NotFinalDoc.ComputeStatistics(stat, ref missing2) || alwaysBreake) && Variants.IndexOf(st) != 0)
+                {
+                    FinalDocRange.InsertBreak(Microsoft.Office.Interop.Word.WdBreakType.wdPageBreak);
+                    FinalDocRange = FinalDoc.Range(FinalDoc.Content.End - 1, FinalDoc.Content.End);
+                    wDoc.Range(wDoc.Content.Start, wDoc.Content.End).Copy();
+                    FinalDocRange.Paste();
+                }
+                else
+                {
+                    wDoc.Range(wDoc.Content.Start, wDoc.Content.End).Copy();
+                    FinalDocRange.Paste();
+                }
+
+                NotFinalDocRange = NotFinalDoc.Range(NotFinalDoc.Content.Start, NotFinalDoc.Content.End);
+                NotFinalDocRange.Delete();
+                FinalDocRange = FinalDoc.Range(FinalDoc.Content.Start, FinalDoc.Content.End);
+                FinalDocRange.Copy();
+                NotFinalDocRange.Paste();
+                NotFinalDoc.Save();
+                wDoc.Close();
+            }
+            NotFinalDoc.Save();
+            NotFinalDoc.Close();
+            FinalDoc.SaveAs2(ref aabsPath, ref mmissing, ref rreadOnly, ref mmissing, ref mmissing, ref mmissing, ref mmissing,
+                                                         ref mmissing, ref mmissing, ref mmissing, ref mmissing, ref isVvisible);
+            WordApp2.Quit();
+            File.Delete((string)aabsPath2);
+            foreach (string st in Variants)
+            {
+                File.Delete(st);
+            }
+            return FinalDoc;
         }
 
         List<Image> FindAllImagesInParagraph(Paragraph paragraph)
@@ -302,12 +368,11 @@ namespace TaskMaker
             ms.Close();
         }
 
-        private void CreatePdfDocument(string filePath, MemoryStream ms)
+        private void CreatePdfDocument(Microsoft.Office.Interop.Word.Document wordDocument, string path)
         {
-            Document document = new Document();
-            document.LoadFromStream(ms, FileFormat.Rtf);
-            document.SaveToFile(filePath, FileFormat.PDF);
-            ms.Close();
+            //Microsoft.Office.Interop.Word.Application appWord = new Microsoft.Office.Interop.Word.Application();
+            wordDocument.ExportAsFixedFormat(path, Microsoft.Office.Interop.Word.WdExportFormat.wdExportFormatPDF);
+            wordDocument.Close();
         }
 
         private void Say_NO_to_letters(object sender, TextCompositionEventArgs e)

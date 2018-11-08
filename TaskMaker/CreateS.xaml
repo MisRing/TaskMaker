@@ -18,7 +18,7 @@
             <ColumnDefinition Width="170"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <ScrollViewer Grid.Column="0" HorizontalAlignment="Stretch" Margin="10,40,0,100" VerticalAlignment="Stretch">
+        <ScrollViewer Name="themeSV" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10,40,0,100" VerticalAlignment="Stretch">
             <StackPanel x:Name="Content_scroll" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="130">
                 <Button x:Name="CreateTheme_button" Margin="0,10,0,10" BorderThickness="2" Style="{StaticResource plus}"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="50" Height="50" Click="CreateTheme_button_Click">
                     <Image Source="plus.png"/>
