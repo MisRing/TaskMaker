@@ -12,10 +12,9 @@ namespace TaskMaker
         private const long SHCNE_ASSOCCHANGED = 0x8000000L;
         private const uint SHCNF_IDLIST = 0x0U;
 
-        public static void Associate(string description, string icon)
+        public static void Associate(string extension, string progID, string description, string icon, string application)
         {
             Registry.ClassesRoot.CreateSubKey(FILE_EXTENSION).SetValue("", Application.ProductName);
-            icon = @"E:\Task Maker\TaskMaker\TaskMaker\file.ico";
             if (Application.ProductName != null && Application.ProductName.Length > 0)
             {
                 using (RegistryKey key = Registry.ClassesRoot.CreateSubKey(Application.ProductName))
@@ -33,9 +32,9 @@ namespace TaskMaker
             SHChangeNotify(SHCNE_ASSOCCHANGED, SHCNF_IDLIST, IntPtr.Zero, IntPtr.Zero);
         }
 
-        public static bool IsAssociated
+        public static bool IsAssociated(string extension)
         {
-            get { return (Registry.ClassesRoot.OpenSubKey(FILE_EXTENSION, false) != null); }
+            return (Registry.ClassesRoot.OpenSubKey(extension, false) != null);
         }
 
         public static void Remove()

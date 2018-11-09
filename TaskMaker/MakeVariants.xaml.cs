@@ -99,124 +99,132 @@ namespace TaskMaker
 
         public Microsoft.Office.Interop.Word.Document RandomiseVariants(string path)
         {
-            float fontSize = int.Parse((fontSizeBox.SelectedItem as ComboBoxItem).Content.ToString()) / 0.75f;
-            List<Question>[] Questions = cre.choosedTheme.Questions;
-            int variants = int.Parse(v_count.Text);
-            int questions = int.Parse(q_count.Text);
-
-            int[] quesOfDif = new int[10];
-
-            int ii = 0;
-            for(int i = 0; i < questions; i++)
-            {
-                quesOfDif[ii]++;
-                ii++;
-                ii = (ii > 10) ? 0 : ii;
-            }
-
-            List<FlowDocument>[] newQuestions = new List<FlowDocument>[10]; 
-
-            for(int i = 0; i < 10; i++)
-            {
-                newQuestions[i] = new List<FlowDocument>();
-                foreach (Question q in Questions[i])
-                {
-                    FlowDocument fd = new FlowDocument();
-                    var range = new TextRange(fd.ContentStart, fd.ContentEnd);
-                    try
-                    {
-                        var fStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(q.Text));
-                        range.Load(fStream, System.Windows.DataFormats.Rtf);
-                    }
-                    catch
-                    {
-                        range.Text = "no text";
-                    }
-                    newQuestions[i].Insert(GetNextRnd(0, newQuestions[i].Count), fd);
-                }
-            }
-            int[] questionsID = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-
-            //List<FlowDocument> Variants = new List<FlowDocument>();
             List<string> Variants = new List<string>();
-            //List<Microsoft.Office.Interop.Word.Document> Variants = new List<Microsoft.Office.Interop.Word.Document>();
-            for (int v = 0; v < variants; v++)
+            try
             {
-                FlowDocument thisVariant = new FlowDocument();
-                Paragraph v_text = new Paragraph(new Run("Вариант " + (v + 1).ToString()));
-                v_text.TextAlignment = TextAlignment.Center;
-                v_text.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
-                v_text.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
-                v_text.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
-                FlowDocument to = new FlowDocument();
-                TextRange range = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
-                MemoryStream stream = new MemoryStream();
-                range.Save(stream, DataFormats.Rtf);
-                TextRange range2 = new TextRange(to.ContentEnd, to.ContentEnd);
-                range2.Load(stream, DataFormats.Rtf);
-                stream.Close();
+                float fontSize = int.Parse((fontSizeBox.SelectedItem as ComboBoxItem).Content.ToString()) / 0.75f;
+                List<Question>[] Questions = cre.choosedTheme.Questions;
+                int variants = int.Parse(v_count.Text);
+                int questions = int.Parse(q_count.Text);
 
-                foreach (Block b in to.Blocks)
+                int[] quesOfDif = new int[10];
+
+                int ii = 0;
+                for (int i = 0; i < questions; i++)
                 {
-                    if (b is Paragraph)
-                    {
-                        Paragraph par = b as Paragraph;
-                        par.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
-                        par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
-                        par.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
-                    }
+                    quesOfDif[ii]++;
+                    ii++;
+                    ii = (ii > 10) ? 0 : ii;
                 }
 
-                thisVariant.Blocks.AddRange(to.Blocks.ToList());
-                thisVariant.Blocks.Add(v_text);
-                thisVariant.Blocks.Add(new Paragraph(new Run("")));
-                
-                int globalQ = 1;
-                for (int dif = 0; dif < 10; dif++)
+                List<FlowDocument>[] newQuestions = new List<FlowDocument>[10];
+
+                for (int i = 0; i < 10; i++)
                 {
-                    for(int q = 0; q < quesOfDif[dif]; q++)
+                    newQuestions[i] = new List<FlowDocument>();
+                    foreach (Question q in Questions[i])
                     {
-                        FlowDocument currentFD = new FlowDocument();
-                        TextRange rrrange = new TextRange(newQuestions[dif][questionsID[dif]].ContentStart, newQuestions[dif][questionsID[dif]].ContentEnd);
-                        MemoryStream sstream = new MemoryStream();
-                        rrrange.Save(sstream, DataFormats.Rtf);
-                        TextRange rrrange2 = new TextRange(currentFD.ContentEnd, currentFD.ContentEnd);
-                        rrrange2.Load(sstream, DataFormats.Rtf);
-                        sstream.Close();
-
-                        List<Block> blocks = currentFD.Blocks.ToList();
-                        foreach (Block b in blocks)
+                        FlowDocument fd = new FlowDocument();
+                        var range = new TextRange(fd.ContentStart, fd.ContentEnd);
+                        try
                         {
-                            b.TextAlignment = TextAlignment.Left;
-                            b.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                            b.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                            var fStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(q.Text));
+                            range.Load(fStream, System.Windows.DataFormats.Rtf);
                         }
-
-                        string number = "";
-                        switch(comboBox3.SelectedIndex)
+                        catch
                         {
-                            case (0):
-                                number = "    " + (globalQ).ToString() + ") ";
-                                break;
-                            case (1):
-                                number = "    " + (globalQ).ToString() + ". ";
-                                break;
-                            case (2):
-                                number = "    №" + (globalQ).ToString() + " ";
-                                break;
+                            range.Text = "no text";
                         }
-                        if (blocks[0] is Paragraph )
+                        newQuestions[i].Insert(GetNextRnd(0, newQuestions[i].Count), fd);
+                    }
+                }
+                int[] questionsID = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+                for (int v = 0; v < variants; v++)
+                {
+                    FlowDocument thisVariant = new FlowDocument();
+                    Paragraph v_text = new Paragraph(new Run("Вариант " + (v + 1).ToString()));
+                    v_text.TextAlignment = TextAlignment.Center;
+                    v_text.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
+                    v_text.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
+                    v_text.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                    FlowDocument to = new FlowDocument();
+                    TextRange range = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
+                    MemoryStream stream = new MemoryStream();
+                    range.Save(stream, DataFormats.Rtf);
+                    TextRange range2 = new TextRange(to.ContentEnd, to.ContentEnd);
+                    range2.Load(stream, DataFormats.Rtf);
+                    stream.Close();
+
+                    foreach (Block b in to.Blocks)
+                    {
+                        if (b is Paragraph)
                         {
-                            Paragraph par = blocks[0] as Paragraph;
-                            var images = FindAllImagesInParagraph(par);
-                            if (images == null)
+                            Paragraph par = b as Paragraph;
+                            par.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
+                            par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
+                            par.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                        }
+                    }
+
+                    thisVariant.Blocks.AddRange(to.Blocks.ToList());
+                    thisVariant.Blocks.Add(v_text);
+                    thisVariant.Blocks.Add(new Paragraph(new Run("")));
+
+                    int globalQ = 1;
+                    for (int dif = 0; dif < 10; dif++)
+                    {
+                        for (int q = 0; q < quesOfDif[dif]; q++)
+                        {
+                            FlowDocument currentFD = new FlowDocument();
+                            TextRange rrrange = new TextRange(newQuestions[dif][questionsID[dif]].ContentStart, newQuestions[dif][questionsID[dif]].ContentEnd);
+                            MemoryStream sstream = new MemoryStream();
+                            rrrange.Save(sstream, DataFormats.Rtf);
+                            TextRange rrrange2 = new TextRange(currentFD.ContentEnd, currentFD.ContentEnd);
+                            rrrange2.Load(sstream, DataFormats.Rtf);
+                            sstream.Close();
+
+                            List<Block> blocks = currentFD.Blocks.ToList();
+                            foreach (Block b in blocks)
                             {
-                                TextRange tr1 = new TextRange(par.ContentStart, par.ContentEnd);
-                                tr1.Text = number + tr1.Text;
-                                blocks.RemoveAt(0);
-                                par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                par.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
-                                thisVariant.Blocks.Add(par);
+                                b.TextAlignment = TextAlignment.Left;
+                                b.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
+                                b.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                            }
+
+                            string number = "";
+                            switch (comboBox3.SelectedIndex)
+                            {
+                                case (0):
+                                    number = "    " + (globalQ).ToString() + ") ";
+                                    break;
+                                case (1):
+                                    number = "    " + (globalQ).ToString() + ". ";
+                                    break;
+                                case (2):
+                                    number = "    №" + (globalQ).ToString() + " ";
+                                    break;
+                            }
+                            if (blocks[0] is Paragraph)
+                            {
+                                Paragraph par = blocks[0] as Paragraph;
+                                var images = FindAllImagesInParagraph(par);
+                                if (images == null)
+                                {
+                                    TextRange tr1 = new TextRange(par.ContentStart, par.ContentEnd);
+                                    tr1.Text = number + tr1.Text;
+                                    blocks.RemoveAt(0);
+                                    par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
+                                    par.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                                    thisVariant.Blocks.Add(par);
+                                }
+                                else
+                                {
+                                    Paragraph newPar = new Paragraph(new Run(number));
+                                    newPar.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
+                                    newPar.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                                    newPar.TextAlignment = TextAlignment.Left;
+                                    thisVariant.Blocks.Add(newPar);
+                                }
                             }
                             else
                             {
@@ -226,35 +234,31 @@ namespace TaskMaker
                                 newPar.TextAlignment = TextAlignment.Left;
                                 thisVariant.Blocks.Add(newPar);
                             }
-                        }
-                        else
-                        {
-                            Paragraph newPar = new Paragraph(new Run(number));
-                            newPar.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                            newPar.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
-                            newPar.TextAlignment = TextAlignment.Left;
-                            thisVariant.Blocks.Add(newPar);
-                        }
 
-                        thisVariant.Blocks.AddRange(blocks);
-                        thisVariant.Blocks.Add(new Paragraph(new Run("")));
+                            thisVariant.Blocks.AddRange(blocks);
+                            thisVariant.Blocks.Add(new Paragraph(new Run("")));
 
-                        globalQ++;
-                        questionsID[dif]++;
-                        questionsID[dif] = (questionsID[dif] > newQuestions[dif].Count - 1) ? 0 : questionsID[dif];
+                            globalQ++;
+                            questionsID[dif]++;
+                            questionsID[dif] = (questionsID[dif] > newQuestions[dif].Count - 1) ? 0 : questionsID[dif];
+                        }
                     }
-                }
-                //Variants.Add(thisVariant);
+                    //Variants.Add(thisVariant);
 
-                object ffileName = "test" + v.ToString() + ".docx";
-                MemoryStream ms = new MemoryStream();
-                var rrrrange = new TextRange(thisVariant.ContentStart, thisVariant.ContentEnd);
-                var fffStream = new MemoryStream();
-                rrrrange.Save(fffStream, System.Windows.DataFormats.Rtf);
-                string t = Encoding.UTF8.GetString(fffStream.ToArray());
-                ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(t));
-                CreateWordDocument((string)ffileName, ms);
-                Variants.Add(System.IO.Path.GetFullPath((string)ffileName));
+                    object ffileName = "test" + v.ToString() + ".docx";
+                    MemoryStream ms = new MemoryStream();
+                    var rrrrange = new TextRange(thisVariant.ContentStart, thisVariant.ContentEnd);
+                    var fffStream = new MemoryStream();
+                    rrrrange.Save(fffStream, System.Windows.DataFormats.Rtf);
+                    string t = Encoding.UTF8.GetString(fffStream.ToArray());
+                    ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(t));
+                    CreateWordDocument((string)ffileName, ms);
+                    Variants.Add(System.IO.Path.GetFullPath((string)ffileName));
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка. Для создания такой работы недостаточно вопросов", "Ошибка");
             }
             object mmissing = Missing.Value;
             object rreadOnly = false;
@@ -370,9 +374,9 @@ namespace TaskMaker
 
         private void CreatePdfDocument(Microsoft.Office.Interop.Word.Document wordDocument, string path)
         {
-            //Microsoft.Office.Interop.Word.Application appWord = new Microsoft.Office.Interop.Word.Application();
             wordDocument.ExportAsFixedFormat(path, Microsoft.Office.Interop.Word.WdExportFormat.wdExportFormatPDF);
             wordDocument.Close();
+            wordDocument.Application.Quit();
         }
 
         private void Say_NO_to_letters(object sender, TextCompositionEventArgs e)
