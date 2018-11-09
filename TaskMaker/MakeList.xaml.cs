@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 using Spire.Doc;
+using System.Reflection;
+
 
 namespace TaskMaker
 {
@@ -36,16 +38,16 @@ namespace TaskMaker
 
         private void create_Click(object sender, RoutedEventArgs e)
         {
-            FlowDocument flowDoc = CreateList();
+            FlowDocument flowDoc = CreateList();//
 
             if (flowDoc != null)
             {
-                MemoryStream ms = new MemoryStream();
-                var rrange = new TextRange(flowDoc.ContentStart, flowDoc.ContentEnd);
-                var ffStream = new MemoryStream();
-                rrange.Save(ffStream, System.Windows.DataFormats.Rtf);
-                string stream = Encoding.UTF8.GetString(ffStream.ToArray());
-                ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(stream));
+                //MemoryStream ms = new MemoryStream();
+                //var rrange = new TextRange(flowDoc.ContentStart, flowDoc.ContentEnd);
+                //var ffStream = new MemoryStream();
+                //rrange.Save(ffStream, System.Windows.DataFormats.Rtf);
+                //string stream = Encoding.UTF8.GetString(ffStream.ToArray());
+                //ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(stream));
                 System.Windows.Forms.SaveFileDialog sfd = new System.Windows.Forms.SaveFileDialog();
 
                 if (FormatBox.SelectedIndex == 0)
@@ -76,10 +78,36 @@ namespace TaskMaker
                         {
                             if (FormatBox.SelectedIndex == 0)
                             {
-                                CreatePdfDocument(sfd.FileName, ms);
+                                MemoryStream ms = new MemoryStream();
+                                var rrange = new TextRange(flowDoc.ContentStart, flowDoc.ContentEnd);
+                                var ffStream = new MemoryStream();
+                                rrange.Save(ffStream, System.Windows.DataFormats.Rtf);
+                                string stream = Encoding.UTF8.GetString(ffStream.ToArray());
+                                ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(stream));
+
+                                CreateWordDocument("test.docx", ms);
+                                Microsoft.Office.Interop.Word.Application WordApp = new Microsoft.Office.Interop.Word.Application();
+                                object sst = System.IO.Path.GetFullPath("test.docx");
+                                object missing = Missing.Value;
+                                object missing2 = Missing.Value;
+                                object readOnly = false;
+                                object isVisible = false;
+                                Microsoft.Office.Interop.Word.Document wDoc = WordApp.Documents.Open(ref sst,
+                                                                           ref missing, ref readOnly, ref missing,
+                                                                           ref missing, ref missing, ref missing,
+                                                                           ref missing, ref missing, ref missing,
+                                                                           ref missing, ref isVisible);
+                                CreatePdfDocument(wDoc,sfd.FileName);
+                                File.Delete((string)sst);
                             }
                             else
                             {
+                                MemoryStream ms = new MemoryStream();
+                                var rrange = new TextRange(flowDoc.ContentStart, flowDoc.ContentEnd);
+                                var ffStream = new MemoryStream();
+                                rrange.Save(ffStream, System.Windows.DataFormats.Rtf);
+                                string stream = Encoding.UTF8.GetString(ffStream.ToArray());
+                                ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(stream));
                                 CreateWordDocument(sfd.FileName, ms);
                             }
                             MessageBox.Show("Список успешно экспортирован.", "Готово");
@@ -190,7 +218,7 @@ namespace TaskMaker
                                             if (images == null)
                                             {
                                                 TextRange tr1 = new TextRange(par.ContentStart, par.ContentEnd);
-                                                tr1.Text = number + tr1.Text;
+                                                tr1.Text = numberS + tr1.Text;
                                                 blocks.RemoveAt(0);
                                                 par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
                                                 par.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
@@ -344,12 +372,12 @@ namespace TaskMaker
             ms.Close();
         }
 
-        private void CreatePdfDocument(string filePath, MemoryStream ms)
+        private void CreatePdfDocument(Microsoft.Office.Interop.Word.Document wordDocument, string path)
         {
-            Document document = new Document();
-            document.LoadFromStream(ms, FileFormat.Rtf);
-            document.SaveToFile(filePath, FileFormat.PDF);
-            ms.Close();
+            wordDocument.ExportAsFixedFormat(path, Microsoft.Office.Interop.Word.WdExportFormat.wdExportFormatPDF);
+            Microsoft.Office.Interop.Word.Application app = wordDocument.Application;
+            wordDocument.Close();
+            app.Quit();
         }
 
         List<Image> FindAllImagesInParagraph(Paragraph paragraph)
