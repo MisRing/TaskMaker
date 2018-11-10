@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Editor
 {
@@ -356,8 +351,7 @@ namespace Editor
                                   CreateImageUri("integrals", "integralSubSuper.png"),
                                   CreateImageUri("integrals", "integralBottom.png"),
                                   CreateImageUri("integrals", "integralBottomTop.png"),
-                                  CreateImageUri("integrals", "integralBottomTop.png"), //this will be left empty using CommandType.None
-
+                                  CreateImageUri("integrals", "integralBottomTop.png"),
                                   CreateImageUri("integrals", "dIntegral.png"),
                                   CreateImageUri("integrals", "dIntegralSub.png"),
                                   CreateImageUri("integrals", "dIntegralBottom.png"),                                  
@@ -388,7 +382,7 @@ namespace Editor
                                };
 
             CommandType[] commands = Enumerable.Repeat(CommandType.SignComposite, 27).ToArray();
-            commands[5] = CommandType.None; //empty cell
+            commands[5] = CommandType.None;
 
             object[] paramz = { 
                                   new object [] {Position.None,    SignCompositeSymbol.Integral} ,
@@ -397,7 +391,7 @@ namespace Editor
                                   new object [] {Position.Bottom,    SignCompositeSymbol.Integral} ,
                                   new object [] {Position.BottomTop, SignCompositeSymbol.Integral} ,
                                   
-                                  0 /*Empty cell */,
+                                  0 ,
 
                                   new object [] {Position.None, SignCompositeSymbol.DoubleIntegral} ,
                                   new object [] {Position.Sub, SignCompositeSymbol.DoubleIntegral} ,
