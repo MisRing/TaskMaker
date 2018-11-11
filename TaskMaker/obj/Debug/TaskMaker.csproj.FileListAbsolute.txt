@@ -6,6 +6,7 @@ E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Interaction.exe
 E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.Doc.dll
 E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.License.dll
 E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.Pdf.dll
+E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Microsoft.mshtml.dll
 E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Editor.pdb
 E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Interaction.pdb
 E:\Task Maker\TaskMaker\TaskMaker\bin\Debug\Interaction.exe.config

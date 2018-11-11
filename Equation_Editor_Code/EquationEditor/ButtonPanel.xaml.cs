@@ -1,7 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
 namespace Editor
 {
     /// <summary>
@@ -16,7 +26,7 @@ namespace Editor
         {
             InitializeComponent();
             commandDetails = listCommandDetails;
-            mainGrid.Columns = columns;
+            mainGrid.Columns = columns;//listButtonDetails.Count < 5 ? listButtonDetails.Count : 5;
             mainGrid.Rows = (int)Math.Ceiling(listCommandDetails.Count / (double)mainGrid.Columns);
             mainGrid.Width = 30 * mainGrid.Columns;
             mainGrid.Height = 30 * mainGrid.Rows;
@@ -30,6 +40,7 @@ namespace Editor
                 b.SetValue(Grid.ColumnProperty, i % mainGrid.Columns);
                 b.SetValue(Grid.RowProperty, i / mainGrid.Columns);
                 b.FontFamily = FontFactory.GetFontFamily(FontType.STIXGeneral);
+                //b.FontSize = 10;
                 if (commandDetails[i].Image != null)
                 {
                     b.Content = commandDetails[i].Image;
@@ -39,7 +50,7 @@ namespace Editor
                     b.Content = commandDetails[i].UnicodeString;
                 }
                 mainGrid.Children.Add(b);
-                if (commandDetails[i].CommandType == CommandType.None) 
+                if (commandDetails[i].CommandType == CommandType.None) //This is an ugly kludge!
                 {
                     b.Visibility = System.Windows.Visibility.Hidden;
                 }

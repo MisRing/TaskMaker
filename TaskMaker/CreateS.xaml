@@ -29,9 +29,9 @@
         <Border Grid.Column="0" BorderThickness="2" BorderBrush="Black" HorizontalAlignment="Stretch" Margin="10,40,0,100" VerticalAlignment="Stretch" />
 
         <Canvas Grid.Column="0">
-            <Image Source="search.jpg" Margin="0,0,0,0" Height="22" Width="160" Canvas.Left="10" Canvas.Top="10"/>
-            <TextBlock x:Name="SearchStatic" Background="Transparent" HorizontalAlignment="Left" Height="21" TextWrapping="Wrap" Foreground="Gray" Text="  Поиск по темам..." VerticalAlignment="Top" Width="130" Canvas.Left="10" Canvas.Top="13"/>
-            <TextBox x:Name="Search" Background="Transparent" Foreground="Black" HorizontalAlignment="Left" Height="22"   BorderThickness="0" VerticalAlignment="Top" Width="130" TextInput="Search_TextInput" LostKeyboardFocus="Search_LostKeyboardFocus" PreviewTextInput="Search_TextInput" Canvas.Left="10" Canvas.Top="12" TextChanged="Search_TextChanged" GotFocus="Search_GotFocus"/>
+            <Image Source="search.jpg" Margin="0,0,0,0" Height="21" Width="150" Canvas.Left="10" Canvas.Top="10"/>
+            <TextBlock x:Name="SearchStatic" Background="Transparent" HorizontalAlignment="Left" Height="21" TextWrapping="Wrap" Foreground="Gray" Text="  Поиск по темам..." VerticalAlignment="Top" Width="123" Canvas.Left="10" Canvas.Top="13"/>
+            <TextBox x:Name="Search" Background="Transparent" Foreground="Black" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap"  BorderThickness="0" VerticalAlignment="Top" Width="123" TextInput="Search_TextInput" LostKeyboardFocus="Search_LostKeyboardFocus" PreviewTextInput="Search_TextInput" Canvas.Left="10" Canvas.Top="12" TextChanged="Search_TextChanged" GotFocus="Search_GotFocus"/>
             <Button x:Name="del_thems" FontSize="17"  Foreground="#FFD7D7D7" BorderThickness="2" Style="{StaticResource dif}" Content="Удалить все темы" HorizontalAlignment="Left" Canvas.Bottom="20" Canvas.Left="10" VerticalAlignment="Top" Width="150" Height="60" Background="#FF990404" BorderBrush="Black" Click="DeliteAllThemes"/>
 
         </Canvas>
