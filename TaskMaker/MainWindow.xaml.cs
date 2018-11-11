@@ -43,8 +43,8 @@ namespace TaskMaker
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //if (!FileAssociation.IsAssociated(".task"))
-            //    FileAssociation.Associate(".task", "ClassID.ProgID", "ext File", "file.ico", "YourApplication.exe");
+            if (!FileAssociation.IsAssociated(".task"))
+                FileAssociation.Associate("ext File", System.IO.Path.GetFullPath("file.ico"));
             string[] args = Environment.GetCommandLineArgs();
 
             try

@@ -12,7 +12,7 @@ namespace TaskMaker
         private const long SHCNE_ASSOCCHANGED = 0x8000000L;
         private const uint SHCNF_IDLIST = 0x0U;
 
-        public static void Associate(string extension, string progID, string description, string icon, string application)
+        public static void Associate(string description, string icon)
         {
             Registry.ClassesRoot.CreateSubKey(FILE_EXTENSION).SetValue("", Application.ProductName);
             if (Application.ProductName != null && Application.ProductName.Length > 0)

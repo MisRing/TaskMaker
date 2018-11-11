@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
+using System.Reflection;
 using Spire.Doc;
 
 namespace TaskMaker
@@ -76,7 +77,19 @@ namespace TaskMaker
                         {
                             if (FormatBox.SelectedIndex == 0)
                             {
-                                CreatePdfDocument(sfd.FileName, ms);
+                                CreateWordDocument("bbb.docx", ms);
+                                object missing = Missing.Value;
+                                object readOnly = false;
+                                object isVisible = false;
+                                object sst = System.IO.Path.GetFullPath("bbb.docx");
+                                Microsoft.Office.Interop.Word.Application WordApp = new Microsoft.Office.Interop.Word.Application();
+                                Microsoft.Office.Interop.Word.Document wDoc = WordApp.Documents.Open(ref sst,
+                                                           ref missing, ref readOnly, ref missing,
+                                                           ref missing, ref missing, ref missing,
+                                                           ref missing, ref missing, ref missing,
+                                                           ref missing, ref isVisible);
+                                CreatePdfDocument(wDoc, sfd.FileName);
+                                File.Delete("bbb.docx");
                             }
                             else
                             {
@@ -124,26 +137,17 @@ namespace TaskMaker
                         int dif = 1;
                         foreach (List<Question> ql in Themes[themeID].Questions)
                         {
-
-                            Paragraph difText = new Paragraph(new Run("Вопросы " + dif.ToString() + " сложности"));
-                            difText.TextAlignment = TextAlignment.Center;
-                            difText.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
-                            difText.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
-                            difText.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
-                            
-                            flowDoc.Blocks.Add(difText);
-
                             int number = 1;
-                            if (ql.Count == 0)
+                            if (ql.Count != 0)
                             {
-                                Paragraph noText = new Paragraph(new Run("Нет вопросов."));
-                                noText.TextAlignment = TextAlignment.Center;
-                                noText.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                noText.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
-                                flowDoc.Blocks.Add(noText);
-                            }
-                            else
-                            {
+                                Paragraph difText = new Paragraph(new Run("Вопросы " + dif.ToString() + " сложности"));
+                                difText.TextAlignment = TextAlignment.Center;
+                                difText.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
+                                difText.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
+                                difText.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+
+                                flowDoc.Blocks.Add(difText);
+
                                 foreach (Question q in ql)
                                 {
                                     FlowDocument currentQuestion = new FlowDocument();
@@ -344,12 +348,12 @@ namespace TaskMaker
             ms.Close();
         }
 
-        private void CreatePdfDocument(string filePath, MemoryStream ms)
+        private void CreatePdfDocument(Microsoft.Office.Interop.Word.Document wordDocument, string path)
         {
-            Document document = new Document();
-            document.LoadFromStream(ms, FileFormat.Rtf);
-            document.SaveToFile(filePath, FileFormat.PDF);
-            ms.Close();
+            wordDocument.ExportAsFixedFormat(path, Microsoft.Office.Interop.Word.WdExportFormat.wdExportFormatPDF);
+            Microsoft.Office.Interop.Word.Application applic = wordDocument.Application;
+            wordDocument.Close();
+            applic.Quit();
         }
 
         List<Image> FindAllImagesInParagraph(Paragraph paragraph)

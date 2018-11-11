@@ -263,7 +263,7 @@ namespace TaskMaker
             object mmissing = Missing.Value;
             object rreadOnly = false;
             object isVvisible = false;
-            Microsoft.Office.Interop.Word.Application WordApp2 = new Microsoft.Office.Interop.Word.Application();
+            Microsoft.Office.Interop.Word.Application WordApp = new Microsoft.Office.Interop.Word.Application();
             object aabsPath = System.IO.Path.GetFullPath(path);
             Microsoft.Office.Interop.Word.Document FinalDoc = new Microsoft.Office.Interop.Word.Document();
             object aabsPath2 = System.IO.Path.GetFullPath("notFull.docx");
@@ -276,13 +276,12 @@ namespace TaskMaker
                 Microsoft.Office.Interop.Word.Range FinalDocRange = FinalDoc.Range(FinalDoc.Content.End - 1, FinalDoc.Content.End);
                 Microsoft.Office.Interop.Word.Range NotFinalDocRange = NotFinalDoc.Range(NotFinalDoc.Content.End - 1, NotFinalDoc.Content.End);
 
-                //Microsoft.Office.Interop.Word.Application WordApp = new Microsoft.Office.Interop.Word.Application();
                 object sst = st;
                 object missing = Missing.Value;
                 object missing2 = Missing.Value;
                 object readOnly = false;
                 object isVisible = false;
-                Microsoft.Office.Interop.Word.Document wDoc = WordApp2.Documents.Open(ref sst,
+                Microsoft.Office.Interop.Word.Document wDoc = WordApp.Documents.Open(ref sst,
                                                            ref missing, ref readOnly, ref missing,
                                                            ref missing, ref missing, ref missing,
                                                            ref missing, ref missing, ref missing,
@@ -318,7 +317,7 @@ namespace TaskMaker
             NotFinalDoc.Close();
             FinalDoc.SaveAs2(ref aabsPath, ref mmissing, ref rreadOnly, ref mmissing, ref mmissing, ref mmissing, ref mmissing,
                                                          ref mmissing, ref mmissing, ref mmissing, ref mmissing, ref isVvisible);
-            WordApp2.Quit();
+            WordApp.Quit();
             File.Delete((string)aabsPath2);
             foreach (string st in Variants)
             {
@@ -375,8 +374,9 @@ namespace TaskMaker
         private void CreatePdfDocument(Microsoft.Office.Interop.Word.Document wordDocument, string path)
         {
             wordDocument.ExportAsFixedFormat(path, Microsoft.Office.Interop.Word.WdExportFormat.wdExportFormatPDF);
+            Microsoft.Office.Interop.Word.Application applic = wordDocument.Application;
             wordDocument.Close();
-            wordDocument.Application.Quit();
+            applic.Quit();
         }
 
         private void Say_NO_to_letters(object sender, TextCompositionEventArgs e)

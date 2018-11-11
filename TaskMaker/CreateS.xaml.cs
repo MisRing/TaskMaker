@@ -193,7 +193,7 @@ namespace TaskMaker
 
         public bool WasLoaded = false;
         public Button[] DifButtons = new Button[10];
-        public string SaveFilePath = "save.xml";
+        public string SaveFilePath = System.AppDomain.CurrentDomain.BaseDirectory + "save.xml";
         private void ThemePageLoaded(object sender, RoutedEventArgs e)
         {
             if (!WasLoaded)
@@ -209,20 +209,24 @@ namespace TaskMaker
                 DifButtons[8] = dif9;
                 DifButtons[9] = dif10;
 
-                if (File.Exists("save.xml"))
+                if (File.Exists(SaveFilePath))
                 {
                     try
                     {
                         LoadAll();
                         if (loadedFilePath != "none")
                         {
-                            Import(loadedFilePath);
+                            if (MessageBox.Show("Импортировать темы из этого файла?", "Импорт тем", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                            {
+                                Import(loadedFilePath);
+                                MessageBox.Show("Импорт завершен.", "Готово");
+                            }
                             loadedFilePath = "none";
                         }
                     }
                     catch
                     {
-                        MessageBox.Show("При загрузке сохраненных данных произошла ошибка. \n Ваши сохраненные данные не были утеряны и были скопированны в следующий файл: " + SaveFilePath.Replace(".xml", "") + "_Error.xml", "Ошибка загрузки.");
+                        MessageBox.Show("При загрузке сохраненных данных произошла ошибка. \nВаши сохраненные данные не были утеряны и были скопированны в следующий файл: " + SaveFilePath.Replace(".xml", "") + "_Error.xml", "Ошибка загрузки.");
                         File.Copy(SaveFilePath, SaveFilePath.Replace(".xml", "") + "_Error.xml", true);
                     }
                 }
