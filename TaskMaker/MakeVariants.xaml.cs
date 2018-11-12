@@ -317,7 +317,6 @@ namespace TaskMaker
             NotFinalDoc.Close();
             FinalDoc.SaveAs2(ref aabsPath, ref mmissing, ref rreadOnly, ref mmissing, ref mmissing, ref mmissing, ref mmissing,
                                                          ref mmissing, ref mmissing, ref mmissing, ref mmissing, ref isVvisible);
-            WordApp.Quit();
             File.Delete((string)aabsPath2);
             foreach (string st in Variants)
             {
