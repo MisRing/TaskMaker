@@ -40,17 +40,6 @@ namespace TaskMaker
             if(v_count.Text != "" && v_count.Text != null && q_count.Text != "" && q_count.Text != null)
             {
                 bool Do = true;
-                //MemoryStream ms = new MemoryStream();
-                //try
-                //{
-                //ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(RandomiseVariants()));
-                //RandomiseVariants().
-                //}
-                //catch
-                //{
-                //    MessageBox.Show("Ошибка. Для создания такой работы недостаточно вопросов", "Ошибка");
-                //    Do = false;
-                //}
 
                 if (Do)
                 {
@@ -207,24 +196,11 @@ namespace TaskMaker
                             if (blocks[0] is Paragraph)
                             {
                                 Paragraph par = blocks[0] as Paragraph;
-                                var images = FindAllImagesInParagraph(par);
-                                if (images == null)
-                                {
-                                    TextRange tr1 = new TextRange(par.ContentStart, par.ContentEnd);
-                                    tr1.Text = number + tr1.Text;
-                                    blocks.RemoveAt(0);
-                                    par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                    par.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
-                                    thisVariant.Blocks.Add(par);
-                                }
-                                else
-                                {
-                                    Paragraph newPar = new Paragraph(new Run(number));
-                                    newPar.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                    newPar.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
-                                    newPar.TextAlignment = TextAlignment.Left;
-                                    thisVariant.Blocks.Add(newPar);
-                                }
+                                par.Inlines.InsertBefore(par.Inlines.First(), new Run(number));
+                                blocks.RemoveAt(0);
+                                par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
+                                par.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                                thisVariant.Blocks.Add(par);
                             }
                             else
                             {
@@ -243,7 +219,6 @@ namespace TaskMaker
                             questionsID[dif] = (questionsID[dif] > newQuestions[dif].Count - 1) ? 0 : questionsID[dif];
                         }
                     }
-                    //Variants.Add(thisVariant);
 
                     object ffileName = "test" + v.ToString() + ".docx";
                     MemoryStream ms = new MemoryStream();

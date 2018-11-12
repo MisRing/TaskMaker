@@ -190,24 +190,11 @@ namespace TaskMaker
                                         if (blocks[0] is Paragraph)
                                         {
                                             Paragraph par = blocks[0] as Paragraph;
-                                            var images = FindAllImagesInParagraph(par);
-                                            if (images == null)
-                                            {
-                                                TextRange tr1 = new TextRange(par.ContentStart, par.ContentEnd);
-                                                tr1.Text = number + tr1.Text;
-                                                blocks.RemoveAt(0);
-                                                par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                                par.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
-                                                flowDoc.Blocks.Add(par);
-                                            }
-                                            else
-                                            {
-                                                Paragraph newPar = new Paragraph(new Run(numberS));
-                                                newPar.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                                newPar.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
-                                                newPar.TextAlignment = TextAlignment.Left;
-                                                flowDoc.Blocks.Add(newPar);
-                                            }
+                                            par.Inlines.InsertBefore(par.Inlines.First(), new Run(numberS));
+                                            blocks.RemoveAt(0);
+                                            par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
+                                            par.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                                            flowDoc.Blocks.Add(par);
                                         }
                                         else
                                         {
