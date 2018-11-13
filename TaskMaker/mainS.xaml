@@ -26,7 +26,7 @@
         <Button Grid.Column="1" Grid.Row="2" x:Name="Exit" Style="{StaticResource one}" Content="Выход"    HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         <Button Grid.Column="0" Grid.Row="0" x:Name="FAQ" Style="{StaticResource ResourceKey=one}" Content="Как пользоваться" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         <Button Grid.Column="1" Grid.Row="0" x:Name="Creators" Style="{StaticResource ResourceKey=one}" Content="Создатели"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        <Button Grid.Column="0" Grid.Row="2" x:Name="Exit_Copy" Style="{StaticResource ResourceKey=one}" Content="О программе" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Button Grid.Column="0" Grid.Row="2" x:Name="About" Style="{StaticResource ResourceKey=one}" Content="О программе" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="About_Click"/>
 
     </Grid>
 </Page>

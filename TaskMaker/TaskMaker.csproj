@@ -110,6 +110,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FileAssociation.cs" />
     <Compile Include="grec.xaml.cs">
       <DependentUpon>grec.xaml</DependentUpon>
@@ -127,6 +130,10 @@
     </Compile>
     <Compile Include="Theme.cs" />
     <Compile Include="ThemeData.cs" />
+    <Page Include="About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CreateS.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

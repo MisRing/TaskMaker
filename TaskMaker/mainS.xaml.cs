@@ -33,5 +33,12 @@ namespace TaskMaker
             MW.Content = create;
         }
 
+        private void About_Click(object sender, RoutedEventArgs e)
+        {
+            
+             //   About a = new About(MW);
+             //   MW.Content = a;
+            
+        }
     }
 }

@@ -75,7 +75,7 @@ namespace TaskMaker {
         
         #line 29 "..\..\mainS.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.Button Exit_Copy;
+        internal System.Windows.Controls.Button About;
         
         #line default
         #line hidden
@@ -129,7 +129,13 @@ namespace TaskMaker {
             this.Creators = ((System.Windows.Controls.Button)(target));
             return;
             case 5:
-            this.Exit_Copy = ((System.Windows.Controls.Button)(target));
+            this.About = ((System.Windows.Controls.Button)(target));
+            
+            #line 29 "..\..\mainS.xaml"
+            this.About.Click += new System.Windows.RoutedEventHandler(this.About_Click);
+            
+            #line default
+            #line hidden
             return;
             }
             this._contentLoaded = true;
