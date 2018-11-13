@@ -1,2 +1,27 @@
 <?xml version="1.0"?>
-<ArrayOfThemeData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" />
+<ArrayOfThemeData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ThemeData>
+    <ThemeName>Новая тема</ThemeName>
+    <Questions>
+      <ArrayOfQuestionData>
+        <QuestionData>
+          <Text>&lt;FlowDocument PagePadding="5,0,5,0" AllowDrop="True" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"&gt;&lt;Paragraph&gt;asdsdc&lt;/Paragraph&gt;&lt;Paragraph&gt;&lt;Run FontWeight="Bold"&gt;asdasdascas&lt;/Run&gt;&lt;/Paragraph&gt;&lt;Paragraph&gt;&lt;Run FontStyle="Italic"&gt;aecsdscsscsdx&lt;/Run&gt;&lt;/Paragraph&gt;&lt;Paragraph&gt;&lt;Run&gt;&lt;Run.TextDecorations&gt;&lt;TextDecoration Location="Underline" /&gt;&lt;/Run.TextDecorations&gt;cadcasdczsc&lt;/Run&gt;&lt;/Paragraph&gt;&lt;Paragraph&gt;&lt;Run FontStyle="Italic" FontWeight="Bold"&gt;&lt;Run.TextDecorations&gt;&lt;TextDecoration Location="Underline" /&gt;&lt;/Run.TextDecorations&gt;asczdcszc&lt;/Run&gt;&lt;Run BaselineAlignment="Superscript" FontSize="11.5"&gt;sdc sdsc&lt;/Run&gt;&lt;/Paragraph&gt;&lt;Paragraph&gt;&lt;Run BaselineAlignment="Superscript" FontSize="11.5"&gt;csdcszcz z&lt;/Run&gt;&lt;Run BaselineAlignment="Subscript" FontSize="11"&gt;zczxc z&lt;/Run&gt;zdxczcz&lt;/Paragraph&gt;&lt;/FlowDocument&gt;</Text>
+          <Dif>1</Dif>
+        </QuestionData>
+        <QuestionData>
+          <Text>&lt;FlowDocument PagePadding="5,0,5,0" AllowDrop="True" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"&gt;&lt;Paragraph&gt;123456&lt;Run BaselineAlignment="Subscript" FontSize="11"&gt;3456789&lt;/Run&gt;&lt;Run BaselineAlignment="Superscript" FontSize="11.5"&gt;456789&lt;/Run&gt;&lt;Run BaselineAlignment="Subscript" FontSize="11"&gt;56789&lt;/Run&gt;657890&lt;Run BaselineAlignment="Subscript" FontSize="11"&gt;67890-&lt;/Run&gt;&lt;Run BaselineAlignment="Superscript" FontSize="11.5"&gt;56789&lt;/Run&gt;&lt;/Paragraph&gt;&lt;Paragraph&gt;&lt;Run BaselineAlignment="Superscript" FontSize="11.5"&gt;56787654567865456765678656786&lt;/Run&gt;&lt;/Paragraph&gt;&lt;/FlowDocument&gt;</Text>
+          <Dif>1</Dif>
+        </QuestionData>
+      </ArrayOfQuestionData>
+      <ArrayOfQuestionData />
+      <ArrayOfQuestionData />
+      <ArrayOfQuestionData />
+      <ArrayOfQuestionData />
+      <ArrayOfQuestionData />
+      <ArrayOfQuestionData />
+      <ArrayOfQuestionData />
+      <ArrayOfQuestionData />
+      <ArrayOfQuestionData />
+    </Questions>
+  </ThemeData>
+</ArrayOfThemeData>

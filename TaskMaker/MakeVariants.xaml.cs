@@ -37,68 +37,54 @@ namespace TaskMaker
 
         private void create_Click(object sender, RoutedEventArgs e)
         {
-            if(v_count.Text != "" && v_count.Text != null && q_count.Text != "" && q_count.Text != null)
+            if (v_count.Text != "" && v_count.Text != null && q_count.Text != "" && q_count.Text != null)
             {
-                bool Do = true;
-                //MemoryStream ms = new MemoryStream();
-                //try
-                //{
-                //ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(RandomiseVariants()));
-                //RandomiseVariants().
-                //}
-                //catch
-                //{
-                //    MessageBox.Show("Ошибка. Для создания такой работы недостаточно вопросов", "Ошибка");
-                //    Do = false;
-                //}
+                System.Windows.Forms.SaveFileDialog sfd = new System.Windows.Forms.SaveFileDialog();
 
-                if (Do)
+                if (fileType.SelectedIndex == 0)
                 {
-                    System.Windows.Forms.SaveFileDialog sfd = new System.Windows.Forms.SaveFileDialog();
+                    sfd.FileName = "NewTest.pdf";
+                    sfd.Filter = "pdf files (*.pdf)|*.pdf";
+                    sfd.FilterIndex = 1;
+                }
+                else
+                {
+                    sfd.FileName = "NewTest.docx";
+                    sfd.Filter = "docx files (*.docx)|*.docx|doc files (*.doc)|*.doc";
+                    sfd.FilterIndex = 2;
+                }
+                sfd.RestoreDirectory = true;
 
-                    if (fileType.SelectedIndex == 0)
+                if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    if (sfd.FileName != null)
                     {
-                        sfd.FileName = "NewTest.pdf";
-                        sfd.Filter = "pdf files (*.pdf)|*.pdf";
-                        sfd.FilterIndex = 1;
-                    }
-                    else
-                    {
-                        sfd.FileName = "NewTest.docx";
-                        sfd.Filter = "docx files (*.docx)|*.docx|doc files (*.doc)|*.doc";
-                        sfd.FilterIndex = 2;
-                    }
-                    sfd.RestoreDirectory = true;
-
-                    if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                    {
-                        if (sfd.FileName != null)
+                        try
                         {
-                            try
+                            if (fileType.SelectedIndex == 0)
                             {
-                                if (fileType.SelectedIndex == 0)
-                                {
-                                    CreatePdfDocument(RandomiseVariants("pdf.docx"), sfd.FileName);
-                                    File.Delete("pdf.docx"); 
-                                }
-                                else
-                                {
-                                    RandomiseVariants(sfd.FileName).Close();
-                                }
-                                MessageBox.Show("Генерация завершена.", "Готово");
+                                CreatePdfDocument(RandomiseVariants("pdf.docx"), sfd.FileName);
+                                File.Delete("pdf.docx");
                             }
-                            catch
+                            else
                             {
-                                MessageBox.Show("Не удаётся получить доступ к файлу.", "Ошибка");
+                                RandomiseVariants(sfd.FileName).Close();
                             }
+                            MessageBox.Show("Генерация завершена.", "Готово");
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Не удаётся получить доступ к файлу.", "Ошибка");
                         }
                     }
                 }
             }
+            
         }
 
         public Microsoft.Office.Interop.Word.Document RandomiseVariants(string path)
         {
+            FontFamily font = new FontFamily("font.ttf");
             List<string> Variants = new List<string>();
             try
             {
@@ -126,15 +112,18 @@ namespace TaskMaker
                     {
                         FlowDocument fd = new FlowDocument();
                         var range = new TextRange(fd.ContentStart, fd.ContentEnd);
+
                         try
                         {
-                            var fStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(q.Text));
-                            range.Load(fStream, System.Windows.DataFormats.Rtf);
+                            MemoryStream sstream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(q.Text));
+                            fd = System.Windows.Markup.XamlReader.Load(sstream) as FlowDocument;
+                            sstream.Close();
                         }
                         catch
                         {
-                            range.Text = "no text";
+                            fd.Blocks.Add(new Paragraph(new Run("no text")));
                         }
+
                         newQuestions[i].Insert(GetNextRnd(0, newQuestions[i].Count), fd);
                     }
                 }
@@ -146,13 +135,11 @@ namespace TaskMaker
                     v_text.TextAlignment = TextAlignment.Center;
                     v_text.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
                     v_text.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
-                    v_text.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                    v_text.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
                     FlowDocument to = new FlowDocument();
-                    TextRange range = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
                     MemoryStream stream = new MemoryStream();
-                    range.Save(stream, DataFormats.Rtf);
-                    TextRange range2 = new TextRange(to.ContentEnd, to.ContentEnd);
-                    range2.Load(stream, DataFormats.Rtf);
+                    System.Windows.Markup.XamlWriter.Save(richTextBox.Document, stream);
+                    to = System.Windows.Markup.XamlReader.Load(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(Encoding.UTF8.GetString(stream.ToArray())))) as FlowDocument;
                     stream.Close();
 
                     foreach (Block b in to.Blocks)
@@ -162,7 +149,8 @@ namespace TaskMaker
                             Paragraph par = b as Paragraph;
                             par.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
                             par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
-                            par.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                            par.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
+                            par.TextAlignment = TextAlignment.Center;
                         }
                     }
 
@@ -176,11 +164,9 @@ namespace TaskMaker
                         for (int q = 0; q < quesOfDif[dif]; q++)
                         {
                             FlowDocument currentFD = new FlowDocument();
-                            TextRange rrrange = new TextRange(newQuestions[dif][questionsID[dif]].ContentStart, newQuestions[dif][questionsID[dif]].ContentEnd);
                             MemoryStream sstream = new MemoryStream();
-                            rrrange.Save(sstream, DataFormats.Rtf);
-                            TextRange rrrange2 = new TextRange(currentFD.ContentEnd, currentFD.ContentEnd);
-                            rrrange2.Load(sstream, DataFormats.Rtf);
+                            System.Windows.Markup.XamlWriter.Save(newQuestions[dif][questionsID[dif]], sstream);
+                            currentFD = System.Windows.Markup.XamlReader.Load(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(Encoding.UTF8.GetString(sstream.ToArray())))) as FlowDocument;
                             sstream.Close();
 
                             List<Block> blocks = currentFD.Blocks.ToList();
@@ -188,7 +174,7 @@ namespace TaskMaker
                             {
                                 b.TextAlignment = TextAlignment.Left;
                                 b.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                b.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                                b.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
                             }
 
                             string number = "";
@@ -207,30 +193,14 @@ namespace TaskMaker
                             if (blocks[0] is Paragraph)
                             {
                                 Paragraph par = blocks[0] as Paragraph;
-                                var images = FindAllImagesInParagraph(par);
-                                if (images == null)
-                                {
-                                    TextRange tr1 = new TextRange(par.ContentStart, par.ContentEnd);
-                                    tr1.Text = number + tr1.Text;
-                                    blocks.RemoveAt(0);
-                                    par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                    par.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
-                                    thisVariant.Blocks.Add(par);
-                                }
-                                else
-                                {
-                                    Paragraph newPar = new Paragraph(new Run(number));
-                                    newPar.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                    newPar.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
-                                    newPar.TextAlignment = TextAlignment.Left;
-                                    thisVariant.Blocks.Add(newPar);
-                                }
+
+                                par.Inlines.InsertBefore(par.Inlines.First(), new Run(number));
                             }
                             else
                             {
                                 Paragraph newPar = new Paragraph(new Run(number));
                                 newPar.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                newPar.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                                newPar.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
                                 newPar.TextAlignment = TextAlignment.Left;
                                 thisVariant.Blocks.Add(newPar);
                             }
@@ -243,110 +213,91 @@ namespace TaskMaker
                             questionsID[dif] = (questionsID[dif] > newQuestions[dif].Count - 1) ? 0 : questionsID[dif];
                         }
                     }
-                    //Variants.Add(thisVariant);
+                thisVariant.FontFamily = font;
 
                     object ffileName = "test" + v.ToString() + ".docx";
                     MemoryStream ms = new MemoryStream();
                     var rrrrange = new TextRange(thisVariant.ContentStart, thisVariant.ContentEnd);
                     var fffStream = new MemoryStream();
                     rrrrange.Save(fffStream, System.Windows.DataFormats.Rtf);
-                    string t = Encoding.UTF8.GetString(fffStream.ToArray());
+                    string t = (Encoding.UTF8.GetString(fffStream.ToArray())).Replace(@"\fs16", @"\fs21\sub");
+                    t = t.Replace(@"\fs17", @"\fs21\super");
                     ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(t));
                     CreateWordDocument((string)ffileName, ms);
                     Variants.Add(System.IO.Path.GetFullPath((string)ffileName));
                 }
+
+
+                object mmissing = Missing.Value;
+                object rreadOnly = false;
+                object isVvisible = false;
+                Microsoft.Office.Interop.Word.Application WordApp = new Microsoft.Office.Interop.Word.Application();
+                object aabsPath = System.IO.Path.GetFullPath(path);
+                Microsoft.Office.Interop.Word.Document FinalDoc = new Microsoft.Office.Interop.Word.Document();
+                object aabsPath2 = System.IO.Path.GetFullPath("notFull.docx");
+                Microsoft.Office.Interop.Word.Document NotFinalDoc = new Microsoft.Office.Interop.Word.Document();
+                NotFinalDoc.SaveAs2(aabsPath2);
+
+                bool alwaysBreake = false;
+                foreach (string st in Variants)
+                {
+                    Microsoft.Office.Interop.Word.Range FinalDocRange = FinalDoc.Range(FinalDoc.Content.End - 1, FinalDoc.Content.End);
+                    Microsoft.Office.Interop.Word.Range NotFinalDocRange = NotFinalDoc.Range(NotFinalDoc.Content.End - 1, NotFinalDoc.Content.End);
+
+                    object sst = st;
+                    object missing = Missing.Value;
+                    object missing2 = Missing.Value;
+                    object readOnly = false;
+                    object isVisible = false;
+                    Microsoft.Office.Interop.Word.Document wDoc = WordApp.Documents.Open(ref sst,
+                                                               ref missing, ref readOnly, ref missing,
+                                                               ref missing, ref missing, ref missing,
+                                                               ref missing, ref missing, ref missing,
+                                                               ref missing, ref isVisible);
+                    Microsoft.Office.Interop.Word.WdStatistic stat = Microsoft.Office.Interop.Word.WdStatistic.wdStatisticPages;
+                    int num = NotFinalDoc.ComputeStatistics(stat, ref missing2);
+                    wDoc.Range(wDoc.Content.Start, wDoc.Content.End).Copy();
+                    NotFinalDocRange.Paste();
+                    if (Variants.IndexOf(st) == 0 && num < NotFinalDoc.ComputeStatistics(stat, ref missing2))
+                        alwaysBreake = true;
+                    if ((num < NotFinalDoc.ComputeStatistics(stat, ref missing2) || alwaysBreake) && Variants.IndexOf(st) != 0)
+                    {
+                        FinalDocRange.InsertBreak(Microsoft.Office.Interop.Word.WdBreakType.wdPageBreak);
+                        FinalDocRange = FinalDoc.Range(FinalDoc.Content.End - 1, FinalDoc.Content.End);
+                        wDoc.Range(wDoc.Content.Start, wDoc.Content.End).Copy();
+                        FinalDocRange.Paste();
+                    }
+                    else
+                    {
+                        wDoc.Range(wDoc.Content.Start, wDoc.Content.End).Copy();
+                        FinalDocRange.Paste();
+                    }
+
+                    NotFinalDocRange = NotFinalDoc.Range(NotFinalDoc.Content.Start, NotFinalDoc.Content.End);
+                    NotFinalDocRange.Delete();
+                    FinalDocRange = FinalDoc.Range(FinalDoc.Content.Start, FinalDoc.Content.End);
+                    FinalDocRange.Copy();
+                    NotFinalDocRange.Paste();
+                    NotFinalDoc.Save();
+                    wDoc.Close();
+                }
+                NotFinalDoc.Save();
+                NotFinalDoc.Close();
+                FinalDoc.SaveAs2(ref aabsPath, ref mmissing, ref rreadOnly, ref mmissing, ref mmissing, ref mmissing, ref mmissing,
+                                                             ref mmissing, ref mmissing, ref mmissing, ref mmissing, ref isVvisible);
+                File.Delete((string)aabsPath2);
+                foreach (string st in Variants)
+                {
+                    File.Delete(st);
+                }
+                return FinalDoc;
             }
             catch
             {
                 MessageBox.Show("Ошибка. Для создания такой работы недостаточно вопросов", "Ошибка");
             }
-            object mmissing = Missing.Value;
-            object rreadOnly = false;
-            object isVvisible = false;
-            Microsoft.Office.Interop.Word.Application WordApp = new Microsoft.Office.Interop.Word.Application();
-            object aabsPath = System.IO.Path.GetFullPath(path);
-            Microsoft.Office.Interop.Word.Document FinalDoc = new Microsoft.Office.Interop.Word.Document();
-            object aabsPath2 = System.IO.Path.GetFullPath("notFull.docx");
-            Microsoft.Office.Interop.Word.Document NotFinalDoc = new Microsoft.Office.Interop.Word.Document();
-            NotFinalDoc.SaveAs2(aabsPath2);
 
-            bool alwaysBreake = false;
-            foreach (string st in Variants)
-            {
-                Microsoft.Office.Interop.Word.Range FinalDocRange = FinalDoc.Range(FinalDoc.Content.End - 1, FinalDoc.Content.End);
-                Microsoft.Office.Interop.Word.Range NotFinalDocRange = NotFinalDoc.Range(NotFinalDoc.Content.End - 1, NotFinalDoc.Content.End);
-
-                object sst = st;
-                object missing = Missing.Value;
-                object missing2 = Missing.Value;
-                object readOnly = false;
-                object isVisible = false;
-                Microsoft.Office.Interop.Word.Document wDoc = WordApp.Documents.Open(ref sst,
-                                                           ref missing, ref readOnly, ref missing,
-                                                           ref missing, ref missing, ref missing,
-                                                           ref missing, ref missing, ref missing,
-                                                           ref missing, ref isVisible);
-                Microsoft.Office.Interop.Word.WdStatistic stat = Microsoft.Office.Interop.Word.WdStatistic.wdStatisticPages;
-                int num = NotFinalDoc.ComputeStatistics(stat, ref missing2);
-                wDoc.Range(wDoc.Content.Start, wDoc.Content.End).Copy();
-                NotFinalDocRange.Paste();
-                if (Variants.IndexOf(st) == 0 && num < NotFinalDoc.ComputeStatistics(stat, ref missing2))
-                    alwaysBreake = true;
-                if((num < NotFinalDoc.ComputeStatistics(stat, ref missing2) || alwaysBreake) && Variants.IndexOf(st) != 0)
-                {
-                    FinalDocRange.InsertBreak(Microsoft.Office.Interop.Word.WdBreakType.wdPageBreak);
-                    FinalDocRange = FinalDoc.Range(FinalDoc.Content.End - 1, FinalDoc.Content.End);
-                    wDoc.Range(wDoc.Content.Start, wDoc.Content.End).Copy();
-                    FinalDocRange.Paste();
-                }
-                else
-                {
-                    wDoc.Range(wDoc.Content.Start, wDoc.Content.End).Copy();
-                    FinalDocRange.Paste();
-                }
-
-                NotFinalDocRange = NotFinalDoc.Range(NotFinalDoc.Content.Start, NotFinalDoc.Content.End);
-                NotFinalDocRange.Delete();
-                FinalDocRange = FinalDoc.Range(FinalDoc.Content.Start, FinalDoc.Content.End);
-                FinalDocRange.Copy();
-                NotFinalDocRange.Paste();
-                NotFinalDoc.Save();
-                wDoc.Close();
-            }
-            NotFinalDoc.Save();
-            NotFinalDoc.Close();
-            FinalDoc.SaveAs2(ref aabsPath, ref mmissing, ref rreadOnly, ref mmissing, ref mmissing, ref mmissing, ref mmissing,
-                                                         ref mmissing, ref mmissing, ref mmissing, ref mmissing, ref isVvisible);
-            File.Delete((string)aabsPath2);
-            foreach (string st in Variants)
-            {
-                File.Delete(st);
-            }
-            return FinalDoc;
-        }
-
-        List<Image> FindAllImagesInParagraph(Paragraph paragraph)
-        {
-            List<Image> result = null;
-
-            foreach (var inline in paragraph.Inlines)
-            {
-                var inlineUIContainer = inline as InlineUIContainer;
-                if (inlineUIContainer != null)
-                {
-                    var image = inlineUIContainer.Child as Image;
-
-                    if (image != null)
-                    {
-                        if (result == null)
-                            result = new List<Image>();
-
-                        result.Add(image);
-                    }
-                }
-            }
-
-            return result;
+            return null;
         }
 
         private static RNGCryptoServiceProvider _RNG = new RNGCryptoServiceProvider();

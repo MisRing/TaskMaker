@@ -231,6 +231,9 @@ namespace TaskMaker
                     }
                 }
 
+                Content_scroll.Children.Remove(CreateTheme_button);
+                Content_scroll.Children.Add(CreateTheme_button);
+
                 WasLoaded = true;
             }
         }

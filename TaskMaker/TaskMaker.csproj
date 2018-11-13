@@ -72,6 +72,9 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="RtfWriter">
+      <HintPath>C:\Users\MisRing\Downloads\netrtfwriter-1.0.0\RtfWriter\bin\Debug\RtfWriter.dll</HintPath>
+    </Reference>
     <Reference Include="Spire.Doc, Version=6.3.0.41040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
       <HintPath>..\packages\FreeSpire.Doc.6.3\lib\net40\Spire.Doc.dll</HintPath>
       <Private>True</Private>

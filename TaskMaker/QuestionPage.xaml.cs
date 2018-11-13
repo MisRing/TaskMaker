@@ -41,12 +41,13 @@ namespace TaskMaker
 
         private void save_Click(object sender, RoutedEventArgs e)
         {
+            
             var range = new TextRange(Pole.Document.ContentStart, Pole.Document.ContentEnd);
             var fStream = new MemoryStream();
-            range.Save(fStream, System.Windows.DataFormats.Rtf);
+
+            System.Windows.Markup.XamlWriter.Save(Pole.Document, fStream);
 
             string text = Encoding.UTF8.GetString(fStream.ToArray());
-
             ques.Text = text;
             ques.text.Text = new TextRange(Pole.Document.ContentStart, Pole.Document.ContentEnd).Text;
             fStream.Close();
@@ -67,9 +68,7 @@ namespace TaskMaker
             {
                 string text = ques.Text;
                 var fStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(text));
-
-                var range = new TextRange(Pole.Document.ContentStart, Pole.Document.ContentEnd);
-                range.Load(fStream, System.Windows.DataFormats.Rtf);
+                Pole.Document = System.Windows.Markup.XamlReader.Load(fStream) as FlowDocument;
                 fStream.Close();
             }
             catch { }
@@ -79,10 +78,8 @@ namespace TaskMaker
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show("Formula");
             Editor.MainWindow qe = new Editor.MainWindow();
             logic.Logic.Interact(Pole, qe);
-            //eq.Activate();
             qe.Show();
         }
 
@@ -244,7 +241,8 @@ namespace TaskMaker
         private void Superscript_but_Click(object sender, RoutedEventArgs e)
         {
             Pole.Focus();
-            Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
+            if(CurrentSelection != null)
+                Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
 
             Button thisButton = sender as Button;
             if (scriptMode == 2)
@@ -373,7 +371,7 @@ namespace TaskMaker
                     break;
                 case (2):
                     Pole.Selection.ApplyPropertyValue(Inline.BaselineAlignmentProperty, BaselineAlignment.Superscript);
-                    Pole.Selection.ApplyPropertyValue(Inline.FontSizeProperty, 11.0);
+                    Pole.Selection.ApplyPropertyValue(Inline.FontSizeProperty, 11.5);
                     break;
             }
 

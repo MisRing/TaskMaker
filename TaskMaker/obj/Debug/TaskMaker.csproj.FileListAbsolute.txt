@@ -92,3 +92,5 @@ D:\GitHub\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CoreCompileInputs.cache
 D:\GitHub\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CopyComplete
 D:\GitHub\TaskMaker\TaskMaker\obj\Debug\TaskMaker.exe
 D:\GitHub\TaskMaker\TaskMaker\obj\Debug\TaskMaker.pdb
+D:\GitHub\TaskMaker\TaskMaker\bin\Debug\RtfWriter.dll
+D:\GitHub\TaskMaker\TaskMaker\bin\Debug\RtfWriter.pdb

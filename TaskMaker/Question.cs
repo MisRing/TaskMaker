@@ -42,7 +42,14 @@ public class Question : Window
         can.Margin = new Thickness(10, 10, 10, 0);
         can.HorizontalAlignment = HorizontalAlignment.Stretch;
         can.Background = Brushes.White;
-        Text = question_text;
+        if (Text != "" && Text != null)
+            Text = question_text;
+        else
+        {
+            MemoryStream ms = new MemoryStream();
+            System.Windows.Markup.XamlWriter.Save(new FlowDocument(), ms);
+            Text = Encoding.UTF8.GetString(ms.ToArray());
+        }
 
         can.Children.Add(text);
         text.TextWrapping = TextWrapping.Wrap;
@@ -84,8 +91,8 @@ public class Question : Window
         {
             var fStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(Text));
             var fd = new FlowDocument();
+            fd = System.Windows.Markup.XamlReader.Load(fStream) as FlowDocument;
             var range = new TextRange(fd.ContentStart, fd.ContentEnd);
-            range.Load(fStream, System.Windows.DataFormats.Rtf);
             fStream.Close();
             text.Text = range.Text;
         }

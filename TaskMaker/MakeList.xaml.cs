@@ -45,7 +45,8 @@ namespace TaskMaker
                 var rrange = new TextRange(flowDoc.ContentStart, flowDoc.ContentEnd);
                 var ffStream = new MemoryStream();
                 rrange.Save(ffStream, System.Windows.DataFormats.Rtf);
-                string stream = Encoding.UTF8.GetString(ffStream.ToArray());
+                string stream = Encoding.UTF8.GetString(ffStream.ToArray()).Replace(@"\fs16", @"\fs21\sub");
+                stream = stream.Replace(@"\fs17", @"\fs21\super");
                 ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(stream));
                 System.Windows.Forms.SaveFileDialog sfd = new System.Windows.Forms.SaveFileDialog();
 
@@ -154,14 +155,12 @@ namespace TaskMaker
                                     try
                                     {
                                         MemoryStream sstream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(q.Text));
-                                        TextRange rrrange2 = new TextRange(currentQuestion.ContentEnd, currentQuestion.ContentEnd);
-                                        rrrange2.Load(sstream, DataFormats.Rtf);
+                                        currentQuestion = System.Windows.Markup.XamlReader.Load(sstream) as FlowDocument;
                                         sstream.Close();
                                     }
                                     catch
                                     {
-                                        TextRange rrrange2 = new TextRange(currentQuestion.ContentEnd, currentQuestion.ContentEnd);
-                                        rrrange2.Text = "";
+                                        currentQuestion.Blocks.Add(new Paragraph(new Run("no text")));
                                     }
 
                                     List<Block> blocks = currentQuestion.Blocks.ToList();
@@ -190,24 +189,8 @@ namespace TaskMaker
                                         if (blocks[0] is Paragraph)
                                         {
                                             Paragraph par = blocks[0] as Paragraph;
-                                            var images = FindAllImagesInParagraph(par);
-                                            if (images == null)
-                                            {
-                                                TextRange tr1 = new TextRange(par.ContentStart, par.ContentEnd);
-                                                tr1.Text = number + tr1.Text;
-                                                blocks.RemoveAt(0);
-                                                par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                                par.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
-                                                flowDoc.Blocks.Add(par);
-                                            }
-                                            else
-                                            {
-                                                Paragraph newPar = new Paragraph(new Run(numberS));
-                                                newPar.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                                newPar.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
-                                                newPar.TextAlignment = TextAlignment.Left;
-                                                flowDoc.Blocks.Add(newPar);
-                                            }
+
+                                            par.Inlines.InsertBefore(par.Inlines.First(), new Run(numberS));
                                         }
                                         else
                                         {
@@ -261,8 +244,7 @@ namespace TaskMaker
                         {
                             FlowDocument currentQuestion = new FlowDocument();
                             MemoryStream sstream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(q.Text));
-                            TextRange rrrange2 = new TextRange(currentQuestion.ContentEnd, currentQuestion.ContentEnd);
-                            rrrange2.Load(sstream, DataFormats.Rtf);
+                            currentQuestion = System.Windows.Markup.XamlReader.Load(sstream) as FlowDocument;
                             sstream.Close();
 
                             List<Block> blocks = currentQuestion.Blocks.ToList();
@@ -289,24 +271,7 @@ namespace TaskMaker
                             if (blocks[0] is Paragraph)
                             {
                                 Paragraph par = blocks[0] as Paragraph;
-                                var images = FindAllImagesInParagraph(par);
-                                if (images == null)
-                                {
-                                    TextRange tr1 = new TextRange(par.ContentStart, par.ContentEnd);
-                                    tr1.Text = number + tr1.Text;
-                                    blocks.RemoveAt(0);
-                                    par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                    par.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
-                                    flowDoc.Blocks.Add(par);
-                                }
-                                else
-                                {
-                                    Paragraph newPar = new Paragraph(new Run(numberS));
-                                    newPar.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                    newPar.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
-                                    newPar.TextAlignment = TextAlignment.Left;
-                                    flowDoc.Blocks.Add(newPar);
-                                }
+                                par.Inlines.InsertBefore(par.Inlines.First(), new Run(numberS));
                             }
                             else
                             {
