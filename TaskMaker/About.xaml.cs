@@ -20,8 +20,10 @@ namespace TaskMaker
     /// </summary>
     public partial class About : Page
     {
-        public About()
+        Window MW = new Window();
+        public About(Window win)
         {
+            MW = win;
             InitializeComponent();
         }
     }
