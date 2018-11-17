@@ -91,8 +91,9 @@ public class Question : Window
         {
             var fStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(Text));
             var fd = new FlowDocument();
-            fd = System.Windows.Markup.XamlReader.Load(fStream) as FlowDocument;
             var range = new TextRange(fd.ContentStart, fd.ContentEnd);
+            range.Load(fStream, DataFormats.Rtf);
+            fd = ReturnIndexes(fd);
             fStream.Close();
             text.Text = range.Text;
         }
@@ -128,14 +129,33 @@ public class Question : Window
         MW.SaveAll();
     }
 
-    void SaveQ(object sender, RoutedEventArgs e)
+    public static FlowDocument ReturnIndexes(FlowDocument fd)
     {
-        // MainWindow.SaveQuestions();
-    }
+        foreach (Block b in fd.Blocks)
+        {
+            if (b is Paragraph)
+            {
+                Paragraph par = b as Paragraph;
 
-    public void SaveQuestion()
-    {
-        //text.Text = q_text.Replace("@:n:@", "\n");
-        //MainWindow.SaveQuestions();
+                foreach (Inline line in par.Inlines)
+                {
+                    if (line is Span)
+                    {
+                        Span r = line as Span;
+                        double fsize = Math.Round(double.Parse(r.GetValue(Inline.FontSizeProperty).ToString()), 1);
+                        if (fsize == 10.7)
+                        {
+                            r.SetValue(Inline.BaselineAlignmentProperty, BaselineAlignment.Subscript);
+                            r.SetValue(Inline.FontSizeProperty, 11.0);
+                        }
+                        else if (fsize == 11.3)
+                        {
+                            r.SetValue(Inline.FontSizeProperty, 11.5);
+                        }
+                    }
+                }
+            }
+        }
+        return fd;
     }
 }

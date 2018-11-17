@@ -155,7 +155,9 @@ namespace TaskMaker
                                     try
                                     {
                                         MemoryStream sstream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(q.Text));
-                                        currentQuestion = System.Windows.Markup.XamlReader.Load(sstream) as FlowDocument;
+                                        TextRange range = new TextRange(currentQuestion.ContentStart, currentQuestion.ContentEnd);
+                                        range.Load(sstream, DataFormats.Rtf);
+                                        currentQuestion = Question.ReturnIndexes(currentQuestion);
                                         sstream.Close();
                                     }
                                     catch
@@ -244,7 +246,9 @@ namespace TaskMaker
                         {
                             FlowDocument currentQuestion = new FlowDocument();
                             MemoryStream sstream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(q.Text));
-                            currentQuestion = System.Windows.Markup.XamlReader.Load(sstream) as FlowDocument;
+                            TextRange range = new TextRange(currentQuestion.ContentStart, currentQuestion.ContentEnd);
+                            range.Load(sstream, DataFormats.Rtf);
+                            currentQuestion = Question.ReturnIndexes(currentQuestion);
                             sstream.Close();
 
                             List<Block> blocks = currentQuestion.Blocks.ToList();

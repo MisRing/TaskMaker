@@ -45,7 +45,7 @@ namespace TaskMaker
             var range = new TextRange(Pole.Document.ContentStart, Pole.Document.ContentEnd);
             var fStream = new MemoryStream();
 
-            System.Windows.Markup.XamlWriter.Save(Pole.Document, fStream);
+            range.Save(fStream, DataFormats.Rtf);
 
             string text = Encoding.UTF8.GetString(fStream.ToArray());
             ques.Text = text;
@@ -68,7 +68,10 @@ namespace TaskMaker
             {
                 string text = ques.Text;
                 var fStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(text));
-                Pole.Document = System.Windows.Markup.XamlReader.Load(fStream) as FlowDocument;
+                FlowDocument fd = new FlowDocument();
+                var range = new TextRange(fd.ContentStart, fd.ContentEnd);
+                range.Load(fStream, DataFormats.Rtf);
+                Pole.Document = Question.ReturnIndexes(fd);
                 fStream.Close();
             }
             catch { }

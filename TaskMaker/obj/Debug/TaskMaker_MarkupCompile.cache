@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Task Maker\TaskMaker\TaskMaker\obj\Debug\
+D:\GitHub\TaskMaker\TaskMaker\obj\Debug\
 TaskMaker
 none
 false
 DEBUG;TRACE
-E:\Task Maker\TaskMaker\TaskMaker\App.xaml
-111464156193
+D:\GitHub\TaskMaker\TaskMaker\App.xaml
+12853231063
 
-23-192687495
-251607897084
-CreateS.xaml;Dictionary.xaml;Export.xaml;grec.xaml;mainS.xaml;MainWindow.xaml;MakeList.xaml;MakeVariants.xaml;math.xaml;QuestionPage.xaml;spec.xaml;
+20-58839949
+25-816400723
+About.xaml;CreateS.xaml;Dictionary.xaml;Export.xaml;grec.xaml;mainS.xaml;MainWindow.xaml;MakeList.xaml;MakeVariants.xaml;math.xaml;QuestionPage.xaml;spec.xaml;
 
-True
+False
 

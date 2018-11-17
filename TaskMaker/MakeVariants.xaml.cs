@@ -116,7 +116,8 @@ namespace TaskMaker
                         try
                         {
                             MemoryStream sstream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(q.Text));
-                            fd = System.Windows.Markup.XamlReader.Load(sstream) as FlowDocument;
+                            range.Load(sstream, DataFormats.Rtf);
+                            fd = Question.ReturnIndexes(fd);
                             sstream.Close();
                         }
                         catch
@@ -138,9 +139,11 @@ namespace TaskMaker
                     v_text.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
                     FlowDocument to = new FlowDocument();
                     MemoryStream stream = new MemoryStream();
-                    System.Windows.Markup.XamlWriter.Save(richTextBox.Document, stream);
-                    to = System.Windows.Markup.XamlReader.Load(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(Encoding.UTF8.GetString(stream.ToArray())))) as FlowDocument;
-                    stream.Close();
+                    TextRange range1 = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
+                    range1.Save(stream, DataFormats.Rtf);
+                    range1 = new TextRange(to.ContentStart, to.ContentEnd);
+                    range1.Load(stream, DataFormats.Rtf);
+                    to = Question.ReturnIndexes(to);
 
                     foreach (Block b in to.Blocks)
                     {
@@ -164,9 +167,12 @@ namespace TaskMaker
                         for (int q = 0; q < quesOfDif[dif]; q++)
                         {
                             FlowDocument currentFD = new FlowDocument();
+                            TextRange range2 = new TextRange(newQuestions[dif][questionsID[dif]].ContentStart, newQuestions[dif][questionsID[dif]].ContentEnd);
                             MemoryStream sstream = new MemoryStream();
-                            System.Windows.Markup.XamlWriter.Save(newQuestions[dif][questionsID[dif]], sstream);
-                            currentFD = System.Windows.Markup.XamlReader.Load(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(Encoding.UTF8.GetString(sstream.ToArray())))) as FlowDocument;
+                            range2.Save(sstream, DataFormats.Rtf);
+                            range2 = new TextRange(currentFD.ContentStart, currentFD.ContentEnd);
+                            range2.Load(sstream, DataFormats.Rtf);
+                            currentFD = Question.ReturnIndexes(currentFD);
                             sstream.Close();
 
                             List<Block> blocks = currentFD.Blocks.ToList();
