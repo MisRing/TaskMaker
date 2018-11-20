@@ -130,3 +130,30 @@ D:\GitHub\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csp
 D:\GitHub\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.CopyComplete
 D:\GitHub\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.exe
 D:\GitHub\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.pdb
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Editor.exe
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Editor.pdb
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Interaction.exe
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Interaction.pdb
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\bin\Debug\Interaction.exe.config
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csprojAssemblyReference.cache
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\ButtonPanel.baml
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MathToolBar.baml
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\App.baml
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\ButtonPanel.g.cs
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\EditorControl.g.cs
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MainWindow.g.cs
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MathToolBar.g.cs
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\App.g.cs
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor_MarkupCompile.cache
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor_MarkupCompile.lref
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\EditorControl.baml
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MainDictionary.baml
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\MainWindow.baml
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.g.resources
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.Properties.Resources.resources
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.GenerateResource.cache
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.CoreCompileInputs.cache
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.csproj.CopyComplete
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.exe
+D:\УЧЁБА\Task Maker\TaskMaker\Equation_Editor_Code\EquationEditor\obj\x86\Debug\Editor.pdb

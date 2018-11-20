@@ -74,3 +74,14 @@ D:\GitHub\TaskMaker\Interaction\obj\Debug\Interaction.csproj.GenerateResource.ca
 D:\GitHub\TaskMaker\Interaction\obj\Debug\Interaction.csproj.CoreCompileInputs.cache
 D:\GitHub\TaskMaker\Interaction\obj\Debug\Interaction.exe
 D:\GitHub\TaskMaker\Interaction\obj\Debug\Interaction.pdb
+D:\УЧЁБА\Task Maker\TaskMaker\Interaction\bin\Debug\Interaction.exe.config
+D:\УЧЁБА\Task Maker\TaskMaker\Interaction\bin\Debug\Interaction.exe
+D:\УЧЁБА\Task Maker\TaskMaker\Interaction\bin\Debug\Interaction.pdb
+D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Debug\Interaction.csprojAssemblyReference.cache
+D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Debug\App.g.cs
+D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Debug\Interaction_MarkupCompile.cache
+D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Debug\Interaction.Properties.Resources.resources
+D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Debug\Interaction.csproj.GenerateResource.cache
+D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Debug\Interaction.csproj.CoreCompileInputs.cache
+D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Debug\Interaction.exe
+D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Debug\Interaction.pdb

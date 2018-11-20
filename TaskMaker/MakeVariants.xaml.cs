@@ -383,5 +383,24 @@ namespace TaskMaker
             richTextBox.Document.Blocks.Add(new Paragraph(new Run("Самостоятельная работа")));
             richTextBox.Document.Blocks.Add(new Paragraph(new Run("по теме \""+ cre.choosedTheme.ThemeName +"\"")));
         }
+
+        private void CheckBox_Click(object sender, RoutedEventArgs e)
+        {
+            if (chek.IsChecked == true)
+
+            {
+                this.Width = this.Width + 350;
+                RichTextBox rtb = new RichTextBox();
+                rtb.Margin = new Thickness(147, 239, 0, 0);
+                rtb.Height = 150;
+                rtb.Width = 300;
+            }
+            else
+            {
+                this.Width = this.Width - 350;
+            }
+
+            
+        }
     }
 }

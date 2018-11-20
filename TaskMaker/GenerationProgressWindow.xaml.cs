@@ -60,6 +60,11 @@ namespace TaskMaker
             ProgressBar.Maximum = NeedProgress;
         }
 
+        private void ProgressBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close(); ;
