@@ -44,12 +44,6 @@ public class Question : Window
         can.Background = Brushes.White;
         if (Text != "" && Text != null)
             Text = question_text;
-        else
-        {
-            MemoryStream ms = new MemoryStream();
-            System.Windows.Markup.XamlWriter.Save(new FlowDocument(), ms);
-            Text = Encoding.UTF8.GetString(ms.ToArray());
-        }
 
         can.Children.Add(text);
         text.TextWrapping = TextWrapping.Wrap;

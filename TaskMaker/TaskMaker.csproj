@@ -114,6 +114,9 @@
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
     <Compile Include="FileAssociation.cs" />
+    <Compile Include="GenerationProgressWindow.xaml.cs">
+      <DependentUpon>GenerationProgressWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="grec.xaml.cs">
       <DependentUpon>grec.xaml</DependentUpon>
     </Compile>
@@ -143,6 +146,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Export.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GenerationProgressWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

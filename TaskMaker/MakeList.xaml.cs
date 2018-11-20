@@ -110,6 +110,8 @@ namespace TaskMaker
 
         public FlowDocument CreateList()
         {
+            FontFamily font = new FontFamily("font.ttf");
+
             FlowDocument flowDoc = new FlowDocument();
 
             if (ThemeBox.SelectedIndex != -1)
@@ -132,7 +134,7 @@ namespace TaskMaker
                         nameText.TextAlignment = TextAlignment.Center;
                         nameText.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
                         nameText.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
-                        nameText.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                        nameText.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
                         flowDoc.Blocks.Add(nameText);
                         flowDoc.Blocks.Add(new Paragraph(new Run("")));
                         int dif = 1;
@@ -145,7 +147,7 @@ namespace TaskMaker
                                 difText.TextAlignment = TextAlignment.Center;
                                 difText.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
                                 difText.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
-                                difText.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                                difText.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
 
                                 flowDoc.Blocks.Add(difText);
 
@@ -170,7 +172,7 @@ namespace TaskMaker
                                     {
                                         b.TextAlignment = TextAlignment.Left;
                                         b.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                        b.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                                        b.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
                                     }
 
                                     string numberS = "";
@@ -198,7 +200,7 @@ namespace TaskMaker
                                         {
                                             Paragraph newPar = new Paragraph(new Run(numberS));
                                             newPar.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                            newPar.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                                            newPar.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
                                             newPar.TextAlignment = TextAlignment.Left;
                                             flowDoc.Blocks.Add(newPar);
                                         }
@@ -229,13 +231,13 @@ namespace TaskMaker
                         nameText.TextAlignment = TextAlignment.Center;
                         nameText.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
                         nameText.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
-                        nameText.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                        nameText.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
 
                         Paragraph difText = new Paragraph(new Run("Вопросы " + (difID + 1).ToString() + " сложности"));
                         difText.TextAlignment = TextAlignment.Center;
                         difText.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
                         difText.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
-                        difText.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                        difText.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
 
                         flowDoc.Blocks.Add(nameText);
                         flowDoc.Blocks.Add(difText);
@@ -256,7 +258,7 @@ namespace TaskMaker
                             {
                                 b.TextAlignment = TextAlignment.Left;
                                 b.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                b.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                                b.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
                             }
 
                             string numberS = "";
@@ -281,7 +283,7 @@ namespace TaskMaker
                             {
                                 Paragraph newPar = new Paragraph(new Run(numberS));
                                 newPar.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
-                                newPar.SetCurrentValue(Inline.FontFamilyProperty, FontFamily); // need font
+                                newPar.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
                                 newPar.TextAlignment = TextAlignment.Left;
                                 flowDoc.Blocks.Add(newPar);
                             }

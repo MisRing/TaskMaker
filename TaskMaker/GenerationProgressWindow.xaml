@@ -1,0 +1,18 @@
+﻿<Window x:Class="TaskMaker.GenerationProgressWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskMaker"
+        mc:Ignorable="d"
+        Title="Создвние ..." Height="140" Width="260"
+        WindowStyle="None" Loaded="Window_Loaded"
+        MinHeight="140" MinWidth="260"
+        MaxHeight="140" MaxWidth="260">
+    <Grid>
+
+        <TextBlock x:Name="Top_Text" Margin="10,27,9.6,86.6" Text="Some text..."></TextBlock>
+        <Button x:Name="button" Margin="69,91,73.6,16.6" Visibility="Hidden" Content="ОК" Click="Button_Click"></Button>
+        <ProgressBar Name="ProgressBar" HorizontalAlignment="Left" Height="20" Margin="10,58,0,0" VerticalAlignment="Top" Width="234"/>
+    </Grid>
+</Window>

@@ -24,6 +24,7 @@ namespace TaskMaker
     public partial class MakeVariants : Window
     {
         public CreateS cre;
+        GenerationProgressWindow GPwin;
 
         public MakeVariants()
         {
@@ -70,10 +71,15 @@ namespace TaskMaker
                             {
                                 RandomiseVariants(sfd.FileName).Close();
                             }
-                            MessageBox.Show("Генерация завершена.", "Готово");
+                            GPwin.ChangeValue(1);
                         }
                         catch
                         {
+                            try
+                            {
+                                GPwin.Close();
+                            }
+                            catch { }
                             MessageBox.Show("Не удаётся получить доступ к файлу.", "Ошибка");
                         }
                     }
@@ -88,10 +94,25 @@ namespace TaskMaker
             List<string> Variants = new List<string>();
             try
             {
+
                 float fontSize = int.Parse((fontSizeBox.SelectedItem as ComboBoxItem).Content.ToString()) / 0.75f;
                 List<Question>[] Questions = cre.choosedTheme.Questions;
                 int variants = int.Parse(v_count.Text);
                 int questions = int.Parse(q_count.Text);
+
+                int qCount = 0;
+                foreach(List<Question>  q in Questions)
+                {
+                    qCount += q.Count;
+                }
+                GPwin = new GenerationProgressWindow(4 + questions + qCount + variants * (questions + 2));
+                GPwin.Owner = this;
+                GPwin.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+                GPwin.Show();
+                GPwin.Margin = new Thickness(0, 0, 0, 0);
+                
+
+                GPwin.ChangeValue(1, "Идет генерация работы...");
 
                 int[] quesOfDif = new int[10];
 
@@ -101,6 +122,8 @@ namespace TaskMaker
                     quesOfDif[ii]++;
                     ii++;
                     ii = (ii > 10) ? 0 : ii;
+
+                    GPwin.ChangeValue(1);
                 }
 
                 List<FlowDocument>[] newQuestions = new List<FlowDocument>[10];
@@ -126,6 +149,7 @@ namespace TaskMaker
                         }
 
                         newQuestions[i].Insert(GetNextRnd(0, newQuestions[i].Count), fd);
+                        GPwin.ChangeValue(1);
                     }
                 }
                 int[] questionsID = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -217,9 +241,10 @@ namespace TaskMaker
                             globalQ++;
                             questionsID[dif]++;
                             questionsID[dif] = (questionsID[dif] > newQuestions[dif].Count - 1) ? 0 : questionsID[dif];
+                            GPwin.ChangeValue(1);
                         }
                     }
-                thisVariant.FontFamily = font;
+                    thisVariant.FontFamily = font;
 
                     object ffileName = "test" + v.ToString() + ".docx";
                     MemoryStream ms = new MemoryStream();
@@ -231,6 +256,7 @@ namespace TaskMaker
                     ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(t));
                     CreateWordDocument((string)ffileName, ms);
                     Variants.Add(System.IO.Path.GetFullPath((string)ffileName));
+                    GPwin.ChangeValue(1);
                 }
 
 
@@ -243,6 +269,8 @@ namespace TaskMaker
                 object aabsPath2 = System.IO.Path.GetFullPath("notFull.docx");
                 Microsoft.Office.Interop.Word.Document NotFinalDoc = new Microsoft.Office.Interop.Word.Document();
                 NotFinalDoc.SaveAs2(aabsPath2);
+
+                GPwin.ChangeValue(1);
 
                 bool alwaysBreake = false;
                 foreach (string st in Variants)
@@ -286,6 +314,8 @@ namespace TaskMaker
                     NotFinalDocRange.Paste();
                     NotFinalDoc.Save();
                     wDoc.Close();
+
+                    GPwin.ChangeValue(1);
                 }
                 NotFinalDoc.Save();
                 NotFinalDoc.Close();
@@ -296,10 +326,17 @@ namespace TaskMaker
                 {
                     File.Delete(st);
                 }
+
+                GPwin.ChangeValue(1);
                 return FinalDoc;
             }
             catch
             {
+                try
+                {
+                    GPwin.Close();
+                }
+                catch { }
                 MessageBox.Show("Ошибка. Для создания такой работы недостаточно вопросов", "Ошибка");
             }
 
@@ -338,6 +375,13 @@ namespace TaskMaker
         private void Say_NO_to_letters(object sender, TextCompositionEventArgs e)
         {
             e.Handled = "0123456789 ,".IndexOf(e.Text) < 0;
+        }
+
+        private void richTextBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            richTextBox.Document.Blocks.Clear();
+            richTextBox.Document.Blocks.Add(new Paragraph(new Run("Самостоятельная работа")));
+            richTextBox.Document.Blocks.Add(new Paragraph(new Run("по теме \""+ cre.choosedTheme.ThemeName +"\"")));
         }
     }
 }

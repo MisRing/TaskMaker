@@ -96,3 +96,5 @@ D:\GitHub\TaskMaker\TaskMaker\bin\Debug\RtfWriter.dll
 D:\GitHub\TaskMaker\TaskMaker\bin\Debug\RtfWriter.pdb
 D:\GitHub\TaskMaker\TaskMaker\obj\Debug\About.g.cs
 D:\GitHub\TaskMaker\TaskMaker\obj\Debug\About.baml
+D:\GitHub\TaskMaker\TaskMaker\obj\Debug\GenerationProgressWindow.g.cs
+D:\GitHub\TaskMaker\TaskMaker\obj\Debug\GenerationProgressWindow.baml
