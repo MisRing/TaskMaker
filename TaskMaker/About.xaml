@@ -9,6 +9,7 @@
       Title="About">
 
     <Grid Style="{StaticResource main}">
-        
+        <TextBox x:Name="label" BorderThickness="0" Background="Transparent" Text="Task Maker - это программа, предназначенная для одновременного создания множества уникальных вариантов для самостоятельных работ. Создана учащимися Минского радиотехнического колледжа с целью предотвращения списывания и ускорения процесса создания работ" TextWrapping="Wrap" Height="188" Margin="0,200,0,0" HorizontalContentAlignment="Center" FontFamily="Calibri" FontSize="37" Foreground="White" VerticalAlignment="Top" Width="1184.8"/>
+
     </Grid>
 </Page>

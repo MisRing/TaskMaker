@@ -389,18 +389,35 @@ namespace TaskMaker
             if (chek.IsChecked == true)
 
             {
-                this.Width = this.Width + 350;
-                RichTextBox rtb = new RichTextBox();
-                rtb.Margin = new Thickness(147, 239, 0, 0);
-                rtb.Height = 150;
-                rtb.Width = 300;
+                this.Width = this.Width + 325;
+                richTextBox2.Visibility = Visibility.Visible;
+                l2.Visibility = Visibility.Visible;
+                lbl4.Content = "Шапка ОКР";
+                richTextBox.Document.Blocks.Clear();
+                richTextBox.Document.Blocks.Add(new Paragraph(new Run("Учреждение образования «»")));
+                richTextBox.Document.Blocks.Add(new Paragraph(new Run("Задание на обязательную контрольную работу № по дисциплине «»")));
+                richTextBox.Document.Blocks.Add(new Paragraph(new Run(cre.choosedTheme.ThemeName)));
+                richTextBox2.Document.Blocks.Clear();
+                richTextBox2.Document.Blocks.Add(new Paragraph(new Run("Составитель: ")));
+                richTextBox2.Document.Blocks.Add(new Paragraph(new Run("Учреждение образования «»")));
+                richTextBox2.Document.Blocks.Add(new Paragraph(new Run("Рассмотрено на заседании ЦК ")));
+                richTextBox2.Document.Blocks.Add(new Paragraph(new Run("Рекомендовано к использованию")));
+                richTextBox2.Document.Blocks.Add(new Paragraph(new Run("Протокол № __ от _____________")));
+                richTextBox2.Document.Blocks.Add(new Paragraph(new Run("Председатель ЦК ")));
+
             }
             else
             {
-                this.Width = this.Width - 350;
+                this.Width = this.Width - 325;
+                richTextBox2.Visibility = Visibility.Collapsed;
+                lbl4.Content = "Шапка работы";
+                l2.Visibility = Visibility.Collapsed;
+                richTextBox.Document.Blocks.Clear();
+                richTextBox.Document.Blocks.Add(new Paragraph(new Run("Самостоятельная работа")));
+                richTextBox.Document.Blocks.Add(new Paragraph(new Run("по теме \"" + cre.choosedTheme.ThemeName + "\"")));
             }
 
-            
+
         }
     }
 }
