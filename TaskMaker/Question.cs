@@ -144,6 +144,7 @@ public class Question : Window
                         }
                         else if (fsize == 11.3)
                         {
+                            r.SetValue(Inline.BaselineAlignmentProperty, BaselineAlignment.Superscript);
                             r.SetValue(Inline.FontSizeProperty, 11.5);
                         }
                     }

@@ -71,13 +71,15 @@ namespace TaskMaker
                             {
                                 RandomiseVariants(sfd.FileName).Close();
                             }
-                            GPwin.ChangeValue(1);
+                            //GPwin.ChangeValue(1);
+
+                            MessageBox.Show("Генерация успешно завершена!", "Готово!");
                         }
                         catch
                         {
                             try
                             {
-                                GPwin.Close();
+                                //GPwin.Close();
                             }
                             catch { }
                             MessageBox.Show("Не удаётся получить доступ к файлу.", "Ошибка");
@@ -105,14 +107,14 @@ namespace TaskMaker
                 {
                     qCount += q.Count;
                 }
-                GPwin = new GenerationProgressWindow(4 + questions + qCount + variants * (questions + 2));
-                GPwin.Owner = this;
-                GPwin.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-                GPwin.Show();
-                GPwin.Margin = new Thickness(0, 0, 0, 0);
+                //GPwin = new GenerationProgressWindow(4 + questions + qCount + variants * (questions + 2));
+                //GPwin.Owner = this;
+                //GPwin.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+                //GPwin.Show();
+                //GPwin.Margin = new Thickness(0, 0, 0, 0);
                 
 
-                GPwin.ChangeValue(1, "Идет генерация работы...");
+                //GPwin.ChangeValue(1, "Идет генерация работы...");
 
                 int[] quesOfDif = new int[10];
 
@@ -123,7 +125,7 @@ namespace TaskMaker
                     ii++;
                     ii = (ii > 10) ? 0 : ii;
 
-                    GPwin.ChangeValue(1);
+                    //GPwin.ChangeValue(1);
                 }
 
                 List<FlowDocument>[] newQuestions = new List<FlowDocument>[10];
@@ -149,7 +151,7 @@ namespace TaskMaker
                         }
 
                         newQuestions[i].Insert(GetNextRnd(0, newQuestions[i].Count), fd);
-                        GPwin.ChangeValue(1);
+                        //GPwin.ChangeValue(1);
                     }
                 }
                 int[] questionsID = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -169,15 +171,32 @@ namespace TaskMaker
                     range1.Load(stream, DataFormats.Rtf);
                     to = Question.ReturnIndexes(to);
 
-                    foreach (Block b in to.Blocks)
+                    if (chek.IsChecked == false)
                     {
-                        if (b is Paragraph)
+                        foreach (Block b in to.Blocks)
                         {
-                            Paragraph par = b as Paragraph;
-                            par.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
-                            par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
-                            par.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
-                            par.TextAlignment = TextAlignment.Center;
+                            if (b is Paragraph)
+                            {
+                                Paragraph par = b as Paragraph;
+                                par.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
+                                par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 4));
+                                par.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
+                                par.TextAlignment = TextAlignment.Center;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        foreach (Block b in to.Blocks)
+                        {
+                            if (b is Paragraph)
+                            {
+                                Paragraph par = b as Paragraph;
+                                par.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Normal);
+                                par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 2));
+                                par.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
+                                par.TextAlignment = TextAlignment.Center;
+                            }
                         }
                     }
 
@@ -241,9 +260,36 @@ namespace TaskMaker
                             globalQ++;
                             questionsID[dif]++;
                             questionsID[dif] = (questionsID[dif] > newQuestions[dif].Count - 1) ? 0 : questionsID[dif];
-                            GPwin.ChangeValue(1);
+                            //GPwin.ChangeValue(1);
                         }
                     }
+
+                    if (chek.IsChecked == true)
+                    {
+                        to = new FlowDocument();
+                        stream = new MemoryStream();
+                        range1 = new TextRange(richTextBox2.Document.ContentStart, richTextBox2.Document.ContentEnd);
+                        range1.Save(stream, DataFormats.Rtf);
+                        range1 = new TextRange(to.ContentStart, to.ContentEnd);
+                        range1.Load(stream, DataFormats.Rtf);
+                        to = Question.ReturnIndexes(to);
+
+                        foreach (Block b in to.Blocks)
+                        {
+                            if (b is Paragraph)
+                            {
+                                Paragraph par = b as Paragraph;
+                                par.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Normal);
+                                par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 2));
+                                par.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
+                                par.TextAlignment = TextAlignment.Right;
+                            }
+                        }
+
+                        thisVariant.Blocks.AddRange(to.Blocks.ToList());
+                        thisVariant.Blocks.Add(new Paragraph(new Run("")));
+                    }
+
                     thisVariant.FontFamily = font;
 
                     object ffileName = "test" + v.ToString() + ".docx";
@@ -256,7 +302,7 @@ namespace TaskMaker
                     ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(t));
                     CreateWordDocument((string)ffileName, ms);
                     Variants.Add(System.IO.Path.GetFullPath((string)ffileName));
-                    GPwin.ChangeValue(1);
+                    //GPwin.ChangeValue(1);
                 }
 
 
@@ -270,7 +316,7 @@ namespace TaskMaker
                 Microsoft.Office.Interop.Word.Document NotFinalDoc = new Microsoft.Office.Interop.Word.Document();
                 NotFinalDoc.SaveAs2(aabsPath2);
 
-                GPwin.ChangeValue(1);
+                //GPwin.ChangeValue(1);
 
                 bool alwaysBreake = false;
                 foreach (string st in Variants)
@@ -315,7 +361,7 @@ namespace TaskMaker
                     NotFinalDoc.Save();
                     wDoc.Close();
 
-                    GPwin.ChangeValue(1);
+                    //GPwin.ChangeValue(1);
                 }
                 NotFinalDoc.Save();
                 NotFinalDoc.Close();
@@ -327,14 +373,14 @@ namespace TaskMaker
                     File.Delete(st);
                 }
 
-                GPwin.ChangeValue(1);
+                //GPwin.ChangeValue(1);
                 return FinalDoc;
             }
             catch
             {
                 try
                 {
-                    GPwin.Close();
+                    //GPwin.Close();
                 }
                 catch { }
                 MessageBox.Show("Ошибка. Для создания такой работы недостаточно вопросов", "Ошибка");
@@ -381,7 +427,7 @@ namespace TaskMaker
         {
             richTextBox.Document.Blocks.Clear();
             richTextBox.Document.Blocks.Add(new Paragraph(new Run("Самостоятельная работа")));
-            richTextBox.Document.Blocks.Add(new Paragraph(new Run("по теме \""+ cre.choosedTheme.ThemeName +"\"")));
+            richTextBox.Document.Blocks.Add(new Paragraph(new Run("по теме \"" + cre.choosedTheme.ThemeName + "\"")));
         }
 
         private void CheckBox_Click(object sender, RoutedEventArgs e)
@@ -394,12 +440,12 @@ namespace TaskMaker
                 l2.Visibility = Visibility.Visible;
                 lbl4.Content = "Шапка ОКР";
                 richTextBox.Document.Blocks.Clear();
-                richTextBox.Document.Blocks.Add(new Paragraph(new Run("Учреждение образования «»")));
-                richTextBox.Document.Blocks.Add(new Paragraph(new Run("Задание на обязательную контрольную работу № по дисциплине «»")));
+                richTextBox.Document.Blocks.Add(new Paragraph(new Run("Учреждение образования \"\"")));
+                richTextBox.Document.Blocks.Add(new Paragraph(new Run("Задание на обязательную контрольную работу № по дисциплине \"\"")));
                 richTextBox.Document.Blocks.Add(new Paragraph(new Run(cre.choosedTheme.ThemeName)));
                 richTextBox2.Document.Blocks.Clear();
                 richTextBox2.Document.Blocks.Add(new Paragraph(new Run("Составитель: ")));
-                richTextBox2.Document.Blocks.Add(new Paragraph(new Run("Учреждение образования «»")));
+                richTextBox2.Document.Blocks.Add(new Paragraph(new Run("Учреждение образования \"\"")));
                 richTextBox2.Document.Blocks.Add(new Paragraph(new Run("Рассмотрено на заседании ЦК ")));
                 richTextBox2.Document.Blocks.Add(new Paragraph(new Run("Рекомендовано к использованию")));
                 richTextBox2.Document.Blocks.Add(new Paragraph(new Run("Протокол № __ от _____________")));
