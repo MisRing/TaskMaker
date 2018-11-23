@@ -26,5 +26,11 @@ namespace TaskMaker
             MW = win;
             InitializeComponent();
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            mainS main = new mainS(MW);
+            MW.Content = main;
+        }
     }
 }

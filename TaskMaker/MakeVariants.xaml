@@ -45,7 +45,7 @@
         <RichTextBox x:Name="richTextBox" HorizontalAlignment="Left" Height="150" Block.TextAlignment="Center" BorderThickness="2" BorderBrush="LightBlue" Margin="97,239,0,0" VerticalAlignment="Top" Width="300" Loaded="richTextBox_Loaded"/>
         <RichTextBox x:Name="richTextBox2" HorizontalAlignment="Left" Height="260" Visibility="Collapsed" Block.TextAlignment="Right" BorderThickness="2" BorderBrush="LightBlue" Margin="496,181,-302.4,0" VerticalAlignment="Top" Width="300" Loaded="richTextBox_Loaded"/>
 
-        <Label x:Name="l2" Content="Подпись ОКР:" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" Visibility="Collapsed" HorizontalAlignment="Left" Margin="403,124,-403.4,0" VerticalAlignment="Top" Width="494"/>
+        <Label x:Name="l2" Content="Подпись ОКР:" FontSize="22" Foreground="White" HorizontalContentAlignment="Center" Visibility="Collapsed" HorizontalAlignment="Left" Margin="496,124,-361.4,0" VerticalAlignment="Top" Width="359"/>
 
         <Button Style="{StaticResource one}" x:Name="create" FontSize="20" Content="Создать" HorizontalAlignment="Left" Margin="50,460,0,0" VerticalAlignment="Top" Width="155" Height="55" Click="create_Click"/>
         <Button Style="{StaticResource one}" x:Name="exit" FontSize="20" Content="Закрыть" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Margin="287,460,0,0" Click="exit_Click" Height="55"/>

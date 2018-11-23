@@ -29,5 +29,23 @@ namespace TaskMaker
               MW.Content = a;
             
         }
+
+        private void Creators_Click(object sender, RoutedEventArgs e)
+        {
+            creators cre = new creators(MW);
+            MW.Content = cre;
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            MW.Close();
+
+        }
+
+        private void FAQ_Click(object sender, RoutedEventArgs e)
+        {
+            HOW how = new HOW(MW);
+            MW.Content = how;
+        }
     }
 }

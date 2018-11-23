@@ -107,8 +107,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="a6.xaml.cs">
+      <DependentUpon>a6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="a4.xaml.cs">
+      <DependentUpon>a4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="a3.xaml.cs">
+      <DependentUpon>a3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="a2.xaml.cs">
+      <DependentUpon>a2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="a1.xaml.cs">
+      <DependentUpon>a1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="creators.xaml.cs">
+      <DependentUpon>creators.xaml</DependentUpon>
     </Compile>
     <Compile Include="FileAssociation.cs" />
     <Compile Include="GenerationProgressWindow.xaml.cs">
@@ -116,6 +134,9 @@
     </Compile>
     <Compile Include="grec.xaml.cs">
       <DependentUpon>grec.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HOW.xaml.cs">
+      <DependentUpon>HOW.xaml</DependentUpon>
     </Compile>
     <Compile Include="math.xaml.cs">
       <DependentUpon>math.xaml</DependentUpon>
@@ -130,11 +151,35 @@
     </Compile>
     <Compile Include="Theme.cs" />
     <Compile Include="ThemeData.cs" />
+    <Page Include="a6.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="a4.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="a3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="a2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="a1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="About.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CreateS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="creators.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -151,6 +196,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="grec.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HOW.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -279,6 +328,40 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="strelka.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="strelka2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="dom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="screens\10.PNG" />
+    <Resource Include="screens\11.PNG" />
+    <Resource Include="screens\12.png" />
+    <Resource Include="screens\13.png" />
+    <Resource Include="screens\14.png" />
+    <Resource Include="screens\15.png" />
+    <Resource Include="screens\16.png" />
+    <Resource Include="screens\17.png" />
+    <Resource Include="screens\18.png" />
+    <Resource Include="screens\19.png" />
+    <Resource Include="screens\1a.png" />
+    <Resource Include="screens\2.PNG" />
+    <Resource Include="screens\20.png" />
+    <Resource Include="screens\21.PNG" />
+    <Resource Include="screens\22.png" />
+    <Resource Include="screens\3.PNG" />
+    <Resource Include="screens\4.PNG" />
+    <Resource Include="screens\5.PNG" />
+    <Resource Include="screens\6.PNG" />
+    <Resource Include="screens\7.PNG" />
+    <Resource Include="screens\8.PNG" />
+    <Resource Include="screens\9.PNG" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

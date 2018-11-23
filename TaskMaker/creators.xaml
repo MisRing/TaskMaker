@@ -1,0 +1,21 @@
+﻿<Page x:Class="TaskMaker.creators"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TaskMaker"
+      mc:Ignorable="d" 
+      d:DesignHeight="662" d:DesignWidth="1185"
+      Title="creators">
+
+    <Grid Style="{StaticResource main}">
+        <Label x:Name="label" Content="Создатели:" Foreground="White" FontWeight="Thin" HorizontalContentAlignment="Center" FontSize="40" HorizontalAlignment="Left" Height="59" Margin="0,84,-0.2,0" VerticalAlignment="Top" Width="1185"/>
+        <Label x:Name="label1" Content="Хомич К. А., Рудницкий Е. А." FontWeight="SemiBold" Foreground="White" HorizontalContentAlignment="Center" FontSize="40" HorizontalAlignment="Left" Height="59" Margin="0,146,-0.2,0" VerticalAlignment="Top" Width="1185"/>
+        <Label x:Name="label2" Content="Автор идеи:" Foreground="White" FontWeight="Thin" HorizontalContentAlignment="Center" FontSize="40" HorizontalAlignment="Left" Height="59" Margin="0,206,-0.2,0" VerticalAlignment="Top" Width="1185"/>
+        <Label x:Name="label3" Content="Фесько В. В." Foreground="White" HorizontalContentAlignment="Center" FontSize="40" HorizontalAlignment="Left" Height="59" Margin="0,270,-0.2,0" VerticalAlignment="Top" Width="1185"/>
+        <Label x:Name="label4" Content="Отдельное спасибо:" Foreground="White" FontWeight="Thin" HorizontalContentAlignment="Center" FontSize="40" HorizontalAlignment="Left" Height="59" Margin="0,330,-0.2,0" VerticalAlignment="Top" Width="1185"/>
+        <Label x:Name="label5" Content="Галков А. Ю., Кухарева С. А." Foreground="White" HorizontalContentAlignment="Center" FontSize="40" HorizontalAlignment="Left" Height="59" Margin="0,396,-0.2,0" VerticalAlignment="Top" Width="1185"/>
+        <Button x:Name="back" Style="{StaticResource one}" Content="Назад" HorizontalAlignment="Left" Height="85"  Margin="375,540,0,0" VerticalAlignment="Top" Width="430" Click="Back_Click"/>
+
+    </Grid>
+</Page>

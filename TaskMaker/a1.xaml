@@ -1,0 +1,22 @@
+﻿<Page x:Class="TaskMaker.a1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TaskMaker"
+      mc:Ignorable="d" 
+d:DesignHeight="662" d:DesignWidth="1185"
+      Title="a1">
+
+    <Grid Style="{StaticResource main }">
+        <Button x:Name="next" Margin="966,572,138.8,0" BorderThickness="2" Style="{StaticResource plus}"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="80" Height="80" Click="Next_Click">
+            <Image Source="strelka.png" Margin="0,0,0,0" Height="60" Width="60"/>
+        </Button>
+        <Button x:Name="home" Margin="1063,572,41.8,0" BorderThickness="2" Style="{StaticResource plus}"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="80" Height="80" Click="Home_Click">
+            <Image Source="dom.png" Margin="0,0,0,0" Height="60" Width="60"/>
+        </Button>
+        <Button x:Name="back" Style="{StaticResource one}" Content="Меню" HorizontalAlignment="Left" Height="80" Margin="10,572,0,0" VerticalAlignment="Top" Width="198" Click="Back_Click"/>
+        <Label x:Name="label" Content="Создание вариантов для работы" HorizontalAlignment="Left" Foreground="White" FontSize="50" FontWeight="Thin" FontFamily="Consolas" HorizontalContentAlignment="Center" Height="90" VerticalAlignment="Top" Width="1185" Margin="0,0,-0.2,0"/>
+
+    </Grid>
+</Page>

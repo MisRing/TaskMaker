@@ -95,7 +95,7 @@ namespace TaskMaker
             Themes.Add(t);
             Content_scroll.Children.Remove(CreateTheme_button);
             Content_scroll.Children.Add(CreateTheme_button);
-            themeSV.ScrollToVerticalOffset(Content_scroll.Children.Count * 60);
+            themeSV.ScrollToVerticalOffset(Content_scroll.Children.Count * 100000);
             SaveAll();
         }
 

@@ -108,7 +108,6 @@ D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\Microsoft.mshtml.dll
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\Editor.pdb
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\Interaction.pdb
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\Interaction.exe.config
-D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\RtfWriter.pdb
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.Doc.xml
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.License.xml
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csprojAssemblyReference.cache
@@ -148,3 +147,17 @@ D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CoreComp
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CopyComplete
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.exe
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.pdb
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\creators.g.cs
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\creators.baml
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\HOW.g.cs
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\HOW.baml
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a1.g.cs
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a1.baml
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a6.g.cs
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a4.g.cs
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a3.g.cs
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a2.g.cs
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a6.baml
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a4.baml
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a3.baml
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a2.baml
