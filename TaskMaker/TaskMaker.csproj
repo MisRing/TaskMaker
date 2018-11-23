@@ -339,23 +339,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="screens\10.PNG" />
-    <Resource Include="screens\11.PNG" />
-    <Resource Include="screens\12.png" />
-    <Resource Include="screens\13.png" />
-    <Resource Include="screens\14.png" />
-    <Resource Include="screens\15.png" />
-    <Resource Include="screens\16.png" />
-    <Resource Include="screens\17.png" />
-    <Resource Include="screens\18.png" />
-    <Resource Include="screens\19.png" />
     <Resource Include="screens\1a.png" />
     <Resource Include="screens\2.PNG" />
-    <Resource Include="screens\20.png" />
-    <Resource Include="screens\21.PNG" />
-    <Resource Include="screens\22.png" />
     <Resource Include="screens\3.PNG" />
     <Resource Include="screens\4.PNG" />
-    <Resource Include="screens\5.PNG" />
     <Resource Include="screens\6.PNG" />
     <Resource Include="screens\7.PNG" />
     <Resource Include="screens\8.PNG" />

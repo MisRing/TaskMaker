@@ -20,6 +20,5 @@ d:DesignHeight="662" d:DesignWidth="1185"
         </Button>
         <Button x:Name="back" Style="{StaticResource one}" Content="Меню" HorizontalAlignment="Left" Height="80" Margin="10,572,0,0" VerticalAlignment="Top" Width="198" Click="Back_Click"/>
         <Label x:Name="label" Content="Создание вопроса" HorizontalAlignment="Left" Foreground="White" FontSize="50" FontWeight="Thin" FontFamily="Consolas" HorizontalContentAlignment="Center" Height="90" VerticalAlignment="Top" Width="1185" Margin="0,0,-0.2,0"/>
-
     </Grid>
 </Page>
