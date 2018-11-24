@@ -15,6 +15,21 @@ d:DesignHeight="662" d:DesignWidth="1185"
         <Button x:Name="home" Margin="1063,572,41.8,0" BorderThickness="2" Style="{StaticResource plus}"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="80" Height="80" Click="Home_Click">
             <Image Source="dom.png" Margin="0,0,0,0" Height="60" Width="60"/>
         </Button>
+
+        <ScrollViewer Name="themeSV" Grid.Column="0" HorizontalAlignment="Stretch" Margin="58,90,77.8,122.4" VerticalAlignment="Stretch">
+            <StackPanel x:Name="Content_scroll" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="994">
+                <Image Source="search.jpg" Width="500" Margin="0,0,0, 10"/>
+                <Image Source="search.jpg" Width="500" Margin="0,0,0, 10"/>
+                <Image Source="search.jpg" Width="500" Margin="0,0,0, 10"/>
+                <Image Source="search.jpg" Width="500" Margin="0,0,0, 10"/>
+                <Image Source="search.jpg" Width="500" Margin="0,0,0, 10"/>
+                <Image Source="search.jpg" Width="500" Margin="0,0,0, 10"/>
+                <Image Source="search.jpg" Width="500" Margin="0,0,0, 10"/>
+                <Image Source="search.jpg" Width="500" Margin="0,0,0, 10"/>
+                <Image Source="search.jpg" Width="500" />
+            </StackPanel>
+        </ScrollViewer>
+
         <Button x:Name="back" Style="{StaticResource one}" Content="Меню" HorizontalAlignment="Left" Height="80" Margin="10,572,0,0" VerticalAlignment="Top" Width="198" Click="Back_Click"/>
         <Label x:Name="label" Content="Создание вариантов для работы" HorizontalAlignment="Left" Foreground="White" FontSize="50" FontWeight="Thin" FontFamily="Consolas" HorizontalContentAlignment="Center" Height="90" VerticalAlignment="Top" Width="1185" Margin="0,0,-0.2,0"/>
 
