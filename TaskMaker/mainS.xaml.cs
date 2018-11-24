@@ -42,10 +42,6 @@ namespace TaskMaker
 
         }
 
-        private void FAQ_Click(object sender, RoutedEventArgs e)
-        {
-            HOW how = new HOW(MW);
-            MW.Content = how;
-        }
+      
     }
 }

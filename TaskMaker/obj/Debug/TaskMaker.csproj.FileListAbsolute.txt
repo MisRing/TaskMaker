@@ -149,18 +149,6 @@ D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.exe
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.pdb
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\creators.g.cs
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\creators.baml
-D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\HOW.g.cs
-D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\HOW.baml
-D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a1.g.cs
-D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a1.baml
-D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a6.g.cs
-D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a4.g.cs
-D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a3.g.cs
-D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a2.g.cs
-D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a6.baml
-D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a4.baml
-D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a3.baml
-D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\a2.baml
 D:\GitHub\TaskMaker\TaskMaker\obj\Debug\a6.g.cs
 D:\GitHub\TaskMaker\TaskMaker\obj\Debug\a4.g.cs
 D:\GitHub\TaskMaker\TaskMaker\obj\Debug\a3.g.cs

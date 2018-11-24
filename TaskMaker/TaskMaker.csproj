@@ -107,21 +107,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="a6.xaml.cs">
-      <DependentUpon>a6.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="a4.xaml.cs">
-      <DependentUpon>a4.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="a3.xaml.cs">
-      <DependentUpon>a3.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="a2.xaml.cs">
-      <DependentUpon>a2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="a1.xaml.cs">
-      <DependentUpon>a1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
@@ -134,9 +119,6 @@
     </Compile>
     <Compile Include="grec.xaml.cs">
       <DependentUpon>grec.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="HOW.xaml.cs">
-      <DependentUpon>HOW.xaml</DependentUpon>
     </Compile>
     <Compile Include="math.xaml.cs">
       <DependentUpon>math.xaml</DependentUpon>
@@ -151,26 +133,6 @@
     </Compile>
     <Compile Include="Theme.cs" />
     <Compile Include="ThemeData.cs" />
-    <Page Include="a6.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="a4.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="a3.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="a2.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="a1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="About.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -196,10 +158,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="grec.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="HOW.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -337,18 +295,6 @@
   <ItemGroup>
     <Resource Include="dom.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="screens\10.PNG" />
-    <Resource Include="screens\1a.png" />
-    <Resource Include="screens\2.PNG" />
-    <Resource Include="screens\3.PNG" />
-    <Resource Include="screens\4.PNG" />
-    <Resource Include="screens\6.PNG" />
-    <Resource Include="screens\7.PNG" />
-    <Resource Include="screens\8.PNG" />
-    <Resource Include="screens\9.PNG" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

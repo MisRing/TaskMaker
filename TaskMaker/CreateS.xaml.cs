@@ -279,6 +279,7 @@ namespace TaskMaker
 
                 QuestionStackPanel.Children.Remove(createQeust_button);
                 QuestionStackPanel.Children.Add(createQeust_button);
+
                 SaveAll();
 
                 int Tcount = 0;

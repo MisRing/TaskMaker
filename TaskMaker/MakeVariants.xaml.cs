@@ -24,7 +24,6 @@ namespace TaskMaker
     public partial class MakeVariants : Window
     {
         public CreateS cre;
-        GenerationProgressWindow GPwin;
 
         public MakeVariants()
         {

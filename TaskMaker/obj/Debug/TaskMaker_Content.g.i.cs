@@ -8,27 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("10.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("11.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("12.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("13.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("14.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("15.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("16.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("17.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("18.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("19.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("1a.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("2.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("20.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("21.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("22.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("3.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("4.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("5.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("6.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("7.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("8.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("9.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("screens/r.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("screens/t.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("screens/y.png")]
 
 

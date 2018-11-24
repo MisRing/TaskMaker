@@ -53,7 +53,7 @@ public class Theme : Window
         NameBox = new TextBox()
         {
             Width = 117,
-            Height = 60.5,
+            Height = 60,
             Background = Brushes.Transparent,
             BorderThickness = new Thickness(0),
             Margin = new Thickness(0, 13, 3, 0),
