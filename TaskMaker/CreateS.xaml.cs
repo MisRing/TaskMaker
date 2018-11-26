@@ -290,6 +290,8 @@ namespace TaskMaker
                 }
                 k_theme.Content = "Количество вопросов в теме: " + Tcount.ToString();
                 k_dif.Content = "Количество вопросов в сложности: " + Dcount.ToString();
+
+                QuestionPanel.ScrollToVerticalOffset(QuestionStackPanel.Children.Count * 100000);
             }
         }
 
