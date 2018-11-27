@@ -272,7 +272,8 @@ namespace TaskMaker
         {
             string path = "NA";
             System.Windows.Forms.OpenFileDialog op = new System.Windows.Forms.OpenFileDialog();
-            op.DefaultExt = "png";
+            op.DefaultExt = "Png files (*.png)|*.png|Jpg files (*.jpg)|*.jpg|Bmp files (*.bmp)|*.bmp";
+            op.SupportMultiDottedExtensions = true;
             op.Filter = "Png files (*.png)|*.png|Jpg files (*.jpg)|*.jpg|Bmp files (*.bmp)|*.bmp";
             op.Title = "Выберите картинку";
 

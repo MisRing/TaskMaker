@@ -8,7 +8,8 @@
         WindowStartupLocation="CenterScreen" 
         Background="White"
         TextInput="Window_TextInput"
-        KeyDown="Window_KeyDown"      
+        KeyDown="Window_KeyDown" 
+    ResizeMode="NoResize"
     >
     <Window.Resources>
         <Style TargetType="{x:Type Image}" x:Key="DisabledImageStyle">
