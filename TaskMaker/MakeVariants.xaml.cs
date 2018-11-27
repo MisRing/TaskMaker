@@ -258,7 +258,18 @@ namespace TaskMaker
 
                             globalQ++;
                             questionsID[dif]++;
-                            questionsID[dif] = (questionsID[dif] > newQuestions[dif].Count - 1) ? 0 : questionsID[dif];
+                            if(questionsID[dif] > newQuestions[dif].Count - 1)
+                            {
+                                questionsID[dif] = 0;
+
+                                List<FlowDocument> fdl = new List<FlowDocument>();
+                                foreach (FlowDocument ques in newQuestions[dif])
+                                {
+                                    fdl.Insert(GetNextRnd(0, fdl.Count), ques);
+                                }
+
+                                newQuestions[dif] = fdl;
+                            }
                             //GPwin.ChangeValue(1);
                         }
                     }
