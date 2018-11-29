@@ -49,7 +49,7 @@ public class Question : Window
         text.TextWrapping = TextWrapping.Wrap;
         text.Margin = new Thickness(5, 5, 100, 5); //5 5 20 5
         text.Height = 100;
-        text.Width = 700;
+        text.Width = 755;
         text.HorizontalAlignment = HorizontalAlignment.Stretch;
         text.VerticalAlignment = VerticalAlignment.Stretch;
         close.BorderThickness = new Thickness(0, 0, 0, 0);
