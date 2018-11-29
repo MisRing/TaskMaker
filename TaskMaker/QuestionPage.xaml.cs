@@ -399,25 +399,7 @@ namespace TaskMaker
         {
             CurrentSelection = Pole.Selection;
 
-            // Неработающая хрень
-            /*switch((BaselineAlignment)CurrentSelection.GetPropertyValue(Inline.BaselineAlignmentProperty))
-            {
-                case (BaselineAlignment.Superscript):
-                    Superscript_but_Click(up_ind, null);
-                    break;
-                case (BaselineAlignment.Subscript):
-                    Superscript_but_Click(down_ind, null);
-                    break;
-                default:
-                    up_ind.Background = Brushes.LightGray;
-                    up_ind.FontWeight = FontWeights.Normal;
-
-                    down_ind.Background = Brushes.LightGray;
-                    down_ind.FontWeight = FontWeights.Normal;
-
-                    scriptMode = 0;
-                    break;
-            }*/
+           
         }
 
         private void Pole_TextChanged(object sender, TextChangedEventArgs e)

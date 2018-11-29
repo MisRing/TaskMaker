@@ -6,7 +6,6 @@ D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\Interaction.exe
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\Spire.Doc.dll
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\Spire.License.dll
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\Spire.Pdf.dll
-D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\Microsoft.mshtml.dll
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\Editor.pdb
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\Interaction.pdb
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\Interaction.exe.config

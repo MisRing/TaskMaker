@@ -1,7 +1,6 @@
 D:\УЧЁБА\Task Maker\TaskMaker\Interaction\bin\Release\Interaction.exe.config
 D:\УЧЁБА\Task Maker\TaskMaker\Interaction\bin\Release\Interaction.exe
 D:\УЧЁБА\Task Maker\TaskMaker\Interaction\bin\Release\Interaction.pdb
-D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Release\Interaction.csprojAssemblyReference.cache
 D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Release\App.g.cs
 D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Release\Interaction_MarkupCompile.cache
 D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Release\Interaction.Properties.Resources.resources
