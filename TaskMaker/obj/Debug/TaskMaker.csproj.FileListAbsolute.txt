@@ -53,7 +53,6 @@ D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Interaction.exe
 D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Spire.Doc.dll
 D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Spire.License.dll
 D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Spire.Pdf.dll
-D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Microsoft.mshtml.dll
 D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Editor.pdb
 D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Interaction.pdb
 D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Interaction.exe.config

@@ -149,6 +149,7 @@ namespace TaskMaker
                             fd.Blocks.Add(new Paragraph(new Run("no text")));
                         }
 
+
                         newQuestions[i].Insert(GetNextRnd(0, newQuestions[i].Count), fd);
                         //GPwin.ChangeValue(1);
                     }
@@ -270,6 +271,7 @@ namespace TaskMaker
 
                                 newQuestions[dif] = fdl;
                             }
+
                             //GPwin.ChangeValue(1);
                         }
                     }
@@ -301,7 +303,6 @@ namespace TaskMaker
                     }
 
                     thisVariant.FontFamily = font;
-
                     object ffileName = "test" + v.ToString() + ".docx";
                     MemoryStream ms = new MemoryStream();
                     var rrrrange = new TextRange(thisVariant.ContentStart, thisVariant.ContentEnd);

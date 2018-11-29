@@ -8,3 +8,14 @@ D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Release\Interaction.csproj.Ge
 D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Release\Interaction.csproj.CoreCompileInputs.cache
 D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Release\Interaction.exe
 D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Release\Interaction.pdb
+D:\GitHub\TaskMaker\Interaction\bin\Release\Interaction.exe.config
+D:\GitHub\TaskMaker\Interaction\bin\Release\Interaction.exe
+D:\GitHub\TaskMaker\Interaction\bin\Release\Interaction.pdb
+D:\GitHub\TaskMaker\Interaction\obj\Release\Interaction.csprojAssemblyReference.cache
+D:\GitHub\TaskMaker\Interaction\obj\Release\App.g.cs
+D:\GitHub\TaskMaker\Interaction\obj\Release\Interaction_MarkupCompile.cache
+D:\GitHub\TaskMaker\Interaction\obj\Release\Interaction.Properties.Resources.resources
+D:\GitHub\TaskMaker\Interaction\obj\Release\Interaction.csproj.GenerateResource.cache
+D:\GitHub\TaskMaker\Interaction\obj\Release\Interaction.csproj.CoreCompileInputs.cache
+D:\GitHub\TaskMaker\Interaction\obj\Release\Interaction.exe
+D:\GitHub\TaskMaker\Interaction\obj\Release\Interaction.pdb

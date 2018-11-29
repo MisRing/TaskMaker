@@ -99,8 +99,8 @@ namespace Editor
                     int h = b.Height;
                     int w = b.Width;
                     System.Drawing.Size size = new System.Drawing.Size(w, h);
-                    w = (int)((w * 1f) / 2f);
-                    h = (int)((h * 1f) / 2f);
+                    w = (int)((w * 2f) / 3f);
+                    h = (int)((h * 2f) / 3f);
                     size = new System.Drawing.Size(w, h);
                     b = new System.Drawing.Bitmap(System.Drawing.Image.FromStream(s), size);
                     System.Drawing.Image im = (System.Drawing.Image)b;
