@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
 using System.Reflection;
-using Spire.Doc;
 
 namespace TaskMaker
 {
@@ -66,7 +65,7 @@ namespace TaskMaker
                     else
                         sfd.FileName = cre.Themes[ThemeBox.SelectedIndex].ThemeName + " Dificult " + DifBox.SelectedIndex.ToString() + " Questions.docx";
                     sfd.Filter = "docx files (*.docx)|*.docx|doc files (*.doc)|*.doc";
-                    sfd.FilterIndex = 2;
+                    sfd.FilterIndex = 1;
                 }
                 sfd.RestoreDirectory = true;
 
@@ -313,10 +312,32 @@ namespace TaskMaker
 
         private void CreateWordDocument(string filePath, MemoryStream ms)
         {
-            Document document = new Document();
-            document.LoadFromStream(ms, FileFormat.Rtf);
-            document.SaveToFile(filePath, FileFormat.Docx);
-            ms.Close();
+            Microsoft.Office.Interop.Word.Application word_app = new Microsoft.Office.Interop.Word.Application();
+
+            FileStream fs = new FileStream("test.rtf", FileMode.OpenOrCreate);
+            ms.WriteTo(fs);
+            fs.Close();
+
+            object input_file = System.IO.Path.GetFullPath("test.rtf");
+            object missing = Type.Missing;
+            word_app.Documents.Open(ref input_file, ref missing, ref missing,
+                ref missing, ref missing, ref missing, ref missing,
+                ref missing, ref missing, ref missing, ref missing,
+                ref missing,
+                ref missing, ref missing, ref missing, ref missing);
+
+            object output_file = System.IO.Path.GetFullPath(filePath);
+            object format_doc = (int)16;    // 16 for docx, 0 for doc.
+            Microsoft.Office.Interop.Word.Document active_document = word_app.ActiveDocument;
+            active_document.SaveAs(ref output_file, ref format_doc,
+                ref missing, ref missing, ref missing, ref missing,
+                ref missing, ref missing, ref missing, ref missing,
+                ref missing, ref missing, ref missing, ref missing,
+                ref missing, ref missing);
+
+            active_document.Close();
+            word_app.Quit();
+            File.Delete("test.rtf");
         }
 
         private void CreatePdfDocument(Microsoft.Office.Interop.Word.Document wordDocument, string path)

@@ -32,7 +32,7 @@
         <Button x:Name="create" Content="Создать список" Style="{StaticResource one}" FontSize="20" HorizontalAlignment="Left" Height="55" Margin="50,460,0,0" VerticalAlignment="Top" Width="155" Click="create_Click"/>
         <Button x:Name="exit" Content="Закрыть" Style="{StaticResource one}" FontSize="20" HorizontalAlignment="Left" Height="55" Margin="287,460,0,0" VerticalAlignment="Top" Width="155" Click="exit_Click"/>
         <Label x:Name="label1_Copy" Content="Экспорт в формате:" Foreground="White" FontSize="18" HorizontalAlignment="Left" Margin="50,225,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="FormatBox" FontSize="18" HorizontalAlignment="Left" Height="30" Margin="287,230,0,0" VerticalAlignment="Top" Width="155" SelectedIndex="0">
+        <ComboBox x:Name="FormatBox" FontSize="18" HorizontalAlignment="Left" Height="30" Margin="287,230,0,0" VerticalAlignment="Top" Width="155" SelectedIndex="1">
             <ComboBoxItem Content="PDF"/>
             <ComboBoxItem Content="Docx"/>
         </ComboBox>

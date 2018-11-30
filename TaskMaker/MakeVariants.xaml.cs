@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.IO;
-using Spire.Doc;
 using System.Security.Cryptography;
 using System.Reflection;
 
@@ -51,7 +50,7 @@ namespace TaskMaker
                 {
                     sfd.FileName = "NewTest.docx";
                     sfd.Filter = "docx files (*.docx)|*.docx|doc files (*.doc)|*.doc";
-                    sfd.FilterIndex = 2;
+                    sfd.FilterIndex = 1;
                 }
                 sfd.RestoreDirectory = true;
 
@@ -68,22 +67,25 @@ namespace TaskMaker
                             }
                             else
                             {
-                                RandomiseVariants(sfd.FileName).Close();
+                                Microsoft.Office.Interop.Word.Document doc = RandomiseVariants(sfd.FileName);
+                                Microsoft.Office.Interop.Word.Application app = doc.Application;
+                                doc.Close();
+                                app.Quit();
                             }
                             //GPwin.ChangeValue(1);
 
                             MessageBox.Show("Генерация успешно завершена!", "Готово!");
-                        }
-                        catch
-                        {
-                            try
-                            {
-                                //GPwin.Close();
-                            }
-                            catch { }
-                            MessageBox.Show("Не удаётся получить доступ к файлу.", "Ошибка");
-                        }
                     }
+                        catch
+                    {
+                        try
+                        {
+                            //GPwin.Close();
+                        }
+                        catch { }
+                        MessageBox.Show("Не удаётся получить доступ к файлу.", "Ошибка");
+                    }
+                }
                 }
             }
             
@@ -386,7 +388,7 @@ namespace TaskMaker
 
                 //GPwin.ChangeValue(1);
                 return FinalDoc;
-            }
+        }
             catch
             {
                 try
@@ -415,10 +417,32 @@ namespace TaskMaker
 
         private void CreateWordDocument(string filePath, MemoryStream ms)
         {
-            Document document = new Document();
-            document.LoadFromStream(ms, FileFormat.Rtf);
-            document.SaveToFile(filePath, FileFormat.Docx);
-            ms.Close();
+            Microsoft.Office.Interop.Word.Application word_app = new Microsoft.Office.Interop.Word.Application();
+            
+            FileStream fs = new FileStream("test.rtf", FileMode.OpenOrCreate);
+            ms.WriteTo(fs);
+            fs.Close();
+            
+            object input_file = System.IO.Path.GetFullPath("test.rtf");
+            object missing = Type.Missing;
+            word_app.Documents.Open(ref input_file, ref missing, ref missing,
+                ref missing, ref missing, ref missing, ref missing,
+                ref missing, ref missing, ref missing, ref missing,
+                ref missing,
+                ref missing, ref missing, ref missing, ref missing);
+
+            object output_file = System.IO.Path.GetFullPath(filePath);
+            object format_doc = (int)16;    // 16 for docx, 0 for doc.
+            Microsoft.Office.Interop.Word.Document active_document = word_app.ActiveDocument;
+            active_document.SaveAs(ref output_file, ref format_doc,
+                ref missing, ref missing, ref missing, ref missing,
+                ref missing, ref missing, ref missing, ref missing,
+                ref missing, ref missing, ref missing, ref missing,
+                ref missing, ref missing);
+
+            active_document.Close();
+            word_app.Quit();
+            File.Delete("test.rtf");
         }
 
         private void CreatePdfDocument(Microsoft.Office.Interop.Word.Document wordDocument, string path)

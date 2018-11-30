@@ -50,14 +50,9 @@ D:\GitHub\TaskMaker\TaskMaker\bin\Debug\TaskMaker.exe
 D:\GitHub\TaskMaker\TaskMaker\bin\Debug\TaskMaker.pdb
 D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Editor.exe
 D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Interaction.exe
-D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Spire.Doc.dll
-D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Spire.License.dll
-D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Spire.Pdf.dll
 D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Editor.pdb
 D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Interaction.pdb
 D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Interaction.exe.config
-D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Spire.Doc.xml
-D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Spire.License.xml
 D:\GitHub\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csprojAssemblyReference.cache
 D:\GitHub\TaskMaker\TaskMaker\obj\Debug\CreateS.g.cs
 D:\GitHub\TaskMaker\TaskMaker\obj\Debug\Export.g.cs

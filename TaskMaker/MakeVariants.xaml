@@ -14,7 +14,7 @@
         <Grid.Background>
             <ImageBrush ImageSource="font2.jpg"/>
         </Grid.Background>
-        <ComboBox x:Name="fileType" FontSize="18"  HorizontalAlignment="Left" Height="30" Margin="408,79,0,0" VerticalAlignment="Top" Width="66" SelectedIndex="0" RenderTransformOrigin="0.512,0.527">
+        <ComboBox x:Name="fileType" FontSize="18"  HorizontalAlignment="Left" Height="30" Margin="408,79,0,0" VerticalAlignment="Top" Width="66" SelectedIndex="1" RenderTransformOrigin="0.512,0.527">
             <ComboBoxItem Content="pdf"/>
             <ComboBoxItem Content="docx"/>
         </ComboBox>
