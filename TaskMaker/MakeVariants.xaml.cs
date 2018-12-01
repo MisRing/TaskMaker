@@ -99,8 +99,6 @@ namespace TaskMaker
             {
 
                 float fontSize = int.Parse((fontSizeBox.SelectedItem as ComboBoxItem).Content.ToString()) / 0.75f;
-                if(int.Parse((fontSizeBox.SelectedItem as ComboBoxItem).Content.ToString()) == 8)
-                    fontSize = 7.5f / 0.75f;
                 List<Question>[] Questions = cre.choosedTheme.Questions;
                 int variants = int.Parse(v_count.Text);
                 int questions = int.Parse(q_count.Text);
@@ -164,8 +162,7 @@ namespace TaskMaker
                     FlowDocument thisVariant = new FlowDocument();
                     Paragraph v_text = new Paragraph(new Run("Вариант " + (v + 1).ToString()));
                     v_text.TextAlignment = TextAlignment.Center;
-                    v_text.FontSize = (double)(fontSize + 4);
-                    //v_text.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
+                    v_text.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
                     v_text.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
                     v_text.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
                     FlowDocument to = new FlowDocument();
@@ -231,19 +228,9 @@ namespace TaskMaker
                                 b.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
                             }
 
-                            string number = "";
-                            switch (comboBox3.SelectedIndex)
-                            {
-                                case (0):
-                                    number = "    " + (globalQ).ToString() + ") ";
-                                    break;
-                                case (1):
-                                    number = "    " + (globalQ).ToString() + ". ";
-                                    break;
-                                case (2):
-                                    number = "    №" + (globalQ).ToString() + " ";
-                                    break;
-                            }
+                            string number = "    " + (globalQ).ToString() + ") ";
+                           
+                                
                             if (blocks[0] is Paragraph)
                             {
                                 Paragraph par = blocks[0] as Paragraph;
@@ -313,8 +300,8 @@ namespace TaskMaker
                     var rrrrange = new TextRange(thisVariant.ContentStart, thisVariant.ContentEnd);
                     var fffStream = new MemoryStream();
                     rrrrange.Save(fffStream, System.Windows.DataFormats.Rtf);
-                    string t = (Encoding.UTF8.GetString(fffStream.ToArray())).Replace(@"\fs16", @"\fs" + ((int)(fontSize * 2 * 0.75f)).ToString() + @"\sub");
-                    t = t.Replace(@"\fs17", @"\fs" + ((int)(fontSize * 2 * 0.75f)).ToString() + @"\super");
+                    string t = (Encoding.UTF8.GetString(fffStream.ToArray())).Replace(@"\fs16", @"\fs21\sub");
+                    t = t.Replace(@"\fs17", @"\fs21\super");
                     ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(t));
                     CreateWordDocument((string)ffileName, ms);
                     Variants.Add(System.IO.Path.GetFullPath((string)ffileName));

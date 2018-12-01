@@ -19,17 +19,20 @@
             <ColumnDefinition Width="170"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="1" Margin="0.4,0,0.2,162.4">
             <Border Margin="10,10,10,0" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <RichTextBox x:Name="Pole" FontSize="14" KeyDown="Pole_KeyDown" SelectionChanged="Pole_SelectionChanged" TextChanged="Pole_TextChanged" ContextMenuClosing="Pole_ContextMenuClosing" />
             </Border>
+            <Border Margin="10,471,10,-171" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <RichTextBox x:Name="ans" FontSize="14" KeyDown="Pole_KeyDown" SelectionChanged="Pole_SelectionChanged" TextChanged="Pole_TextChanged" ContextMenuClosing="Pole_ContextMenuClosing" Margin="0,0,-0.2,0" />
+            </Border>
+            <Label x:Name="label" Content="Ответ:" Foreground="White" FontSize="20" HorizontalAlignment="Left" Margin="10,429,0,-71" VerticalAlignment="Top" Height="42" Width="73"/>
 
         </Grid>
         <Grid Grid.Column="2">
             <Frame x:Name="f1" NavigationUIVisibility="Hidden"/>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="2">
-            <Label x:Name="k_theme" Grid.Row="1" Foreground="White" Content="Количество символов: 0" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="255" Canvas.Left="545" Margin="543,20,0,0"/>
 
             <Button x:Name="jir" Style="{StaticResource textap}"  FontWeight="Bold" Content="Ab" FontSize="25" HorizontalAlignment="Left" Margin="35,25,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="Bold_but_Click"/>
             <Button x:Name="cur" Style="{StaticResource textap}"  FontStyle="Oblique" Content="Ab" FontSize="25" HorizontalAlignment="Left" Margin="130,25,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="Italian_but_Click"/>
@@ -47,6 +50,7 @@
         <Button x:Name="grec" Content="Греческий алфавит" Style="{StaticResource dif}" HorizontalAlignment="Left" Margin="5,281,0,0" VerticalAlignment="Top" Width="170" Height="44" Click="grec_Click" Grid.ColumnSpan="2"/>
         <Button x:Name="cancel" FontSize="23"  BorderThickness="2" Style="{StaticResource dif}" Content="Отмена" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="70"  BorderBrush="Black" Margin="7,15.6,0,0" Click="cancel_Click" Grid.Row="1"/>
         <Button x:Name="save" FontSize="23" BorderThickness="2" Style="{StaticResource dif}" Content="Сохранить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="70"  BorderBrush="Black" Click="save_Click" Margin="4.8,15.6,0,0" Grid.Row="1" Grid.Column="2"/>
+        <Label x:Name="k_theme" Foreground="White" Content="Количество символов: 0" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" Width="191" Margin="644.4,400,0,0" Grid.Column="1"/>
 
     </Grid>
 </Page>
