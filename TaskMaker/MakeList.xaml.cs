@@ -44,8 +44,8 @@ namespace TaskMaker
                 var rrange = new TextRange(flowDoc.ContentStart, flowDoc.ContentEnd);
                 var ffStream = new MemoryStream();
                 rrange.Save(ffStream, System.Windows.DataFormats.Rtf);
-                string stream = Encoding.UTF8.GetString(ffStream.ToArray()).Replace(@"\fs16", @"\fs21\sub");
-                stream = stream.Replace(@"\fs17", @"\fs21\super");
+                string stream = Encoding.UTF8.GetString(ffStream.ToArray()).Replace(@"\fs16", @"\fs" + ((int)(int.Parse((FontSizeBox.SelectedItem as ComboBoxItem).Content.ToString()) * 2)).ToString() + @"\sub");
+                stream = stream.Replace(@"\fs17", @"\fs" + ((int)(int.Parse((FontSizeBox.SelectedItem as ComboBoxItem).Content.ToString()) * 2)).ToString() + @"\super");
                 ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(stream));
                 System.Windows.Forms.SaveFileDialog sfd = new System.Windows.Forms.SaveFileDialog();
 
@@ -131,7 +131,7 @@ namespace TaskMaker
                     {
                         Paragraph nameText = new Paragraph(new Run(Themes[themeID].ThemeName));
                         nameText.TextAlignment = TextAlignment.Center;
-                        nameText.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
+                        nameText.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 4));
                         nameText.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
                         nameText.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
                         flowDoc.Blocks.Add(nameText);
@@ -144,7 +144,7 @@ namespace TaskMaker
                             {
                                 Paragraph difText = new Paragraph(new Run("Вопросы " + dif.ToString() + " сложности"));
                                 difText.TextAlignment = TextAlignment.Center;
-                                difText.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
+                                difText.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 4));
                                 difText.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
                                 difText.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
 
@@ -228,13 +228,13 @@ namespace TaskMaker
                     {
                         Paragraph nameText = new Paragraph(new Run(Themes[themeID].ThemeName));
                         nameText.TextAlignment = TextAlignment.Center;
-                        nameText.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
+                        nameText.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 4));
                         nameText.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
                         nameText.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
 
                         Paragraph difText = new Paragraph(new Run("Вопросы " + (difID + 1).ToString() + " сложности"));
                         difText.TextAlignment = TextAlignment.Center;
-                        difText.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
+                        difText.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 4));
                         difText.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
                         difText.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
 

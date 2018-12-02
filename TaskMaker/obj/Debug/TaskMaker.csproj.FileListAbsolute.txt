@@ -95,9 +95,15 @@ D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\TaskMaker.exe
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\TaskMaker.pdb
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\Editor.exe
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\Interaction.exe
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.Doc.dll
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.License.dll
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.Pdf.dll
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\Microsoft.mshtml.dll
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\Editor.pdb
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\Interaction.pdb
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\Interaction.exe.config
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.Doc.xml
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\Spire.License.xml
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csprojAssemblyReference.cache
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\About.g.cs
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Debug\CreateS.g.cs

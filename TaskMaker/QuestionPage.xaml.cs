@@ -36,7 +36,7 @@ namespace TaskMaker
             cre = main;
             MW = win;
             InitializeComponent();
- 
+            Pole.Focus();
         }
 
         private void save_Click(object sender, RoutedEventArgs e)
@@ -411,7 +411,7 @@ namespace TaskMaker
 
         private void Page_GotFocus(object sender, RoutedEventArgs e)
         {
- 
+            Pole.Focus();
         }
 
         private void Pole_ContextMenuClosing(object sender, ContextMenuEventArgs e)
