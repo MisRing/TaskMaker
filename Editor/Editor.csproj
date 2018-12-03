@@ -763,7 +763,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Interaction\Interaction.csproj">
+    <ProjectReference Include="..\Interaction\Interaction.csproj">
       <Project>{d4b55879-8c7b-459a-b742-da61aa75e797}</Project>
       <Name>Interaction</Name>
     </ProjectReference>

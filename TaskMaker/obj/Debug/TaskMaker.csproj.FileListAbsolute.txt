@@ -243,3 +243,5 @@ H:\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CoreCompileInputs.cache
 H:\TaskMaker\TaskMaker\obj\Debug\TaskMaker.csproj.CopyComplete
 H:\TaskMaker\TaskMaker\obj\Debug\TaskMaker.exe
 H:\TaskMaker\TaskMaker\obj\Debug\TaskMaker.pdb
+D:\GitHub\TaskMaker\TaskMaker\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Editor.exe.config
