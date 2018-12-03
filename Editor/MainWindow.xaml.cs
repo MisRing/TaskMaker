@@ -41,7 +41,6 @@ namespace Editor
             equationToolBar.CommandCompleted += (x, y) => { editor.Focus(); };
             SetTitle();
             AddHandler(UIElement.MouseDownEvent, new MouseButtonEventHandler(MainWindow_MouseDown), true);
-            Task.Factory.StartNew(CheckForUpdate);
             //if (ConfigManager.GetConfigurationValue(KeyName.firstTime) == "true" || ConfigManager.GetConfigurationValue(KeyName.version) != version)
             //{
             //    string successMessage = "";
@@ -53,11 +52,8 @@ namespace Editor
             //                    "Please help us by sending your suggestions, feature requests or bug reports using our facebook page or our website (see help)." + Environment.NewLine + Environment.NewLine +
             //                    successMessage, "Important message");
             //}
-            UndoManager.CanUndo += (a, b) => { undoButton.IsEnabled = b.ActionPossible; };
-            UndoManager.CanRedo += (a, b) => { redoButton.IsEnabled = b.ActionPossible; };
             EquationBase.SelectionAvailable += new EventHandler<EventArgs>(editor_SelectionAvailable);
             EquationBase.SelectionUnavailable += new EventHandler<EventArgs>(editor_SelectionUnavailable);
-            underbarToggle.IsChecked = true;
             TextEquation.InputPropertyChanged += new System.ComponentModel.PropertyChangedEventHandler(TextEquation_InputPropertyChanged);
             editor.ZoomChanged += new EventHandler(editor_ZoomChanged);
         }
@@ -76,22 +72,7 @@ namespace Editor
             var mode = ConfigManager.GetConfigurationValue(KeyName.default_mode);
             var fontName = ConfigManager.GetConfigurationValue(KeyName.default_font);
 
-            var modes = editorModeCombo.Items;
-            foreach (ComboBoxItem item in modes)
-            {
-                if ((string)item.Tag == mode)
-                {
-                    editorModeCombo.SelectedItem = item;
-                }
-            }
-            var fonts = equationFontCombo.Items;
-            foreach (ComboBoxItem item in fonts)
-            {
-                if ((string)item.Tag == fontName)
-                {
-                    equationFontCombo.SelectedItem = item;
-                }
-            }
+            
             ChangeEditorMode();
             ChangeEditorFont();
             editor.Focus();            
@@ -99,20 +80,12 @@ namespace Editor
 
         void editor_SelectionUnavailable(object sender, EventArgs e)
         {
-            copyMenuItem.IsEnabled = false;
-            cutMenuItem.IsEnabled = false;
-            deleteMenuItem.IsEnabled = false;
-            cutButton.IsEnabled = false;
-            copyButton.IsEnabled = false;
+           
         }
 
         void editor_SelectionAvailable(object sender, EventArgs e)
         {
-            copyMenuItem.IsEnabled = true;
-            cutMenuItem.IsEnabled = true;
-            deleteMenuItem.IsEnabled = true;
-            cutButton.IsEnabled = true;
-            copyButton.IsEnabled = true;
+            
         }
 
         //private Image ConvertImageToGrayScaleImage()
@@ -134,41 +107,8 @@ namespace Editor
         //    return image;
         //}
 
-        void CheckForUpdate()
-        {
-            if (ConfigManager.GetConfigurationValue(KeyName.checkUpdates) == "false")
-            {
-                return;
-            }
-            try
-            {
-                string newVersion = version;
-                using (WebClient client = new WebClient())
-                {
-                    newVersion = client.DownloadString("http://www.mathiversity.com/matheditor/version");
-                }
-                string[] newParts = newVersion.Split('.');
-                string[] currentParts = version.Split('.');
-                for (int i = 0; i < newParts.Count(); i++)
-                {
-                    if (int.Parse(newParts[i]) > int.Parse(currentParts[i]))
-                    {
-                        if (MessageBox.Show("A new version of Math Editor with enhanced features is available.\r\nWould you like to download the new version?",
-                                            "New version available",
-                                            MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-                        {
-                            Process.Start("http://www.mathiversity.com/Downloads");
-                        }
-                        break;
-                    }
-                    else if (int.Parse(newParts[i]) < int.Parse(currentParts[i]))
-                    {
-                        break;
-                    }
-                }
-            }
-            catch { } // hopeless..
-        }
+        
+        
 
         public void HandleToolBarCommand(CommandDetails commandDetails)
         {
@@ -186,10 +126,7 @@ namespace Editor
             else
             {
                 editor.HandleUserCommand(commandDetails);
-                if (commandDetails.CommandType == CommandType.Text)
-                {
-                    historyToolBar.AddItem(commandDetails.UnicodeString);
-                }
+               
             }
         }
 
@@ -245,7 +182,6 @@ namespace Editor
             //        }
             //    }
             //}
-            historyToolBar.Save();
         }
 
         private void OpenCommandHandler(object sender, ExecutedRoutedEventArgs e)
@@ -427,14 +363,7 @@ namespace Editor
         private void showNestingMenuItem_Click(object sender, RoutedEventArgs e)
         {
             TextEquation.ShowNesting = !TextEquation.ShowNesting;
-            if (TextEquation.ShowNesting)
-            {
-                showNestingMenuItem.Header = "Hide Nesting";
-            }
-            else
-            {
-                showNestingMenuItem.Header = "Show Nesting";
-            }
+            
             editor.InvalidateVisual();
         }
 
@@ -450,25 +379,12 @@ namespace Editor
 
         private void UnderbarToggleCheckChanged(object sender, RoutedEventArgs e)
         {
-            editor.ShowOverbar(underbarToggle.IsChecked == true);
+            
         }
 
-        private void contentsMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("http://mathiversity.com/MathEditor/Documentation");
-        }
-
-        private void aboutMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            Window aboutWindow = new AboutWindow();
-            aboutWindow.Owner = this;
-            aboutWindow.ShowDialog();
-        }
-
-        private void videoMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("http://youtu.be/_j6R2mv3StQ");
-        }
+       
+     
+        
 
         private void deleteMenuItem_Click(object sender, RoutedEventArgs e)
         {
@@ -497,7 +413,6 @@ namespace Editor
         {
             if (WindowStyle == System.Windows.WindowStyle.None)
             {
-                fullScreenMenuItem.Header = "_Full Screen";
                 WindowStyle = System.Windows.WindowStyle.ThreeDBorderWindow;
                 WindowState = System.Windows.WindowState.Normal;
                 exitFullScreenButton.Visibility = System.Windows.Visibility.Collapsed;
@@ -505,7 +420,6 @@ namespace Editor
             }
             else
             {
-                fullScreenMenuItem.Header = "_Normal Screen";
                 WindowStyle = System.Windows.WindowStyle.None;
                 WindowState = System.Windows.WindowState.Normal; //extral call to be on safe side. windows is funky
                 WindowState = System.Windows.WindowState.Maximized;
@@ -519,17 +433,13 @@ namespace Editor
             ToggleFullScreen();
         }
 
-        private void fbMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("http://www.facebook.com/matheditor");
-        }
+    
 
         MenuItem lastZoomMenuItem = null;
 
         private void ZoomMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            customZoomMenu.Header = "_Custom";
-            customZoomMenu.IsChecked = false;
+            
             if (lastZoomMenuItem != null && sender != lastZoomMenuItem)
             {
                 lastZoomMenuItem.IsChecked = false;
@@ -545,8 +455,7 @@ namespace Editor
 
         void editor_ZoomChanged(object sender, EventArgs e)
         {
-            customZoomMenu.Header = "_Custom";
-            customZoomMenu.IsChecked = false;
+            
             if (lastZoomMenuItem != null)
             {
                 lastZoomMenuItem.IsChecked = false;
@@ -563,8 +472,7 @@ namespace Editor
 
         public void SetFontSizePercentage(int number)
         {
-            customZoomMenu.Header = "_Custom (" + number + "%)";
-            customZoomMenu.IsChecked = true;
+           
             if (lastZoomMenuItem != null)
             {
                 lastZoomMenuItem.IsChecked = false;
@@ -605,7 +513,7 @@ namespace Editor
         {
             if (codePointWindow == null)
             {
-                codePointWindow = new CodepointWindow();
+          
                 //codePointWindow.Owner = this;
             }
             codePointWindow.Show();
@@ -692,26 +600,13 @@ namespace Editor
             if (e.PropertyName == "EditorMode")
             {
                 var mode = TextEquation.EditorMode.ToString();
-                var t = editorModeCombo.Items;
-                foreach (ComboBoxItem item in t)
-                {
-                    if ((string)item.Tag == mode)
-                    {
-                        editorModeCombo.SelectedItem = item;
-                    }
-                }
+             
+                
             }
             else if (e.PropertyName == "FontType")
             {
                 string fontName = TextEquation.FontType.ToString();
-                var t = equationFontCombo.Items;
-                foreach (ComboBoxItem item in t)
-                {
-                    if ((string)item.Tag == fontName)
-                    {
-                        equationFontCombo.SelectedItem = item;
-                    }
-                }
+               
 
             }
             else
@@ -725,8 +620,7 @@ namespace Editor
             if (editor != null)
             {
                 TextEquation.InputPropertyChanged -= TextEquation_InputPropertyChanged;
-                TextEquation.FontType = (FontType)Enum.Parse(typeof(FontType), (string)((ComboBoxItem)equationFontCombo.SelectedItem).Tag);
-                editor.ChangeFormat("font", (string)((ComboBoxItem)equationFontCombo.SelectedItem).Tag, true);
+               
                 TextEquation.InputPropertyChanged += TextEquation_InputPropertyChanged;
                 editor.Focus();
             }
@@ -748,12 +642,8 @@ namespace Editor
         {
             if (editor != null)
             {
-                ComboBoxItem item = (ComboBoxItem)editorModeCombo.SelectedItem;
-                EditorMode mode = (EditorMode)Enum.Parse(typeof(EditorMode), item.Tag.ToString()); 
 
                 TextEquation.InputPropertyChanged -= TextEquation_InputPropertyChanged;
-                TextEquation.EditorMode = (EditorMode)Enum.Parse(typeof(EditorMode), (string)((ComboBoxItem)editorModeCombo.SelectedItem).Tag);
-                editor.ChangeFormat("mode", mode.ToString().ToLower(), true);
                 TextEquation.InputPropertyChanged += TextEquation_InputPropertyChanged;
                 editor.Focus();
             }
@@ -764,10 +654,7 @@ namespace Editor
             ChangeEditorMode();
         }
 
-        private void mvHelpMenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            System.Diagnostics.Process.Start("http://www.MathiVersity.com/MathEditor/Documentation/Online-Storage");
-        }   
+   
       
 
         private void NewCommandHandler(object sender, ExecutedRoutedEventArgs e)

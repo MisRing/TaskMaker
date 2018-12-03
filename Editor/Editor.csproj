@@ -98,9 +98,6 @@
     </Compile>
     <Compile Include="common\AutoGrayableImage.cs" />
     <Compile Include="common\Caret.cs" />
-    <Compile Include="CodepointWindow.xaml.cs">
-      <DependentUpon>CodepointWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="common\EditorModeToVisibilityConverter.cs" />
     <Compile Include="common\EditorModeToBoolConverter.cs" />
     <Compile Include="equations\Common\CopyDataObject.cs" />
@@ -170,9 +167,6 @@
     <Compile Include="equations\SubSuper\SubSuperBase.cs" />
     <Compile Include="equations\SubSuper\Super.cs" />
     <Compile Include="equations\Text\TextManager.cs" />
-    <Compile Include="HistoryToolBar.xaml.cs">
-      <DependentUpon>HistoryToolBar.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MatrixInputForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,10 +187,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CodepointWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="EquationToolBar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -206,10 +196,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CustomZoomWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="HistoryToolBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

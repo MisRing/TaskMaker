@@ -5,7 +5,7 @@
         xmlns:trace="clr-namespace:System.Diagnostics;assembly=WindowsBase"
         x:Class="Editor.MainWindow"        
         Title="MainWindow" 
-        Height="550" Width="928"  
+        Height="580" Width="928"  
         WindowStartupLocation="CenterScreen" 
         Background="White"    
         Loaded="Window_Loaded"        
@@ -33,8 +33,8 @@
         <CommandBinding Command="Redo"          Executed="RedoCommandHandler"/>
         <CommandBinding Command="New"           Executed="NewCommandHandler"/>
     </Window.CommandBindings>
-
-    <DockPanel x:Name="mainDock" LastChildFill="True">
+    <Grid>
+        <DockPanel x:Name="mainDock" LastChildFill="True">
         <Grid DockPanel.Dock="Top">
             <StackPanel Panel.ZIndex="10"  Orientation="Horizontal"  HorizontalAlignment="Right">
                 <Button x:Name="exitFullScreenButton" Visibility="Collapsed"  Width="22" Height="22" Style="{DynamicResource fullScreenButtonStyle}" Click="exitFullScreenButton_Click">
@@ -44,131 +44,11 @@
                     <Image Source="/images/gui/delete.png"></Image>
                 </Button>
             </StackPanel>
-            <Menu DockPanel.Dock="Top">
-                <MenuItem x:Name="editMenuItem" Header="_Edit">
-                    <MenuItem x:Name="cutMenuItem" Header="C_ut" Command="Cut" IsEnabled="False" />
-                    <MenuItem x:Name="copyMenuItem" Header="_Copy" Command="Copy" IsEnabled="False"/>
-                    <MenuItem x:Name="pasteMenuItem" Header="_Paste" Command="Paste"/>
-                    <MenuItem x:Name="selectAllMenuItem" Header="Select _All" Command="SelectAll"/>
-                    <MenuItem x:Name="deleteMenuItem" Header="_Delete" Click="deleteMenuItem_Click" IsEnabled="False"/>
-                </MenuItem>
-                <MenuItem x:Name="insertMenuItem" Header="_Insert">
-                    <MenuItem x:Name="symbolMenuItem" Header="_Symbol" Click="symbolMenuItem_Click" />
-                    <MenuItem x:Name="codePointMenuItem" Header="_Unicode Value" Click="codePointMenuItem_Click" />
-                </MenuItem>
-                <MenuItem x:Name="viewMenuItem" Header="_View">
-                    <MenuItem x:Name="fullScreenMenuItem" Header="_Full Screen" Click="fullScreenMenuItem_Click"></MenuItem>
-                    <MenuItem Header="_Zoom">
-                        <MenuItem Header="25%" Click="ZoomMenuItem_Click" IsCheckable="True"></MenuItem>
-                        <MenuItem Header="50%" Click="ZoomMenuItem_Click" IsCheckable="True"></MenuItem>
-                        <MenuItem Header="75%" Click="ZoomMenuItem_Click" IsCheckable="True"></MenuItem>
-                        <MenuItem Header="100%" Click="ZoomMenuItem_Click" IsCheckable="True"></MenuItem>
-                        <MenuItem Header="150%" Click="ZoomMenuItem_Click" IsCheckable="True"></MenuItem>
-                        <MenuItem Header="200%" Click="ZoomMenuItem_Click" IsCheckable="True"></MenuItem>
-                        <MenuItem Header="250%" Click="ZoomMenuItem_Click" IsCheckable="True"></MenuItem>
-                        <MenuItem Header="300%" Click="ZoomMenuItem_Click" IsCheckable="True"></MenuItem>
-                        <MenuItem Header="400%" Click="ZoomMenuItem_Click" IsCheckable="True"></MenuItem>
-                        <MenuItem Header="500%" Click="ZoomMenuItem_Click" IsCheckable="True"></MenuItem>
-                        <MenuItem Name="customZoomMenu" Header="_Custom" Click="CustomZoomMenuItem_Click" IsCheckable="True"></MenuItem>
-                    </MenuItem>
-                    <MenuItem x:Name="showNestingMenuItem" Header="Show Nesting" Click="showNestingMenuItem_Click"></MenuItem>
-                </MenuItem>
-                <MenuItem x:Name="toolsMenuItem" Header="_Tools">
-                    <MenuItem x:Name="settingsMenuItem" Header="_Settings" Click="settingsMenuItem_Click"/>
-                </MenuItem>
-                <MenuItem x:Name="helpMenuItem" Header="_Help">
-                    <MenuItem x:Name="contentsMenuItem" Header="_Contents" Click="contentsMenuItem_Click"/>
-                    <MenuItem x:Name="fbMenuItem" Header="_Facebook Page" Click="fbMenuItem_Click"/>
-                    <!--<MenuItem x:Name="videoMenuItem" Header="_Video (YouTube)" Click="videoMenuItem_Click"></MenuItem>-->
-                    <Separator />
-                    <MenuItem x:Name="aboutMenuItem" Header="_About" Click="aboutMenuItem_Click"/>
-                </MenuItem>
-            </Menu>
         </Grid>
-        <Grid DockPanel.Dock="Top" HorizontalAlignment="Stretch" Margin="0,2,0,4">
-            <ToolBarTray  IsLocked="True">
-                <ToolBar Band="0" BandIndex="1"  Height="30" Loaded="ToolBar_Loaded">
-                    <Button x:Name="button" Content="Вставить формулу" Height="25" VerticalAlignment="Top" Width="120" Click="button_Click"/>
-                    <Separator />
-                    <Button x:Name="undoButton" Command="Undo" ToolTip="Undo" IsEnabled="False"  ToolTipService.ShowOnDisabled="True">
-                        <local:AutoGreyableImage Source="images\gui\undo.png" />
-                    </Button>
-                    <Button x:Name="redoButton" Command="Redo" ToolTip="Redo"  IsEnabled="False"  ToolTipService.ShowOnDisabled="True">
-                        <local:AutoGreyableImage Source="images\gui\redo.png"/>
-                    </Button>
-                    <Separator/>
-                    <Button x:Name="zoomoutButton" Command="DecreaseZoom" ToolTip="Zoom out" ToolTipService.ShowOnDisabled="True">
-                        <local:AutoGreyableImage Source="images\gui\zoomout.png"/>
-                    </Button>
-                    <Button x:Name="zoominButton" Command="IncreaseZoom" ToolTip="Zoom in" ToolTipService.ShowOnDisabled="True">
-                        <local:AutoGreyableImage Source="images\gui\zoomin.png" />
-                    </Button>
-                    <Separator />
-                    <Button x:Name="cutButton" Command="Cut" ToolTip="Cut" IsEnabled="False"  ToolTipService.ShowOnDisabled="True">
-                        <local:AutoGreyableImage Source="images\gui\cut.png" />
-                    </Button>
-                    <Button x:Name="copyButton" Command="Copy" ToolTip="Copy" IsEnabled="False"  ToolTipService.ShowOnDisabled="True">
-                        <local:AutoGreyableImage Source="images\gui\copy.png"/>
-                    </Button>
-                    <Button x:Name="pasteButton" Command="Paste" ToolTip="Paste" ToolTipService.ShowOnDisabled="True">
-                        <Image Source="images\gui\paste.png"/>
-                    </Button>
-                    <Separator />
-                    <ComboBox Name="equationFontCombo" Width="100" DropDownClosed="EquationFontCombo_DropDownClosed" SelectedIndex="0">
-                        <ComboBoxItem Tag="STIXGeneral">STIX</ComboBoxItem>
-                        <ComboBoxItem Tag="Arial">Arial</ComboBoxItem>
-                        <ComboBoxItem Tag="ArialBlack">Arial Black</ComboBoxItem>
-                        <ComboBoxItem Tag="ComicSansMS">Comic Sans MS</ComboBoxItem>
-                        <ComboBoxItem Tag="Courier">Courier</ComboBoxItem>
-                        <ComboBoxItem Tag="CourierNew">Courier New</ComboBoxItem>
-                        <ComboBoxItem Tag="Georgia">Georgia</ComboBoxItem>
-                        <ComboBoxItem Tag="Impact">Impact</ComboBoxItem>
-                        <ComboBoxItem Tag="LucidaConsole">Lucida Console</ComboBoxItem>
-                        <ComboBoxItem Tag="LucidaSansUnicode">Lucida Sans Unicode</ComboBoxItem>
-                        <ComboBoxItem Tag="PalatinoLinotype">Palatino Linotype</ComboBoxItem>
-                        <ComboBoxItem Tag="Segoe">Segoe UI</ComboBoxItem>
-                        <ComboBoxItem Tag="Tahoma">Tahoma</ComboBoxItem>
-                        <ComboBoxItem Tag="TimesNewRoman">Times New Roman</ComboBoxItem>
-                        <ComboBoxItem Tag="TrebuchetMS">Trebuchet MS</ComboBoxItem>
-                        <ComboBoxItem Tag="Verdana">Verdana</ComboBoxItem>
-                        <ComboBoxItem Tag="Symbol">Symbol</ComboBoxItem>
-                        <ComboBoxItem Tag="Webdings">Webdings</ComboBoxItem>
-                        <ComboBoxItem Tag="Wingdings">Wingdings</ComboBoxItem>
-                    </ComboBox>
-                    <Separator />
-                    <ComboBox Name="editorModeCombo" Width="100" DropDownClosed="EditorModeCombo_DropDownClosed" SelectedIndex="1">
-                        <ComboBoxItem Tag="Math">Math</ComboBoxItem>
-                        <ComboBoxItem Tag="Text">Text</ComboBoxItem>
-                    </ComboBox>
-                    <ToggleButton x:Name="boldToggleButton" IsThreeState="False" ToolTip="Bold" IsChecked="{Binding Path=InputBold}">
-                        <Image Source="images\gui\bold.png" />
-                    </ToggleButton>
-                    <!--<ToggleButton IsEnabled="{Binding Path=EditorMode, Converter={StaticResource editorModeToBoolconverter}}" x:Name="italicToggleButton" IsThreeState="False" ToolTip="Italic" IsChecked="{Binding Path=InputItalic}">-->
-                    <ToggleButton x:Name="italicToggleButton" IsThreeState="False" ToolTip="Italic" IsChecked="{Binding Path=InputItalic}">
-                        <Image Source="images\gui\italic.png" />
-                    </ToggleButton>
-                    <ToggleButton x:Name="underlineToggleButton" IsThreeState="False" ToolTip="Underline" IsChecked="{Binding Path=InputUnderline}">
-                        <Image Source="images\gui\underline.png" />
-                    </ToggleButton>
-                    <Separator />
-                    <ToggleButton x:Name="underbarToggle" ToolTip="Show/Hide Underbar" Unchecked="UnderbarToggleCheckChanged" Checked="UnderbarToggleCheckChanged">
-                        <Image Source="images\gui\underbar.png" />
-                    </ToggleButton>
-                    <Separator />
-                    <StackPanel Orientation="Horizontal" Height="30"/>
-                    <Separator />
-                    <Separator Visibility="Collapsed" />
-                    <Label Visibility="Collapsed">
-                        <Hyperlink Click="spiroLinkClick">Cool math!</Hyperlink>
-                    </Label>
-                    
-                </ToolBar>
-            </ToolBarTray>
-        </Grid>
-        <StackPanel DockPanel.Dock="Top" DockPanel.ZIndex="100">
+        <Grid DockPanel.Dock="Top" HorizontalAlignment="Stretch" Margin="0,2,0,4"/>
+            <StackPanel DockPanel.Dock="Top" DockPanel.ZIndex="100">
             <local:CharacterToolBar x:Name="characterToolBar" Padding="0,4" Panel.ZIndex="100"></local:CharacterToolBar>
             <local:EquationToolBar x:Name="equationToolBar" Padding="0,6" Panel.ZIndex="99"></local:EquationToolBar>
-            <local:HistoryToolBar x:Name="historyToolBar" BorderBrush="#FFB6B6B6" BorderThickness="0,0,0,1"></local:HistoryToolBar>
         </StackPanel>
         <Grid Background="#FFEEDDCC" DockPanel.Dock="Bottom" Visibility="Collapsed">
             <Grid.ColumnDefinitions>
@@ -178,8 +58,11 @@
             <Label Name="statusBarLeftLabel" Height="25"></Label>
             <Label Grid.Column="1" Name="statusBarRightLabel" Height="25" HorizontalAlignment="Right"></Label>
         </Grid>
-        <ScrollViewer x:Name="scrollViwer" FocusVisualStyle="{x:Null}" Focusable="True" ScrollChanged="scrollViwer_ScrollChanged" HorizontalScrollBarVisibility="Auto">
+        <ScrollViewer x:Name="scrollViwer" FocusVisualStyle="{x:Null}" Focusable="True" ScrollChanged="scrollViwer_ScrollChanged" HorizontalScrollBarVisibility="Auto" Margin="0,-0.4,0,87.4">
             <local:EditorControl Background="Transparent" x:Name="editor" Focusable="True"  FocusVisualStyle="{x:Null}"></local:EditorControl>
         </ScrollViewer>
     </DockPanel>
+        <Button x:Name="button" Content="Вставить формулу" Height="25" VerticalAlignment="Top" Width="120" Click="button_Click" Margin="402,491,399.6,0"/>
+
+    </Grid>
 </Window>
