@@ -244,8 +244,8 @@
     <Resource Include="cross.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Equation_Editor_Code\EquationEditor\Editor.csproj">
-      <Project>{b19ff7b5-8771-4222-a539-496b58eccc12}</Project>
+    <ProjectReference Include="..\Editor\Editor.csproj">
+      <Project>{52dc540a-0c7f-4eb2-b9f7-4552e90938ea}</Project>
       <Name>Editor</Name>
     </ProjectReference>
     <ProjectReference Include="..\Interaction\Interaction.csproj">

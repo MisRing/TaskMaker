@@ -85,3 +85,25 @@ D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Debug\Interaction.csproj.Gene
 D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Debug\Interaction.csproj.CoreCompileInputs.cache
 D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Debug\Interaction.exe
 D:\УЧЁБА\Task Maker\TaskMaker\Interaction\obj\Debug\Interaction.pdb
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Interaction\bin\Debug\Interaction.exe.config
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Interaction\bin\Debug\Interaction.exe
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Interaction\bin\Debug\Interaction.pdb
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Interaction\obj\Debug\Interaction.csprojAssemblyReference.cache
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Interaction\obj\Debug\App.g.cs
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Interaction\obj\Debug\Interaction_MarkupCompile.cache
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Interaction\obj\Debug\Interaction.Properties.Resources.resources
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Interaction\obj\Debug\Interaction.csproj.GenerateResource.cache
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Interaction\obj\Debug\Interaction.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Interaction\obj\Debug\Interaction.exe
+C:\Users\User\Documents\GitHub\FORMULIITASKI\TaskMaker\Interaction\obj\Debug\Interaction.pdb
+H:\TaskMaker\Interaction\bin\Debug\Interaction.exe.config
+H:\TaskMaker\Interaction\bin\Debug\Interaction.exe
+H:\TaskMaker\Interaction\bin\Debug\Interaction.pdb
+H:\TaskMaker\Interaction\obj\Debug\Interaction.csprojAssemblyReference.cache
+H:\TaskMaker\Interaction\obj\Debug\App.g.cs
+H:\TaskMaker\Interaction\obj\Debug\Interaction_MarkupCompile.cache
+H:\TaskMaker\Interaction\obj\Debug\Interaction.Properties.Resources.resources
+H:\TaskMaker\Interaction\obj\Debug\Interaction.csproj.GenerateResource.cache
+H:\TaskMaker\Interaction\obj\Debug\Interaction.csproj.CoreCompileInputs.cache
+H:\TaskMaker\Interaction\obj\Debug\Interaction.exe
+H:\TaskMaker\Interaction\obj\Debug\Interaction.pdb

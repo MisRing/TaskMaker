@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\GitHub\TaskMaker\TaskMaker\obj\Debug\
+H:\TaskMaker\TaskMaker\obj\Debug\
 TaskMaker
 none
 false
 DEBUG;TRACE
-D:\GitHub\TaskMaker\TaskMaker\App.xaml
+H:\TaskMaker\TaskMaker\App.xaml
 141301365029
 
-23444847972
-20-275572979
+23-1739160040
+201122418495
 About.xaml;CreateS.xaml;creators.xaml;Dictionary.xaml;Export.xaml;GenerationProgressWindow.xaml;grec.xaml;mainS.xaml;MainWindow.xaml;MakeList.xaml;MakeVariants.xaml;math.xaml;QuestionPage.xaml;spec.xaml;
 
 True
