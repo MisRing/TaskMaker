@@ -231,19 +231,10 @@ namespace TaskMaker
                                 b.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
                             }
 
-                            string number = "";
-                            switch (comboBox3.SelectedIndex)
-                            {
-                                case (0):
-                                    number = "    " + (globalQ).ToString() + ") ";
-                                    break;
-                                case (1):
-                                    number = "    " + (globalQ).ToString() + ". ";
-                                    break;
-                                case (2):
-                                    number = "    №" + (globalQ).ToString() + " ";
-                                    break;
-                            }
+                            string number = "    " + (globalQ).ToString() + ") ";
+
+                       
+                                 
                             if (blocks[0] is Paragraph)
                             {
                                 Paragraph par = blocks[0] as Paragraph;
