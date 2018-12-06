@@ -206,6 +206,52 @@ namespace TaskMaker
                                     }
 
                                     flowDoc.Blocks.AddRange(blocks);
+
+                                    if (chek.IsChecked == true)
+                                    {
+                                        FlowDocument currentAnswer = new FlowDocument();
+                                        try
+                                        {
+                                            MemoryStream sstream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(q.ansText));
+                                            TextRange range = new TextRange(currentAnswer.ContentStart, currentAnswer.ContentEnd);
+                                            range.Load(sstream, DataFormats.Rtf);
+                                            currentAnswer = Question.ReturnIndexes(currentAnswer);
+                                            sstream.Close();
+                                        }
+                                        catch
+                                        {
+                                            currentAnswer.Blocks.Add(new Paragraph(new Run("————")));
+                                        }
+
+                                        List<Block> blocks2 = currentAnswer.Blocks.ToList();
+                                        foreach (Block b in blocks2)
+                                        {
+                                            b.TextAlignment = TextAlignment.Right;
+                                            b.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
+                                            b.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
+                                        }
+                                        
+                                        if (blocks2.Count != 0)
+                                        {
+                                            if (blocks2[0] is Paragraph)
+                                            {
+                                                Paragraph par = blocks2[0] as Paragraph;
+
+                                                par.Inlines.InsertBefore(par.Inlines.First(), new Run("Ответ: "));
+                                            }
+                                            else
+                                            {
+                                                Paragraph newPar = new Paragraph(new Run("Ответ: "));
+                                                newPar.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
+                                                newPar.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
+                                                newPar.TextAlignment = TextAlignment.Left;
+                                                flowDoc.Blocks.Add(newPar);
+                                            }
+                                        }
+
+                                        flowDoc.Blocks.AddRange(blocks2);
+                                    }
+                                    
                                     flowDoc.Blocks.Add(new Paragraph(new Run("")));
 
                                     number++;
@@ -288,6 +334,52 @@ namespace TaskMaker
                             }
 
                             flowDoc.Blocks.AddRange(blocks);
+
+                            if (chek.IsChecked == true)
+                            {
+                                FlowDocument currentAnswer = new FlowDocument();
+                                try
+                                {
+                                    sstream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(q.ansText));
+                                    range = new TextRange(currentAnswer.ContentStart, currentAnswer.ContentEnd);
+                                    range.Load(sstream, DataFormats.Rtf);
+                                    currentAnswer = Question.ReturnIndexes(currentAnswer);
+                                    sstream.Close();
+                                }
+                                catch
+                                {
+                                    currentAnswer.Blocks.Add(new Paragraph(new Run("————")));
+                                }
+
+                                List<Block> blocks2 = currentAnswer.Blocks.ToList();
+                                foreach (Block b in blocks2)
+                                {
+                                    b.TextAlignment = TextAlignment.Right;
+                                    b.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
+                                    b.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
+                                }
+
+                                if (blocks2.Count != 0)
+                                {
+                                    if (blocks2[0] is Paragraph)
+                                    {
+                                        Paragraph par = blocks2[0] as Paragraph;
+
+                                        par.Inlines.InsertBefore(par.Inlines.First(), new Run("Ответ: "));
+                                    }
+                                    else
+                                    {
+                                        Paragraph newPar = new Paragraph(new Run("Ответ: "));
+                                        newPar.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
+                                        newPar.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
+                                        newPar.TextAlignment = TextAlignment.Left;
+                                        flowDoc.Blocks.Add(newPar);
+                                    }
+                                }
+
+                                flowDoc.Blocks.AddRange(blocks2);
+                            }
+
                             flowDoc.Blocks.Add(new Paragraph(new Run("")));
 
                             number++;

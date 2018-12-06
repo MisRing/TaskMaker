@@ -308,7 +308,7 @@ namespace TaskMaker
                     QD.Add(new List<QuestionData>());
                     foreach(Question q in t.Questions[i])
                     {
-                        QD[i].Add(new QuestionData() { Dif = q.Dif, Text = q.Text });
+                        QD[i].Add(new QuestionData() { Dif = q.Dif, Text = q.Text, ansText = q.ansText});
                     }
                 }
 
@@ -349,7 +349,7 @@ namespace TaskMaker
                     foreach (QuestionData qd in td.Questions[i])
                     {
                         Question q = new Question();
-                        q.LoadQuestion(qd.Text, QuestionStackPanel, this, theme, qd.Dif, MW);
+                        q.LoadQuestion(qd.Text, qd.ansText, QuestionStackPanel, this, theme, qd.Dif, MW);
                         QD[i].Add(q);
                     }
                 }
@@ -452,7 +452,7 @@ namespace TaskMaker
                     foreach (QuestionData qd in td.Questions[i])
                     {
                         Question q = new Question();
-                        q.LoadQuestion(qd.Text, QuestionStackPanel, this, theme, qd.Dif, MW);
+                        q.LoadQuestion(qd.Text, qd.ansText, QuestionStackPanel, this, theme, qd.Dif, MW);
                         QD[i].Add(q);
                     }
                 }

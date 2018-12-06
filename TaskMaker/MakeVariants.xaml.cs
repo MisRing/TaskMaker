@@ -75,17 +75,17 @@ namespace TaskMaker
                             //GPwin.ChangeValue(1);
 
                             MessageBox.Show("Генерация успешно завершена!", "Готово!");
-                    }
-                        catch
-                    {
-                        try
-                        {
-                            //GPwin.Close();
                         }
-                        catch { }
+                        catch
+                        {
+                            try
+                            {
+                                //GPwin.Close();
+                            }
+                            catch { }
                         MessageBox.Show("Не удаётся получить доступ к файлу.", "Ошибка");
+                        }
                     }
-                }
                 }
             }
             
@@ -95,6 +95,7 @@ namespace TaskMaker
         {
             FontFamily font = new FontFamily("font.ttf");
             List<string> Variants = new List<string>();
+            List<string> VariantsAnswers = new List<string>();
             try
             {
 
@@ -132,10 +133,13 @@ namespace TaskMaker
                 }
 
                 List<FlowDocument>[] newQuestions = new List<FlowDocument>[10];
+                List<FlowDocument>[] newAnswers = new List<FlowDocument>[10];
 
                 for (int i = 0; i < 10; i++)
                 {
                     newQuestions[i] = new List<FlowDocument>();
+                    newAnswers[i] = new List<FlowDocument>();
+
                     foreach (Question q in Questions[i])
                     {
                         FlowDocument fd = new FlowDocument();
@@ -153,19 +157,41 @@ namespace TaskMaker
                             fd.Blocks.Add(new Paragraph(new Run("no text")));
                         }
 
+                        int ind = GetNextRnd(0, newQuestions[i].Count);
 
-                        newQuestions[i].Insert(GetNextRnd(0, newQuestions[i].Count), fd);
+                        newQuestions[i].Insert(ind, fd);
+
+                        if (setAnswers.IsChecked == true)
+                        {
+                            FlowDocument fd2 = new FlowDocument();
+                            var range2 = new TextRange(fd2.ContentStart, fd2.ContentEnd);
+
+                            try
+                            {
+                                MemoryStream sstream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(q.ansText));
+                                range2.Load(sstream, DataFormats.Rtf);
+                                fd2 = Question.ReturnIndexes(fd2);
+                                sstream.Close();
+                            }
+                            catch
+                            {
+                                fd2.Blocks.Add(new Paragraph(new Run("———")));
+                            }
+
+                            newAnswers[i].Insert(ind, fd2);
+                        }
+
                         //GPwin.ChangeValue(1);
                     }
                 }
                 int[] questionsID = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
                 for (int v = 0; v < variants; v++)
                 {
+                    // Variant
                     FlowDocument thisVariant = new FlowDocument();
                     Paragraph v_text = new Paragraph(new Run("Вариант " + (v + 1).ToString()));
                     v_text.TextAlignment = TextAlignment.Center;
                     v_text.FontSize = (double)(fontSize + 4);
-                    //v_text.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 8));
                     v_text.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
                     v_text.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
                     FlowDocument to = new FlowDocument();
@@ -208,12 +234,71 @@ namespace TaskMaker
                     thisVariant.Blocks.AddRange(to.Blocks.ToList());
                     thisVariant.Blocks.Add(v_text);
                     thisVariant.Blocks.Add(new Paragraph(new Run("")));
+                    // variant\
+
+                    // Answers
+                    FlowDocument thisVariantAnswers = new FlowDocument();
+                    if (setAnswers.IsChecked == true)
+                    {
+                        Paragraph v_text1 = new Paragraph(new Run("Ответы"));
+                        v_text1.TextAlignment = TextAlignment.Center;
+                        v_text1.FontSize = (double)(fontSize + 4);
+                        v_text1.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
+                        v_text1.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
+                        v_text = new Paragraph(new Run("Вариант " + (v + 1).ToString()));
+                        v_text.TextAlignment = TextAlignment.Center;
+                        v_text.FontSize = (double)(fontSize + 4);
+                        v_text.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
+                        v_text.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
+                        FlowDocument to2 = new FlowDocument();
+                        MemoryStream stream11 = new MemoryStream();
+                        TextRange range11 = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
+                        range11.Save(stream11, DataFormats.Rtf);
+                        range11 = new TextRange(to2.ContentStart, to2.ContentEnd);
+                        range11.Load(stream11, DataFormats.Rtf);
+                        to2 = Question.ReturnIndexes(to2);
+
+                        if (chek.IsChecked == false)
+                        {
+                            foreach (Block b in to2.Blocks)
+                            {
+                                if (b is Paragraph)
+                                {
+                                    Paragraph par = b as Paragraph;
+                                    par.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
+                                    par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 4));
+                                    par.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
+                                    par.TextAlignment = TextAlignment.Center;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            foreach (Block b in to2.Blocks)
+                            {
+                                if (b is Paragraph)
+                                {
+                                    Paragraph par = b as Paragraph;
+                                    par.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Normal);
+                                    par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 2));
+                                    par.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
+                                    par.TextAlignment = TextAlignment.Center;
+                                }
+                            }
+                        }
+                        thisVariantAnswers.Blocks.AddRange(to2.Blocks.ToList());
+                        thisVariantAnswers.Blocks.Add(v_text1);
+                        thisVariantAnswers.Blocks.Add(v_text);
+                        thisVariantAnswers.Blocks.Add(new Paragraph(new Run("")));
+                    }
+                    // answers \
 
                     int globalQ = 1;
                     for (int dif = 0; dif < 10; dif++)
                     {
                         for (int q = 0; q < quesOfDif[dif]; q++)
                         {
+                            // Question\
                             FlowDocument currentFD = new FlowDocument();
                             TextRange range2 = new TextRange(newQuestions[dif][questionsID[dif]].ContentStart, newQuestions[dif][questionsID[dif]].ContentEnd);
                             MemoryStream sstream = new MemoryStream();
@@ -252,6 +337,47 @@ namespace TaskMaker
 
                             thisVariant.Blocks.AddRange(blocks);
                             thisVariant.Blocks.Add(new Paragraph(new Run("")));
+                            // question\
+
+                            // Answer
+                            if(setAnswers.IsChecked == true)
+                            {
+                                FlowDocument currentAnswer = new FlowDocument();
+                                TextRange range2a = new TextRange(newAnswers[dif][questionsID[dif]].ContentStart, newAnswers[dif][questionsID[dif]].ContentEnd);
+                                MemoryStream sstreama = new MemoryStream();
+                                range2a.Save(sstreama, DataFormats.Rtf);
+                                range2a = new TextRange(currentAnswer.ContentStart, currentAnswer.ContentEnd);
+                                range2a.Load(sstreama, DataFormats.Rtf);
+                                currentAnswer = Question.ReturnIndexes(currentAnswer);
+                                sstreama.Close();
+
+                                List<Block> blocksa = currentAnswer.Blocks.ToList();
+                                foreach (Block b in blocksa)
+                                {
+                                    b.TextAlignment = TextAlignment.Left;
+                                    b.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
+                                    b.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
+                                }
+
+                                if (blocksa[0] is Paragraph)
+                                {
+                                    Paragraph par = blocksa[0] as Paragraph;
+
+                                    par.Inlines.InsertBefore(par.Inlines.First(), new Run(number));
+                                }
+                                else
+                                {
+                                    Paragraph newPar = new Paragraph(new Run(number));
+                                    newPar.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize));
+                                    newPar.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
+                                    newPar.TextAlignment = TextAlignment.Left;
+                                    thisVariantAnswers.Blocks.Add(newPar);
+                                }
+
+                                thisVariantAnswers.Blocks.AddRange(blocksa);
+                                thisVariantAnswers.Blocks.Add(new Paragraph(new Run("")));
+                            }
+                            // answer\
 
                             globalQ++;
                             questionsID[dif]++;
@@ -260,12 +386,16 @@ namespace TaskMaker
                                 questionsID[dif] = 0;
 
                                 List<FlowDocument> fdl = new List<FlowDocument>();
+                                List<FlowDocument> fdla = new List<FlowDocument>();
                                 foreach (FlowDocument ques in newQuestions[dif])
                                 {
-                                    fdl.Insert(GetNextRnd(0, fdl.Count), ques);
+                                    int ind = GetNextRnd(0, fdl.Count);
+                                    fdla.Insert(ind, newAnswers[dif][newQuestions[dif].IndexOf(ques)]);
+                                    fdl.Insert(ind, ques);
                                 }
 
                                 newQuestions[dif] = fdl;
+                                newAnswers[dif] = fdla;
                             }
 
                             //GPwin.ChangeValue(1);
@@ -296,8 +426,35 @@ namespace TaskMaker
 
                         thisVariant.Blocks.AddRange(to.Blocks.ToList());
                         thisVariant.Blocks.Add(new Paragraph(new Run("")));
+
+                        if(setAnswers.IsChecked == true)
+                        {
+                            to = new FlowDocument();
+                            stream = new MemoryStream();
+                            range1 = new TextRange(richTextBox2.Document.ContentStart, richTextBox2.Document.ContentEnd);
+                            range1.Save(stream, DataFormats.Rtf);
+                            range1 = new TextRange(to.ContentStart, to.ContentEnd);
+                            range1.Load(stream, DataFormats.Rtf);
+                            to = Question.ReturnIndexes(to);
+
+                            foreach (Block b in to.Blocks)
+                            {
+                                if (b is Paragraph)
+                                {
+                                    Paragraph par = b as Paragraph;
+                                    par.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Normal);
+                                    par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 2));
+                                    par.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
+                                    par.TextAlignment = TextAlignment.Right;
+                                }
+                            }
+
+                            thisVariantAnswers.Blocks.AddRange(to.Blocks.ToList());
+                            thisVariantAnswers.Blocks.Add(new Paragraph(new Run("")));
+                        }
                     }
 
+                    // Variant
                     thisVariant.FontFamily = font;
                     object ffileName = "test" + v.ToString() + ".docx";
                     MemoryStream ms = new MemoryStream();
@@ -309,6 +466,24 @@ namespace TaskMaker
                     ms = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(t));
                     CreateWordDocument((string)ffileName, ms);
                     Variants.Add(System.IO.Path.GetFullPath((string)ffileName));
+                    // variant\
+
+                    // Answers
+                    if(setAnswers.IsChecked == true)
+                    {
+                        thisVariantAnswers.FontFamily = font;
+                        object ffileNamea = "testA" + v.ToString() + ".docx";
+                        MemoryStream msa = new MemoryStream();
+                        var rrrrangea = new TextRange(thisVariantAnswers.ContentStart, thisVariantAnswers.ContentEnd);
+                        var fffStreama = new MemoryStream();
+                        rrrrangea.Save(fffStreama, System.Windows.DataFormats.Rtf);
+                        string ta = (Encoding.UTF8.GetString(fffStreama.ToArray())).Replace(@"\fs16", @"\fs" + ((int)(fontSize * 2 * 0.75f)).ToString() + @"\sub");
+                        ta = ta.Replace(@"\fs17", @"\fs" + ((int)(fontSize * 2 * 0.75f)).ToString() + @"\super");
+                        msa = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(ta));
+                        CreateWordDocument((string)ffileNamea, msa);
+                        VariantsAnswers.Add(System.IO.Path.GetFullPath((string)ffileNamea));
+                    }
+                    // answers\
                     //GPwin.ChangeValue(1);
                 }
 
@@ -324,7 +499,8 @@ namespace TaskMaker
                 NotFinalDoc.SaveAs2(aabsPath2);
 
                 //GPwin.ChangeValue(1);
-
+                
+                // Variants
                 bool alwaysBreake = false;
                 foreach (string st in Variants)
                 {
@@ -370,6 +546,52 @@ namespace TaskMaker
 
                     //GPwin.ChangeValue(1);
                 }
+                // variants\
+
+                // Answers
+                if(setAnswers.IsChecked == true)
+                {
+                    Microsoft.Office.Interop.Word.Range FinalDocRange2 = FinalDoc.Range(FinalDoc.Content.End - 1, FinalDoc.Content.End);
+
+                    FinalDocRange2.InsertBreak(Microsoft.Office.Interop.Word.WdBreakType.wdPageBreak);
+                    FinalDocRange2 = FinalDoc.Range(FinalDoc.Content.End - 1, FinalDoc.Content.End);
+
+                    foreach (string st in VariantsAnswers)
+                    {
+                        Microsoft.Office.Interop.Word.Range FinalDocRange = FinalDoc.Range(FinalDoc.Content.End - 1, FinalDoc.Content.End);
+                        Microsoft.Office.Interop.Word.Range NotFinalDocRange = NotFinalDoc.Range(NotFinalDoc.Content.End - 1, NotFinalDoc.Content.End);
+
+                        object sst = st;
+                        object missing = Missing.Value;
+                        object missing2 = Missing.Value;
+                        object readOnly = false;
+                        object isVisible = false;
+                        Microsoft.Office.Interop.Word.Document wDoc = WordApp.Documents.Open(ref sst,
+                                                                   ref missing, ref readOnly, ref missing,
+                                                                   ref missing, ref missing, ref missing,
+                                                                   ref missing, ref missing, ref missing,
+                                                                   ref missing, ref isVisible);
+                        Microsoft.Office.Interop.Word.WdStatistic stat = Microsoft.Office.Interop.Word.WdStatistic.wdStatisticPages;
+                        int num = NotFinalDoc.ComputeStatistics(stat, ref missing2);
+                        wDoc.Range(wDoc.Content.Start, wDoc.Content.End).Copy();
+                        NotFinalDocRange.Paste();
+                    
+                        wDoc.Range(wDoc.Content.Start, wDoc.Content.End).Copy();
+                        FinalDocRange.Paste();
+
+                        NotFinalDocRange = NotFinalDoc.Range(NotFinalDoc.Content.Start, NotFinalDoc.Content.End);
+                        NotFinalDocRange.Delete();
+                        FinalDocRange = FinalDoc.Range(FinalDoc.Content.Start, FinalDoc.Content.End);
+                        FinalDocRange.Copy();
+                        NotFinalDocRange.Paste();
+                        NotFinalDoc.Save();
+                        wDoc.Close();
+
+                        //GPwin.ChangeValue(1);
+                    }
+                }
+                // answers\
+
                 NotFinalDoc.Save();
                 NotFinalDoc.Close();
                 FinalDoc.SaveAs2(ref aabsPath, ref mmissing, ref rreadOnly, ref mmissing, ref mmissing, ref mmissing, ref mmissing,

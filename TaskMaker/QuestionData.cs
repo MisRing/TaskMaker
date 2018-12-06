@@ -8,7 +8,7 @@ namespace TaskMaker
 {
     public class QuestionData
     {
-        public string Text;
+        public string Text, ansText;
         public int Dif = 0;
 
         public QuestionData() { }

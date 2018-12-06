@@ -21,7 +21,7 @@ public class Question : Window
     public Canvas can;
     public Button close = new Button();
     public TextBlock text = new TextBlock();
-    public string Text;
+    public string Text, ansText;
     public StackPanel qPan;
     public CreateS MW;
     public Window lol;
@@ -68,7 +68,7 @@ public class Question : Window
 
     public Question() { }
 
-    public void LoadQuestion(string question_text, StackPanel stack, CreateS win, Theme t, int dif, Window okno)
+    public void LoadQuestion(string question_text, string question_answer, StackPanel stack, CreateS win, Theme t, int dif, Window okno)
     {
         lol = okno;
         Dif = dif;
@@ -82,6 +82,7 @@ public class Question : Window
         can.HorizontalAlignment = HorizontalAlignment.Stretch;
         can.Background = Brushes.White;
         Text = question_text;
+        ansText = question_answer;
         if (Text != null && Text != "")
         {
             var fStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(Text));

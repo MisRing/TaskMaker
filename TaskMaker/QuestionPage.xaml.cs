@@ -36,7 +36,7 @@ namespace TaskMaker
             cre = main;
             MW = win;
             InitializeComponent();
-            Pole.Focus();
+ 
         }
 
         private void save_Click(object sender, RoutedEventArgs e)
@@ -52,6 +52,15 @@ namespace TaskMaker
             ques.text.Text = new TextRange(Pole.Document.ContentStart, Pole.Document.ContentEnd).Text;
             fStream.Close();
 
+            range = new TextRange(ansPole.Document.ContentStart, ansPole.Document.ContentEnd);
+            fStream = new MemoryStream();
+
+            range.Save(fStream, DataFormats.Rtf);
+
+            text = Encoding.UTF8.GetString(fStream.ToArray());
+            ques.ansText = text;
+            fStream.Close();
+
             MW.Content = cre;
 
             cre.SaveAll();
@@ -59,6 +68,7 @@ namespace TaskMaker
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            changedRTB = Pole;
             Load();
         }
 
@@ -73,6 +83,14 @@ namespace TaskMaker
                 range.Load(fStream, DataFormats.Rtf);
                 Pole.Document = Question.ReturnIndexes(fd);
                 fStream.Close();
+
+                text = ques.ansText;
+                fStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(text));
+                FlowDocument fd2 = new FlowDocument();
+                range = new TextRange(fd2.ContentStart, fd2.ContentEnd);
+                range.Load(fStream, DataFormats.Rtf);
+                ansPole.Document = Question.ReturnIndexes(fd2);
+                fStream.Close();
             }
             catch { }
         }
@@ -82,7 +100,7 @@ namespace TaskMaker
         private void button_Click(object sender, RoutedEventArgs e)
         {
             Editor.MainWindow qe = new Editor.MainWindow();
-            logic.Logic.Interact(Pole, qe);
+            logic.Logic.Interact(changedRTB, qe);
             qe.Show();
         }
 
@@ -136,14 +154,16 @@ namespace TaskMaker
         {
             string str = Clipboard.GetText();
             Clipboard.SetText((sender as Button).Content.ToString());
-            Pole.Paste();
+            changedRTB.Paste();
             try { Clipboard.SetText(str); } catch { }
         }
+
+        public RichTextBox changedRTB;
 
         private bool isBold = false;
         private void Bold_but_Click(object sender, RoutedEventArgs e)
         {
-            Pole.Focus();
+            changedRTB.Focus();
             Button thisButton = sender as Button;
             if(isBold)
             {
@@ -157,7 +177,7 @@ namespace TaskMaker
             TextPropertys();
             try
             {
-                Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
+                changedRTB.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
             }
             catch { }
         }
@@ -165,7 +185,7 @@ namespace TaskMaker
         private bool isItalian = false;
         private void Italian_but_Click(object sender, RoutedEventArgs e)
         {
-            Pole.Focus();
+            changedRTB.Focus();
             Button thisButton = sender as Button;
             if (isItalian)
             {
@@ -181,7 +201,7 @@ namespace TaskMaker
             TextPropertys();
             try
             {
-                Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
+                changedRTB.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
             }
             catch { }
         }
@@ -189,7 +209,7 @@ namespace TaskMaker
         private bool isUnderline = false;
         private void underline_but_Click(object sender, RoutedEventArgs e)
         {
-            Pole.Focus();
+            changedRTB.Focus();
             Button thisButton = sender as Button;
             if (isUnderline)
             {
@@ -205,7 +225,7 @@ namespace TaskMaker
             TextPropertys();
             try
             {
-                Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
+                changedRTB.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
             }
             catch { }
         }
@@ -214,7 +234,7 @@ namespace TaskMaker
 
         private void Subscipt_but_Click(object sender, RoutedEventArgs e)
         {
-            Pole.Focus();
+            changedRTB.Focus();
             Button thisButton = sender as Button;
             if (scriptMode == 1)
             {
@@ -236,16 +256,16 @@ namespace TaskMaker
             TextPropertys();
             try
             {
-                Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
+                changedRTB.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
             }
             catch { }
         }
 
         private void Superscript_but_Click(object sender, RoutedEventArgs e)
         {
-            Pole.Focus();
+            changedRTB.Focus();
             if(CurrentSelection != null)
-                Pole.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
+                changedRTB.Selection.Select(CurrentSelection.Start, CurrentSelection.End);
 
             Button thisButton = sender as Button;
             if (scriptMode == 2)
@@ -308,9 +328,9 @@ namespace TaskMaker
                 System.Drawing.Image im = (System.Drawing.Image)b;
                 string clipText = System.Windows.Forms.Clipboard.GetText();
                 System.Windows.Forms.Clipboard.SetText(" ");
-                Pole.Paste();
+                changedRTB.Paste();
                 System.Windows.Forms.Clipboard.SetImage(im);
-                Pole.Paste();
+                changedRTB.Paste();
                 System.Windows.Forms.Clipboard.Clear();
                 try
                 {
@@ -322,7 +342,6 @@ namespace TaskMaker
 
         private void Pole_KeyDown(object sender, KeyEventArgs e)
         {
-            
             TextPropertys();
         }
         //
@@ -366,40 +385,38 @@ namespace TaskMaker
             {
                 
                 case (0):
-                    Pole.Selection.ApplyPropertyValue(Inline.BaselineAlignmentProperty, BaselineAlignment.Baseline);
-                    Pole.Selection.ApplyPropertyValue(Inline.FontSizeProperty, 14.0);
+                    changedRTB.Selection.ApplyPropertyValue(Inline.BaselineAlignmentProperty, BaselineAlignment.Baseline);
+                    changedRTB.Selection.ApplyPropertyValue(Inline.FontSizeProperty, 14.0);
                     break;
                 case (1):
-                    Pole.Selection.ApplyPropertyValue(Inline.BaselineAlignmentProperty, BaselineAlignment.Subscript);
-                    Pole.Selection.ApplyPropertyValue(Inline.FontSizeProperty, 11.0);
+                    changedRTB.Selection.ApplyPropertyValue(Inline.BaselineAlignmentProperty, BaselineAlignment.Subscript);
+                    changedRTB.Selection.ApplyPropertyValue(Inline.FontSizeProperty, 11.0);
                     break;
                 case (2):
-                    Pole.Selection.ApplyPropertyValue(Inline.BaselineAlignmentProperty, BaselineAlignment.Superscript);
-                    Pole.Selection.ApplyPropertyValue(Inline.FontSizeProperty, 11.5);
+                    changedRTB.Selection.ApplyPropertyValue(Inline.BaselineAlignmentProperty, BaselineAlignment.Superscript);
+                    changedRTB.Selection.ApplyPropertyValue(Inline.FontSizeProperty, 11.5);
                     break;
             }
 
             if (isBold)
-                Pole.Selection.ApplyPropertyValue(Inline.FontWeightProperty, FontWeights.Bold);
+                changedRTB.Selection.ApplyPropertyValue(Inline.FontWeightProperty, FontWeights.Bold);
             else
-                Pole.Selection.ApplyPropertyValue(Inline.FontWeightProperty, FontWeights.Normal);
+                changedRTB.Selection.ApplyPropertyValue(Inline.FontWeightProperty, FontWeights.Normal);
 
             if (isItalian)
-                Pole.Selection.ApplyPropertyValue(Inline.FontStyleProperty, FontStyles.Italic);
+                changedRTB.Selection.ApplyPropertyValue(Inline.FontStyleProperty, FontStyles.Italic);
             else
-                Pole.Selection.ApplyPropertyValue(Inline.FontStyleProperty, FontStyles.Normal);
+                changedRTB.Selection.ApplyPropertyValue(Inline.FontStyleProperty, FontStyles.Normal);
 
             if (isUnderline)
-                Pole.Selection.ApplyPropertyValue(Inline.TextDecorationsProperty, TextDecorations.Underline);
+                changedRTB.Selection.ApplyPropertyValue(Inline.TextDecorationsProperty, TextDecorations.Underline);
             else
-                Pole.Selection.ApplyPropertyValue(Inline.TextDecorationsProperty, null);
+                changedRTB.Selection.ApplyPropertyValue(Inline.TextDecorationsProperty, null);
         }
 
         private void Pole_SelectionChanged(object sender, RoutedEventArgs e)
         {
-            CurrentSelection = Pole.Selection;
-
-           
+            CurrentSelection = changedRTB.Selection;
         }
 
         private void Pole_TextChanged(object sender, TextChangedEventArgs e)
@@ -411,12 +428,27 @@ namespace TaskMaker
 
         private void Page_GotFocus(object sender, RoutedEventArgs e)
         {
-            Pole.Focus();
+           
         }
 
         private void Pole_ContextMenuClosing(object sender, ContextMenuEventArgs e)
         {
 
+        }
+
+        private void Pole_GotFocus(object sender, RoutedEventArgs e)
+        {
+            changedRTB = Pole;
+        }
+
+        private void ansPole_GotFocus(object sender, RoutedEventArgs e)
+        {
+            changedRTB = ansPole;
+        }
+
+        private void ansPole_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextPropertys();
         }
     }
     //----------------------------------------------------------------------------------------------------------------

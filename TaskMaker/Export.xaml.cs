@@ -108,7 +108,7 @@ namespace TaskMaker
                     QD.Add(new List<QuestionData>());
                     foreach (Question q in t.Questions[i])
                     {
-                        QD[i].Add(new QuestionData() { Dif = q.Dif, Text = q.Text });
+                        QD[i].Add(new QuestionData() { Dif = q.Dif, Text = q.Text, ansText = q.ansText});
                     }
                 }
 
