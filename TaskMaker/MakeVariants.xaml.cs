@@ -78,11 +78,11 @@ namespace TaskMaker
                         }
                         catch
                         {
-                            try
-                            {
+                            //try
+                            //{
                                 //GPwin.Close();
-                            }
-                            catch { }
+                            //}
+                            //catch { }
                         MessageBox.Show("Не удаётся получить доступ к файлу.", "Ошибка");
                         }
                     }
