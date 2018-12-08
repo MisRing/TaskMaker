@@ -304,10 +304,16 @@ namespace TaskMaker
             }
             if (path != "NA")
             {
-                System.Drawing.Bitmap b = new System.Drawing.Bitmap(System.Drawing.Image.FromFile(path));
+                ImagePropertis ImP = new ImagePropertis(this, new System.Drawing.Bitmap(System.Drawing.Image.FromFile(path)));
+                ImP.ShowDialog();
+                /*System.Drawing.Bitmap b = new System.Drawing.Bitmap(System.Drawing.Image.FromFile(path));
                 int h = b.Height;
                 int w = b.Width;
                 System.Drawing.Size s = new System.Drawing.Size(w, h);
+
+
+                /////////k
+
 
                 bool ok = false;
 
@@ -337,7 +343,7 @@ namespace TaskMaker
                 {
                     System.Windows.Forms.Clipboard.SetText(clipText);
                 }
-                catch { }
+                catch { }*/
             }
         }
 

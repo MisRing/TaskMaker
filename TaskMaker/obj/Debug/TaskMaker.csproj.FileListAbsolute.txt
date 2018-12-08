@@ -241,3 +241,5 @@ D:\GitHub\TaskMaker\TaskMaker\bin\Debug\ICSharpCode.SharpZipLib.dll
 D:\GitHub\TaskMaker\TaskMaker\bin\Debug\Editor.exe.config
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\ICSharpCode.SharpZipLib.dll
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Debug\Editor.exe.config
+D:\GitHub\TaskMaker\TaskMaker\obj\Debug\ImagePropertis.g.cs
+D:\GitHub\TaskMaker\TaskMaker\obj\Debug\ImagePropertis.baml

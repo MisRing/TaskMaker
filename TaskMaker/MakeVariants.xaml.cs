@@ -75,17 +75,17 @@ namespace TaskMaker
                             //GPwin.ChangeValue(1);
 
                             MessageBox.Show("Генерация успешно завершена!", "Готово!");
-                        }
-                        catch
-                        {
-                            //try
-                            //{
-                                //GPwin.Close();
-                            //}
-                            //catch { }
-                        MessageBox.Show("Не удаётся получить доступ к файлу.", "Ошибка");
-                        }
                     }
+                        catch
+                    {
+                        //try
+                        //{
+                        //GPwin.Close();
+                        //}
+                        //catch { }
+                        MessageBox.Show("Не удаётся получить доступ к файлу.", "Ошибка");
+                    }
+                }
                 }
             }
             
@@ -390,7 +390,8 @@ namespace TaskMaker
                                 foreach (FlowDocument ques in newQuestions[dif])
                                 {
                                     int ind = GetNextRnd(0, fdl.Count);
-                                    fdla.Insert(ind, newAnswers[dif][newQuestions[dif].IndexOf(ques)]);
+                                    if(setAnswers.IsChecked == true)
+                                        fdla.Insert(ind, newAnswers[dif][newQuestions[dif].IndexOf(ques)]);
                                     fdl.Insert(ind, ques);
                                 }
 

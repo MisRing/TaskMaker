@@ -108,6 +108,9 @@
     <Compile Include="grec.xaml.cs">
       <DependentUpon>grec.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ImagePropertis.xaml.cs">
+      <DependentUpon>ImagePropertis.xaml</DependentUpon>
+    </Compile>
     <Compile Include="math.xaml.cs">
       <DependentUpon>math.xaml</DependentUpon>
     </Compile>
@@ -146,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="grec.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImagePropertis.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
