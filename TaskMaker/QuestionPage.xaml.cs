@@ -49,7 +49,10 @@ namespace TaskMaker
 
             string text = Encoding.UTF8.GetString(fStream.ToArray());
             ques.Text = text;
-            ques.text.Text = new TextRange(Pole.Document.ContentStart, Pole.Document.ContentEnd).Text;
+            FlowDocument fd = new FlowDocument();
+            range = new TextRange(fd.ContentStart, fd.ContentEnd);
+            range.Load(fStream, DataFormats.Rtf);
+            ques.text.Document = fd;
             fStream.Close();
 
             range = new TextRange(ansPole.Document.ContentStart, ansPole.Document.ContentEnd);

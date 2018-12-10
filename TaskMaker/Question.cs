@@ -20,7 +20,7 @@ public class Question : Window
 {
     public Canvas can;
     public Button close = new Button();
-    public TextBlock text = new TextBlock();
+    public FlowDocumentScrollViewer text = new FlowDocumentScrollViewer();
     public string Text, ansText;
     public StackPanel qPan;
     public CreateS MW;
@@ -46,8 +46,8 @@ public class Question : Window
             Text = question_text;
 
         can.Children.Add(text);
-        text.TextWrapping = TextWrapping.Wrap;
-        text.Margin = new Thickness(5, 5, 100, 5); //5 5 20 5
+        text.VerticalScrollBarVisibility = ScrollBarVisibility.Hidden;
+        text.Margin = new Thickness(0, 0, 100, 0); //5 5 20 5
         text.Height = 100;
         text.Width = 755;
         text.HorizontalAlignment = HorizontalAlignment.Stretch;
@@ -64,6 +64,7 @@ public class Question : Window
         close.Content = img;
         can.MouseUp += Redaktor;
         theme.Questions[Dif - 1].Add(this);
+        text.MouseUp += Redaktor;
     }
 
     public Question() { }
@@ -86,16 +87,15 @@ public class Question : Window
         if (Text != null && Text != "")
         {
             var fStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(Text));
-            var fd = new FlowDocument();
-            var range = new TextRange(fd.ContentStart, fd.ContentEnd);
+            text.Document = new FlowDocument();
+            var range = new TextRange(text.Document.ContentStart, text.Document.ContentEnd);
             range.Load(fStream, DataFormats.Rtf);
-            fd = ReturnIndexes(fd);
+            text.Document = ReturnIndexes(text.Document);
             fStream.Close();
-            text.Text = range.Text;
         }
         can.Children.Add(text);
-        text.TextWrapping = TextWrapping.Wrap;
-        text.Margin = new Thickness(5, 5, 100, 5); //5 5 20 5
+        text.VerticalScrollBarVisibility = ScrollBarVisibility.Hidden;
+        text.Margin = new Thickness(0, 0, 100, 0); //5 5 20 5
         text.Height = 100;
         text.Width = 770;
         text.HorizontalAlignment = HorizontalAlignment.Stretch;
@@ -111,6 +111,8 @@ public class Question : Window
         img.Source = new BitmapImage(new Uri(@"/cross.png", UriKind.Relative));
         close.Content = img;
         can.MouseUp += Redaktor;
+        text.MouseUp += Redaktor;
+        text.PreviewMouseUp += Redaktor;
     }
 
     public void Redaktor(object sender, RoutedEventArgs e)
