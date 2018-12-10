@@ -54,7 +54,7 @@ namespace TaskMaker
                     if(DifBox.SelectedIndex == 10)
                         sfd.FileName = cre.Themes[ThemeBox.SelectedIndex].ThemeName + " Questions.pdf";
                     else
-                        sfd.FileName = cre.Themes[ThemeBox.SelectedIndex].ThemeName + " Dificult " + DifBox.SelectedIndex.ToString() + " Questions.pdf";
+                        sfd.FileName = cre.Themes[ThemeBox.SelectedIndex].ThemeName + " Dificult " + (DifBox.SelectedIndex + 1).ToString() + " Questions.pdf";
                     sfd.Filter = "pdf files (*.pdf)|*.pdf";
                     sfd.FilterIndex = 1;
                 }

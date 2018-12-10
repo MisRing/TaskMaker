@@ -65,6 +65,7 @@ public class Question : Window
         can.MouseUp += Redaktor;
         theme.Questions[Dif - 1].Add(this);
         text.MouseUp += Redaktor;
+        text.Focusable = false;
     }
 
     public Question() { }
@@ -113,6 +114,7 @@ public class Question : Window
         can.MouseUp += Redaktor;
         text.MouseUp += Redaktor;
         text.PreviewMouseUp += Redaktor;
+        text.Focusable = false;
     }
 
     public void Redaktor(object sender, RoutedEventArgs e)
@@ -124,6 +126,16 @@ public class Question : Window
     {
         theme.Questions[Dif - 1].Remove(this);
         qPan.Children.Remove(can);
+
+        int Tcount = 0;
+        int Dcount = MW.choosedTheme.Questions[MW.choosedDif - 1].Count;
+        foreach (List<Question> qm in MW.choosedTheme.Questions)
+        {
+            Tcount += qm.Count;
+        }
+        MW.k_theme.Content = "Количество вопросов в теме: " + Tcount.ToString();
+        MW.k_dif.Content = "Количество вопросов в сложности: " + Dcount.ToString();
+
         MW.SaveAll();
     }
 
