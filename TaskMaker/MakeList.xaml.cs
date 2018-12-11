@@ -63,7 +63,7 @@ namespace TaskMaker
                     if (DifBox.SelectedIndex == 10)
                         sfd.FileName = cre.Themes[ThemeBox.SelectedIndex].ThemeName + " Questions.docx";
                     else
-                        sfd.FileName = cre.Themes[ThemeBox.SelectedIndex].ThemeName + " Dificult " + DifBox.SelectedIndex.ToString() + " Questions.docx";
+                        sfd.FileName = cre.Themes[ThemeBox.SelectedIndex].ThemeName + " Dificult " + (DifBox.SelectedIndex + 1).ToString() + " Questions.docx";
                     sfd.Filter = "docx files (*.docx)|*.docx|doc files (*.doc)|*.doc";
                     sfd.FilterIndex = 1;
                 }

@@ -250,45 +250,8 @@ namespace TaskMaker
                         v_text.FontSize = (double)(fontSize + 4);
                         v_text.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
                         v_text.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
-                        FlowDocument to2 = new FlowDocument();
-                        MemoryStream stream11 = new MemoryStream();
-                        TextRange range11 = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
-                        range11.Save(stream11, DataFormats.Rtf);
-                        range11 = new TextRange(to2.ContentStart, to2.ContentEnd);
-                        range11.Load(stream11, DataFormats.Rtf);
-                        to2 = Question.ReturnIndexes(to2);
-
-                        if (chek.IsChecked == false)
-                        {
-                            foreach (Block b in to2.Blocks)
-                            {
-                                if (b is Paragraph)
-                                {
-                                    Paragraph par = b as Paragraph;
-                                    par.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
-                                    par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 4));
-                                    par.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
-                                    par.TextAlignment = TextAlignment.Center;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            foreach (Block b in to2.Blocks)
-                            {
-                                if (b is Paragraph)
-                                {
-                                    Paragraph par = b as Paragraph;
-                                    par.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Normal);
-                                    par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 2));
-                                    par.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
-                                    par.TextAlignment = TextAlignment.Center;
-                                }
-                            }
-                        }
-                        thisVariantAnswers.Blocks.AddRange(to2.Blocks.ToList());
-                        thisVariantAnswers.Blocks.Add(v_text1);
                         thisVariantAnswers.Blocks.Add(v_text);
+                        thisVariantAnswers.Blocks.Add(v_text1);
                         thisVariantAnswers.Blocks.Add(new Paragraph(new Run("")));
                     }
                     // answers \
