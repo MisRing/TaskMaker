@@ -394,32 +394,6 @@ namespace TaskMaker
                         }
 
                         thisVariant.Blocks.AddRange(to.Blocks.ToList());
-                        thisVariant.Blocks.Add(new Paragraph(new Run("")));
-
-                        if(setAnswers.IsChecked == true)
-                        {
-                            to = new FlowDocument();
-                            stream = new MemoryStream();
-                            range1 = new TextRange(richTextBox2.Document.ContentStart, richTextBox2.Document.ContentEnd);
-                            range1.Save(stream, DataFormats.Rtf);
-                            range1 = new TextRange(to.ContentStart, to.ContentEnd);
-                            range1.Load(stream, DataFormats.Rtf);
-                            to = Question.ReturnIndexes(to);
-
-                            foreach (Block b in to.Blocks)
-                            {
-                                if (b is Paragraph)
-                                {
-                                    Paragraph par = b as Paragraph;
-                                    par.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Normal);
-                                    par.SetCurrentValue(Inline.FontSizeProperty, (double)(fontSize + 2));
-                                    par.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
-                                    par.TextAlignment = TextAlignment.Right;
-                                }
-                            }
-
-                            thisVariantAnswers.Blocks.AddRange(to.Blocks.ToList());
-                        }
                     }
 
                     // Variant
@@ -579,6 +553,10 @@ namespace TaskMaker
                                                              ref mmissing, ref mmissing, ref mmissing, ref mmissing, ref isVvisible);
                 File.Delete((string)aabsPath2);
                 foreach (string st in Variants)
+                {
+                    File.Delete(st);
+                }
+                foreach (string st in VariantsAnswers)
                 {
                     File.Delete(st);
                 }
