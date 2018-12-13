@@ -348,6 +348,9 @@
     <Style x:Key="Arrow_Cursor" TargetType="{x:Type TextBox}">
         <Setter Property="Cursor" Value="Arrow"></Setter>
     </Style>
+    <Style x:Key="Arrow" TargetType="{x:Type FlowDocumentScrollViewer}">
+        <Setter Property="Cursor" Value="Arrow"></Setter>
+    </Style>
     <Style TargetType="{x:Type Button}" x:Key="textap" x:Name="textap">
         <Setter Property="Cursor" Value="Hand"></Setter>
         <Setter Property="Template">
