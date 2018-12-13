@@ -240,19 +240,12 @@ namespace TaskMaker
                     FlowDocument thisVariantAnswers = new FlowDocument();
                     if (setAnswers.IsChecked == true)
                     {
-                        Paragraph v_text1 = new Paragraph(new Run("Ответы"));
-                        v_text1.TextAlignment = TextAlignment.Center;
-                        v_text1.FontSize = (double)(fontSize + 4);
-                        v_text1.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
-                        v_text1.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
-                        v_text = new Paragraph(new Run("Вариант " + (v + 1).ToString()));
-                        v_text.TextAlignment = TextAlignment.Center;
-                        v_text.FontSize = (double)(fontSize + 4);
-                        v_text.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
-                        v_text.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
+                        v_text = new Paragraph(new Run("ВАРИАНТ " + (v + 1).ToString() + ":"));
+                        v_text.TextAlignment = TextAlignment.Left;
+                        v_text.Inlines.First().FontSize = (double)(fontSize + 4);
+                        v_text.Inlines.First().SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
+                        v_text.Inlines.First().SetCurrentValue(Inline.FontFamilyProperty, font); // need font
                         thisVariantAnswers.Blocks.Add(v_text);
-                        thisVariantAnswers.Blocks.Add(v_text1);
-                        thisVariantAnswers.Blocks.Add(new Paragraph(new Run("")));
                     }
                     // answers \
 
@@ -327,6 +320,19 @@ namespace TaskMaker
                                     Paragraph par = blocksa[0] as Paragraph;
 
                                     par.Inlines.InsertBefore(par.Inlines.First(), new Run(number));
+                                    blocksa.Remove(par);
+                                    if (thisVariantAnswers.Blocks.Last() is Paragraph)
+                                    {
+                                        Paragraph lastp = thisVariantAnswers.Blocks.Last() as Paragraph;
+                                        thisVariantAnswers.Blocks.Remove(lastp);
+                                        List<Inline> lines = par.Inlines.ToList();
+                                        par.Inlines.Clear();
+                                        foreach (Inline l in lines)
+                                        {
+                                            lastp.Inlines.InsertAfter(lastp.Inlines.Last(), l);
+                                        }
+                                        thisVariantAnswers.Blocks.Add(lastp);
+                                    }
                                 }
                                 else
                                 {
@@ -338,7 +344,6 @@ namespace TaskMaker
                                 }
 
                                 thisVariantAnswers.Blocks.AddRange(blocksa);
-                                thisVariantAnswers.Blocks.Add(new Paragraph(new Run("")));
                             }
                             // answer\
 
@@ -414,7 +419,6 @@ namespace TaskMaker
                             }
 
                             thisVariantAnswers.Blocks.AddRange(to.Blocks.ToList());
-                            thisVariantAnswers.Blocks.Add(new Paragraph(new Run("")));
                         }
                     }
 
@@ -451,6 +455,19 @@ namespace TaskMaker
                     //GPwin.ChangeValue(1);
                 }
 
+                object fn = "ta.docx";
+                Paragraph a_text = new Paragraph(new Run("Ответы"));
+                a_text.TextAlignment = TextAlignment.Center;
+                a_text.FontSize = (double)(fontSize + 4);
+                a_text.SetCurrentValue(Inline.FontWeightProperty, FontWeights.Bold);
+                a_text.SetCurrentValue(Inline.FontFamilyProperty, font); // need font
+                FlowDocument anstext = new FlowDocument();
+                anstext.Blocks.Add(a_text);
+                TextRange tr = new TextRange(anstext.ContentStart, anstext.ContentEnd);
+                MemoryStream mer = new MemoryStream();
+                tr.Save(mer, System.Windows.DataFormats.Rtf);
+                CreateWordDocument((string)fn, mer);
+                VariantsAnswers.Insert(0, System.IO.Path.GetFullPath((string)fn));
 
                 object mmissing = Missing.Value;
                 object rreadOnly = false;
