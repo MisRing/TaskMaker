@@ -20,10 +20,6 @@
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="1" Margin="0.4,0,0.2,162.4">
-            <Border Margin="10,471,10,-171" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <RichTextBox x:Name="ansPole" FontSize="14" SelectionChanged="Pole_SelectionChanged" TextChanged="Pole_TextChanged" ContextMenuClosing="Pole_ContextMenuClosing" Margin="0,0,-0.2,0" GotFocus="ansPole_GotFocus" KeyDown="ansPole_KeyDown" />
-            </Border>
-            <Label x:Name="label" Content="Ответ:" Foreground="White" FontSize="20" HorizontalAlignment="Left" Margin="10,429,0,-71" VerticalAlignment="Top" Height="42" Width="73"/>
 
             <Border Margin="10,10,10,0" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <RichTextBox x:Name="Pole" FontSize="14" KeyDown="Pole_KeyDown" SelectionChanged="Pole_SelectionChanged" TextChanged="Pole_TextChanged" ContextMenuClosing="Pole_ContextMenuClosing" GotFocus="Pole_GotFocus" />
@@ -34,6 +30,11 @@
             <Frame x:Name="f1" NavigationUIVisibility="Hidden"/>
         </Grid>
         <Grid Grid.Column="1" Grid.Row="2">
+            <Border Margin="12,-101,11.6,105" BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5">
+                
+                <RichTextBox x:Name="ansPole" FontSize="14" SelectionChanged="Pole_SelectionChanged" TextChanged="Pole_TextChanged" ContextMenuClosing="Pole_ContextMenuClosing" Margin="0,0,0,0" GotFocus="ansPole_GotFocus" KeyDown="ansPole_KeyDown" />
+            </Border>
+            <Label x:Name="label" Content="Ответ:" Foreground="White" FontSize="20" HorizontalAlignment="Left" Margin="10,-143,0,0" VerticalAlignment="Top" Height="42" Width="73"/>
 
             <Button x:Name="jir" Style="{StaticResource textap}"  FontWeight="Bold" Content="Ab" FontSize="25" HorizontalAlignment="Left" Margin="35,25,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="Bold_but_Click"/>
             <Button x:Name="cur" Style="{StaticResource textap}"  FontStyle="Oblique" Content="Ab" FontSize="25" HorizontalAlignment="Left" Margin="130,25,0,0" VerticalAlignment="Top" Width="50" Height="50" Click="Italian_but_Click"/>

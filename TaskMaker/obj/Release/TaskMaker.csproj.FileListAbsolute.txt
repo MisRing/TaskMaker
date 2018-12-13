@@ -3,14 +3,9 @@ D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\TaskMaker.exe
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\TaskMaker.pdb
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\Editor.exe
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\Interaction.exe
-D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\Spire.Doc.dll
-D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\Spire.License.dll
-D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\Spire.Pdf.dll
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\Editor.pdb
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\Interaction.pdb
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\Interaction.exe.config
-D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\Spire.Doc.xml
-D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\Spire.License.xml
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Release\TaskMaker.csprojAssemblyReference.cache
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Release\About.g.cs
 D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Release\CreateS.g.cs
@@ -97,3 +92,7 @@ D:\GitHub\TaskMaker\TaskMaker\obj\Release\TaskMaker.csproj.CoreCompileInputs.cac
 D:\GitHub\TaskMaker\TaskMaker\obj\Release\TaskMaker.csproj.CopyComplete
 D:\GitHub\TaskMaker\TaskMaker\obj\Release\TaskMaker.exe
 D:\GitHub\TaskMaker\TaskMaker\obj\Release\TaskMaker.pdb
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\ICSharpCode.SharpZipLib.dll
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\bin\Release\Editor.exe.config
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Release\ImagePropertis.g.cs
+D:\УЧЁБА\Task Maker\TaskMaker\TaskMaker\obj\Release\ImagePropertis.baml
